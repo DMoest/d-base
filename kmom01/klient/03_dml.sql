@@ -1,12 +1,18 @@
--- Insert content into DB
+--
+-- Insert content into the database.
+--
 USE dbwebb;
 
--- Delete from all tables
-DELETE FROM student2course;
-DELETE FROM student;
-DELETE FROM course;
+--
+-- Delete from all tables.
+--
+DELETE FROM student2course; 
+DELETE FROM student; 
+DELETE FROM course; 
 
--- Add students
+--
+-- Add some students.
+--
 INSERT INTO student
     (acronym, name)
 VALUES
@@ -17,7 +23,10 @@ VALUES
     ('doe', 'John/Jane Doe')
 ;
 
-INSERT INTO course
+--
+-- Add some courses.
+--
+INSERT INTO course 
     (code, name, nick, points)
 VALUES
     ('PA1439', 'Webbteknologier', 'htmlphp', 7.5),
@@ -26,7 +35,9 @@ VALUES
     ('DV1608', 'Objektorienterade webbteknologier', 'oophp', 7.5)
 ;
 
--- Adding students to courses, with grades if they exist.
+--
+-- Adding students to courses, with grades if there exists such.
+--
 INSERT INTO student2course
     (acronym, code, grade)
 VALUES

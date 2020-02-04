@@ -1,15 +1,16 @@
--- Samples to show reports from DB
+-- Samples to show reports from the database.
 USE dbwebb;
 
--- Show all tabels in DB
+-- Show all tables in the database.
 SHOW TABLES;
 
--- Show content from tabels
+
+-- Show content of tables.
 SELECT * FROM student;
 SELECT * FROM course;
 SELECT * FROM student2course;
 
--- A report joining all tables
+-- A report joining all tables.
 SELECT
     CONCAT(s.name, ' (', s.acronym, ')') AS "student",
     CONCAT(c.name, ' (', c.nick, ')') AS "course",
