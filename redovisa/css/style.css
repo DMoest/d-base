@@ -1,685 +1,182 @@
-/* --- BASICS --- */
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #1289A7;
+  border-radius: 0.3rem;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+* {
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html {
-    background-color: #fff;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 62.5%;
-    color: #444;
-    overflow-y: scroll;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  overflow: auto;
 }
-
-body {
-    min-height: 90vh;
-    margin: 0 15%;
-    font-size: 1.6rem;
-    background-color: #fff;
+html body {
+  width: 100%;
+  font-size: 1.6rem;
+  color: #333;
+  background-color: #fff;
 }
-
-/* --- TEXT STANDARD SIZE --- */
-h1 {
-    font-size: 3.2rem;
-    font-weight: 500;
+html body h1 {
+  font-size: 3.6rem;
+  font-weight: 500;
 }
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: 400;
+html body h2 {
+  font-size: 3rem;
+  font-weight: 500;
 }
-
-h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
+html body h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
 }
-
-p {
-    font-size: 1.6rem;
-    font-weight: 300;
+html body h4 {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
-
-
-
-/* --- HEADER & Incl elements --- */
-.site__header {
-    overflow: auto; /* clear fix to make div span all elements */
-    background-color: #fff;
-    border-bottom: 0.1rem solid #0596a6;
+.site__header--outer {
+  display: block;
+  width: 100%;
+  height: 15rem;
+  background-color: #1289A7;
 }
-
-.site__logo {
-    float: left;
-    width: 5rem;
-    height: auto;
+.site__header--inner {
+  width: 100%;
+  padding: 0 20%;
 }
-
-.site__title {
-    overflow: auto;
-    display: block;
-    font-size: 3.2rem;
-    font-weight: 500;
-    padding-top: 2rem;
-    padding-left: 5rem;
+.site__header--inner .site__logo {
+  display: inline-block;
+  width: 10rem;
+  padding: 2rem;
 }
-
-.site__slogan {
-    overflow: auto;
-    display: block;
-    font-weight: 300;
-    font-style: italic;
-    width: auto;
-    padding-left: 5rem;
+.site__header--inner .site__title {
+  font-size: 3.2rem;
+  padding: 0;
 }
-
-.report_image {
-    width: 350px;
+.site__header--inner .site__slogan {
+  display: block;
+  font-style: italic;
+  padding-left: 10.5rem;
 }
-
-
-
-/* --- FOOTER --- */
-.site-footer { margin-top: 10rem; }
-
-.footer__links {
-    width: 100%;
-    height: auto;
-    margin: 1rem auto 1.5rem;
-    text-align: center;
+.site__footer {
+  font-size: 1.2rem;
 }
-
-.footer__links p {
-    margin: 1rem 0.5rem 0.5rem;
-    font-size: 1.2rem;
+.site__footer--links {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
-
-.footer__pageLoader,
-footer p {
-    font-size: 1rem;
-    text-align: center;
-    margin: 0.5rem;
+.site__footer--pageLoader {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
-
-
-
-/* --- NAVIGATION --- */
+footer {
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 15rem;
+  color: #f5f5f5;
+  background-color: #222;
+}
 .navbar {
-    overflow: auto;
-    display: block;
-    padding: 0;
-    padding-bottom: 1rem;
-    margin: 1rem 0;
-    background-color: #fff;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0 20%;
+  background-color: #222;
 }
-
-/* Navigation, SELECTED page */
-.navbar .selected {
-    color: #fff !important;
-    background-color: rgb(5, 150, 166) !important;
-    border: 0.1rem solid rgb(5, 150, 166) !important;
+.navbar__multi {
+  display: block;
+  width: 100%;
+  padding: 0 20%;
 }
-
-
-
-/* --- Navigation BUTTON (Normal)--- */
-.navbar__button:link,
-.navbar__button:visited {
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 1.2rem;
-    background-color: #fff;
-    color: #777;
-    height: 1.4rem;
-    width: 6.5rem;
-    padding: 0.4rem 1rem;
-    margin-right: 0.5rem;
-    border: 0.1rem solid #777;
-    border-radius: 50rem;
-    transition: color 0.3s, border 0.3s, backgound-color 0.3s, transform 0.1s;
+.navbar__multi li {
+  display: inline-block;
 }
-
-/* Navigation HOVER button */
-.navbar__button:hover {
-    color: #fff;
-    background-color: rgb(5, 150, 166);
-    border: 0.1rem solid rgb(5, 150, 166);
+.navbar__button--NB {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 2rem 1rem 0;
+  color: #f5f5f5;
+  background-color: #222;
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+  transition: all 0.25s;
 }
-
-/* Navigation KLICK/ACTIVE button */
-.navbar__button:active {
-    background-color: rgb(8, 166, 184);
-    border: 0.1rem solid rgb(8, 166, 184);
-    transform: translateY(0.15rem);
+.navbar__button--NB:hover {
+  color: #222;
+  background-color: #fff;
 }
-
-
-
-/* --- Small buttons --- */
-.navbar--multi li .selected {
-    color: #fff;
-    background-color: rgb(5, 150, 166);
-    border: 0.05rem solid rgb(5, 150, 166);
+.navbar__button--selected {
+  color: #222;
+  background-color: #fff;
 }
-
-/* Rapportsidans knappar */
-.navbar--multi ul {
-    list-style: none;
-    padding: 0;
+.navbar__button--multi {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  width: 10rem;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1.5rem;
+  color: #333;
+  background-color: #fff;
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+  transition: all 0.25s;
 }
-
-.navbar--multi li { display: inline-block; }
-
-.navbar--multi .small__button { margin-right: 0.25rem; }
-
-.session__main a,
-.multipage__main a { width: 12rem !important; }
-
-/* --- SMALL BUTTONS --- */
-fieldset .small__button,
-.small__button:link,
-.small__button:visited {
-    list-style: none;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: 300;
-    background-color: #fff;
-    color: #777;
-    height: auto;
-    width: 7rem;
-    padding: 0.2rem 0.5rem;
-    margin: 0.25rem;
-    border: 0.05rem solid #777;
-    border-radius: 50rem;
-    transition: color 0.3s, border 0.3s, backgound-color 0.3s, transform 0.2s;
+.navbar__button--multi:hover {
+  color: #fff;
+  background-color: #1289A7;
+  border: 0.05rem solid #1289A7;
+  border-radius: 0.3rem;
 }
-
-fieldset .small__button { margin: 1rem auto !important; }
-
-/* Small buttons HOVER */
-.small__button:hover,
-fieldset .small__button:hover {
-    color: #fff;
-    background-color: rgb(5, 150, 166);
-    border: 0.05rem solid rgb(5, 150, 166);
+.navbar__button--multi:active {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
 }
-
-/* Small buttons KLICK/ACTIVE */
-.small__button:active,
-fieldset .small__button:active {
-    background-color: rgb(8, 166, 184);
-    border: 0.05rem solid rgb(8, 166, 184);
-    transform: translateY(0.1rem);
+.navbar__button--multi--selected {
+  color: #fff;
+  background-color: #1289A7;
+  border: 0.05rem solid #1289A7;
+  border-radius: 0.3rem;
 }
-
-/* --- SITE-SPECIFICS --- */
-
-/* My picture */
-.me__img {
-    display: block;
-    width: 25rem;
-    margin-top: 3rem;
+.content__report {
+  width: 100%;
+  padding: 0 20%;
 }
-
-/* BTH-länken på OMsidan */
-p a { text-decoration: none; }
-p a:hover { text-decoration: underline; }
-
-
-
-/* --- BYLINE --- */
-.byline {
-    display: flex;
-    flex-direction: row;
-    margin: 4rem 5%;
-    width: 90%;
+.content__me {
+  width: 100%;
+  padding: 0 20%;
 }
-
-.byline__img {
-    display: inline-block;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0;
+.content__about {
+  width: 100%;
+  padding: 0 20%;
 }
-
-figcaption {
-    color: #555;
-    font-size: 1.2rem;
-    font-style: italic;
+img[src*="#image__me"] {
+  width: 30rem;
 }
-
-.byline p {
-    width: auto;
-    margin: 1rem;
-    color: #555;
-}
-
-
-
-/* --- REPORT stuff--- */
-.report__kmom { margin-top: 5rem; }
-
-.report__question {
-    font-style: italic;
-    font-weight: 400;
-    margin-top: 1rem;
-}
-
-.report__answer { margin-bottom: 4rem; }
-
-.report__future {
-    font-style: italic;
-    opacity: 0.5;
-}
-
-
-
-/* --- GRID AREA DECLARATION --- */
-#name-label { grid-area: name-label; }
-#name { grid-area: name-input; }
-#email-label { grid-area: email-label; }
-#email { grid-area: email-input; }
-#telephone-label { grid-area: telephone-label; }
-#telephone { grid-area: telephone-input; }
-#contact__subject-label { grid-area: subject-label; }
-#contact__subject { grid-area: subject-input; }
-#contact__priority-label { grid-area: priority-label; }
-#contact__priority { grid-area: priority-input; }
-#message { grid-area: message-input; }
-#btn-send { grid-area: btn-send; }
-#btn-reset { grid-area: btn-reset; }
-
-/* --- CONTACT FORM --- */
-.contact__legend {
-    font-size: 2rem;
-    margin: 0 auto;
-}
-
-#contact__form {
-    width: 80%;
-    height: auto;
-    margin: 3rem auto 0;
-    padding: 5%;
-    background-color: #f7f7f7;
-    border: 0.05rem solid #a0a0a0;
-    border-radius: 0.5rem;
-    display: grid;
-    gap: 1rem;
-    grid-template:
-    'name-label name-input'
-    'email-label email-input'
-    'telephone-label telephone-input'
-    'subject-label subject-input'
-    'priority-label priority-input'
-    'message-label message-input'
-    'btn-send btn-reset';
-}
-
-.contact__label {
-    display: inline-block;
-    text-align: left;
-    font-size: 1.4rem;
-    color: #555;
-    width: 90%;
-    margin: auto;
-}
-
-.contact__input {
-    display: block;
-    width: 90%;
-    border-radius: 0.3rem;
-    margin: 0.5rem auto;
-}
-
-#contact__form input:focus,
-#contact__form textarea:focus { border: 0.2rem solid rgb(8, 166, 184); }
-
-#message {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2rem;
-    resize: vertical;
-    width: 90%;
-    height: 10rem;
-    border-radius: 0.3rem;
-    margin: 0 auto;
-}
-
-#message_long {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2rem;
-    resize: vertical;
-    width: 90%;
-    height: 35rem;
-    border-radius: 0.3rem;
-    margin: 0 auto;
-}
-
-.message_output {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.4rem;
-    width: 45%;
-    margin: 1rem;
-}
-
-.contact__button {
-    display: inline-block !important;
-    margin: 0 auto;
-}
-
-
-
-/* --- LOGIN --- */
-.login__legend { font-size: 2rem; }
-
-#login__user--label { grid-area: login__user--label; }
-#login__user--input { grid-area: login__user--input; }
-#login__password--label { grid-area: login__password--label; }
-#login__password--input { grid-area: login__password--input; }
-.login__button { grid-area: login__button; }
-
-.login__form {
-    width: 60%;
-    margin: 1rem auto;
-    padding: 1rem;
-    border: 0.05rem solid #a0a0a0;
-    border-radius: 0.5rem;
-    background-color: #f7f7f7;
-    display: grid;
-    grid-template:
-    'login__user--label login__user--input login__user--input'
-    'login__password--label login__password--input login__password--input'
-    'login__button login__button login__button';
-}
-
-.login__label {
-    width: 80%;
-    height: 1rem;
-    margin: 1rem auto;
-    text-align: left;
-    font-size: 1.4rem;
-}
-
-.login__input {
-    width: 80%;
-    height: 2.25rem;
-    margin: auto;
-    border: 0.05rem solid #a0a0a0;
-    border-radius: 0.3rem;
-    font-style: italic;
-}
-
-.login__form input:focus,
-.login__form textarea:focus { border: 0.2rem solid rgb(8, 166, 184); }
-
-
-
-/* --- TABLE --- */
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: #eee;
-    color: #444;
-    width: 90%;
-}
-
-table a {
-    text-decoration: none;
-    color: rgb(17, 115, 126);
-    font-size: 1.5rem;
-}
-
-table a:hover {
-    text-decoration: none;
-    color: rgb(42, 209, 228);
-}
-
-.crud_symbol {
-    font-size: 2.2rem;
-}
-
-th,
-td {
-    border: 0.1rem solid #9b9b9b;
-    padding: 0.75rem;
-}
-
-th {
-    height: 4rem;
-    color: rgb(17, 115, 126);
-    background-color: rgb(215, 251, 255);
-}
-
-td {
-    text-align: center;
-}
-
-td:first-child {
-    color: #666;
-}
-
-tr:nth-child(even) {
-    background-color: #f7f7f7;
-}
-
-/* Check for DB */
-.print_positive_result {
-    width: 40%;
-    height: 3rem;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    color: lightgreen;
-    background-color: darkgreen;
-}
-
-.print_negative_result {
-    width: 40%;
-    height: 3rem;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    color: orangered;
-    background-color: darkred;
-}
-
-
-
-/* --- CRUD DB-FORM --- */
-.crud_fieldset {
-    border: 0.05rem solid rgb(201, 201, 201);
-    border-radius: 0.3rem;
-    background-color: rgb(240, 240, 240);
-    padding: 2rem;
-    margin: 5%;
-}
-
-.crud_legend {
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: #777;
-}
-
-.crud_label {
-    display: inline-block;
-    text-align: left;
-    text-transform: uppercase;
-    color: #777;
-    width: 40%;
-    height: 1.5rem;
-    margin: 0.5rem auto;
-}
-
-.crud_input {
-    display: inline-block;
-    width: 40%;
-    height: 1.5rem;
-    margin: 0.5rem auto;
-    border: 0.05rem solid #777;
-    border-radius: 0.3rem;
-}
-
-.crud_input:focus {
-    border: 0.2rem solid rgb(7, 84, 165);
-}
-
-.crud_button {
-    display: block;
-    cursor: pointer;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #fff;
-    width: 15rem;
-    height: 3rem;
-    margin: 1rem auto;
-    border-radius: 0.3rem;
-    border: 0.1rem solid rgb(5, 166, 56);
-    background-color: rgb(5, 166, 56);
-    transition: all 0.2s;
-}
-
-.crud_button:hover {
-    border: 0.1rem solid rgb(0, 208, 66);
-    background-color: rgb(0, 208, 66);
-}
-
-.crud_button-caution {
-    display: block;
-    cursor: pointer;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #fff;
-    width: 15rem;
-    height: 3rem;
-    margin: 1rem auto;
-    border-radius: 0.3rem;
-    border: 0.1rem solid #ffc400;
-    background-color: #ffc400;
-    transition: all 0.2s;
-}
-
-.crud_button-caution:hover {
-    border: 0.1rem solid #ffd23d;
-    background-color: #ffd23d;
-}
-
-.crud_button-danger {
-    display: block;
-    cursor: pointer;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #fff;
-    width: 15rem;
-    height: 3rem;
-    margin: 1rem auto;
-    border-radius: 0.3rem;
-    border: 0.1rem solid rgb(208, 0, 0);
-    background-color: rgb(208, 0, 0);
-    transition: all 0.2s;
-}
-
-.crud_button-danger:hover {
-    border: 0.1rem solid rgb(255, 34, 34);
-    background-color: rgb(255, 0, 0);
-}
-
-/* fieldset .small__button { display: block; } */
-
-/* --- MEDIA QUERIES --- */
-
-/* Minimering av NAVBAR små skärmar */
-@media (min-width: 1px) and (max-width: 550px) {
-    .navbar__button:link,
-    .navbar__button:visited {
-        display: block;
-        margin: 0.5rem auto;
-        height: 1.4rem;
-        width: 25rem;
-    }
-}
-
-
-
-/* TELEFONER & Small iPADS */
-@media (min-width: 1px) and (max-width: 767px) {
-    body {
-        font-size: 1.2rem;
-        width: 90%;
-        margin: 0 5%;
-    }
-
-    /* --- HEADER --- */
-    .site__logo { margin: 3rem 1rem; }
-
-    .site__title {
-        font-size: 2.8rem;
-        padding-top: 2rem;
-        padding-left: 2rem;
-    }
-
-    .site__slogan { padding-left: 2rem; }
-
-    /* --- BYLINE --- */
-    .byline figure { margin: 0.5rem; }
-
-    .byline__img {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    /* my picture */
-    .me__img { margin: 1rem auto; }
-
-
-
-    .login__form {
-        width: 90%;
-        margin: 5rem auto;
-    }
-
-    .login__label {
-        width: 90%;
-        height: 1rem;
-        margin: 1rem auto;
-    }
-
-    .login__input {
-        width: 90%;
-        height: 2.25rem;
-        margin: 1rem auto;
-    }
-}
-
-
-
-/* --- DESKTOP & Large iPADS --- */
-@media (min-width: 768px) {
-    body {
-        font-size: 1.2rem;
-        width: 60%;
-        margin: 0 20%;
-    }
-
-    /* --- HEADER --- */
-    .site__logo { margin: 2rem; }
-
-    .site__title {
-        font-size: 3.2rem;
-        padding-top: 2rem;
-        padding-left: 5rem;
-    }
-
-    .site__slogan { padding-left: 5rem; }
-
-    /* --- BYLINE --- */
-    .byline figure { margin: 1rem; }
-
-    .byline__img {
-        width: 7.5rem;
-        height: 7.5rem;
-    }
-
-    /* my picture */
-    .me__img { margin: 1rem 0; }
+img[src*="#image__about"] {
+  width: 30rem;
 }

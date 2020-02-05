@@ -1,3 +1,11 @@
+<?php require __DIR__ . "/../vendor/autoload.php"; ?>
 
-<h2 class="report__kmom">Kmom07</h2>
-<p class="report__future">Här kommer jag att skriva redovisningstext för kmom07.</p>
+<section class="content__report">
+    <?php
+        $filename = __DIR__ . "/markdown/kmom07.md";
+        $text     = file_get_contents($filename);
+        $filter   = new \Anax\TextFilter\TextFilter();
+        $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
+        echo $parsed->text;
+    ?>
+</section>

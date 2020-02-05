@@ -1,17 +1,11 @@
+<?php require __DIR__ . "/../vendor/autoload.php"; ?>
 
-<h2 class="report__kmom">Kmom05</h2>
-
-<p class="report__question">Berätta kort om den utvecklingsmiljö du sitter i och vilka databaser/klienter du installerat och vilka versioner de har.</p>
-<p class="report__answer"></p>
-
-<p class="report__question">Hur känns det att komma igång med databaser, klienter och SQL?</p>
-<p class="report__answer"></p>
-
-<p class="report__question">Har du jobbat med databaser eller liknande tidigare?</p>
-<p class="report__answer"></p>
-
-<p class="report__question">Hur gick det att jobba med SQL i guiden?</p>
-<p class="report__answer"></p>
-
-<p class="report__question">Jämför SQL med andra sätt att programmera.</p>
-<p class="report__answer"></p>
+<section class="content__report">
+    <?php
+        $filename = __DIR__ . "/markdown/kmom05.md";
+        $text     = file_get_contents($filename);
+        $filter   = new \Anax\TextFilter\TextFilter();
+        $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
+        echo $parsed->text;
+    ?>
+</section>

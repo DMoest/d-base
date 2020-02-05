@@ -1,0 +1,271 @@
+// --- VARIABLES ---
+@color__white: #fff;
+@color__black: #000;
+@color__grey--light: #888;
+@color__grey: #555;
+@color__grey--dark: #222;
+
+@color__primary--light: #46bddb;
+@color__primary--standard: #1289A7;
+@color__primary--dark: #0b596d;
+@color__secondary--light: #ffd864;
+@color__secondary--standard: #FFC312;
+@color__secondary--dark: rgb(207, 155, 0);
+
+@color__font--light: #f5f5f5;
+@color__font--dark: #333;
+
+@font__size--p: 1.6rem;
+@font__size--h1: 3.2rem;
+@font__size--h2: 2.8rem;
+@font__size--h3: 2.4rem;
+@font__size--h4: 2rem;
+@font__size--footer: 1.2rem;
+@font__weight--header: 500;
+@font__weight--p: 300;
+@font__size--button: 2rem;
+
+@padding__content--sides: 0 20%;
+@padding__elements--around: 2rem;
+@padding__button: 0.75rem 1.5rem;
+@margin__button: 1rem 2rem 1rem 0;
+
+@width--full: 100%;
+@button__multi--width: 10rem;
+@animation__time: 0.25s;
+@border__radius: 0.3rem;
+@border__thinckness: 0.05rem;
+
+@image--width: 30rem;
+
+// --- MIXINS ---
+.bordered--light {
+    border: @border__thinckness solid @color__font--light;
+    border-radius: @border__radius;
+}
+
+.bordered--dark {
+    border: @border__thinckness solid @color__font--dark;
+    border-radius: @border__radius;
+}
+
+.bordered--primary{
+    border: @border__thinckness solid @color__primary--standard;
+    border-radius: @border__radius;
+}
+
+.button--click {   
+    transform: translateY(1px);
+    background-color: @color__primary--light;
+    border: @border__thinckness solid @color__primary--light;
+}
+
+// --- BASICS ---
+* {
+    overflow: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+    overflow: auto;
+    
+    body {
+        width: 100%;
+        font-size: @font__size--p;
+        color: @color__font--dark;
+        background-color: @color__white;
+
+        h1 {
+            font-size: 3.6rem;
+            font-weight: @font__weight--header
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: @font__weight--header
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: @font__weight--header
+        }
+
+        h4 {
+            font-size: 1.8rem;
+            font-weight: @font__weight--header
+        }
+    }
+}
+
+// --- HEADER ---
+.site {
+    &__header {
+    
+        &--outer {
+            display: block;
+            width: @width--full;
+            height: 15rem;
+            background-color: @color__primary--standard;
+        }
+
+        &--inner {
+            width: @width--full;
+            padding: @padding__content--sides;
+
+            .site__logo {
+                display: inline-block;
+                width: 10rem;
+                padding: @padding__elements--around;
+            }
+
+            .site__title {
+                font-size: @font__size--h1;
+                padding: 0;
+            }
+
+            .site__slogan {
+                display: block;
+                font-style: italic;
+                padding-left: 10.5rem;
+            }
+        }
+    }
+
+    &__footer {
+        font-size: @font__size--footer;
+        &--links {
+            text-align: center;
+            width: 50%;
+            margin: 0 auto;
+        }
+        &--pageLoader {
+            text-align: center;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+//  --- FOOTER ---
+footer {
+    display: block;
+    bottom: 0;
+    width: @width--full;
+    height: 15rem;
+    color: @color__font--light;
+    background-color: @color__grey--dark;
+}
+
+// --- NAVIGATION ---
+.navbar {
+    display: block;
+    width: @width--full;
+    height: auto;
+    padding: @padding__content--sides;
+    background-color: @color__grey--dark;
+
+    &__multi {
+        display: block;
+        width: @width--full;
+        padding: @padding__content--sides;
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    &__button {
+
+        &--NB {
+            cursor: pointer;
+            display: inline-block;
+            font-size: @font__size--button;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: @padding__button;
+            margin: @margin__button;
+            color: @color__font--light;
+            background-color: @color__grey--dark;
+            .bordered--light();
+            transition: all @animation__time;
+
+            &:hover {
+                color: @color__grey--dark;
+                background-color: @color__white;
+            }
+
+            &:active {
+
+            }
+        }
+
+        &--selected {
+            color: @color__grey--dark;
+            background-color: @color__white;
+        }
+        
+        &--multi {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            width: @button__multi--width;
+            margin: 0.5rem auto;
+            padding: 0.5rem 1.5rem;
+            color: @color__font--dark;
+            background-color: @color__white;
+            .bordered--dark();
+            transition: all @animation__time;
+    
+            &:hover {
+                color: @color__white;
+                background-color: @color__primary--standard;
+                .bordered--primary();
+            }
+    
+            &:active {
+                .button--click();
+            }
+    
+            &--selected {
+                color: @color__white;
+                background-color: @color__primary--standard;
+                .bordered--primary();
+            }
+        }
+    }
+
+}
+
+// --- CONTENT ---
+.content {
+
+    &__report {
+        width: @width--full;
+        padding: @padding__content--sides;
+    }
+
+    &__me {
+        width: @width--full;
+        padding: @padding__content--sides;
+    }
+
+    &__about {
+        width: @width--full;
+        padding: @padding__content--sides;
+    }
+}
+
+// --- IMAGES ---
+img[src*="#image__me"] {
+    width: @image--width;
+}
+
+img[src*="#image__about"] {
+    width: @image--width;
+}
