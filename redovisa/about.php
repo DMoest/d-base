@@ -3,7 +3,7 @@
 require __DIR__ . "/config.php";
 require __DIR__ . "/src/functions.php";
 
-$title = "Om kursen HTMLPHP";
+$title = "Om kursen DATABAS";
 $title .= " | DAAP19";
 
 include __DIR__ . "/incl/header.php"; 

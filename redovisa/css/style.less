@@ -1,10 +1,10 @@
 // --- VARIABLES ---
+// Colors:
 @color__white: #fff;
 @color__black: #000;
 @color__grey--light: #888;
 @color__grey: #555;
 @color__grey--dark: #222;
-
 @color__primary--light: #46bddb;
 @color__primary--standard: #1289A7;
 @color__primary--dark: #0b596d;
@@ -12,30 +12,44 @@
 @color__secondary--standard: #FFC312;
 @color__secondary--dark: rgb(207, 155, 0);
 
+// Colors for fonts:
 @color__font--light: #f5f5f5;
 @color__font--dark: #333;
 
+// Font:
 @font__size--p: 1.6rem;
-@font__size--h1: 3.2rem;
-@font__size--h2: 2.8rem;
+@font__size--h1: 3.6rem;
+@font__size--h2: 3rem;
 @font__size--h3: 2.4rem;
-@font__size--h4: 2rem;
+@font__size--h4: 1.8rem;
 @font__size--footer: 1.2rem;
-@font__weight--header: 500;
-@font__weight--p: 300;
+@font__weight--header: 400;
+@font__weight--p: 200;
 @font__size--button: 2rem;
 
+// Margins & Paddings:
+@paragraph__margin--overUnder: 2rem;
 @padding__content--sides: 0 20%;
 @padding__elements--around: 2rem;
 @padding__button: 0.75rem 1.5rem;
 @margin__button: 1rem 2rem 1rem 0;
 
+// Width & Height:
 @width--full: 100%;
+@width--threeQuarters: 75%;
+@width--half: 50%;
+@width--quarter: 25%;
+@header--height: 30rem;
 @button__multi--width: 10rem;
+
+// Animation(time, etc.):
 @animation__time: 0.25s;
+
+// Borders:
 @border__radius: 0.3rem;
 @border__thinckness: 0.05rem;
 
+// Images:
 @image--width: 30rem;
 
 // --- MIXINS ---
@@ -70,7 +84,7 @@
 
 html {
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 62.5%;
     overflow: auto;
     
@@ -81,41 +95,62 @@ html {
         background-color: @color__white;
 
         h1 {
-            font-size: 3.6rem;
-            font-weight: @font__weight--header
+            font-size: @font__size--h1;
+            font-weight: @font__weight--header;
+            margin: @font__size--h1 0;
         }
 
         h2 {
-            font-size: 3rem;
-            font-weight: @font__weight--header
+            font-size: @font__size--h2;
+            font-weight: @font__weight--header;
+            margin: @font__size--h2 0;
         }
 
         h3 {
-            font-size: 2.4rem;
-            font-weight: @font__weight--header
+            font-size: @font__size--h3;
+            font-weight: @font__weight--header;
+            margin: @font__size--h3 0;
         }
 
         h4 {
-            font-size: 1.8rem;
-            font-weight: @font__weight--header
+            font-size: @font__size--h4;
+            font-weight: @font__weight--header;
+            margin: @font__size--h4 0;
+        }
+
+        p {
+            font-size: @font__size--p;
+            font-weight: @font__weight--p;
+            margin: @font__size--p 0;
         }
     }
 }
 
-// --- HEADER ---
 .site {
+    // --- HEADER ---
     &__header {
-    
         &--outer {
             display: block;
             width: @width--full;
-            height: 15rem;
-            background-color: @color__primary--standard;
+            height: @header--height;
+            
+            .cover__image {
+                width: 100vw;
+                height: @header--height;
+                position: absolute;
+                background: url(../img/bg_image-5.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: -100;
+            }
         }
 
         &--inner {
             width: @width--full;
-            padding: @padding__content--sides;
+            height: @header--height;
+            background: transparent;
+            overflow: hidden;
 
             .site__logo {
                 display: inline-block;
@@ -124,6 +159,7 @@ html {
             }
 
             .site__title {
+                color: @color__font--light;
                 font-size: @font__size--h1;
                 padding: 0;
             }
@@ -131,13 +167,24 @@ html {
             .site__slogan {
                 display: block;
                 font-style: italic;
+                color: @color__font--light;
                 padding-left: 10.5rem;
             }
         }
     }
 
     &__footer {
+        display: block;
+        bottom: 0;
+        width: @width--full;
+        height: auto;
+        padding-bottom: 1rem;
+        color: @color__font--light;
+        background-color: @color__grey--dark;
         font-size: @font__size--footer;
+        font-weight: @font__weight--p;
+        outline: none;
+
         &--links {
             text-align: center;
             width: 50%;
@@ -149,16 +196,44 @@ html {
             margin: 0 auto;
         }
     }
-}
 
-//  --- FOOTER ---
-footer {
-    display: block;
-    bottom: 0;
-    width: @width--full;
-    height: 15rem;
-    color: @color__font--light;
-    background-color: @color__grey--dark;
+    &__byline--outer {
+        display: block;
+        width: @width--full;
+        padding: @padding__content--sides;
+        margin: 2rem auto;
+    }
+
+    &__byline--inner {
+        display: flex;
+        flex-direction: row;
+        padding: @padding__elements--around;
+        width: @width--full;
+        .bordered--dark();
+
+        figure {
+            display: block;
+            width: @width--half;
+            padding: @padding__elements--around;
+            text-align: center;
+
+            figcaption {
+                text-align: center;
+                font-size: @font__size--p;
+                font-weight: @font__weight--p;
+            }
+
+            .image__byline {
+                border-radius: 50%;
+            }
+        }
+    
+        &--text {
+            display: inline-block;
+            width: @width--full;
+            padding: @padding__elements--around;
+        }
+    }
 }
 
 // --- NAVIGATION ---
@@ -185,8 +260,10 @@ footer {
             cursor: pointer;
             display: inline-block;
             font-size: @font__size--button;
+            text-align: center;
             text-transform: uppercase;
             text-decoration: none;
+            width: 15rem;
             padding: @padding__button;
             margin: @margin__button;
             color: @color__font--light;
@@ -199,9 +276,9 @@ footer {
                 background-color: @color__white;
             }
 
-            &:active {
+            // &:active {
 
-            }
+            // }
         }
 
         &--selected {
@@ -268,4 +345,104 @@ img[src*="#image__me"] {
 
 img[src*="#image__about"] {
     width: @image--width;
+}
+
+// --------------------------------------------------
+// --- QUERIES ---
+// --------------------------------------------------
+
+// --- MOBILE DEVICES (portrait)
+@media (max-width: 600px) {
+    .site {
+        // --- HEADER ---
+        &__header {
+            padding: 0 3%;
+
+            &--inner {
+                padding: 0 3%;
+
+                .site__logo {
+                    padding: @padding__elements--around;
+                }
+
+                .site__slogan {
+                    padding-left: 10.5rem;
+                }
+            }
+        }
+    
+        &__footer {    
+            &--links {
+                width: 50%;
+                margin: 0 auto;
+            }
+            &--pageLoader {
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+    
+        &__byline--outer {
+            margin: 2rem auto;
+        }
+    
+        &__byline--inner {
+            flex-direction: row;
+            padding: @padding__elements--around;
+            .bordered--dark();
+    
+            figure {
+                padding: @padding__elements--around;
+            }
+
+            &--text {
+                padding: @padding__elements--around;
+            }
+        }
+    }
+
+    // --- NAVIGATION ---
+    .navbar {
+        padding: 0 5%;
+
+        &__multi {
+            width: @width--full;
+            padding: @padding__content--sides;
+        }
+
+        &__button {
+
+            &--NB {
+                width: 15rem;
+                padding: @padding__button;
+                margin: @margin__button;
+            }
+            
+            &--multi {
+                width: @button__multi--width;
+                margin: 0.5rem auto;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+    }
+}
+
+// --- MOBILE DEVICES (landscape)
+@media (min-width: 601px) and (max-width: 840px) {
+    @padding__content--sides: 0 5%;
+}
+
+// --- TABLET DEVICES (protrait)
+@media (min-width: 841px) and (max-width: 960px) {
+    @padding__content--sides: 0 10%;
+}
+
+// --- TABLET DEVICES (landscape)
+@media (min-width: 961px) and (max-width: 1280px) {
+    @padding__content--sides: 0 15%;
+}
+
+// --- DESKTOP DEVICES (full size)
+@media (min-width: 1281px) {
+    @padding__content--sides: 0 20%;
 }

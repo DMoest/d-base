@@ -1,4 +1,4 @@
-    <footer id="site__footer">
+    <footer class="site__footer">
         <hr>
             <div class="site__footer--links">
                 <p>Valideringsalternativ</p>

@@ -38,7 +38,7 @@ $pages = [
 
 $page = $pages[$pageReference] ?? null;
 
-$title = $page["title"] . " - HTMLPHP" ?? "404";
+$title = $page["title"] . " - DATABAS" ?? "404";
 $title .= " | DAAP19";
 
 include __DIR__ . "/incl/header.php";
