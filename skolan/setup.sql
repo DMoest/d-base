@@ -1,6 +1,8 @@
--- This is a part of traing SQL in the course "Databas" and it will cover the basics of it. Student Daniel Andersson - daap19.
+-- This is a part of traing SQL in the course "Databas" and it will cover the basics of databases. Student Daniel Andersson - daap19 2020-02-07.
 
 -- Setup.sql is intenden to recreate/reset/do over if something went wrong.
+
+
 
 -- Create a database and use it:
 CREATE DATABASE IF NOT EXISTS skolan;
