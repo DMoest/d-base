@@ -5,11 +5,11 @@
 
 
 -- 1. Check how much is available for salary revision:
--- SELECT
---     SUM(lon) AS lönesumma,
---     SUM(lon)*0.064 AS "lönesumma ökning"
--- FROM larare
--- ;
+SELECT
+    SUM(lon) AS lönesumma,
+    SUM(lon)*0.064 AS "lönesumma ökning"
+FROM larare
+;
 
 
 
@@ -44,8 +44,7 @@ UPDATE larare
     SET 
         lon = (lon - 3000)
 WHERE 
-	fornamn = 'Argus'
-    AND fornamn = 'Gyllenroy'
+	fornamn IN ('Alastor', 'Gyllenroy')
 ;
 
 -- 5. Update all teachers salary(lon) with +2% in the department(avdelning) 'DIDD':
@@ -70,9 +69,9 @@ UPDATE larare
 UPDATE larare
     SET
         lon = (lon + 5000),
-        kompetens = (kompetens+ 1)
+        kompetens = (kompetens + 1)
 WHERE 
-	fornamn IN ('Snape', 'Minerva', 'Hagrid')
+	fornamn IN ('Severus', 'Minerva', 'Hagrid')
 ;
 
 -- 8. Give all teachers +2.2% except 'Snape', 'Minerva' and 'Hagrid':
@@ -80,7 +79,7 @@ UPDATE larare
 	SET
 		lon = (lon * 1.022)
 	WHERE NOT
-		fornamn IN ('Albus', 'Snape', 'Minerva', 'Hagrid')
+		fornamn IN ('Albus', 'Severus', 'Minerva', 'Hagrid')
 ;
 
 

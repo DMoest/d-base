@@ -1,6 +1,6 @@
 -- This is a part of traing SQL in the course "Databas" and it will cover the basics of databases. Student Daniel Andersson - daap19 2020-02-07.
 
--- DML (Data Manipulation Language) here I want to keep my SELECT, INSERT & UPDATE statements, DML_UPDATE.sql will be for UPDATEspecificly.
+-- DML (Data Manipulation Language) here I want to keep my SELECT, INSERT & UPDATE statements, DML_UPDATE.sql will be for UPDATE specificly.
 
 
 
