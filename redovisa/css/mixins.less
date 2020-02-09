@@ -1,0 +1,67 @@
+@import "variables.less";
+
+// --- MIXINS ---
+.bordered--light {
+    border: @border__thinckness solid @color__font--light;
+    border-radius: @border__radius;
+}
+
+.bordered--dark {
+    border: @border__thinckness solid @color__font--dark;
+    border-radius: @border__radius;
+}
+
+.bordered--primary{
+    border: @border__thinckness solid @color__primary--standard;
+    border-radius: @border__radius;
+}
+
+.button--click {   
+    transform: translateY(1px);
+    background-color: @color__primary--light;
+    border: @border__thinckness solid @color__primary--light;
+}
+
+
+// --------------------------------------------------
+// --- MEDIA QUERIES ---
+// --------------------------------------------------
+// 0 - 600      phone--portrait
+// 601 - 840    phone--landscape
+// 840 - 960    tablet
+// 960 - 1280   desktop--mid
+// 1280         desktop--large
+// --------------------------------------------------
+
+.responsive(@minWidth; @maxWidth; @rules) {
+    @media only screen and (min-width: @minWidth) and (max-width: @maxWidth) {
+        @rules();
+    }
+}
+
+.breakpoint(@point) {
+    // --- MOBILE DEVICES (portrait):
+    & when (@point = phone--portrait){
+        @media (max-width: 600px) { @content(); }
+    }
+
+    // --- MOBILE DEVICES (landscape):
+    & when (@point = phone--landscape) {
+        @media (min-width: 601px) and (max-width: 840px) { @content(); }
+    }
+
+    // --- TABLET DEVICES (protrait):
+    & when (@point = tablet--portrait) {
+        @media (min-width: 841px) and (max-width: 960px) { @content(); }
+    }
+
+    // --- TABLET DEVICES(landscape) & DESKTOP(small/mid size):
+    & when (@point = desktop--mid) {
+        @media (min-width: 961px) and (max-width: 1280px) { @content(); }
+    }
+
+    // --- DESKTOP DEVICES (full size):
+    & when (@point = desktop--large) {
+        @media (min-width: 1281px) { @content(); }
+    }
+  } 
