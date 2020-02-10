@@ -20,9 +20,9 @@
         <div class="cover__image"></div>
         
         <div class="site__header--inner">
-                <img src="img/CoconutPalmTree.png" alt="logo" class="site__logo">
+                <img src="img/CoconutPalmTree.svg" alt="logo" class="site__logo">
                 <span class="site__title">Daniel Andersson</span>
-                <span class="site__slogan">Här ska jag ha en slogan om jag så bryr mig att lägga in en...</span>
+                <span class="site__slogan">JaaaaAa, vad ska man ha för slogan egentligen...?</span>
         </div>
     </header>
 
