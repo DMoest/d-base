@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Cascading Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lib/style.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700&display=swap" rel="stylesheet">
     <!-- Favicon -->
@@ -20,7 +20,7 @@
         <div class="cover__image"></div>
         
         <div class="site__header--inner">
-                <img src="img/CoconutPalmTree.svg" alt="logo" class="site__logo">
+                <img src="img/CoconutPalmTree--light.svg" alt="logo" class="site__logo">
                 <span class="site__title">Daniel Andersson</span>
                 <span class="site__slogan">JaaaaAa, vad ska man ha för slogan egentligen...?</span>
         </div>

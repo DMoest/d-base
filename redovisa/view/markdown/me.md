@@ -1,6 +1,6 @@
-## Om mig
+# Om mig
 
-![Bild på mig](/../databas/me/redovisa/img/me.png#image__me)
+![Bild på mig](img/me.png#image__me)
 
 Mitt namn är Daniel Andersson och jag bor tillsammans med min familj i Västerås. Tillsammans är vi fyra plus hund, Natasa min fru, Cerah min son, Hulu min dotter, Astrid vår hund och jag. Fritiden spenderar vi gärna tillsammans med vänner och familj på äventyr, små som stora i när och fjärran men det svåra är att hitta tiden just nu. I skrivande stund och framåt på obestämd tid kan man säga att vi är i stor färändringsfas för det bättre. Sedan Hulu kom till världen ganska nyligen har det varit mycket att anpassa sig till och jag kämpar för att vidareutbilda mig här genom BTH som webbprogrammerare på distans samtidigt som jag arbetar fulltid för att kunna försörja familjen. Nyligen började jag arbeta på ett företag där jag sköter lagervaror och blandar färger till krockade bilar som ska repareras mfl arbetsuppgifter. Det kanske inte är mitt drömyrke men det försörjer familjen just nu och ärligt talat har jag arbetat i mycket sämre miljöer.
 
