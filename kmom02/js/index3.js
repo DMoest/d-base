@@ -18,7 +18,7 @@ console.info("1) Program is starting up!");
 data = getFileContentSync(path);
 console.info(data);
 
-console.info("2) End of the program!");
+console.info("3) End of the program!");
 
 /**
  * Return the content of the file, synced version which works.

@@ -20,18 +20,20 @@ USE skolan;
 SHOW DATABASES LIKE "%skolan%";
 
 -- Create a user with password "pass" and user can login from host "@'%'":
-CREATE USER IF NOT EXISTS 'user'@'%'
-IDENTIFIED
-BY 'pass'
-;
-
--- Create a user with backwards compatible password algoritm:
---
 -- CREATE USER IF NOT EXISTS 'user'@'%'
 -- IDENTIFIED
--- WITH mysql_native_password -- MySQL with version > 8.0.4
 -- BY 'pass'
 -- ;
+
+-- Create a user with backwards compatible password algoritm:
+
+DROP USER IF EXISTS 'user'@'%';
+--
+CREATE USER IF NOT EXISTS 'user'@'%'
+IDENTIFIED
+WITH mysql_native_password -- MySQL with version > 8.0.4
+BY 'pass'
+;
 
 -- Drop/delete a user:
 --
@@ -48,6 +50,5 @@ GRANT ALL PRIVILEGES
 SHOW GRANTS FOR 'user'@'%';
 
 -- Show granted privleges to current user:
---
+-- DROP USER IF EXISTS 'user'@'%';
 -- SHOW GRANTS FOR CURRENT_USER;
-

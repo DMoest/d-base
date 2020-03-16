@@ -2,8 +2,10 @@
 -- to the database.
 -- Create the user 'user' with a backward compatible password algorithm
 -- and the password 'pass'
+
 CREATE USER IF NOT EXISTS 'user'@'%'
-    IDENTIFIED WITH mysql_native_password
+    IDENTIFIED
+    WITH mysql_native_password
     BY 'pass'
 ;
 
@@ -22,3 +24,24 @@ GRANT ALL PRIVILEGES
 
 -- Create the database 'dbwebb', but only if it does not exists.
 CREATE DATABASE IF NOT EXISTS dbwebb;
+
+
+
+
+
+
+--
+-- Create a user user:pass with backward compatible login.
+--
+
+
+-- CREATE USER 'user'@'%'
+-- IDENTIFIED
+-- WITH mysql_native_password -- Only MySQL > 8.0.4
+-- BY 'pass'
+-- ;
+
+-- GRANT ALL PRIVILEGES
+-- ON *.*
+-- TO 'user'@'%'
+-- ;
