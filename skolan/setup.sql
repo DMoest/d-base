@@ -42,7 +42,7 @@ BY 'pass'
 
 -- Give user all privileges on specific database:
 GRANT ALL PRIVILEGES
-	ON skolan.*
+	ON *.*
 	TO 'user'@'%'
 ;
 
