@@ -1,90 +1,90 @@
 -- This is a part of traing SQL in the course "Databas" and it will cover the basics of databases. Student Daniel Andersson - daap19 2020-02-07.
 
--- DML (Data Manipulation Language) here I want to keep my SELECT, INSERT & UPDATE statements, DML_UPDATE_LONEREVISION.sql will be for UPDATE of a fictive senario where salaries are updated.
+-- DML (Data Manipulation Language) here I want to keep my select, INSERT & update statements, DML_update_LONEREVISION.sql will be for update of a fictive senario where salaries are updated.
 
 
 
 -- 1. Check how much is available for salary revision:
-SELECT
-    SUM(lon) AS lönesumma,
-    SUM(lon)*0.064 AS "lönesumma ökning"
-FROM larare
+select
+    sum(lon) as lönesumma,
+    sum(lon)*0.064 as "lönesumma ökning"
+from larare
 ;
 
 
 
--- 1. Update 'Albus' salary(lon) to 85000 and kompetens to '7':
-UPDATE larare
-    SET 
+-- 1. update 'Albus' salary(lon) to 85000 and kompetens to '7':
+update larare
+    set 
 		kompetens = 7, 
         lon = 85000
-WHERE
+where
     fornamn = 'Albus'
 ;
 
--- 2. Update 'Minervas' salary(lon( with +4000:
-UPDATE larare
-	SET
+-- 2. update 'Minervas' salary(lon( with +4000:
+update larare
+	set
 		lon = (lon + 4000)
-	WHERE
+	where
 		fornamn = 'Minerva'
 ;
 
--- 3. Update 'Argus' salary(lon) with +2000 and kompetens to '3':
-UPDATE larare
-    SET
+-- 3. update 'Argus' salary(lon) with +2000 and kompetens to '3':
+update larare
+    set
 		kompetens = 3,
         lon = (lon + 2000)
-WHERE
+where
     fornamn = 'Argus'
 ;
 
--- 4. Update 'Gyllenroy' and 'Alastor' salaries(lon) with -3000:
-UPDATE larare
-    SET 
+-- 4. update 'Gyllenroy' and 'Alastor' salaries(lon) with -3000:
+update larare
+    set 
         lon = (lon - 3000)
-WHERE 
-	fornamn IN ('Alastor', 'Gyllenroy')
+where 
+	fornamn in ('Alastor', 'Gyllenroy')
 ;
 
--- 5. Update all teachers salary(lon) with +2% in the department(avdelning) 'DIDD':
-UPDATE larare
-    SET 
+-- 5. update all teachers salary(lon) with +2% in the department(avdelning) 'DIDD':
+update larare
+    set 
         lon = (lon * 1.02)
-WHERE
+where
     avdelning = 'DIDD'
 ;
 
--- 6. Update female teachers salary with +3% if they have < 40000:
-UPDATE larare
-	SET
+-- 6. update female teachers salary with +3% if they have < 40000:
+update larare
+	set
 		lon = (lon * 1.03)
-	WHERE
+	where
 		lon < 40000
-        AND kon = 'K'
+        and kon = 'K'
 ;
 
 
--- 7. Update Snape, Minerva and Hagrid extra +5000 salary(lon) and kompetens +1:
-UPDATE larare
-    SET
+-- 7. update Snape, Minerva and Hagrid extra +5000 salary(lon) and kompetens +1:
+update larare
+    set
         lon = (lon + 5000),
         kompetens = (kompetens + 1)
-WHERE 
-	fornamn IN ('Severus', 'Minerva', 'Hagrid')
+where 
+	fornamn in ('Severus', 'Minerva', 'Hagrid')
 ;
 
 -- 8. Give all teachers +2.2% except 'Snape', 'Minerva' and 'Hagrid':
-UPDATE larare
-	SET
+update larare
+	set
 		lon = (lon * 1.022)
-	WHERE NOT
-		fornamn IN ('Albus', 'Severus', 'Minerva', 'Hagrid')
+	where not
+		fornamn in ('Albus', 'Severus', 'Minerva', 'Hagrid')
 ;
 
 
 
-SELECT akronym, avdelning, fornamn, kon, lon, kompetens
-FROM larare
-ORDER BY lon DESC
+select akronym, avdelning, fornamn, kon, lon, kompetens
+from larare
+order by lon desc
 ;

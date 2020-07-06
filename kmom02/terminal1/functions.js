@@ -160,7 +160,6 @@ async function searchMinMax(db, searchMin, searchMax) {
         HAVING
             (lon >= ?
             AND lon <= ?)
-
         ORDER BY lon DESC;
     `;
 

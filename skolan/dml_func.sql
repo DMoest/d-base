@@ -1,4 +1,4 @@
--- Daniel Andersson, daap19
+-- Daniel andersson, daap19
 -- Databas @ BTH VT-20
 -- Kmom 02 - Mer SQL övningar (skolan)
 -- --------------------------------------------------
@@ -8,59 +8,55 @@
 -- 1. Exercises with STRING functions:
 -- --------------------------------------------------
 -- 1.1 Find a function from the reference manual that takes firstname, lastname & department and puts it in a string in a single column.
-SELECT
-    CONCAT(fornamn, ' ', efternamn, ' (', avdelning, ')') AS NamnOchAvdelning
-FROM larare
+select
+    concat(fornamn, ' ', efternamn, ' (', avdelning, ')') as namn_och_avdelning
+from larare
 ;
 
 -- 1.2 Same as 1.1, add lower case on department and limit to 3 prints from query.
-SELECT
-    CONCAT(fornamn, ' ', efternamn, ' (', LOWER(avdelning), ')') AS NamnOchAvdelning
-FROM larare 
-LIMIT 3
+select
+    concat(fornamn, ' ', efternamn, ' (', lower(avdelning), ')') as namn_och_avdelning
+from larare 
+limit 3
 ;
 
 
-
--- 2. Exercises with DATE functions:
+-- 2. Exercises with date functions:
 -- --------------------------------------------------
--- 2.1 SELECT todays date.
-SELECT
-    CURDATE() AS DagensDatum
+-- 2.1 select todays date.
+select
+    curdate() as dagensdatum
 ;
 
--- 2.2 SELECT all teachers, date of birth, todays date and time.
-SELECT
-    CONCAT(fornamn, ' ', efternamn) AS Larare,
-    DATE(fodd) AS Fodelsedag,
-    CURDATE() AS DagensDatum,
-    CURTIME() AS Klockslag
-FROM larare
-ORDER BY Larare ASC
+-- 2.2 select all teachers, date of birth, todays date and time.
+select
+    concat(fornamn, ' ', efternamn) as larare,
+    date(fodd) as fodelsedag,
+    curdate() as dagensdatum,
+    curtime() as klockslag
+from larare
+order by larare asc
 ;
-
-
 
 -- 3. Exercises with AGE functions:
 -- --------------------------------------------------
--- 3.1 SELECT all teachers, their date of birth and calculate the age.
-SELECT
-    CONCAT(fornamn, ' ', efternamn) AS Larare,
-    DATE(fodd) AS Fodelsedag,
-    ROUND(DATEDIFF(CURDATE(), DATE(fodd))/365, 0) AS Alder
-FROM larare
-ORDER BY Larare ASC
+-- 3.1 select all teachers, their date of birth and calculate the age.
+select
+    concat(fornamn, ' ', efternamn) as larare,
+    date(fodd) as fodelsedag,
+    round(datediff(curdate(), date(fodd))/365, 0) as alder
+from larare
+order by larare asc
 ;
-
 
 -- 4. Exercises with FILTER part of date:
 -- --------------------------------------------------
--- 4.1 SELECT all teachers WHERE year is in the 1940s.
-SELECT
-    CONCAT(fornamn, ' ', efternamn) AS Larare,
-    DATE(fodd) AS Fodelsedag,
-    TIMESTAMPDIFF(YEAR, DATE(fodd), CURDATE()) AS Alder
-FROM larare
-WHERE YEAR(fodd) BETWEEN 1940 AND 1949
-ORDER BY Larare ASC
+-- 4.1 select all teachers where year is in the 1940s.
+select
+    concat(fornamn, ' ', efternamn) as larare,
+    date(fodd) as fodelsedag,
+    timestampdiff(year, date(fodd), curdate()) as alder
+from larare
+where year(fodd) between 1940 and 1949
+order by larare asc
 ;

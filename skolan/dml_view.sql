@@ -5,37 +5,37 @@
 
 
 
--- Examples with VIEWs:
+-- Examples with views:
 -- --------------------------------------------------
 -- Example 1 - without a view
-SELECT
-    CONCAT(fornamn, ' ', efternamn, ' (', LOWER(avdelning), ')') AS Namn,
-        TIMESTAMPDIFF(YEAR, fodd, CURDATE()) AS Ålderr
-    FROM larare;
+select
+    concat(fornamn, ' ', efternamn, ' (', lower(avdelning), ')') as Namn,
+        timestampdiff(year, fodd, curdate()) as alder
+    from larare;
 
 -- Example 2 - with a view
-DROP VIEW IF EXISTS v_name_alder;
+drop view if exists v_name_alder;
 
-CREATE VIEW v_name_alder
-AS
-SELECT
-    CONCAT(fornamn, ' ', efternamn, ' (', LOWER(avdelning), ')') AS Namn,
-    TIMESTAMPDIFF(YEAR, fodd, CURDATE()) AS Alder
-FROM larare
+create view v_name_alder
+as
+select
+    concat(fornamn, ' ', efternamn, ' (', lower(avdelning), ')') as Namn,
+    timestampdiff(year, fodd, curdate()) as alder
+from larare
 ;
 
-SELECT * FROM v_name_alder;
+select * from v_name_alder;
 
 
 
--- 1. Exercises with VIEWs:
+-- 1. Exercises with views:
 -- --------------------------------------------------
--- 1.1 CREATE VIEW that hold all columns from teachers and one that tells the age.
-DROP VIEW IF EXISTS v_larare;
+-- 1.1 create view that hold all columns from teachers and one that tells the age.
+drop view if exists v_larare;
 
-CREATE VIEW v_larare
-AS
-SELECT
+create view v_larare
+as
+select
     akronym,
     avdelning,
     fornamn,
@@ -43,15 +43,15 @@ SELECT
     kon,
     lon,
     fodd,
-    TIMESTAMPDIFF(YEAR, fodd, CURDATE()) AS alder
-FROM larare
+    timestampdiff(year, fodd, curdate()) as alder
+from larare
 ;
 
--- 1.2 SELECT from the view in 1.1 
-SELECT
+-- 1.2 select from the view in 1.1 
+select
     avdelning,
-    ROUND(AVG(alder), 0) AS medelalder
-FROM v_larare
-GROUP BY avdelning
-ORDER BY medelalder DESC
+    ROUND(AVG(alder), 0) as medelalder
+from v_larare
+group by avdelning
+order by medelalder desc
 ;

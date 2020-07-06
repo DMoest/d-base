@@ -8,19 +8,18 @@
 -- Example of UNION
 -- --------------------------------------------------
 -- 1. Make the connection with UNION
-SELECT
+select
     *,
-    'after' AS origin FROM larare
-UNION
-SELECT
+    'after' as origin from larare
+union
+select
     *,
-    'before' AS origin FROM larare_pre
-ORDER BY akronym
+    'before' as origin from larare_pre
+order by akronym
 ;
 
-
 -- 2. Query selection from both tables to show before and after. The information is presented on two rows.
-SELECT
+select
     lon.origin,
     akronym,
     fornamn,
@@ -28,7 +27,7 @@ SELECT
     kon,
     kompetens,
     lon
-WHERE
+where
     akronym IN ('ala', 'dum')
-ORDER BY akronym, origin
+order by akronym, origin
 ;

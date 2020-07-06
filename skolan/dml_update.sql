@@ -17,14 +17,14 @@
 
 -- Alternativ 2 - Set where NULL is the value for column "lon":
 -- I choose this, it is more helpfull if I did not have know where "lon" is NULL.
-UPDATE larare
-    SET
+update larare
+    set
         lon = 30000
-    WHERE
-        lon IS NULL
+    where
+        lon is null
 ;
 
 -- Check selected columns ordered by lon descending order:
-SELECT akronym, avdelning, fornamn, kon, lon, kompetens
-    FROM larare
-    ORDER BY lon DESC;
+select akronym, avdelning, fornamn, kon, lon, kompetens
+    from larare
+    order by lon desc;

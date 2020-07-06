@@ -8,193 +8,193 @@
 -- 1. Exercises with MIN / MAX:
 -- --------------------------------------------------
 -- 1.1 MAX(lon):
-SELECT
-    MAX(lon) as toplon
-FROM larare
+select
+    max(lon) as toplon
+from larare
 ;
 
 -- 1.2 MIN(lon)
-SELECT 
-    MIN(lon)
-FROM larare
+select 
+    min(lon)
+from larare
 ;
 
 
 
--- 2. Exercises with GROUP BY:
+-- 2. Exercises with group by:
 -- --------------------------------------------------
 -- 2.1 Count teachers at department and sort by decending order.
-SELECT
+select
     avdelning,
-    COUNT(avdelning)
-FROM larare
-GROUP BY avdelning
-ORDER BY avdelning DESC
+    count(avdelning)
+from larare
+group by avdelning
+order by avdelning desc
 ;
 
 -- 2.2 How much is each department paying in salaries every month.
-SELECT
+select
     avdelning,
-    SUM(lon) as Summa
-FROM larare
-GROUP BY avdelning
-ORDER BY Summa DESC
+    sum(lon) as summa
+from larare
+group by avdelning
+order by summa desc
 ;
 
 -- 2.3 What is the average salary per department sorted descending order.
-SELECT
+select
     avdelning,
-    AVG(lon) as medellonen
-FROM larare
-GROUP BY avdelning
-ORDER BY medellonen DESC
+    avg(lon) as medellonen
+from larare
+group by avdelning
+order by medellonen desc
 ;
 
 -- 2.4 How much is the average salary for women & men.
-SELECT
+select
     kon,
-    AVG(lon) as Medellon
-FROM larare
-GROUP BY kon
-ORDER BY Medellon DESC
+    avg(lon) as medellon
+from larare
+group by kon
+order by medellon desc
 ;
 
 
 
--- 3. Exercises with GROUP BY
+-- 3. Exercises with group by
 -- --------------------------------------------------
 -- 3.1 What is the average kompetense per department?
-SELECT 
+select 
     avdelning,
-    AVG(kompetens) as snittkompetens
-FROM larare
-GROUP BY avdelning
-ORDER BY snittkompetens DESC
+    avg(kompetens) as snittkompetens
+from larare
+group by avdelning
+order by snittkompetens desc
 ;
 
 -- 3.2 What is the average salary per department and per kompetens?
 -- sorted by department and average salary.
-SELECT 
+select 
     avdelning,
     kompetens,
-    ROUND(AVG(lon), 0) as snittlon,
-    COUNT(*) as antal
-FROM larare
-GROUP BY avdelning, kompetens, lon
-ORDER BY avdelning, snittlon
+    round(avg(lon), 0) as snittlon,
+    count(*) as antal
+from larare
+group by avdelning, kompetens, lon
+order by avdelning, snittlon
 ;
 
 
 
--- 4. Exercises with HAVING
+-- 4. Exercises with having
 -- --------------------------------------------------
 -- Example 1.
-SELECT
+select
     avdelning,
-    ROUND(AVG(lon)) AS Snittlon,
-    COUNT(lon) AS Antal
-FROM larare
-GROUP BY avdelning
-ORDER BY Snittlon DESC
+    round(avg(lon)) as snittlon,
+    count(lon) as antal
+from larare
+group by avdelning
+order by snittlon desc
 ;
 
--- Exercise 4.1 SELECT department with avrage salary higher then 35000 with HAVING.
-SELECT
+-- Exercise 4.1 select department with avrage salary higher then 35000 with having.
+select
     avdelning,
-    ROUND(AVG(lon)) AS Snittlon,
-    COUNT(lon) AS Antal
-FROM larare
-GROUP BY avdelning
-HAVING Snittlon > 35000
-ORDER BY Snittlon DESC
+    round(avg(lon)) as snittlon,
+    count(lon) as antal
+from larare
+group by avdelning
+having snittlon > 35000
+order by snittlon desc
 ;
 
--- Exercise 4.2 SELECT department average salary if number of teachers are 3 or more.
-SELECT
+-- Exercise 4.2 select department average salary if number of teachers are 3 or more.
+select
     avdelning,
-    ROUND(AVG(lon)) AS Snittlon,
-    COUNT(lon) AS Antal
-FROM larare
-GROUP BY avdelning
-HAVING Antal > 2
-ORDER BY Snittlon DESC
+    round(avg(lon)) as snittlon,
+    count(lon) as antal
+from larare
+group by avdelning
+having antal > 2
+order by snittlon desc
 ;
 
 
 
--- 5. WHERE vs. HAVING
+-- 5. where vs. having
 -- --------------------------------------------------
--- Example 1.1 WHERE
-SELECT
+-- Example 1.1 where
+select
     avdelning,
-    ROUND(AVG(lon)) AS Snittlon,
-    COUNT(lon) AS Antal
-FROM larare
-WHERE kompetens = 1
-GROUP BY avdelning
-ORDER BY avdelning
+    round(avg(lon)) as snittlon,
+    count(lon) as antal
+from larare
+where kompetens = 1
+group by avdelning
+order by avdelning
 ;
 
--- Example 1.2 add HAVING
-SELECT
+-- Example 1.2 add having
+select
     avdelning,
-    ROUND(AVG(lon)) AS Snittlon,
-    COUNT(lon) AS Antal
-FROM larare
-WHERE kompetens = 1
-GROUP BY avdelning
-HAVING Snittlon < 30000
-ORDER BY avdelning
+    round(avg(lon)) as snittlon,
+    count(lon) as antal
+from larare
+where kompetens = 1
+group by avdelning
+having snittlon < 30000
+order by avdelning
 ;
 
 
 
--- HAVING Exercises
+-- having Exercises
 -- --------------------------------------------------
--- Exercise 5.1 SELECT department, how many employees, the groups avrage salary and sort by department and avg.salary.
-SELECT
+-- Exercise 5.1 select department, how many employees, the groups avrage salary and sort by department and avg.salary.
+select
     avdelning,
-    COUNT(*) AS antal,
-    ROUND(AVG(lon), 0) AS snittlon
-FROM larare
-GROUP BY avdelning
-ORDER BY avdelning, snittlon
+    count(*) as antal,
+    round(avg(lon), 0) as snittlon
+from larare
+group by avdelning
+order by avdelning, snittlon
 ;
 
--- Exercise 5.2 SELECT same as 5.1, add kompetens, group by department and kompetens, sort by department and avrage salery.
-SELECT
+-- Exercise 5.2 select same as 5.1, add kompetens, group by department and kompetens, sort by department and avrage salery.
+select
     avdelning,
     kompetens,
-    COUNT(*) AS antal,
-    ROUND(AVG(lon), 0) AS snittlon
-FROM larare
-GROUP BY avdelning, kompetens
-ORDER BY avdelning, kompetens DESC
+    count(*) as antal,
+    round(avg(lon), 0) as snittlon
+from larare
+group by avdelning, kompetens
+order by avdelning, kompetens desc
 ;
 
--- Exercise 5.3 SELECT same as 5.2, add HAVING kompetens max 3.
-SELECT
+-- Exercise 5.3 select same as 5.2, add having kompetens max 3.
+select
     avdelning,
     kompetens,
-    COUNT(*) AS antal,
-    ROUND(AVG(lon), 0) AS snittlon
-FROM larare
-GROUP BY avdelning, kompetens
-HAVING kompetens < 4
-ORDER BY avdelning, kompetens DESC
+    count(*) as antal,
+    round(avg(lon), 0) as snittlon
+from larare
+group by avdelning, kompetens
+having kompetens < 4
+order by avdelning, kompetens desc
 ;
 
--- Exercise 5.4 SELECT same as 5.3 with a avrage salary of min 30000 and max 45000 also exclude all groups with more then 1 antal.
-SELECT
+-- Exercise 5.4 select same as 5.3 with a avrage salary of min 30000 and max 45000 also exclude all groups with more then 1 antal.
+select
     avdelning,
     kompetens,
-    COUNT(*) AS antal,
-    ROUND(AVG(lon), 0) AS snittlon
-FROM larare
-WHERE kompetens < 4
-GROUP BY avdelning, kompetens
-HAVING 
-    snittlon >= 30000 AND snittlon <= 45000 AND
+    count(*) as antal,
+    round(avg(lon), 0) as snittlon
+from larare
+where kompetens < 4
+group by avdelning, kompetens
+having 
+    snittlon >= 30000 and snittlon <= 45000 and 
     antal < 2
-ORDER BY avdelning, kompetens DESC
+order by avdelning, kompetens desc
 ;

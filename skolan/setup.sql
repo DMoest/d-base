@@ -5,8 +5,8 @@
 
 
 -- Create a database and use it:
-CREATE DATABASE IF NOT EXISTS skolan;
-USE skolan;
+create database if not exists skolan;
+use skolan;
 
 -- Erase the database and delete all content:
 --
@@ -17,7 +17,7 @@ USE skolan;
 -- SHOW DATABASES;
 
 -- Show which databases exists and have a name LIKE "skolan":
-SHOW DATABASES LIKE "%skolan%";
+show databases like "%skolan%";
 
 -- Create a user with password "pass" and user can login from host "@'%'":
 -- CREATE USER IF NOT EXISTS 'user'@'%'
@@ -27,12 +27,12 @@ SHOW DATABASES LIKE "%skolan%";
 
 -- Create a user with backwards compatible password algoritm:
 
-DROP USER IF EXISTS 'user'@'%';
+drop user if exists 'user'@'%';
 --
-CREATE USER IF NOT EXISTS 'user'@'%'
-IDENTIFIED
-WITH mysql_native_password -- MySQL with version > 8.0.4
-BY 'pass'
+create user if not exists 'user'@'%'
+identified
+with mysql_native_password -- MySQL with version > 8.0.4
+by 'pass'
 ;
 
 -- Drop/delete a user:
@@ -41,13 +41,13 @@ BY 'pass'
 -- DROP USER IF EXISTS 'user'@'%';
 
 -- Give user all privileges on specific database:
-GRANT ALL PRIVILEGES
-	ON *.*
-	TO 'user'@'%'
+grant all privileges
+    on *.*
+    to 'user'@'%'
 ;
 
 -- Show what priveleges is granted to specific user:
-SHOW GRANTS FOR 'user'@'%';
+show grants for 'user'@'%';
 
 -- Show granted privleges to current user:
 -- DROP USER IF EXISTS 'user'@'%';

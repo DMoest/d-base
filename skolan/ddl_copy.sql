@@ -7,11 +7,9 @@
 
 -- COPY table:
 -- --------------------------------------------------
-DROP TABLE IF EXISTS larare_pre;
-CREATE TABLE larare_pre LIKE larare;
-INSERT INTO larare_pre SELECT * FROM larare;
+drop table if exists larare_pre;
+create table larare_pre like larare;
+insert into larare_pre select * from larare;
 
-SELECT SUM(lon) AS 'Lönesumma', SUM(kompetens) AS Kompetens FROM larare;
-SELECT SUM(lon) AS 'Lönesumma', SUM(kompetens) AS Kompetens FROM larare_pre;
-
-
+select sum(lon) as 'lonesumma', sum(kompetens) as kompetens from larare;
+select sum(lon) as 'lonesumma', sum(kompetens) as kompetens from larare_pre;
