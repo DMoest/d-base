@@ -21,7 +21,6 @@ class Game {
 
     /**
      * Init the game and guess the number.
-     * 
      * @returns void
      */
 
@@ -31,18 +30,16 @@ class Game {
 
     /**
      * Check if guess is correct or not.
-     * 
      * @param {integer} guess, the number being guessed.
      * @returns {boolean} True if guess matches thinking, else false.
      */
 
-     check(guess) {
-         return guess === this.thinking;
-     }
+    check(guess) {
+        return guess === this.thinking;
+    }
 
     /**
      * Compare if the nuumber is higher/lower then users guess.
-     * 
      * @param {integer} guess, the number being guessed.
      * @returns {string} Higher or Lower.
      */
@@ -55,13 +52,12 @@ class Game {
 
     /**
      * Cheat to see the nuumber to guess for.
-     * 
      * @returns {integer} Higher or Lower.
      */
 
-     cheat() {
-         return this.thinking;
-     }
+    cheat() {
+        return this.thinking;
+    }
 }
 
 module.exports = Game;

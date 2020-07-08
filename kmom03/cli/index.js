@@ -30,7 +30,7 @@ rl.question[util.promisify.custom] = (arg) => {
     });
 };
 
-const question = util.promisify(rl.question);
+// const question = util.promisify(rl.question);
 
 
 
@@ -45,9 +45,9 @@ const question = util.promisify(rl.question);
 
     game.init();
     console.info(
-        "Lets play the game of \'Guess my number\'! \n"
+        "Lets play the game of 'Guess my number'! \n"
         + "I am guessing of a number between 1 and 100. \n"
-        + "Can you find out what number I\'m guessing? \n"
+        + "Can you find out what number I'm guessing? \n"
     );
 
     rl.setPrompt("Guess my number: ");
@@ -111,7 +111,6 @@ function handleInput(line) {
 
 /**
  * makeGuess Function.
- *
  * @param {integer} guess, the number being guessed.
  * @returns {boolean} true if correct guess, otherwise false.
  */
@@ -128,6 +127,17 @@ function makeGuess(guess) {
     console.info(message);
 
     return match;
+}
+
+
+/**
+ * Init a new game to guess another number.
+ * @param {Game} game The current game being played.
+ * @returns {void}
+ */
+function makeInit(game) {
+    game.init();
+    console.info(` I am know thinking of another number.`);
 }
 
 
