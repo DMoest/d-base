@@ -1,5 +1,8 @@
--- This is a part of traing SQL in the course "Databas" and it will cover the basics of databases. 
--- Student Daniel Andersson - daap19 2020-07-14.
+-- DV1606, Databasteknologier för webben VT20
+-- Daniel Andersson, DAAP19
+-- Module: ddl_more_tables.sql
+-- ***** ***** ***** ***** *****
+-- This is a part of training exercises in the course DV1606("Databas") and it will cover the basics of database technologies for the web.
 
 set names 'utf8';
 
@@ -41,6 +44,5 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
 
 select * from kurstillfalle;
