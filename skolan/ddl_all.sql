@@ -50,9 +50,9 @@ create table larare_pre
 create table kurs
 (
     kod char(6) not null,
-    namn varchar(40),
-    poang float,
-    niva char(3),
+    namn varchar(40) not null,
+    poang float not null,
+    niva char(3) not null,
 
     primary key (kod)
 )
