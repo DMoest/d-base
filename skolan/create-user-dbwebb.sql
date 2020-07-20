@@ -1,5 +1,9 @@
--- This is a part of traing SQL in the course "Databas" and it will cover the basics of databases. 
--- Student Daniel Andersson - daap19 2020-02-07.
+-- DV1606, Databasteknologier för webben VT20
+-- Daniel Andersson, DAAP19
+-- Module: create-user-dbwebb.sql
+-- Module content: Create database, grant privileges, show MySQL version.
+-- ***** ***** ***** ***** *****
+-- This is a part of training exercises in the course DV1606("Databas") and it will cover the basics of database technologies for the web.
 
 -- DDL (Data Definition Language) here I want to keep my CREATE, ALTER & DROP statements.
 

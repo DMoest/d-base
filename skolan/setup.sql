@@ -1,6 +1,9 @@
--- This is a part of traing SQL in the course "Databas" and it will cover the basics of databases. Student Daniel Andersson - daap19 2020-02-07.
-
--- Setup.sql is intenden to recreate/reset/do over if something went wrong.
+-- DV1606, Databasteknologier för webben VT20
+-- Daniel Andersson, DAAP19
+-- Module: setup.sql
+-- Module content: Setup for database. Setup.sql is intenden to recreate/reset/do over if something went wrong.
+-- ***** ***** ***** ***** *****
+-- This is a part of training exercises in the course DV1606("Databas") and it will cover the basics of database technologies for the web.
 
 
 

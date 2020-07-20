@@ -1,7 +1,9 @@
--- Daniel Andersson, daap19
--- Databas @ BTH VT-20
--- Kmom 02 - Mer SQL övningar (skolan)
--- --------------------------------------------------
+-- DV1606, Databasteknologier för webben VT20
+-- Daniel Andersson, DAAP19
+-- Module: ddl_copy.sql
+-- Module content: ddl copy.
+-- ***** ***** ***** ***** *****
+-- This is a part of training exercises in the course DV1606("Databas") and it will cover the basics of database technologies for the web.
 
 
 
