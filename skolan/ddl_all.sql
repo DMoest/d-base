@@ -12,6 +12,7 @@ drop table if exists larare_pre;
 drop table if exists larare;
 
 -- Drop views if exists:
+drop view if exists v_planering;
 drop view if exists v_lonerevision;
 drop view if exists v_larare;
 drop view if exists v_name_alder;
@@ -127,4 +128,18 @@ from larare as l
     join larare_pre as p
         on l.akronym = p.akronym
 order by procent desc
+;
+
+
+
+-- view 4:
+create view v_planering
+as
+select *
+from kurs as k
+    join kurstillfalle as kt
+        on k.kod = kt.kurskod
+    join larare as l
+        on l.akronym = kt.kursansvarig
+order by k.namn asc
 ;

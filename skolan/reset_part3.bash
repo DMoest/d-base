@@ -24,6 +24,7 @@ loadSqlIntoSkolan "root" "" "setup.sql" "Initiera database och användare"
 loadSqlIntoSkolan "user" "pass" "ddl_all.sql" "Create tables"
 loadSqlIntoSkolan "user" "pass" "insert.sql" "Insert into larare"
 loadSqlIntoSkolan "user" "pass" "dml_update_lonerevision.sql" "Utför lönerevision"
+loadSqlIntoSkolan "user" "pass" "dml_insert_csv.sql" "Insert från csv/excel-fil till tabell"
 
 echo ">>> Check larare_pre: Lönesumman = 305000, Kompetens = 8."
 mysql -uuser -ppass skolan -e "SELECT SUM(lon) AS 'Lönesumma', SUM(kompetens) AS Kompetens FROM larare_pre;"
