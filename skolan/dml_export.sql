@@ -13,6 +13,8 @@
 -- "--batch" separerar kolumner per tab (\t).
 -- Delarna "< dml_export.sql" & "> report.xls" kallas i Unix för input/output redirections.
 
+
+
 -- 1. Test query:
 select *
 from larare limit 3;
