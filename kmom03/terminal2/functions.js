@@ -11,10 +11,10 @@
 module.exports = {
     "readCommandLine": readCommandLine,
     "makePromise": makePromise,
-    "viewTeachers": viewTeachers,
-    "searchTeachers": searchTeachers,
     "searchMinMax": searchMinMax,
-    "teachersAsTable": teachersAsTable
+    "teachersAsTable": teachersAsTable,
+    "teachersCompetenceAsTable": teachersCompetenceAsTable,
+    "teachersSalariesAsTable": teachersSalariesAsTable
 };
 
 
@@ -54,78 +54,8 @@ function makePromise(rl) {
 }
 
 
-/**
- * Get report, details about teachers.
- * Text-formatted table.
- */
-async function viewTeachers(db) {
-    let sql;
-    let res;
-    let str;
 
-    sql = `
-        SELECT
-            akronym,
-            fornamn,
-            efternamn,
-            avdelning,
-            lon,
-            kompetens,
-            fodd
-        FROM larare
-        ORDER BY akronym;
-    `;
-
-    res = await db.query(sql);
-    str = teachersAsTable(res);
-    return str;
-}
-
-
-
-/**
- * Output result as formatted table from search.
- * @async
- * @param {connection}  db - The database connection.
- * @param {string}      search String.
- * @returns {string}    Table to print, formatted.
- */
-async function searchTeachers(db, search) {
-    let sql;
-    let res;
-    let str;
-    let like = `%${search}%`;
-
-    console.info(`Searching for: ${search}`);
-
-    // ? is placeholders.
-    sql = `
-        SELECT
-            akronym,
-            fornamn,
-            efternamn,
-            avdelning,
-            lon,
-            kompetens,
-            fodd
-        FROM larare
-        WHERE
-            akronym LIKE ?
-            OR fornamn LIKE ?
-            OR efternamn LIKE ?
-            OR avdelning LIKE ?
-            OR lon = ?
-            OR kompetens LIKE ?
-        ORDER BY akronym;
-    `;
-
-    res = await db.query(sql, [like, like, like, like, search, like]);
-    str = teachersAsTable(res);
-    return str;
-}
-
-
-
+/* -------------------- QUERIES -------------------- */
 /**
  * Output result as formatted table from search.
  * Searching for a min/max spectrum in the salary column.
@@ -171,8 +101,9 @@ async function searchMinMax(db, searchMin, searchMax) {
 
 
 
+/* -------------------- TABLE VIEWS -------------------- */
 /**
- * Print to table.
+ * Print information about the teachers to table.
  * @param {RowDataPacket}
  * @returns {string}
  */
@@ -201,6 +132,70 @@ function teachersAsTable(res) {
     }
     /* eslint-disable */
     str += "+ ----------- + ------------------- + ----------- + ----------- + ----------- + --------------- +\n";
+    /* eslint-enable */
+    return str;
+}
+
+
+
+/**
+ * Print information about the teachers salaries pre & post last revision to a table.
+ * @param {RowDataPacket}
+ * @returns {string}
+ */
+function teachersCompetenceAsTable(res) {
+    let str;
+
+    /* eslint-disable */
+    str  = "+ ------------------------ + -------------- + ------------------ + --------------- +\n";
+    str += "| NAMN (AKRONYM)           | NY KOMPETENS   | TIDIGARE KOMPETENS | PROCENT (%)     |\n";
+    str += "+ ------------------------ + -------------- + ------------------ + --------------- +\n";
+    /* eslint-enable */
+    for (const row of res) {
+        str += "| ";
+        str += row.namn.padEnd(25);
+        str += "| ";
+        str += row.kompetens_nu.toString().padStart(14);
+        str += " | ";
+        str += row.kompetens_pre.toString().padStart(18);
+        str += " | ";
+        str += row.procent.toString().padStart(15);
+        str += " | \n";
+    }
+    /* eslint-disable */
+    str += "+ ------------------------ + -------------- + ------------------ + --------------- +\n";
+    /* eslint-enable */
+    return str;
+}
+
+
+
+/**
+ * Print information about the teachers salaries pre & post last revision to a table.
+ * @param {RowDataPacket}
+ * @returns {string}
+ */
+function teachersSalariesAsTable(res) {
+    let str;
+
+    /* eslint-disable */
+    str  = "+ ------------------------ + -------------- + -------------- + --------------- +\n";
+    str += "| NAMN (AKRONYM)           | NY LÖN         | TIDIGARE LÖN   | PROCENT (%)     |\n";
+    str += "+ ------------------------ + -------------- + -------------- + --------------- +\n";
+    /* eslint-enable */
+    for (const row of res) {
+        str += "| ";
+        str += row.namn.padEnd(25);
+        str += "| ";
+        str += row.lon_nu.toString().padStart(14);
+        str += " | ";
+        str += row.lon_pre.toString().padStart(14);
+        str += " | ";
+        str += row.procent.toString().padStart(15);
+        str += " | \n";
+    }
+    /* eslint-disable */
+    str += "+ ------------------------ + -------------- + -------------- + --------------- +\n";
     /* eslint-enable */
     return str;
 }

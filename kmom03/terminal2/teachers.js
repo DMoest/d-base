@@ -19,14 +19,16 @@ let teachers = {
         const db = await mysql.createConnection(config); // Skapar koppling mot databasen.
 
         let sql = `
-        SELECT
+        select
             *
-        FROM v_larare
-        ORDER BY akronym asc;
+        from v_larare
+        order by akronym asc;
         `;
 
         let res = await db.query(sql);
+
         console.info(myFunctions.teachersAsTable(res)); // Skriver ut res.
+        console.table(res);
         db.end(); // Avslutar uppkopplingen mot databasen.
     },
 
@@ -34,29 +36,105 @@ let teachers = {
         const db = await mysql.createConnection(config);
 
         let sql = `
-        SELECT
-            concat(l.förnamn, " ", l.efternamn, " (", l.akronym, ")") as namn,
-            l.kompetens as kompetens-nu,
-            lp.kompetens as kompetens-pre
+        select
+            concat(l.fornamn, " ", l.efternamn, " (", l.akronym, ")") as 'namn',
+            l.kompetens as 'kompetens_nu',
+            lp.kompetens as 'kompetens_pre',
+            round(((l.kompetens - lp.kompetens) / l.kompetens) * 100, 2) as 'procent'
         from larare as l
-            join larare_pre as pl
-        order by kompetens-nu desc;
+            join larare_pre as lp
+                on l.akronym = lp.akronym
+        order by 'procent' desc;
         `;
 
         let res = await db.query(sql);
-        console.table(res); // Skriver ut res.
+
+        console.info(myFunctions.teachersCompetenceAsTable(res)); // Skriver ut objektet res.
+        console.table(res); // Skriver ut res i tabell.
         db.end(); // Avslutar uppkopplingen mot databasen.
     },
 
-    makeSearch: async function(search) {
+    salariesTeachers: async function() {
         const db = await mysql.createConnection(config);
-        let str;
 
-        search = await question("What to search for? ");
-        str = await myFunctions.searchTeachers(db, search);
-        console.info(str);
+        let sql = `
+        select
+            concat(l.fornamn, " ", l.efternamn, " (", l.akronym, ")") as 'namn',
+            l.lon as 'lon_nu',
+            lp.lon as 'lon_pre',
+            round(((l.lon - lp.lon) / l.lon) * 100, 2) as 'procent'
+        from larare as l
+            join larare_pre as lp
+                on l.akronym = lp.akronym
+        order by procent desc;
+        `;
 
-        rl.close();
+        let res = await db.query(sql);
+
+        console.info(myFunctions.teachersSalariesAsTable(res));
+        console.table(res);
+        db.end();
+    },
+
+    newSalary: async function(akronym, salary) {
+        const db = await mysql.createConnection(config);
+
+        console.info("Akronym input: ", akronym);
+        console.info("New salary input: ", salary);
+
+        // Update query
+        let sql = `
+        update larare
+            set lon = ${salary}
+        where
+            akronym like '${akronym}';
+        `;
+
+        let sql2 = `
+        select
+            *
+        from v_larare
+            where akronym like '${akronym}';`;
+
+        let res = await db.query(sql);
+        let res2 = await db.query(sql2);
+
+        console.info("res1: ", res);
+        console.info("res2: ", res2);
+        console.info(myFunctions.teachersAsTable(res2));
+        console.table(res2);
+        db.end();
+    },
+
+    makeSearch: async function(search) {
+        console.info(search);
+        const db = await mysql.createConnection(config);
+
+        let sql = `
+        select
+            akronym,
+            fornamn,
+            efternamn,
+            avdelning,
+            lon,
+            alder,
+            fodd
+        from v_larare
+        where
+            akronym like ?
+            or fornamn like ?
+            or efternamn like ?
+            or avdelning like ?
+            or lon = ?
+            or alder like ?
+        order by akronym asc;
+        `;
+
+        let res = await db.query(sql, [search, search, search, search, search, search]);
+
+        console.info(myFunctions.teachersAsTable(res));
+        console.table(res);
+
         db.end();
     },
 };
