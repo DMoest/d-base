@@ -1,0 +1,102 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: navigation
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+.navbar {
+    &--outer {
+        display: block;
+        overflow: hidden;
+        width: @width--full;
+        height: 6.5rem;
+        background-color: @color__grey--dark;
+    }
+    
+    &--inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        overflow: hidden;
+        width: @width--full;
+        background-color: transparent;
+
+        // RESPONSIVE:
+        .responsive(@minWidth--phonePortrait, @maxWidth--phonePortrait, {
+            padding: @padding__content--sides1;
+            text-align: center;
+            visibility: hidden;
+        });
+
+        .responsive(@minWidth--phoneLandscape, @maxWidth--phoneLandscape, {
+            display: block;
+            padding: @padding__content--sides2;
+            text-align: center;
+        });
+
+        .responsive(@minWidth--tabletPortrait, @maxWidth--tabletPortrait, {
+            padding: @padding__content--sides3;
+            text-align: left;
+        });
+
+        .responsive(@minWidth--desktopSmall, @maxWidth--desktopSmall, {
+            padding: @padding__content--sides4;
+            text-align: left;
+        });
+
+        .responsive(@minWidth--desktopLarge, @maxWidth--desktopLarge, {
+            padding: @padding__content--sides4;
+            text-align: left;
+        });
+    }
+
+    &__multi {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        overflow: hidden;
+        width: @width--full;
+        height: auto;
+        
+        // RESPONSIVE:
+        .responsive(@minWidth--phonePortrait, @maxWidth--phonePortrait, {
+            padding: @padding__content--sides1;
+            text-align: center;
+        });
+        
+        .responsive(@minWidth--phoneLandscape, @maxWidth--phoneLandscape, {
+            padding: @padding__content--sides2;
+            text-align: center;
+        });
+        
+        .responsive(@minWidth--tabletPortrait, @maxWidth--tabletPortrait, {
+            padding: @padding__content--sides3;
+            text-align: left;
+        });
+
+        .responsive(@minWidth--desktopSmall, @maxWidth--desktopSmall, {
+            padding: @padding__content--sides4;
+            text-align: left;
+        });
+
+        .responsive(@minWidth--desktopLarge, @maxWidth--desktopLarge, {
+            padding: @padding__content--sides4;
+            text-align: left;
+        });
+
+        // ul {
+        //     overflow-y: hidden;
+
+        //     li {
+        //         display: inline-block;
+        //     }
+        // }
+    }
+};

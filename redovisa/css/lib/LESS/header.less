@@ -1,0 +1,27 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: header
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+.site__header {
+    &--outer {
+        display: block;
+        width: @width--full;
+        height: @header--height;
+        
+        .cover__image {
+            width: 100vw;
+            height: @header--height;
+            position: absolute;
+            background: url(../../img/bg_image-5.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -100;
+        }
+    }
+}

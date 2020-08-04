@@ -1,7 +1,7 @@
 /**
  * A function to wrap it all in.
  */
-(function () {
+(function main() {
     "use strict";
 
 

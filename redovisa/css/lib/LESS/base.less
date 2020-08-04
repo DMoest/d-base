@@ -1,0 +1,53 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: base
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+* {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: auto;
+    width: 100vw;
+
+    body {
+        overflow: auto;
+        width: 100%;
+        background-color: @color__white;
+
+        h1 {
+            overflow: auto;
+            padding: @font__size--h1 0;
+        }
+
+        h2 {
+            overflow: auto;
+            padding: @font__size--h2 0;
+        }
+
+        h3 {
+            overflow: auto;
+            padding: @font__size--h3 0;
+        }
+
+        h4 {
+            overflow: auto;
+            padding: @font__size--h4 0;
+        }
+
+        p {
+            overflow: auto;
+            padding: (@font__size--p / 2) 0;
+        }
+    }
+}

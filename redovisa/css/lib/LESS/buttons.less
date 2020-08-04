@@ -1,0 +1,68 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: buttons
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+.navbar__button {
+    &--NB {
+        display: inline-block;
+        width: @width--full;
+        padding: @padding__button;
+        margin: @margin__button;
+        font-size: @font__size--button;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        transition: all @animation__time;
+        color: @color__font--light;
+        background-color: @color__grey--dark;
+        cursor: pointer;
+        .bordered--light();
+
+        &:hover {
+            color: @color__grey--dark;
+            background-color: @color__white;
+        }
+
+        // &:active {
+
+        // }
+    }
+
+    &--selected {
+        color: @color__grey--dark;
+        background-color: @color__white;
+    }
+    
+    &--multi {
+        display: inline-block;
+        width: @width--full;
+        transition: all @animation__time;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        color: @color__font--dark;
+        background-color: @color__white;
+        .bordered--dark();
+
+        &:hover {
+            color: @color__white;
+            background-color: @color__primary--standard;
+            .bordered--primary();
+        }
+
+        &:active {
+            .button--click();
+        }
+
+        &--selected {
+            color: @color__white;
+            background-color: @color__primary--standard;
+            .bordered--primary();
+        }
+    }
+};

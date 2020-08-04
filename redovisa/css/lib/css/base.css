@@ -1,0 +1,62 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: base
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: mixins
+*/
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+* {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow: auto;
+  width: 100vw;
+}
+html body {
+  overflow: auto;
+  width: 100%;
+  background-color: #fff;
+}
+html body h1 {
+  overflow: auto;
+  padding: 3.6rem 0;
+}
+html body h2 {
+  overflow: auto;
+  padding: 3rem 0;
+}
+html body h3 {
+  overflow: auto;
+  padding: 2.4rem 0;
+}
+html body h4 {
+  overflow: auto;
+  padding: 1.8rem 0;
+}
+html body p {
+  overflow: auto;
+  padding: 0.8rem 0;
+}

@@ -1,0 +1,47 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: typography
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+html {
+    overflow: auto;
+    width: 100vw;
+    font-family: 'Roboto Slab', serif;
+    font-size: 100%;
+
+    body {
+        font-size: @font__size--p;
+        color: @color__font--dark;
+
+        h1 {
+            font-size: @font__size--h1;
+            font-weight: @font__weight--header;
+        }
+
+        h2 {
+            font-size: @font__size--h2;
+            font-weight: @font__weight--header;
+        }
+
+        h3 {
+            font-size: @font__size--h3;
+            font-weight: @font__weight--header;
+        }
+
+        h4 {
+            font-size: @font__size--h4;
+            font-weight: @font__weight--header;
+        }
+
+        p {
+            font-size: @font__size--p;
+            font-weight: @font__weight--p;
+        }
+    }
+}

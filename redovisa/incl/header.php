@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Cascading Stylesheet -->
-    <link rel="stylesheet" href="css/lib/style.css">
+    <link rel="stylesheet" href="css/lib/css/style.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700&display=swap" rel="stylesheet">
     <!-- Favicon -->
