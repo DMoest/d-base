@@ -82,7 +82,6 @@ let teachers = {
         console.info("Akronym input: ", akronym);
         console.info("New salary input: ", salary);
 
-        // Update query
         let sql = `
         update larare
             set lon = ${salary}
@@ -107,7 +106,7 @@ let teachers = {
     },
 
     makeSearch: async function(search) {
-        console.info(search);
+        console.info("searching for: ", search);
         const db = await mysql.createConnection(config);
 
         let sql = `
@@ -134,7 +133,38 @@ let teachers = {
 
         console.info(myFunctions.teachersAsTable(res));
         console.table(res);
+        db.end();
+    },
 
+    minMaxSearch: async function(searchMin, searchMax) {
+        const db = await mysql.createConnection(config);
+    
+        console.info(`Searching with min-value: ${searchMin}`);
+        console.info(`Searching with max-value: ${searchMax}`);
+    
+        // ? is placeholders.
+        let sql = `
+            SELECT
+                akronym,
+                fornamn,
+                efternamn,
+                avdelning,
+                lon,
+                kompetens,
+                fodd
+            FROM larare
+            GROUP BY akronym
+            HAVING
+                (lon >= ?
+                AND lon <= ?) 
+                OR (kompetens >= ? AND kompetens <= ?)
+            ORDER BY lon DESC;
+        `;
+    
+        let res = await db.query(sql, [searchMin, searchMax, searchMin, searchMax]);
+
+        // console.info(myFunctions.teachersAsTable(res));
+        console.table(res);
         db.end();
     },
 };

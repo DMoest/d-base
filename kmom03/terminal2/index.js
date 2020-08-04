@@ -22,7 +22,7 @@ const teachers = require("./teachers.js");
         output: process.stdout
     });
 
-    rl.setPrompt("Choose something: ");
+    rl.setPrompt("Please choose something: ");
     rl.prompt();
 
     rl.on("close", process.exit);
@@ -57,11 +57,17 @@ const teachers = require("./teachers.js");
                 break;
             case "newsalary":
             case "nylon":
+            case "ns": // fast/short -key.
                 await teachers.newSalary(lineArray[1], lineArray[2]);
                 break;
             case "search":
             case "sok":
                 await teachers.makeSearch(lineArray[1]);
+                break;
+            case "minMaxSalary":
+            case "minMaxSok":
+            case "mms": // fast/short -key.
+                await teachers.minMaxSearch(lineArray[1], lineArray[2]);
                 break;
             case "exit":
             case "quit":
@@ -84,17 +90,15 @@ const teachers = require("./teachers.js");
  */
 function showMenu() {
     console.info(`
-        * ---------------------------------------------------------------------------------------- *
-        * Choose something from the menu:                                                          *
-        * ---------------------------------------------------------------------------------------- *
+        *** MENU ***
 
-        menu, help (m / h):                         Show this menu.
-        exit, quit (q):                             Quit the program.
-        teachers (t):                               Show information about teachers.
-        competence, kompetens (c):                  Show teachers competence pre & post revision.
-        salary, lon (s):                            Show teachers salaries pre & post revision.
-        newsalary, nylon <akronym> <new salary>:    New salary for teacher.
-        search, sok + <searchString>:               Search for teachers.
-        * ---------------------------------------------------------------------------------------- *
+        Menu, Help (m / h):                             Show this menu.
+        Exit, Quit (q):                                 Quit the program.
+        Teachers (t):                                   Show information about teachers.
+        Competence, Kompetens (c):                      Show teachers competence pre & post revision.
+        Salary, Lon (s):                                Show teachers salaries pre & post revision.
+        Newsalary, Nylon (ns) <akronym> <new salary>:   New salary for teacher.
+        Search, Sok + <searchString>:                   Search for teachers.
+        SearchMinMax, SokMinMax (smm) <Min> <Max>:      Search for min/max salaries from teachers.
     `);
 }

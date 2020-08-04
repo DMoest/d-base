@@ -160,10 +160,12 @@ async function searchMinMax(db, searchMin, searchMax) {
         HAVING
             (lon >= ?
             AND lon <= ?)
-        ORDER BY lon DESC;
+            OR (kompetens >= ?
+            AND kompetens <= ?)
+        ORDER BY lon, kompetens DESC;
     `;
 
-    res = await db.query(sql, [searchMin, searchMax]);
+    res = await db.query(sql, [searchMin, searchMax, searchMin, searchMax]);
     str = teacherAsTable(res);
     return str;
 }

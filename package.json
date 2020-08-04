@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/DMoest/d-base.git"
   },
-  "author": "",
+  "author": "Daniel Andersson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DMoest/d-base/issues"
