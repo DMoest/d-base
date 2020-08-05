@@ -1,0 +1,161 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: header
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: mixins
+*/
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+.site__header--outer {
+  display: block;
+  width: 100vw;
+  height: 30rem;
+}
+.site__header--outer .cover__image {
+  width: 100vw;
+  margin: 0;
+  height: 30rem;
+  position: absolute;
+  background: url(../../img/bg_image-5.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -100;
+}
+.site__header--inner {
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  background: transparent;
+}
+.site__header--inner .site__logo {
+  display: inline-block;
+  top: 10rem;
+  width: 15rem;
+  height: auto;
+  color: #fff;
+  padding: 2.8rem 0;
+}
+.site__header--inner .site__title {
+  display: block;
+  color: #f5f5f5;
+  font-size: 1.912em;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 2.8rem;
+}
+.site__header--inner .site__slogan {
+  display: block;
+  padding-bottom: 1.4rem;
+  font-style: italic;
+  color: #f5f5f5;
+}
+@media only screen and (min-width: 1em) and (max-width: 20em) {
+  .site__header--inner {
+    padding: 0 1.4rem;
+  }
+  .site__header--inner .site__logo {
+    display: block;
+    margin: auto;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 20em) and (max-width: 37.5em) {
+  .site__header--inner {
+    padding: 0 2.5%;
+  }
+  .site__header--inner .site__logo {
+    display: block;
+    margin: auto;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 37.5em) and (max-width: 45em) {
+  .site__header--inner {
+    padding: 0 5%;
+  }
+  .site__header--inner .site__logo {
+    display: inline-block;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 45em) and (max-width: 52.5em) {
+  .site__header--inner {
+    padding: 0 7.5%;
+  }
+  .site__header--inner .site__logo {
+    display: inline-block;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 52.5em) and (max-width: 64em) {
+  .site__header--inner {
+    padding: 0 10%;
+  }
+  .site__header--inner .site__logo {
+    display: inline-block;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+  .site__header--inner {
+    padding: 0 12.5%;
+  }
+  .site__header--inner .site__logo {
+    display: inline-block;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 80em) and (max-width: 250em) {
+  .site__header--inner {
+    padding: 0 15%;
+  }
+  .site__header--inner .site__logo {
+    display: inline-block;
+  }
+  .site__header--inner .site__title,
+  .site__header--inner .site__slogan {
+    text-align: left;
+  }
+}

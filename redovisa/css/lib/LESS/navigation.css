@@ -1,0 +1,149 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: navigation
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: mixins
+*/
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+.navbar--outer {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  background-color: #222;
+}
+.navbar--inner {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  margin: 1.4rem 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: transparent;
+}
+@media only screen and (min-width: 1em) and (max-width: 1em) {
+  .navbar--inner {
+    padding: 0 1.4rem;
+    text-align: center;
+    visibility: hidden;
+  }
+}
+@media only screen and (min-width: 20em) and (max-width: 37.5em) {
+  .navbar--inner {
+    display: block;
+    padding: 0 2.5%;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 37.5em) and (max-width: 45em) {
+  .navbar--inner {
+    padding: 0 5%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 45em) and (max-width: 52.5em) {
+  .navbar--inner {
+    padding: 0 7.5%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 52.5em) and (max-width: 64em) {
+  .navbar--inner {
+    padding: 0 10%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+  .navbar--inner {
+    padding: 0 12.5%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 80em) and (max-width: 250em) {
+  .navbar--inner {
+    padding: 0 15%;
+    text-align: left;
+  }
+}
+.navbar__multi--list {
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  margin: 1.4rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+.navbar__multi--listItem {
+  display: inline-block;
+}
+@media only screen and (min-width: 1em) and (max-width: 20em) {
+  .navbar__multi--list {
+    padding: 0 1.4rem;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 20em) and (max-width: 37.5em) {
+  .navbar__multi--list {
+    padding: 0 2.5%;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 37.5em) and (max-width: 45em) {
+  .navbar__multi--list {
+    padding: 0 5%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 45em) and (max-width: 52.5em) {
+  .navbar__multi--list {
+    padding: 0 7.5%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 52.5em) and (max-width: 64em) {
+  .navbar__multi--list {
+    padding: 0 10%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+  .navbar__multi--list {
+    padding: 0 12.5%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 80em) and (max-width: 250em) {
+  .navbar__multi--list {
+    padding: 0 15%;
+    text-align: left;
+  }
+}

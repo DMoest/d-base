@@ -6,6 +6,11 @@
 /**
  * Redovisningssidan
  * Daniel Andersson (daap19)
+ * Module: variables
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
  * Module: mixins
 */
 .bordered--light {
@@ -26,11 +31,13 @@
   border: 0.05rem solid #46bddb;
 }
 .navbar__button--NB {
+  overflow: hidden;
   display: inline-block;
   width: 100%;
-  padding: 0.75rem 1.5rem;
-  margin: 1rem 2rem 1rem 0;
-  font-size: 2rem;
+  height: auto;
+  padding: 0.7rem;
+  margin: 0 0.7rem;
+  font-size: 1.471em;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
@@ -45,6 +52,11 @@
   color: #222;
   background-color: #fff;
 }
+.navbar__button--NB:active {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
 .navbar__button--selected {
   color: #222;
   background-color: #fff;
@@ -52,6 +64,7 @@
 .navbar__button--multi {
   display: inline-block;
   width: 100%;
+  padding: 0.7rem;
   transition: all 0.25s;
   text-decoration: none;
   text-align: center;

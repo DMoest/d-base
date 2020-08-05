@@ -1,3 +1,35 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: style (Main module)
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: mixins
+*/
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
 ========================================================================== */
@@ -306,44 +338,78 @@ template {
 /**
  * Redovisningssidan
  * Daniel Andersson (daap19)
- * Module: mixins
+ * Module: base
 */
-.bordered--light {
-  border: 0.05rem solid #f5f5f5;
-  border-radius: 0.3rem;
+*,
+*:before,
+*:after {
+  overflow-x: hidden;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
-.bordered--dark {
-  border: 0.05rem solid #333;
-  border-radius: 0.3rem;
+html {
+  overflow: auto;
+  box-sizing: border-box;
+  width: 100vw;
 }
-.bordered--primary {
-  border: 0.05rem solid #1289a7;
-  border-radius: 0.3rem;
+html body {
+  overflow: auto;
+  width: 100%;
+  background-color: #fff;
 }
-.button--click {
-  transform: translateY(1px);
-  background-color: #46bddb;
-  border: 0.05rem solid #46bddb;
+html body h1 {
+  overflow: auto;
+  padding: 1.912rem 0;
+}
+html body h2 {
+  overflow: auto;
+  padding: 1.616rem 0;
+}
+html body h3 {
+  overflow: auto;
+  padding: 1.471rem 0;
+}
+html body h4 {
+  overflow: auto;
+  padding: 1.3rem 0;
+}
+html body p {
+  overflow: auto;
+  padding: 0.8rem 0;
 }
 /**
  * Redovisningssidan
  * Daniel Andersson (daap19)
- * Module: header
+ * Module: typography
 */
-.site__header--outer {
-  display: block;
-  width: 100%;
-  height: 30rem;
+html {
+  font-family: 'Roboto Slab', serif;
+  font-size: 100%;
 }
-.site__header--outer .cover__image {
-  width: 100vw;
-  height: 30rem;
-  position: absolute;
-  background: url(../../img/bg_image-5.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -100;
+html body {
+  font-size: 1em;
+  color: #333;
+}
+html body h1 {
+  font-size: 1.912rem;
+  font-weight: 400;
+}
+html body h2 {
+  font-size: 1.616rem;
+  font-weight: 400;
+}
+html body h3 {
+  font-size: 1.471rem;
+  font-weight: 400;
+}
+html body h4 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+html body p {
+  font-size: 1.6rem;
+  font-weight: 200;
 }
 /**
  * Redovisningssidan
@@ -358,17 +424,19 @@ template {
   background-color: #222;
 }
 .navbar--inner {
+  overflow: hidden;
   display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1.04rem 0;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  overflow: hidden;
-  width: 100%;
   background-color: transparent;
 }
 @media only screen and (min-width: 1px) and (max-width: 600px) {
   .navbar--inner {
-    padding: 0 5%;
+    padding: 0 2.08rem 2.08rem;
     text-align: center;
     visibility: hidden;
   }
@@ -376,160 +444,79 @@ template {
 @media only screen and (min-width: 600px) and (max-width: 840px) {
   .navbar--inner {
     display: block;
-    padding: 0 5%;
+    padding: 0 5% 2.08rem;
     text-align: center;
   }
 }
 @media only screen and (min-width: 840px) and (max-width: 960px) {
   .navbar--inner {
-    padding: 0 10%;
+    padding: 0 10% 2.08rem;
     text-align: left;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1280px) {
   .navbar--inner {
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
     text-align: left;
   }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1000000px) {
   .navbar--inner {
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
     text-align: left;
   }
 }
-.navbar__multi {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+.navbar__multi ul {
   overflow: hidden;
+  display: flex;
   width: 100%;
   height: auto;
+  padding: 2.08rem 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 @media only screen and (min-width: 1px) and (max-width: 600px) {
   .navbar__multi {
-    padding: 0 5%;
+    padding: 0 2.08rem 2.08rem;
     text-align: center;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 840px) {
   .navbar__multi {
-    padding: 0 5%;
+    padding: 0 5% 2.08rem;
     text-align: center;
   }
 }
 @media only screen and (min-width: 840px) and (max-width: 960px) {
   .navbar__multi {
-    padding: 0 10%;
+    padding: 0 10% 2.08rem;
     text-align: left;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1280px) {
   .navbar__multi {
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
     text-align: left;
   }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1000000px) {
   .navbar__multi {
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
     text-align: left;
   }
 }
-/**
- * Redovisningssidan
- * Daniel Andersson (daap19)
- * Module: typography
-*/
-html {
-  overflow: auto;
-  width: 100vw;
-  font-family: 'Roboto Slab', serif;
-  font-size: 100%;
+img[src*="#image__me"] {
+  width: 30rem;
 }
-html body {
-  font-size: 1.6rem;
-  color: #333;
-}
-html body h1 {
-  font-size: 3.6rem;
-  font-weight: 400;
-}
-html body h2 {
-  font-size: 3rem;
-  font-weight: 400;
-}
-html body h3 {
-  font-size: 2.4rem;
-  font-weight: 400;
-}
-html body h4 {
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-html body p {
-  font-size: 1.6rem;
-  font-weight: 200;
+img[src*="#image__about"] {
+  width: 30rem;
 }
 /**
  * Redovisningssidan
  * Daniel Andersson (daap19)
- * Module: buttons
+ * Module: header
 */
-.navbar__button--NB {
-  display: inline-block;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  margin: 1rem 2rem 1rem 0;
-  font-size: 2rem;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  transition: all 0.25s;
-  color: #f5f5f5;
-  background-color: #222;
-  cursor: pointer;
-  border: 0.05rem solid #f5f5f5;
-  border-radius: 0.3rem;
-}
-.navbar__button--NB:hover {
-  color: #222;
-  background-color: #fff;
-}
-.navbar__button--selected {
-  color: #222;
-  background-color: #fff;
-}
-.navbar__button--multi {
-  display: inline-block;
-  width: 100%;
-  transition: all 0.25s;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  color: #333;
-  background-color: #fff;
-  border: 0.05rem solid #333;
-  border-radius: 0.3rem;
-}
-.navbar__button--multi:hover {
-  color: #fff;
-  background-color: #1289a7;
-  border: 0.05rem solid #1289a7;
-  border-radius: 0.3rem;
-}
-.navbar__button--multi:active {
-  transform: translateY(1px);
-  background-color: #46bddb;
-  border: 0.05rem solid #46bddb;
-}
-.navbar__button--multi--selected {
-  color: #fff;
-  background-color: #1289a7;
-  border: 0.05rem solid #1289a7;
-  border-radius: 0.3rem;
-}
 .site__header--outer {
   display: block;
   width: 100%;
@@ -552,17 +539,17 @@ html body p {
   background: transparent;
 }
 .site__header--inner .site__logo {
-  display: block;
+  display: hidden;
   top: 15rem;
-  width: 10rem;
+  width: 15rem;
   height: auto;
   color: #fff;
-  padding: 2rem;
+  padding: 2.08rem;
 }
 .site__header--inner .site__title {
   display: block;
   color: #f5f5f5;
-  font-size: 3.6rem;
+  font-size: 1.912rem;
   height: 5rem;
   padding: 0;
 }
@@ -574,10 +561,9 @@ html body p {
 }
 @media only screen and (min-width: 1px) and (max-width: 600px) {
   .site__header--inner {
-    padding: 0 5%;
+    padding: 0 2.08rem 2.08rem;
   }
   .site__header--inner .site__logo {
-    display: block;
     margin: 6rem auto 1rem;
   }
   .site__header--inner .site__title,
@@ -587,7 +573,7 @@ html body p {
 }
 @media only screen and (min-width: 600px) and (max-width: 840px) {
   .site__header--inner {
-    padding: 0 5%;
+    padding: 0 5% 2.08rem;
   }
   .site__header--inner .site__logo {
     display: block;
@@ -600,7 +586,7 @@ html body p {
 }
 @media only screen and (min-width: 840px) and (max-width: 960px) {
   .site__header--inner {
-    padding: 0 10%;
+    padding: 0 10% 2.08rem;
   }
   .site__header--inner .site__logo {
     display: inline-block;
@@ -613,7 +599,7 @@ html body p {
 }
 @media only screen and (min-width: 960px) and (max-width: 1280px) {
   .site__header--inner {
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
   }
   .site__header--inner .site__logo {
     display: inline-block;
@@ -626,7 +612,7 @@ html body p {
 }
 @media only screen and (min-width: 1280px) and (max-width: 1000000px) {
   .site__header--inner {
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
   }
   .site__header--inner .site__logo {
     display: inline-block;
@@ -637,29 +623,56 @@ html body p {
     text-align: left;
   }
 }
-.site__footer {
-  display: block;
-  bottom: 0;
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: content
+*/
+.content__report,
+.content__me,
+.content__about {
   width: 100%;
-  height: auto;
-  padding-bottom: 1rem;
-  color: #1289a7;
-  background-color: #222;
-  font-size: 1.2rem;
-  font-weight: 200;
-  outline: none;
 }
-.site__footer--links {
-  text-align: center;
-  width: 50%;
-  margin: 0 auto;
-  overflow-y: hidden;
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 2.08rem 2.08rem;
+  }
 }
-.site__footer--pageLoader {
-  text-align: center;
-  width: 50%;
-  margin: 0 auto;
+@media only screen and (min-width: 600px) and (max-width: 840px) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 5% 2.08rem;
+  }
 }
+@media only screen and (min-width: 840px) and (max-width: 960px) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 10% 2.08rem;
+  }
+}
+@media only screen and (min-width: 960px) and (max-width: 1280px) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 15% 2.08rem;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1000000px) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 15% 2.08rem;
+  }
+}
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: byline
+*/
 .site__byline--outer {
   display: block;
   margin: 4rem auto;
@@ -667,37 +680,37 @@ html body p {
 @media only screen and (min-width: 1px) and (max-width: 600px) {
   .site__byline--outer {
     width: 95%;
-    margin: 0 5%;
+    margin: 0 2.08rem 2.08rem;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 840px) {
   .site__byline--outer {
     width: 100%;
-    padding: 0 5%;
+    padding: 0 5% 2.08rem;
   }
 }
 @media only screen and (min-width: 840px) and (max-width: 960px) {
   .site__byline--outer {
     width: 100%;
-    padding: 0 10%;
+    padding: 0 10% 2.08rem;
   }
 }
 @media only screen and (min-width: 960px) and (max-width: 1280px) {
   .site__byline--outer {
     width: 100%;
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
   }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1000000px) {
   .site__byline--outer {
     width: 100%;
-    padding: 0 10%;
+    padding: 0 15% 2.08rem;
   }
 }
 .site__byline--inner {
   display: flex;
   width: 100%;
-  padding: 2rem;
+  padding: 2.08rem;
   border: 0.05rem solid #333;
   border-radius: 0.3rem;
   margin: 0 auto;
@@ -744,7 +757,7 @@ html body p {
 .site__byline--inner figure {
   display: block;
   width: 100%;
-  padding: 2rem;
+  padding: 2.08rem;
   text-align: center;
 }
 .site__byline--inner figure figcaption {
@@ -760,51 +773,94 @@ html body p {
 .site__byline--inner--text {
   display: inline-block;
   width: 100%;
-  padding: 2rem;
+  padding: 2.08rem;
 }
-.content__report,
-.content__me,
-.content__about {
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: footer
+*/
+.site__footer {
+  display: block;
+  bottom: 0;
   width: 100%;
+  height: auto;
+  padding-bottom: 1rem;
+  color: #1289a7;
+  background-color: #222;
+  font-size: 1.2rem;
+  font-weight: 200;
+  outline: none;
 }
-@media only screen and (min-width: 1px) and (max-width: 600px) {
-  .content__report,
-  .content__me,
-  .content__about {
-    padding: 0 5%;
-  }
+.site__footer--links {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  overflow-y: hidden;
 }
-@media only screen and (min-width: 600px) and (max-width: 840px) {
-  .content__report,
-  .content__me,
-  .content__about {
-    padding: 0 5%;
-  }
+.site__footer--pageLoader {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
-@media only screen and (min-width: 840px) and (max-width: 960px) {
-  .content__report,
-  .content__me,
-  .content__about {
-    padding: 0 10%;
-  }
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: buttons
+*/
+.navbar__button--NB {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: 1.04rem 2.08rem;
+  margin: 1.04rem 2.08rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  color: #f5f5f5;
+  background-color: #222;
+  cursor: pointer;
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
 }
-@media only screen and (min-width: 960px) and (max-width: 1280px) {
-  .content__report,
-  .content__me,
-  .content__about {
-    padding: 0 10%;
-  }
+.navbar__button--NB:hover {
+  color: #222;
+  background-color: #fff;
 }
-@media only screen and (min-width: 1280px) and (max-width: 1000000px) {
-  .content__report,
-  .content__me,
-  .content__about {
-    padding: 0 10%;
-  }
+.navbar__button--selected {
+  color: #222;
+  background-color: #fff;
 }
-img[src*="#image__me"] {
-  width: 30rem;
+.navbar__button--multi {
+  display: inline-block;
+  width: 100%;
+  padding: 1.04rem 2.08rem;
+  transition: all 0.25s;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  background-color: #fff;
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
 }
-img[src*="#image__about"] {
-  width: 30rem;
+.navbar__button--multi:hover {
+  color: #fff;
+  background-color: #1289a7;
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
+}
+.navbar__button--multi:active {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+.navbar__button--multi--selected {
+  color: #fff;
+  background-color: #1289a7;
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
 }

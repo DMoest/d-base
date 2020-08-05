@@ -1,0 +1,86 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: content
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: mixins
+*/
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #1289a7;
+  border-radius: 0.3rem;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+.content__report,
+.content__me,
+.content__about {
+  width: 100%;
+}
+@media only screen and (min-width: 1em) and (max-width: 20em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 1.4rem;
+  }
+}
+@media only screen and (min-width: 20em) and (max-width: 37.5em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 2.5%;
+  }
+}
+@media only screen and (min-width: 37.5em) and (max-width: 45em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 5%;
+  }
+}
+@media only screen and (min-width: 45em) and (max-width: 52.5em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 5%;
+  }
+}
+@media only screen and (min-width: 52.5em) and (max-width: 64em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 10%;
+  }
+}
+@media only screen and (min-width: 64em) and (max-width: 80em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 12.5%;
+  }
+}
+@media only screen and (min-width: 80em) and (max-width: 250em) {
+  .content__report,
+  .content__me,
+  .content__about {
+    padding: 0 15%;
+  }
+}

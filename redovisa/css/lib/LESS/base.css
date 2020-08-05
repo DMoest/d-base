@@ -1,7 +1,12 @@
 /**
  * Redovisningssidan
  * Daniel Andersson (daap19)
- * Module: typography
+ * Module: base
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
 */
 /**
  * Redovisningssidan
@@ -25,33 +30,37 @@
   background-color: #46bddb;
   border: 0.05rem solid #46bddb;
 }
+*,
+*:before,
+*:after {
+  overflow-x: hidden;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
 html {
   overflow: auto;
-  width: 100vw;
-  font-family: 'Roboto Slab', serif;
-  font-size: 100%;
+  box-sizing: border-box;
+  width: 100%;
 }
 html body {
-  font-size: 1.6rem;
-  color: #333;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  background-color: #fff;
 }
 html body h1 {
-  font-size: 3.6rem;
-  font-weight: 400;
+  overflow: auto;
 }
 html body h2 {
-  font-size: 3rem;
-  font-weight: 400;
+  overflow: auto;
 }
 html body h3 {
-  font-size: 2.4rem;
-  font-weight: 400;
+  overflow: auto;
 }
 html body h4 {
-  font-size: 1.8rem;
-  font-weight: 400;
+  overflow: auto;
 }
 html body p {
-  font-size: 1.6rem;
-  font-weight: 200;
+  overflow: auto;
 }

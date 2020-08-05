@@ -13,90 +13,112 @@
     &--outer {
         display: block;
         overflow: hidden;
-        width: @width--full;
-        height: 6.5rem;
+        width: @width[full];
+        height: auto;
         background-color: @color__grey--dark;
     }
-    
+
     &--inner {
+        overflow: hidden;
         display: flex;
+        width: @width[full];
+        margin: @rythem--standard 0;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-        overflow: hidden;
-        width: @width--full;
         background-color: transparent;
 
         // RESPONSIVE:
-        .responsive(@minWidth--phonePortrait, @maxWidth--phonePortrait, {
-            padding: @padding__content--sides1;
+        .responsive(@screenMin[mobilePortrait], @screenMin[mobilePortrait], {
+            padding: @padding__content[p1];
             text-align: center;
             visibility: hidden;
         });
 
-        .responsive(@minWidth--phoneLandscape, @maxWidth--phoneLandscape, {
+        .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
             display: block;
-            padding: @padding__content--sides2;
+            padding: @padding__content[p2];
             text-align: center;
         });
-
-        .responsive(@minWidth--tabletPortrait, @maxWidth--tabletPortrait, {
-            padding: @padding__content--sides3;
+        
+        .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+            padding: @padding__content[p3];
             text-align: left;
         });
 
-        .responsive(@minWidth--desktopSmall, @maxWidth--desktopSmall, {
-            padding: @padding__content--sides4;
+        .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+            padding: @padding__content[p4];
             text-align: left;
         });
 
-        .responsive(@minWidth--desktopLarge, @maxWidth--desktopLarge, {
-            padding: @padding__content--sides4;
+        .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+            padding: @padding__content[p5];
+            text-align: left;
+        });
+
+        .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+            padding: @padding__content[p6];
+            text-align: left;
+        });
+
+        .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+            padding: @padding__content[p7];
             text-align: left;
         });
     }
 
     &__multi {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        overflow: hidden;
-        width: @width--full;
-        height: auto;
-        
-        // RESPONSIVE:
-        .responsive(@minWidth--phonePortrait, @maxWidth--phonePortrait, {
-            padding: @padding__content--sides1;
-            text-align: center;
-        });
-        
-        .responsive(@minWidth--phoneLandscape, @maxWidth--phoneLandscape, {
-            padding: @padding__content--sides2;
-            text-align: center;
-        });
-        
-        .responsive(@minWidth--tabletPortrait, @maxWidth--tabletPortrait, {
-            padding: @padding__content--sides3;
-            text-align: left;
-        });
+        &--list {
+            overflow: hidden;
+            width: @width[full];
+            height: auto;
+            width: @width[full];
+            margin: @rythem--standard 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: (@rythem--standard / 2);
 
-        .responsive(@minWidth--desktopSmall, @maxWidth--desktopSmall, {
-            padding: @padding__content--sides4;
-            text-align: left;
-        });
+            &Item {
+                display: inline-block;
+            }
 
-        .responsive(@minWidth--desktopLarge, @maxWidth--desktopLarge, {
-            padding: @padding__content--sides4;
-            text-align: left;
-        });
+            // RESPONSIVE:
+            .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+                padding: @padding__content[p1];
+                text-align: center;
+            });
 
-        // ul {
-        //     overflow-y: hidden;
+            .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
+                padding: @padding__content[p2];
+                text-align: center;
+            });
 
-        //     li {
-        //         display: inline-block;
-        //     }
-        // }
+            .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+                padding: @padding__content[p3];
+                text-align: left;
+            });
+
+            .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+                padding: @padding__content[p4];
+                text-align: left;
+            });
+
+            .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+                padding: @padding__content[p5];
+                text-align: left;
+            });
+
+            .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+                padding: @padding__content[p6];
+                text-align: left;
+            });
+
+            .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+                padding: @padding__content[p7];
+                text-align: left;
+            });
+        }
     }
 };

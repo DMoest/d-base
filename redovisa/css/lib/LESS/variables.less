@@ -1,4 +1,9 @@
-// --- VARIABLES ---
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
+*/
+
 // Colors:
 @color__white: #fff;
 @color__black: #000;
@@ -16,57 +21,70 @@
 @color__font--light: #f5f5f5;
 @color__font--dark: #333;
 
-// Font related:
-@font__size--p: 1.6rem;
-@font__size--h1: 3.6rem;
-@font__size--h2: 3rem;
-@font__size--h3: 2.4rem;
-@font__size--h4: 1.8rem;
-@font__size--footer: 1.2rem;
+// Font related sizing:
+@font__family: {
+    header: 'Pacifico', cursive;
+    subHeader: 'Rowdies', cursive;
+    paragraph: 'Antic Slab', serif;
+}
+
+@font__size--base: 100%;
+@font__size--body: calc(12px + 1vw);
+@font__size--h1: 1.912em;
+@font__size--h2: 1.616em;
+@font__size--h3: 1.471em;
+@font__size--h4: 1.3em;
+@font__size--h5:  1.243em;
+@font__size--h6:  1.132em;
+@font__size--p: 1em;
+@font__size--footer: @font__size--p;
+@font__size--button: @font__size--h3;
+
 @font__weight--header: 400;
+@font__weight--subHeader: 400;
 @font__weight--p: 200;
-@font__size--button: 2rem;
+
+// Baseline & Rythem
+@lineHeight--base: 1.4;
+@rythem--standard: 1.4rem;
 
 // Margins & Paddings:
-@paragraph__margin--overUnder: 2rem;
+@padding__content: {
+    p1: 0 @rythem--standard;
+    p2: 0 2.5%;
+    p3: 0 5%;
+    p4: 0 7.5%;
+    p5: 0 10%;
+    p6: 0 12.5%;
+    p7: 0 15%;
+}
 
-@padding__content--sides1: 0 5%;
-@padding__content--sides2: 0 5%;
-@padding__content--sides3: 0 10%;
-@padding__content--sides4: 0 10%;
-
-@padding__elements--around: 2rem;
-@padding__button: 0.75rem 1.5rem;
-@margin__button: 1rem 2rem 1rem 0;
+@padding__elements--around: @rythem--standard;
+@padding__button: @rythem--standard;
+@margin__button: (@rythem--standard / 2) 0;
 
 // Width & Height:
-@width--full: 100%;
-@width--threeQuarters: 75%;
-@width--half: 50%;
-@width--quarter: 25%;
-
-@innerWidth--1: 90%;
-@innerWidth--2: 80%;
-@innerWidth--3: 70%;
-@innerWidth--4: 60%;
+@width: {
+    full: 100%;
+    w90: 90%;
+    w80: 80%;
+    threeQuarters: 75%;
+    w70: 70%;
+    w60: 60%;
+    half: 50%;
+    w40: 40%;
+    w30: 30%;
+    quarter: 25%;
+    w20: 20%;
+    w10: 10%;
+}
 
 @header--height: 30rem;
-@button__multi--width: @width--full;
-
-// Min & Max WIDTH for Media Queries: 
-@minWidth--phonePortrait: 1px;
-@maxWidth--phonePortrait: 600px;
-@minWidth--phoneLandscape: 600px;
-@maxWidth--phoneLandscape: 840px;
-@minWidth--tabletPortrait: 840px;
-@maxWidth--tabletPortrait: 960px;
-@minWidth--desktopSmall: 960px;
-@maxWidth--desktopSmall: 1280px;
-@minWidth--desktopLarge: 1280px;
-@maxWidth--desktopLarge: 1000000px;
+@button__multi--width: @width[full];
 
 // Animation(time, etc.):
 @animation__time: 0.25s;
+@animation__time--click: 0.125s;
 
 // Borders:
 @border__radius: 0.3rem;
@@ -74,3 +92,60 @@
 
 // Images:
 @image--width: 30rem;
+
+
+// Modular size scale for fonts
+@a: 1em;
+@a: 1.073em;
+@a: 1.132em;
+@a: 1.3em;
+@a: 1.395em;
+@a: 1.471em;
+@a: 1.69em;
+@a: 1.814em;
+@a: 1.912em;
+
+@modularScale--small: {
+    h1: 3.911rem;
+    h2: 2.941rem;
+    h3: 2.211rem;
+    h4: 1.663rem;
+    p: 1.25rem;
+}
+  
+@modularScale--medium: {
+    h1: 3.911rem;
+    h2: 2.941rem;
+    h3: 2.211rem;
+    h4: 1.663rem;
+    p: 1.25rem;
+}
+  
+@modularScale--large: {
+    h1: 3.911rem;
+    h2: 2.941rem;
+    h3: 2.211rem;
+    h4: 1.663rem;
+    p: 1.25rem;
+}
+  
+@screenMin: {
+    mobilePortrait: 1em;
+    mobileLandscape: 20em;
+    tabletPortrait: 37.5em;
+    tabletLandscape: 45em;
+    desktopSmall: 52.5em;
+    desktopMedium: 64em;
+    desktopLarge: 80em;
+}
+  
+@screenMax: {
+    mobilePortrait: 20em;
+    mobileLandscape: 37.5em;
+    tabletPortrait: 45em;
+    tabletLandscape: 52.5em;
+    desktopSmall: 64em;
+    desktopMedium: 80em;
+    desktopLarge: 250em;
+}
+  

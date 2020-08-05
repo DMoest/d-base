@@ -18,5 +18,7 @@
             <p class="site__footer--pageLoader">Page load time: <?= getPageLoadTime() ?>ms.</p>
         </p>
     </footer>
+
+    <script type="text/javascript" src="js/viewPortSize.js"></script>
 </body>
 </html>

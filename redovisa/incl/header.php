@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Cascading Stylesheet -->
-    <link rel="stylesheet" href="css/lib/css/style.css">
+    <link rel="stylesheet" href="css/lib/style.min.css">
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Pacifico&family=Rowdies:wght@300&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png"/>
     <!-- Title -->

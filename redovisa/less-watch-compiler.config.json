@@ -1,7 +1,8 @@
 {
     "allowedExtensions":[".less"],
-    "minified": false,
+    "minified": true,
     "sourceMap": false,
+    "mainFile": "style.less",
     "watchFolder": "css/lib/less",
-    "outputFolder": "css/lib/css"
+    "outputFolder": "css/lib"
 }

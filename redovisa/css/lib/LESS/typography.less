@@ -10,38 +10,222 @@
 
 
 html {
-    overflow: auto;
-    width: 100vw;
-    font-family: 'Roboto Slab', serif;
-    font-size: 100%;
+    font-size: @font__size--base;
 
     body {
-        font-size: @font__size--p;
+        font-family: @font__family[paragraph];
+        font-size: @font__size--body;
+        line-height: @lineHeight--base;
         color: @color__font--dark;
+        
+        // // RESPONSIVE:
+        // .responsive(@screenMin[mobilePortrait], @screenMin[mobilePortrait], {
+        //     h1 {
+        //         font-family: @font__family[header];
+        //         font-size: @modularScale--small[h1];
+        //         font-weight: @font__weight--header;
+        //     }
+            
+        //     h2 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--small[h2];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h3 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--small[h3];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h4 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--small[h4];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     p {
+        //         font-family: @font__family[paragraph];
+        //         font-size: @modularScale--small[p];
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
+        
+        // .responsive(@screenMin[mobileLandscape], @screenMin[mobileLandscape], {
+        //     h1 {
+        //         font-family: @font__family[header];
+        //         font-size: @modularScale--small[h1];
+        //         font-weight: @font__weight--header;
+        //     }
+            
+        //     h2 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--small[h2];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h3 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--small[h3];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h4 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--small[h4];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     p {
+        //         font-family: @font__family[paragraph];
+        //         font-size: @modularScale--small[p];
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
+        
+        // .responsive(@screenMin[tabletPortrait], @screenMin[tabletPortrait], {
+        //     h1 {
+        //         font-family: @font__family[header];
+        //         font-size: @modularScale--medium[h1];
+        //         font-weight: @font__weight--header;
+        //     }
+            
+        //     h2 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--medium[h2];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h3 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--medium[h3];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h4 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--medium[h4];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     p {
+        //         font-family: @font__family[paragraph];
+        //         font-size: @modularScale--medium[p];
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
 
-        h1 {
-            font-size: @font__size--h1;
-            font-weight: @font__weight--header;
-        }
+        // .responsive(@screenMin[tabletLandscape], @screenMin[tabletLandscape], {
+        //     h1 {
+        //         font-family: @font__family[header];
+        //         font-size: @modularScale--medium[h1];
+        //         font-weight: @font__weight--header;
+        //     }
+            
+        //     h2 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--medium[h2];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h3 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--medium[h3];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     h4 {
+        //         font-family: @font__family[subHeader];
+        //         font-size: @modularScale--medium[h4];
+        //         font-weight: @font__weight--subHeader;
+        //     }
+    
+        //     p {
+        //         font-family: @font__family[paragraph];
+        //         font-size: @modularScale--medium[p];
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
 
-        h2 {
-            font-size: @font__size--h2;
-            font-weight: @font__weight--header;
-        }
+        // .responsive(@screenMin[desktopSmall], @screenMin[desktopSmall], {
+        //     h1 {
+        //         font-size: @font__size--h1;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h2 {
+        //         font-size: @font__size--h2;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h3 {
+        //         font-size: @font__size--h3;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h4 {
+        //         font-size: @font__size--h4;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     p {
+        //         font-size: @font__size--p;
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
 
-        h3 {
-            font-size: @font__size--h3;
-            font-weight: @font__weight--header;
-        }
+        // .responsive(@screenMin[desktopMedium], @screenMin[desktopMedium], {
+        //     h1 {
+        //         font-size: @font__size--h1;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h2 {
+        //         font-size: @font__size--h2;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h3 {
+        //         font-size: @font__size--h3;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h4 {
+        //         font-size: @font__size--h4;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     p {
+        //         font-size: @font__size--p;
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
 
-        h4 {
-            font-size: @font__size--h4;
-            font-weight: @font__weight--header;
-        }
-
-        p {
-            font-size: @font__size--p;
-            font-weight: @font__weight--p;
-        }
+        // .responsive(@screenMin[desktopLarge], @screenMin[desktopLarge], {
+        //     h1 {
+        //         font-size: @font__size--h1;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h2 {
+        //         font-size: @font__size--h2;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h3 {
+        //         font-size: @font__size--h3;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     h4 {
+        //         font-size: @font__size--h4;
+        //         font-weight: @font__weight--header;
+        //     }
+    
+        //     p {
+        //         font-size: @font__size--p;
+        //         font-weight: @font__weight--p;
+        //     }
+        // });
     }
 }

@@ -9,10 +9,12 @@
 
 .navbar__button {
     &--NB {
+        overflow: hidden;
         display: inline-block;
-        width: @width--full;
-        padding: @padding__button;
-        margin: @margin__button;
+        width: @width[full];
+        height: auto;
+        padding: (@rythem--standard / 2);
+        margin: 0 (@rythem--standard / 2);
         font-size: @font__size--button;
         text-decoration: none;
         text-align: center;
@@ -28,9 +30,9 @@
             background-color: @color__white;
         }
 
-        // &:active {
-
-        // }
+        &:active {
+            .button--click();
+        }
     }
 
     &--selected {
@@ -40,7 +42,8 @@
     
     &--multi {
         display: inline-block;
-        width: @width--full;
+        width: @width[full];
+        padding: (@rythem--standard / 2);
         transition: all @animation__time;
         text-decoration: none;
         text-align: center;
@@ -64,5 +67,6 @@
             background-color: @color__primary--standard;
             .bordered--primary();
         }
+
     }
 };

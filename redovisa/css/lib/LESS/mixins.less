@@ -29,6 +29,35 @@
     border: @border__thinckness solid @color__primary--light;
 }
 
+.fontSize(@rules) {
+    @media only screen and (min-width: @screenMin[mobilePortrait]) and (max-width: @screenMax[mobilePortrait]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[mobileLandscape]) and (max-width: @screenMax[mobileLandscape]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[tabletPortrait]) and (max-width: @screenMax[tabletPortrait]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[desktopSmall]) and (max-width: @screenMax[desktopSmall]) {
+        @rules();
+    }
+
+    @media only screen and (min-width: @screenMin[desktopMedium]) and (max-width: @screenMax[desktopMedium]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[desktopLarge]) and (max-width: @screenMax[desktopLarge]) {
+        @rules();
+    }
+}
 
 
 // --------------------------------------------------
@@ -49,27 +78,37 @@
 
 .breakpoint(@point) {
     // --- MOBILE DEVICES (portrait):
-    & when (@point = phone--portrait){
-        @media (max-width: 600px) { @content(); }
+    & when (@point = mobilePortrait){
+        @media (max-width: @screenMax[mobilePortrait]) { @content(); }
     }
 
     // --- MOBILE DEVICES (landscape):
-    & when (@point = phone--landscape) {
-        @media (min-width: 601px) and (max-width: 840px) { @content(); }
+    & when (@point = mobileLandscape) {
+        @media (min-width: @screenMax[mobileLandscape]) and (max-width: @screenMax[mobileLandscape]) { @content(); }
     }
 
     // --- TABLET DEVICES (protrait):
-    & when (@point = tablet--portrait) {
-        @media (min-width: 841px) and (max-width: 960px) { @content(); }
+    & when (@point = tabletPortrait) {
+        @media (min-width: @screenMax[tabletPortrait]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
     }
 
     // --- TABLET DEVICES(landscape) & DESKTOP(small/mid size):
-    & when (@point = desktop--mid) {
-        @media (min-width: 961px) and (max-width: 1280px) { @content(); }
+    & when (@point = tabletLandscape) {
+        @media (min-width: @screenMax[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
     }
 
-    // --- DESKTOP DEVICES (full size):
-    & when (@point = desktop--large) {
-        @media (min-width: 1281px) { @content(); }
+    // --- DESKTOP DEVICES (small size):
+    & when (@point = desktopSmall) {
+        @media (min-width: @screenMax[desktopSmall]) and (max-width: @screenMax[desktopSmall]) { @content(); }
     }
-  } 
+    
+    // --- DESKTOP DEVICES (medium size):
+    & when (@point = desktopMedium) {
+        @media (min-width: @screenMax[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
+    }
+    
+    // --- DESKTOP DEVICES (large size):
+    & when (@point = desktopLarge) {
+        @media (min-width: @screenMax[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
+    }
+}

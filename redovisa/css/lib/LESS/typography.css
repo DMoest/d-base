@@ -1,7 +1,12 @@
 /**
  * Redovisningssidan
  * Daniel Andersson (daap19)
- * Module: header
+ * Module: typography
+*/
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
 */
 /**
  * Redovisningssidan
@@ -25,18 +30,12 @@
   background-color: #46bddb;
   border: 0.05rem solid #46bddb;
 }
-.site__header--outer {
-  display: block;
-  width: 100%;
-  height: 30rem;
+html {
+  font-size: 100%;
 }
-.site__header--outer .cover__image {
-  width: 100vw;
-  height: 30rem;
-  position: absolute;
-  background: url(../../img/bg_image-5.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -100;
+html body {
+  font-family: 'Antic Slab', serif;
+  font-size: calc(12px + 1vw);
+  line-height: 1.4;
+  color: #333;
 }

@@ -3,6 +3,11 @@
  * Daniel Andersson (daap19)
  * Module: mixins
 */
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: variables
+*/
 .bordered--light {
   border: 0.05rem solid #f5f5f5;
   border-radius: 0.3rem;

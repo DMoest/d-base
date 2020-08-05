@@ -9,45 +9,46 @@
 
 
 
-* {
+*,
+*:before,
+*:after {
     overflow-x: hidden;
-    box-sizing: border-box;
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
 
 html {
     overflow: auto;
-    width: 100vw;
+    box-sizing: border-box;
+    width: 100%;
 
     body {
-        overflow: auto;
-        width: 100%;
+        overflow: hidden;
+        width: @width[full];
+        margin: 0;
         background-color: @color__white;
+
+
 
         h1 {
             overflow: auto;
-            padding: @font__size--h1 0;
         }
 
         h2 {
             overflow: auto;
-            padding: @font__size--h2 0;
         }
 
         h3 {
             overflow: auto;
-            padding: @font__size--h3 0;
         }
 
         h4 {
             overflow: auto;
-            padding: @font__size--h4 0;
         }
 
         p {
             overflow: auto;
-            padding: (@font__size--p / 2) 0;
         }
     }
 }

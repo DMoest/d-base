@@ -1,0 +1,48 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: content
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+.content {
+
+    &__report,
+    &__me,
+    &__about {
+        width: @width[full];
+
+        // RESPONSIVE:
+        .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+            padding: @padding__content[p1];
+        });
+
+        .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
+            padding: @padding__content[p2];
+        });
+        
+        .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+            padding: @padding__content[p3];
+        });
+        
+        .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+            padding: @padding__content[p3];
+        });
+
+        .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+            padding: @padding__content[p5];
+        });
+
+        .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+            padding: @padding__content[p6];
+        });
+
+        .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+            padding: @padding__content[p7];
+        });
+    }
+}

@@ -1,0 +1,133 @@
+/**
+ * Redovisningssidan
+ * Daniel Andersson (daap19)
+ * Module: byline
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+.site__byline {
+    &--outer {
+        display: block;
+        margin: @rythem--standard auto;
+
+        // RESPONSIVE:
+        .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+            width: @width[full];
+            padding: @padding__content[p1];
+        });
+        
+        .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
+            width: @width[full];
+            padding: @padding__content[p2];
+        });
+        
+        .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+            width: @width[full];
+            padding: @padding__content[p3];
+        });
+        
+        .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+            width: @width[full];
+            padding: @padding__content[p4];
+        });
+        
+        .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+            width: @width[full];
+            padding: @padding__content[p5];
+            text-align: left;
+        });
+        
+        .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+            width: @width[full];
+            padding: @padding__content[p6];
+            text-align: left;
+        });
+        
+        .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+            width: @width[full];
+            padding: @padding__content[p7];
+            text-align: left;
+        });
+    }
+
+    &--inner {
+        display: flex;
+        width: @width[full];
+        padding: @rythem--standard;
+        .bordered--dark();
+
+        figure {
+            display: block;
+            width: @width[full];
+            padding: @padding__elements--around;
+            text-align: center;
+
+            figcaption {
+                text-align: center;
+                font-size: @font__size--p;
+                font-weight: @font__weight--p;
+                height: auto;
+                overflow-y: hidden;
+            }
+
+            .image__byline {
+                border-radius: 50%;
+            }
+        }
+
+        &--text {
+            display: inline-block;
+            width: @width[full];
+            padding: @padding__elements--around;
+        }
+
+        // RESPONSIVE:
+        .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+        flex-direction: column;
+
+            &--text {
+                display: block;
+            }
+        });
+
+        .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
+            flex-direction: row;
+
+            &--text {
+                display: block;
+            }
+        });
+
+        .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+            flex-direction: row;
+
+            &--text {
+                display: inline-block;
+            }
+        });
+
+        .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+            flex-direction: row;
+
+            &--text {
+                display: inline-block;
+            }
+        });
+
+        .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+            flex-direction: row;
+        });
+
+        .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+            flex-direction: row;
+        });
+
+        .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+            flex-direction: row;
+        });
+    }
+}
