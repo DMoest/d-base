@@ -138,10 +138,10 @@ let teachers = {
 
     minMaxSearch: async function(searchMin, searchMax) {
         const db = await mysql.createConnection(config);
-    
+
         console.info(`Searching with min-value: ${searchMin}`);
         console.info(`Searching with max-value: ${searchMax}`);
-    
+
         // ? is placeholders.
         let sql = `
             SELECT
@@ -161,7 +161,7 @@ let teachers = {
                 AND kompetens <= ?)
             ORDER BY lon DESC;
         `;
-    
+
         let res = await db.query(sql, [searchMin, searchMax, searchMin, searchMax]);
 
         // console.info(myFunctions.teachersAsTable(res));

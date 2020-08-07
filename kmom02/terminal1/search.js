@@ -12,8 +12,8 @@
 const mysql = require("promise-mysql");
 const config = require("./config.json");
 let myFunctions = require("./functions.js");
-const question = myFunctions.makePromise(rl);
 let rl = myFunctions.readCommandLine();
+const question = myFunctions.makePromise(rl);
 
 /**
  * Main function

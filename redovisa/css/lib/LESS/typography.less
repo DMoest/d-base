@@ -10,222 +10,290 @@
 
 
 html {
-    font-size: @font__size--base;
+
+    @font-face {
+        font-family: arial;
+        font-style: normal;
+        font-display: swap;
+        src: url('fonts/Arial Unicode.ttf');
+    }
+
+
+    .wf-active .site__title,
+    .wf-active .site__slogan,
+    .wf-active body h1,
+    .wf-active body h2,
+    .wf-active body h3,
+    .wf-active body h4,
+    .wf-active body h5,
+    .wf-active body h6,
+    .wf-active body p {
+        font-family: "Pacifico, Roboto Condenced, Josefin Sans, Arial";
+    }
+
+    font-size: @font__size[base];
 
     body {
         font-family: @font__family[paragraph];
         font-size: @font__size--body;
+        font-weight: @font__weight[standard];
         line-height: @lineHeight--base;
+        font-kerning: normal;
+        font-variant-ligatures: common-ligatures contextual;
+        font-feature-settings: "kern", "liga", "clig", "calt";
+        font-style: normal;
+        font-display: swap;
         color: @color__font--dark;
+
+        h1 {
+            font-family: @font__family[header];
+            font-weight: @font__weight[header];
+            padding-bottom: (2 * @rythem--standard);
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: @font__family[subHeader];
+            font-weight: @font__weight[subHeader];
+            padding-bottom: @rythem--standard;
+        }
+
+        p {
+            font-family: @font__family[paragraph];
+            font-weight: @font__weight[paragraph];
+            padding-bottom: @rythem--standard;
+        }
+
+        .site__title {
+            font-family: @font__family[title];
+            font-size: @font__size[title];
+        }
         
-        // // RESPONSIVE:
-        // .responsive(@screenMin[mobilePortrait], @screenMin[mobilePortrait], {
-        //     h1 {
-        //         font-family: @font__family[header];
-        //         font-size: @modularScale--small[h1];
-        //         font-weight: @font__weight--header;
-        //     }
-            
-        //     h2 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--small[h2];
-        //         font-weight: @font__weight--subHeader;
-        //     }
-    
-        //     h3 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--small[h3];
-        //         font-weight: @font__weight--subHeader;
-        //     }
-    
-        //     h4 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--small[h4];
-        //         font-weight: @font__weight--subHeader;
-        //     }
-    
-        //     p {
-        //         font-family: @font__family[paragraph];
-        //         font-size: @modularScale--small[p];
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
+        .site__slogan {
+            font-family: @font__family[slogan];
+            font-size: @font__size[slogan];
+        }
+
         
-        // .responsive(@screenMin[mobileLandscape], @screenMin[mobileLandscape], {
-        //     h1 {
-        //         font-family: @font__family[header];
-        //         font-size: @modularScale--small[h1];
-        //         font-weight: @font__weight--header;
-        //     }
+        // RESPONSIVE
+        .responsive(@screenMin[mobilePortrait], @screenMin[mobilePortrait], {
+            h1 {
+                font-size: @font__size--S[h1];
+                font-weight: @font__weight--header;
+            }
             
-        //     h2 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--small[h2];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h3 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--small[h3];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h3];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h4 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--small[h4];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h4];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     p {
-        //         font-family: @font__family[paragraph];
-        //         font-size: @modularScale--small[p];
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--S[p];
+                font-weight: @font__weight--p;
+            }
+        });
         
-        // .responsive(@screenMin[tabletPortrait], @screenMin[tabletPortrait], {
-        //     h1 {
-        //         font-family: @font__family[header];
-        //         font-size: @modularScale--medium[h1];
-        //         font-weight: @font__weight--header;
-        //     }
+        .responsive(@screenMin[mobileLandscape], @screenMin[mobileLandscape], {
+            h1 {
+                font-size: @font__size--S[h1];
+                font-weight: @font__weight--header;
+            }
             
-        //     h2 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--medium[h2];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h3 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--medium[h3];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h3];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h4 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--medium[h4];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h4];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     p {
-        //         font-family: @font__family[paragraph];
-        //         font-size: @modularScale--medium[p];
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
-
-        // .responsive(@screenMin[tabletLandscape], @screenMin[tabletLandscape], {
-        //     h1 {
-        //         font-family: @font__family[header];
-        //         font-size: @modularScale--medium[h1];
-        //         font-weight: @font__weight--header;
-        //     }
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--S[p];
+                font-weight: @font__weight--p;
+            }
+        });
+        
+        .responsive(@screenMin[tabletPortrait], @screenMin[tabletPortrait], {
+            h1 {
+                font-size: @font__size--S[h1];
+                font-weight: @font__weight--header;
+            }
             
-        //     h2 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--medium[h2];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h3 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--medium[h3];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h3];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h4 {
-        //         font-family: @font__family[subHeader];
-        //         font-size: @modularScale--medium[h4];
-        //         font-weight: @font__weight--subHeader;
-        //     }
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h4];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     p {
-        //         font-family: @font__family[paragraph];
-        //         font-size: @modularScale--medium[p];
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--S[p];
+                font-weight: @font__weight--p;
+            }
+        });
 
-        // .responsive(@screenMin[desktopSmall], @screenMin[desktopSmall], {
-        //     h1 {
-        //         font-size: @font__size--h1;
-        //         font-weight: @font__weight--header;
-        //     }
+        .responsive(@screenMin[tabletLandscape], @screenMin[tabletLandscape], {
+            h1 {
+                font-size: @font__size--M[h1];
+                font-weight: @font__weight--header;
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h2 {
-        //         font-size: @font__size--h2;
-        //         font-weight: @font__weight--header;
-        //     }
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h3];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h3 {
-        //         font-size: @font__size--h3;
-        //         font-weight: @font__weight--header;
-        //     }
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h4];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h4 {
-        //         font-size: @font__size--h4;
-        //         font-weight: @font__weight--header;
-        //     }
-    
-        //     p {
-        //         font-size: @font__size--p;
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--M[p];
+                font-weight: @font__weight--p;
+            }
+        });
 
-        // .responsive(@screenMin[desktopMedium], @screenMin[desktopMedium], {
-        //     h1 {
-        //         font-size: @font__size--h1;
-        //         font-weight: @font__weight--header;
-        //     }
+        .responsive(@screenMin[desktopSmall], @screenMin[desktopSmall], {
+            h1 {
+                font-size: @font__size--M[h1];
+                font-weight: @font__weight--header;
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h2 {
-        //         font-size: @font__size--h2;
-        //         font-weight: @font__weight--header;
-        //     }
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h3];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h3 {
-        //         font-size: @font__size--h3;
-        //         font-weight: @font__weight--header;
-        //     }
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h4];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h4 {
-        //         font-size: @font__size--h4;
-        //         font-weight: @font__weight--header;
-        //     }
-    
-        //     p {
-        //         font-size: @font__size--p;
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--M[p];
+                font-weight: @font__weight--p;
+            }
+        });
 
-        // .responsive(@screenMin[desktopLarge], @screenMin[desktopLarge], {
-        //     h1 {
-        //         font-size: @font__size--h1;
-        //         font-weight: @font__weight--header;
-        //     }
+        .responsive(@screenMin[desktopMedium], @screenMin[desktopMedium], {
+            h1 {
+                font-size: @font__size--L[h1];
+                font-weight: @font__weight--header;
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h2 {
-        //         font-size: @font__size--h2;
-        //         font-weight: @font__weight--header;
-        //     }
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h3];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h3 {
-        //         font-size: @font__size--h3;
-        //         font-weight: @font__weight--header;
-        //     }
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h4];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     h4 {
-        //         font-size: @font__size--h4;
-        //         font-weight: @font__weight--header;
-        //     }
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--L[p];
+                font-weight: @font__weight--p;
+            }
+        });
+
+        .responsive(@screenMin[desktopLarge], @screenMin[desktopLarge], {
+            h1 {
+                font-size: @font__size--L[h1];
+                font-weight: @font__weight--header;
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h2];
+                font-weight: @font__weight--subHeader;
+            }
     
-        //     p {
-        //         font-size: @font__size--p;
-        //         font-weight: @font__weight--p;
-        //     }
-        // });
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h3];
+                font-weight: @font__weight--subHeader;
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h4];
+                font-weight: @font__weight--subHeader;
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--L[p];
+                font-weight: @font__weight--p;
+            }
+        });
     }
 }

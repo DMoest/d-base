@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=2,0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Web Font Loader -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script type="text/javascript" src="js/fontLoader.js"></script>
+
     <!-- Cascading Stylesheet -->
     <link rel="stylesheet" href="css/lib/style.min.css">
+
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Pacifico&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;1,300&family=Pacifico&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png"/>
+
     <!-- Title -->
     <title><?= $title ?></title>
 </head>
@@ -26,4 +33,4 @@
         </div>
     </header>
 
-<?php include __DIR__ . "/navbar.php" ?>
+<?php include __DIR__ . "/navigation.php" ?>

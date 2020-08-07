@@ -11,7 +11,6 @@
 module.exports = {
     "readCommandLine": readCommandLine,
     "makePromise": makePromise,
-    "searchMinMax": searchMinMax,
     "teachersAsTable": teachersAsTable,
     "teachersCompetenceAsTable": teachersCompetenceAsTable,
     "teachersSalariesAsTable": teachersSalariesAsTable
@@ -51,52 +50,6 @@ function makePromise(rl) {
     const question = util.promisify(rl.question);
 
     return question;
-}
-
-
-
-/* -------------------- QUERIES -------------------- */
-/**
- * Output result as formatted table from search.
- * Searching for a min/max spectrum in the salary column.
- * @async
- * @param {connection}  db - The database connection.
- * @param {string}      search String.
- * @returns {string}    Table to print, formatted.
- */
-async function searchMinMax(db, searchMin, searchMax) {
-    let sql;
-    let res;
-    let str;
-    /* eslint-disable */
-    let likeMin = `%${searchMin}%`;
-    let likeMax = `%${searchMax}%`;
-    /* eslint-enable */
-
-    console.info(`Searching with min-value: ${searchMin}`);
-    console.info(`Searching with max-value: ${searchMax}`);
-
-    // ? is placeholders.
-    sql = `
-        SELECT
-            akronym,
-            fornamn,
-            efternamn,
-            avdelning,
-            lon,
-            kompetens,
-            fodd
-        FROM larare
-        GROUP BY akronym
-        HAVING
-            (lon >= ?
-            AND lon <= ?)
-        ORDER BY lon DESC;
-    `;
-
-    res = await db.query(sql, [searchMin, searchMax]);
-    str = teachersAsTable(res);
-    return str;
 }
 
 

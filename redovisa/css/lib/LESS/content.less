@@ -15,34 +15,42 @@
     &__me,
     &__about {
         width: @width[full];
+        padding-bottom: (@rythem--standard * 2);
 
-        // RESPONSIVE:
+        // RESPONSIVE
         .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
             padding: @padding__content[p1];
+            padding-bottom: (@rythem--standard * 2);
         });
 
         .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
             padding: @padding__content[p2];
+            padding-bottom: (@rythem--standard * 2);
         });
         
         .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
             padding: @padding__content[p3];
+            padding-bottom: (@rythem--standard * 2);
         });
         
         .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
-            padding: @padding__content[p3];
+            padding: @padding__content[p4];
+            padding-bottom: (@rythem--standard * 2);
         });
 
         .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
-            padding: @padding__content[p5];
+            padding: @padding__content[p4];
+            padding-bottom: (@rythem--standard * 2);
         });
 
         .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
-            padding: @padding__content[p6];
+            padding: @padding__content[p5];
+            padding-bottom: (@rythem--standard * 2);
         });
 
         .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
-            padding: @padding__content[p7];
+            padding: @padding__content[p6];
+            padding-bottom: (@rythem--standard * 2);
         });
     }
 }

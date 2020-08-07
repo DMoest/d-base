@@ -23,7 +23,7 @@ button {
 }
 
 div,
-.navbar,
+.navigation,
 #header,
 input[type="input"] {
     font-family: "Helvetica Neue", Arial, sans-serif;

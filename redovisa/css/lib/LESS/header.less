@@ -43,10 +43,10 @@
 
         .site__title {
             display: block;
-            color: @color__font--light;
-            font-size: @font__size--h1;
-            font-family: @font__family[header];
             padding-bottom: (2 * @rythem--standard);
+            font-family: font__family[title];
+            font-size: @font__size--h1;
+            color: @color__font--light;
         }
 
         .site__slogan {
@@ -56,7 +56,7 @@
             color: @color__font--light;
         }
 
-        // RESPONSIVE:
+        // RESPONSIVE
         .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
             padding: @padding__content[p1];
 
@@ -112,7 +112,7 @@
         });
 
         .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
-            padding: @padding__content[p5];
+            padding: @padding__content[p4];
 
             .site__logo {
                 display: inline-block;
@@ -125,7 +125,7 @@
         });
 
         .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
-            padding: @padding__content[p6];
+            padding: @padding__content[p5];
 
             .site__logo {
                 display: inline-block;
@@ -138,7 +138,7 @@
         });
 
         .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
-            padding: @padding__content[p7];
+            padding: @padding__content[p6];
 
             .site__logo {
                 display: inline-block;

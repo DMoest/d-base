@@ -7,19 +7,20 @@
 @import "variables.less";
 @import "mixins.less";
 
-.navbar__button {
+.navigation__button {
     &--NB {
         overflow: hidden;
         display: inline-block;
         width: @width[full];
         height: auto;
         padding: (@rythem--standard / 2);
-        margin: 0 (@rythem--standard / 2);
         font-size: @font__size--button;
         text-decoration: none;
         text-align: center;
+        text-justify: center;
         text-transform: uppercase;
-        transition: all @animation__time;
+        vertical-align: baseline;
+        transition: all @animation[hover];
         color: @color__font--light;
         background-color: @color__grey--dark;
         cursor: pointer;
@@ -43,8 +44,7 @@
     &--multi {
         display: inline-block;
         width: @width[full];
-        padding: (@rythem--standard / 2);
-        transition: all @animation__time;
+        transition: all @animation[hover];
         text-decoration: none;
         text-align: center;
         text-transform: uppercase;
@@ -67,6 +67,67 @@
             background-color: @color__primary--standard;
             .bordered--primary();
         }
+        
+        // RESPONSIVE
+        .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+            letter-spacing: -1.5px;
+            padding: @padding__button[small];
+        });
 
+        .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
+            letter-spacing: -1.5px;
+            padding: @padding__button[small];
+        });
+
+        .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+            letter-spacing: -1px;
+            padding: @padding__button[medium];
+        });
+
+        .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+            letter-spacing: -1px;
+            padding: @padding__button[medium];
+        });
+
+        .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+            letter-spacing: normal;
+            padding: @padding__button[medium];
+        });
+
+        .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+            letter-spacing: normal;
+            padding: @padding__button[medium];
+        });
+
+        .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+            letter-spacing: normal;
+            padding: @padding__button[large];
+        });
+    }
+
+    &--footer {
+        width: @width[full];
+        margin: (@rythem--standard / 4) auto;
+        padding: (@rythem--standard / 4) @rythem--standard;
+        display: inline-block;
+        transition: all @animation[hover];
+        font-size: @font__size[footer];
+        font-size: @font__weight[button];
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: @color__primary--standard;
+        background-color: @color__grey--dark;
+        .bordered--primary();
+        border-radius: @border[radiusFull];
+
+        &:hover {
+            .button--hover();
+        }
+
+        &:active,
+        &:focus {
+            .button--click();
+        }
     }
 };

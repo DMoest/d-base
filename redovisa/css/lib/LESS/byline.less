@@ -12,41 +12,41 @@
 .site__byline {
     &--outer {
         display: block;
-        margin: @rythem--standard auto;
+        margin: @rythem--standard auto (@rythem--standard * 2);
 
-        // RESPONSIVE:
+        // RESPONSIVE
         .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
             width: @width[full];
             padding: @padding__content[p1];
         });
-        
+
         .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
             width: @width[full];
             padding: @padding__content[p2];
         });
-        
+
         .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
             width: @width[full];
             padding: @padding__content[p3];
         });
-        
+
         .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
             width: @width[full];
             padding: @padding__content[p4];
         });
-        
+
         .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
             width: @width[full];
             padding: @padding__content[p5];
             text-align: left;
         });
-        
+
         .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
             width: @width[full];
             padding: @padding__content[p6];
             text-align: left;
         });
-        
+
         .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
             width: @width[full];
             padding: @padding__content[p7];
@@ -82,12 +82,12 @@
         &--text {
             display: inline-block;
             width: @width[full];
-            padding: @padding__elements--around;
+            padding: @rythem--standard
         }
 
-        // RESPONSIVE:
+        // RESPONSIVE
         .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
-        flex-direction: column;
+            flex-direction: column;
 
             &--text {
                 display: block;

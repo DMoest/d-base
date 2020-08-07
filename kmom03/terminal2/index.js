@@ -22,6 +22,7 @@ const teachers = require("./teachers.js");
         output: process.stdout
     });
 
+    showWelcomeText();
     rl.setPrompt("Please choose something: ");
     rl.prompt();
 
@@ -65,7 +66,7 @@ const teachers = require("./teachers.js");
                 await teachers.makeSearch(lineArray[1]);
                 break;
             case "minMaxSalary":
-            case "minMaxSok":
+            case "minMaxLon":
             case "mms": // fast/short -key.
                 await teachers.minMaxSearch(lineArray[1], lineArray[2]);
                 break;
@@ -88,17 +89,32 @@ const teachers = require("./teachers.js");
 /**
  * MENU for the CommandLineLoop
  */
+
+function showWelcomeText() {
+    console.info(`
+    * ============================================================ *
+    |  Welcome to the terminal commanline loop!                    |
+    |  For options available simply use 'menu' or 'help' (m / h).  |
+    * ============================================================ *
+    `);
+}
+
+
+
+/**
+ * MENU for the CommandLineLoop
+ */
 function showMenu() {
     console.info(`
         *** MENU ***
 
         Menu, Help (m / h):                             Show this menu.
         Exit, Quit (q):                                 Quit the program.
-        Teachers (t):                                   Show information about teachers.
-        Competence, Kompetens (c):                      Show teachers competence pre & post revision.
-        Salary, Lon (s):                                Show teachers salaries pre & post revision.
+        Teachers, Larare (t):                           Show information about teachers.
+        Competence, Kompetens (c):                      Show teachers competence pre/post revision.
+        Salary, Lon (s):                                Show teachers salaries pre/post revision.
         Newsalary, Nylon (ns) <akronym> <new salary>:   New salary for teacher.
         Search, Sok + <searchString>:                   Search for teachers.
-        SearchMinMax, SokMinMax (smm) <Min> <Max>:      Search for min/max salaries from teachers.
+        minMaxSalary, minMaxLon (mms) <Min> <Max>:      Search for min/max salaries from teachers.
     `);
 }

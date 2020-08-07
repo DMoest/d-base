@@ -9,7 +9,7 @@
 
 
 
-.navbar {
+.navigation {
     &--outer {
         display: block;
         overflow: hidden;
@@ -20,49 +20,56 @@
 
     &--inner {
         overflow: hidden;
-        display: flex;
         width: @width[full];
         margin: @rythem--standard 0;
+        display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
         background-color: transparent;
 
-        // RESPONSIVE:
-        .responsive(@screenMin[mobilePortrait], @screenMin[mobilePortrait], {
+        // RESPONSIVE
+        .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+            display: block;
             padding: @padding__content[p1];
+            gap: @flexGap[mobile];
             text-align: center;
-            visibility: hidden;
         });
 
         .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
             display: block;
             padding: @padding__content[p2];
+            gap: @flexGap[mobile];
             text-align: center;
         });
         
         .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
             padding: @padding__content[p3];
+            gap: @flexGap[mobile];
             text-align: left;
         });
 
         .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
             padding: @padding__content[p4];
+            gap: @flexGap[tablet];
             text-align: left;
         });
 
         .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
-            padding: @padding__content[p5];
+            padding: @padding__content[p4];
+            gap: @flexGap[tablet];
             text-align: left;
         });
 
         .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
-            padding: @padding__content[p6];
+            padding: @padding__content[p5];
+            gap: @flexGap[desktop_S];
             text-align: left;
         });
 
         .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
-            padding: @padding__content[p7];
+            padding: @padding__content[p6];
+            gap: @flexGap[desktop_L];
             text-align: left;
         });
     }
@@ -78,46 +85,47 @@
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-between;
-            gap: (@rythem--standard / 2);
 
             &Item {
                 display: inline-block;
+                width: @width[full];
+                text-align: center;
             }
 
-            // RESPONSIVE:
+            // RESPONSIVE
             .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
                 padding: @padding__content[p1];
-                text-align: center;
+                gap: @flexGap[mobile];
             });
 
             .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
                 padding: @padding__content[p2];
-                text-align: center;
+                gap: @flexGap[mobile];
             });
 
             .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
                 padding: @padding__content[p3];
-                text-align: left;
+                gap: @flexGap[mobile];
             });
 
             .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
                 padding: @padding__content[p4];
-                text-align: left;
+                gap: @flexGap[tablet];
             });
 
             .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
-                padding: @padding__content[p5];
-                text-align: left;
+                padding: @padding__content[p4];
+                gap: @flexGap[tablet];
             });
 
             .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
-                padding: @padding__content[p6];
-                text-align: left;
+                padding: @padding__content[p5];
+                gap: @flexGap[desktop_S];
             });
 
             .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
-                padding: @padding__content[p7];
-                text-align: left;
+                padding: @padding__content[p6];
+                gap: @flexGap[desktop_L];
             });
         }
     }
