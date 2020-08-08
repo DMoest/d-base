@@ -1,4 +1,4 @@
-# Om mig
+## Om mig
 
 ![Bild på mig](img/me.png#image__me)
 

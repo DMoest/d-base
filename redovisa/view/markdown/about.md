@@ -1,4 +1,4 @@
-# Om webbplatsen
+## Om webbplatsen
 
 Webbplatsen är en del av kursen [databasteknologier](https://dbwebb.se/kurser/databas-v1/). Kursen Databasteknologier för webben, a.k.a. databas, och syftet är att vi studenter ska förstå och lära oss modellera och implementera en databas samt utveckla en webbapplikation som använder databasen. Kursen går vid Blekinge Tekniska Högskola VT-20 och är 7,5hp. Som applikationsspråk används serverbaserad JavaScript i webbmiljö.
 
