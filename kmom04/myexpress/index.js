@@ -16,6 +16,8 @@ const app = express(); // Vi kör Express genom konstanten app.
 const indexRoutes = require("./routes/index.js"); // import av module för "routes" routes/index.js
 const path = require("path"); // Sökvägen.
 
+app.set("view engine", "ejs"); // Lägg till EJS som template motor.
+
 app.use(express.static(path.join(__dirname, "public"))); // Vi använder Express, vi använder en static metod där vi anger med en sökväg med mapnamnet och sökväg.
 
 // Middle wear ?
@@ -37,4 +39,3 @@ app.use("/", indexRoutes);
 app.listen(port, () => { // Lyssnar på port 1337.
     console.log("Server listening to port: " + port);
 });
- 

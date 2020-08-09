@@ -1,0 +1,39 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+    background-color: green;
+}
+
+nav {
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: lightgreen;
+    width: 100%;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+    padding: 5% 20%;
+    background-color: white;
+}
+
+a {
+    padding: 0 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+th {
+    padding: 5px;
+    color: white;
+    background-color: gray;
+}
+
+td {
+    padding: 5px;
+    background-color: lightgrey;
+}

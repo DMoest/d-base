@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<table>
+    <tr>
+        <th>Akronym</th><th>Avdelning</th><th>Förnamn</th><th>Efternamn</th>
+    </tr>
+    <% for (const teacher of all) { %>
+        <tr>
+            <td><%= teacher.akronym %></td>
+            <td><%= teacher.avdelning %></td>
+            <td><%= teacher.fornamn %></td>
+            <td><%= teacher.efternamn %></td>
+        </tr>
+        <% } %>
+    </table>
+
+<%- include("partials/footer.ejs") %>
