@@ -1,0 +1,30 @@
+body {
+    margin: 16px;
+    background-color: white;
+    width: 700px;
+}
+
+.table__account {
+    display: block;
+    width: 100%;
+    padding: 2rem 20%;
+    border: collapse;
+}
+
+.table__account--tableHeader {
+    width: 150px;
+    padding: 5px;
+    text-align: left;
+    background-color: orchid;
+}
+
+.table__account--tableRow {
+    background-color: lightgrey;
+}
+
+.table__accounts--tableData {
+    width: 150px;
+    padding: 5px;
+    background-color: white;
+    
+}

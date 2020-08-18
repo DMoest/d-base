@@ -1,0 +1,28 @@
+<%- include("header", {title:title}); %>
+
+<h1>Account balance</h1>
+
+<p>Here is the balance for the accounts.</p>
+
+<p><i>To output the content of the account table.</i></p>
+
+<p>
+    <a href="index">Index</a>
+</p>
+
+<table class="table__account">
+    <tr class="table__account--tableRow">
+        <th class="table__account--tableHeader">Id</th>
+        <th class="table__account--tableHeader">Name</th>
+        <th class="table__account--tableHeader">Balance</th>
+    </tr>
+    <% for (const row of res) { %>
+        <tr class="table__account--tableRow">
+            <td class="table__account--tableData"><%= row.id %></td>
+            <td class="table__account--tableData"><%= row.name %></td>
+            <td  class="table__account--tableData right"><%= row.balance %></td>
+        </tr>
+    <% }; %>
+</table>
+
+<%- include("footer"); %>
