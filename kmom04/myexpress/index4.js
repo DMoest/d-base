@@ -27,8 +27,9 @@ app.set("view engine", "ejs"); // Set template engine EJS.
 // Middleware takes three parameters.
 // Its callback ends with a call to next() to proceed to the next
 // middleware, or the actual route.
-app.use(middleware.logIncoming); 
-app.use(express.static(path.join(__dirname, "public"))); // Use EXPRESS, use a static method with path and folder name.
+app.use(middleware.logIncoming);
+// Use EXPRESS, use a static method with path and folder name.
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routeIndex);
 app.listen(port, logStartUpDetails);
 
@@ -41,8 +42,8 @@ function logStartUpDetails() {
     // Find supported routes:
     app._router.stack.forEach((middleware) => {
         if (middleware.route) {
-            routes.push(middleware.route); 
-        } else if(middleware.name === "router") {
+            routes.push(middleware.route);
+        } else if (middleware.name === "router") {
             // Router added as router middleware:
             middleware.handle.stack.forEach((handler) => {
                 let route;

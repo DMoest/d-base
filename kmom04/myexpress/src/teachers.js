@@ -31,11 +31,12 @@ async function getAll() {
     `;
 
     let res = await db.query(sql);
+
     // console.log(res); // Skriver ut objektet (rowDataPacket)
     return res;
 }
 
 module.exports = { // Exporterar objektet teachers
     "getAll": getAll
-    // teachers; 
+    // teachers;
 };

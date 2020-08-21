@@ -10,17 +10,13 @@
 
 "use strict";
 
-module.exports = {
-    showBalance: showBalance,
-    findAllInTable: findAllInTable
-};
-
-const mysql = require("promise-mysql");
 const config = require("../config/db/bank.json");
+const mysql = require("promise-mysql");
 let db;
 
+
 /**
- * Main function
+ * Connect to database function
  * @async
  * @returns void
  */
@@ -43,7 +39,7 @@ async function showBalance() {
  * Show allentries in the selected table.
  * @async
  * @param {string}
- * 
+ *
  * @returns {RowDataPacket}
  */
 async function findAllInTable(table) {
@@ -55,3 +51,8 @@ async function findAllInTable(table) {
 
     return res;
 }
+
+module.exports = {
+    showBalance: showBalance,
+    findAllInTable: findAllInTable
+};

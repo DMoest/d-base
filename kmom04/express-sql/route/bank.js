@@ -13,6 +13,7 @@
 const express = require("express");
 const router = express.Router();
 const bank = require("../src/bank.js");
+const bankCli = require("../src/bankCli.js");
 
 router.get("/index", (req, res) => {
     let data = {
@@ -30,6 +31,26 @@ router.get("/balance", async (req, res) => {
     data.res = await bank.showBalance();
 
     res.render("bank/balance", data);
+});
+
+router.get("/move-to-adam", async (req, res) => {
+    let data = {
+        title: "Transaction complete | The Bank"
+    };
+
+    data.res = await bankCli.makeTransaction("eva", "adam", 1.5);
+
+    res.render("bank/move-to-adam", data);
+});
+
+router.get("/move-to-eva", async (req, res) => {
+    let data = {
+        title: "Transaction complete | The Bank"
+    };
+
+    data.res = await bankCli.makeTransaction("adam", "eva", 1.5);
+
+    res.render("bank/move-to-eva", data);
 });
 
 module.exports = router;

@@ -18,7 +18,9 @@ const path = require("path"); // Sökvägen.
 
 app.set("view engine", "ejs"); // Lägg till EJS som template motor.
 
-app.use(express.static(path.join(__dirname, "public"))); // Vi använder Express, vi använder en static metod där vi anger med en sökväg med mapnamnet och sökväg.
+// Vi använder Express:
+// vi använder en static metod där vi anger med en sökväg med mapnamnet och sökväg.
+app.use(express.static(path.join(__dirname, "public")));
 
 // Middle wear ?
 app.use((req, res, next) => { // next är en pekare som har koll på nästa steg.
@@ -30,7 +32,7 @@ app.get("/", (req, res) => {
     res.send("Hello! ...det här är root-routen.");
 });
 
-app.use("/", indexRoutes); 
+app.use("/", indexRoutes);
 
 // app.get("/about", (req, res) => {
 //     res.send("About-route");

@@ -25,7 +25,7 @@ router.get("/about", (req, res) => {
 router.get("/today", (req, res) => {
     let data = {
         date: new Date()
-    }
+    };
 
     res.render("today", data);
 });
@@ -33,7 +33,7 @@ router.get("/today", (req, res) => {
 router.get("/teachers", async (req, res) => {
     let data = {
         all: await teachers.getAll()
-    }
+    };
 
     res.render("teachers", data);
 });

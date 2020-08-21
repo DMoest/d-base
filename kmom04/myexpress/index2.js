@@ -55,8 +55,8 @@ function logStartUpDetails() {
     // Find supported routes:
     app._router.stack.forEach((middleware) => {
         if (middleware.route) {
-            routes.push(middleware.route); }
-        else if(middleware.name === "router") {
+            routes.push(middleware.route);
+        } else if (middleware.name === "router") {
             // Router added as router middleware:
             middleware.handle.stack.forEach((handler) => {
                 let route;

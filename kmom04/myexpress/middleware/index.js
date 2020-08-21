@@ -13,11 +13,11 @@
 /**
  * Log incoming requestes to console.
  * See who accesses the server and on what route.
- * 
+ *
  * @param {request} req - The incoming request.
  * @param {Response} res - The outgoing response.
  * @param {Function} next - The Next to call in chain of middlewear.
- * 
+ *
  * @return {void}
  */
 
@@ -30,8 +30,6 @@ function logIncoming(req, res, next) {
     next();
 }
 
-
-
 module.exports = {
     logIncoming: logIncoming
-}
+};

@@ -1,0 +1,24 @@
+<%- include ("./../partials/header.ejs") %>
+
+<h1 class="movies_header">The Movies</h1>
+
+<table class="table__account">
+    <tr class="table__account--tableRow">
+        <th class="table__account--tableHeader">Id</th>
+        <th class="table__account--tableHeader">Name</th>
+        <th class="table__account--tableHeader">Year</th>
+        <th class="table__account--tableHeader">Action</th>
+    </tr>
+    <% for (const row of res) { %>
+        <%= console.log(row); %>
+        <tr class="table__account--tableRow">
+            <td class="table__account--tableData"><%= row.id %></td>
+            <td class="table__account--tableData"><%= row.name %></td>
+            <td  class="table__account--tableData right"><%= row.year %></td>
+            <td  class="table__account--tableData right">
+                <a href="update/<%= row.id %>">Update</a>
+                <a href="delete/<%= row.id %>">Delete</a>
+            </td>
+        </tr>
+    <% }; %>
+</table> 

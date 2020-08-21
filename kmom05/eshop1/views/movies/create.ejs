@@ -1,0 +1,15 @@
+<%- include ("./../partials/header.ejs") %>
+
+<h1 class="movies_header">Create new movie</h1>
+
+<form method="post" class="crud__form--form">
+    <label for="name" class="crud__form--label">Name:</label>
+    <input type="text"/ name="name" class="crud__form--input"/><br>
+
+    <label for="year" class="crud__form--label">Year:</label>
+    <input type="text" name="year" class="crud__form--input"/><br>
+
+    <input type="submit" name="create" value="Create" class="crudForm__btn crudForm__btn--create">
+</form>
+
+<%- include ("./../partials/footer.ejs") %>

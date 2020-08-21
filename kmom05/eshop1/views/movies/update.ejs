@@ -1,0 +1,20 @@
+<%- include ("./../partials/header.ejs") %>
+
+<% res = res[0] %>
+
+<h1 class="movies_header">Update exisiting movie</h1>
+
+<form method="post" action="/movie/update" class="crud__form--form">
+    <label for="id" class="crud__form--label">ID:</label>
+    <input type="text"/ name="id" value="<%= res.id %>" readonly class="crud__form--input"/><br> <!-- Man kan lägga till attributet "hidden" för att undvika "ryska" botar -->
+
+    <label for="name" class="crud__form--label">Name:</label>
+    <input type="text"/ name="name" value="<%= res.name %>" class="crud__form--input"/><br>
+
+    <label for="year" class="crud__form--label">Year:</label>
+    <input type="text" name="year" value="<%= res.year %>" class="crud__form--input"/><br>
+
+    <input type="submit" name="update" value="Update" class="crudForm__btn crudForm__btn--update">
+</form>
+
+<%- include ("./../partials/footer.ejs") %>
