@@ -63,11 +63,24 @@ router.post("/update", urlencodedParser, async (req, res) => {
     res.redirect("index");
 });
 
-router.get("/delete", (req, res) => {
+router.get("/delete/:id", async (req, res) => {
     console.log("*** DELETE Route successful!");
-    // Fixa DELETE här...
+    console.log("req.params.id: ", req.params.id);
 
-    res.render("movies/create");
+    let data = {
+        res: await movies.getOneMovie(req.params.id)
+    }
+
+    res.render("movies/delete", data);
+});
+
+router.post("/delete", urlencodedParser, async (req, res) => {
+    console.log("* REQ.BODY: ", req.body);
+    console.log("*** POST DELETE Route successful!");
+
+    await movies.deleteMovie(req.body.id);
+
+    res.redirect("index");
 });
 
 

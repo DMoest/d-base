@@ -14,6 +14,7 @@ const mysql = require("promise-mysql");
 let db;
 
 (async function connectToDB() {
+    console.log("* connectToDB() function.");
     db = await mysql.createConnection(config);
 
     process.on("exit", () => {
@@ -55,13 +56,14 @@ async function insertMovie(data) {
     insert
     into movies (name, year)
     values (?, ?);`;
-
+    
     res = await db.query(sql, [data.name, data.year]);
 
     return res;
 }
 
 async function updateMovie(data) {
+    console.log("* updateMovie() function.");
     // let res;
     let sql = `
     update movies
@@ -74,11 +76,21 @@ async function updateMovie(data) {
     await db.query(sql, [data.name, data.year, data.id]);
 }
 
+async function deleteMovie(id) {
+    console.log("* deleteMovie() function.");
 
+    let sql = `
+    delete from movies
+    where id = ?
+    ;`;
+
+    await db.query(sql, [id]);
+}
 
 module.exports = {
     "getAllMovies": getAllMovies,
     "getOneMovie": getOneMovie,
     "insertMovie": insertMovie,
-    "updateMovie": updateMovie
+    "updateMovie": updateMovie,
+    "deleteMovie": deleteMovie
 };

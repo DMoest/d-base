@@ -1,6 +1,20 @@
 <%- include ("./../partials/header.ejs") %>
 
-<p>HELLO WORLD!</p>
-<p>DELETE ROUTE</p>
+<% res = res[0] %>
+
+<h1 class="movies_header">Delete exisiting movie</h1>
+
+<form method="post" action="/movie/delete" class="crud__form--form">
+    <label for="id" class="crud__form--label">ID:</label>
+    <input type="text"/ name="id" value="<%= res.id %>" readonly class="crud__form--input"/><br> <!-- Man kan lägga till attributet "hidden" för att undvika "ryska" botar -->
+
+    <label for="name" class="crud__form--label">Name:</label>
+    <input type="text"/ name="name" value="<%= res.name %>" readonly class="crud__form--input"/><br>
+
+    <label for="year" class="crud__form--label">Year:</label>
+    <input type="text" name="year" value="<%= res.year %>" readonly class="crud__form--input"/><br>
+
+    <input type="submit" name="delete" value="Delete" class="crudForm__btn crudForm__btn--delete">
+</form>
 
 <%- include ("./../partials/footer.ejs") %>
