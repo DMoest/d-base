@@ -15,8 +15,8 @@
             <td class="table__account--tableData"><%= row.name %></td>
             <td  class="table__account--tableData right"><%= row.year %></td>
             <td  class="table__account--tableData right">
-                <a href="update/<%= row.id %>">Update</a>
-                <a href="delete/<%= row.id %>">Delete</a>
+                <a href="update/<%= row.id %>" class="crudForm__btn--small crudForm__btn--smallUpdate">Update</a>
+                <a href="delete/<%= row.id %>" class="crudForm__btn--small crudForm__btn--smallDelete">Delete</a>
             </td>
         </tr>
     <% }; %>
