@@ -33,7 +33,7 @@ footer {
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-    background-color: rgb(0, 185, 185);
+    background-color: orangered;
 }
 
 .navigation {
@@ -64,9 +64,8 @@ footer {
 }
 
 .navigation__button:hover {
-    color: white;
-    border: 0.01rem solid rgb(0, 185, 185);
-    background-color: rgb(0, 185, 185);
+    color: grey;
+    background-color: #fff;
 }
 
 h1,
@@ -102,7 +101,7 @@ a {
     text-transform: uppercase;
     text-align: left;
     color: #fff;
-    background-color: rgb(0, 185, 185);
+    background-color: orangered;
 }
 
 .table__account--tableRow {
@@ -111,201 +110,7 @@ a {
     background-color: lightgrey;
 }
 
-td {
-    padding: 0.5rem 1rem;
-    text-align: center;
+.table__accounts--tableData {
+    padding: 10rem;
     background-color: white;
 }
-
-.crudForm__btn--small {
-    width: 100%;
-    height: 1rem;
-    padding: 0.3rem 0.75rem;
-    margin: 0 0.5rem;
-    color: rgb(0, 185, 185);
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    
-    border-radius: 0.3rem;
-    transition: 0.2s all;
-}
-
-.crudForm__btn--small:hover {
-    color: #fff;
-    background-color: rgb(0, 185, 185);
-}
-
-.crudForm__btn--smallUpdate {
-    color: #f1c40f;
-    border: 0.01rem solid #f1c40f;
-}
-
-.crudForm__btn--smallUpdate:hover {
-    color: #fff;
-    background-color: #f1c40f;
-}
-
-.crudForm__btn--smallDelete {
-    color: #e74c3c;
-    border: 0.01rem solid #e74c3c;
-}
-
-.crudForm__btn--smallDelete:hover {
-    color: #fff;
-    background-color: #e74c3c;
-}
-
-/* CRUD FORM */
-.crud__form--form {
-    width: 100%;
-    padding: 0 20%;
-}
-
-.crud__form--label {
-    width: 100%;
-    height: 2rem;
-    display: inline-block;
-    font-size: 1.5rem;
-    text-align: left;
-}
-
-.crud__form--input {
-    width: 100%;
-    height: 2rem;
-    padding: 0 20%;
-    font-size: 1rem;
-    text-align: center;
-    border-radius: 0.3rem;
-}
-
-.crudForm__btn {
-    width: 40rem;
-    padding: 1rem 2rem;
-    margin: 2rem auto;
-    display: block;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    transition: 0.2s all;
-    border-radius: 0.3rem;
-}
-
-.crudForm__btn:hover {
-    color: white;
-    border: 0.01rem solid rgb(0, 185, 185);
-    background-color: rgb(0, 185, 185);
-}
-
-.crudForm__btn--create {
-    color: darkslategray;
-    border: 0.01rem solid darkslategray;
-}
-
-.crudForm__btn--create:hover {
-    color: white;
-    border: 0.01rem solid #2ecc71;
-    background-color: #2ecc71;
-}
-
-.crudForm__btn--update {
-    color: darkslategray;
-    border: 0.01rem solid darkslategray;
-}
-
-.crudForm__btn--update:hover {
-    color: white;
-    border: 0.01rem solid #f1c40f;
-    background-color: #f1c40f;
-}
-
-.crudForm__btn--delete {
-    color: darkslategray;
-    border: 0.01rem solid darkslategray;
-}
-
-.crudForm__btn--delete:hover {
-    color: white;
-    border: 0.01rem solid #e74c3c;
-    background-color: #e74c3c;
-}
-
-.movies_header {
-    text-align: center;
-    text-transform: uppercase;
-    color: darkslategray;
-}
-
-/* 
-
-body {
-    margin: 8px auto;
-    background: #fff;
-    width: 700px;
-}
-
-header {
-    background-color: #ddd;
-    padding: 1em;
-}
-
-main {
-    min-height: 24em;
-}
-
-footer {
-    background-color: #666;
-    color: #fff;
-    padding: 1em;
-}
-
-table {
-    border: 1px solid #ccc;
-}
-
-th {
-    border-bottom: 1px solid #999;
-}
-
-td {
-    padding: 0.2em;
-}
-
-td.right {
-    text-align: right;
-}
-
-tr:hover {
-    background-color: #eee;
-}
-
-form.label-left {
-    margin-bottom: 24px;
-}
-
-form.label-left label,
-form.label-left input[type=text],
-form.label-left input[type=number] {
-    height: 20px;
-    margin-bottom: 4px;
-}
-
-form.label-left label {
-    display: inline-block;
-    width: 5em;
-    float: left;
-    padding-top: 6px;
-    padding-right: 1em;
-
-    /* text-align: right; */
-/* }
-
-form.label-left label::after {
-    content: ":";
-}
-
-form.label-left input[type=text],
-form.label-left input[type=number] {
-    display: block;
-    width: 20em;
-    height: 25px;
-}  */

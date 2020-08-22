@@ -1,0 +1,311 @@
+/* POOR MANS NORMALIZE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    display: block;
+    font-size: 1em;
+    line-height: 1.4;
+    font-weight: 300;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 2.8rem;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgb(0, 185, 185);
+}
+
+.navigation {
+    top: 100%;
+    width: 100%;
+    padding: 0.25rem;
+    margin-bottom: 2rem;
+    background-color: grey;
+    display: flex;
+    flex-flow: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navigation__button {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.01rem solid #fff;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.navigation__button:hover {
+    color: white;
+    border: 0.01rem solid rgb(0, 185, 185);
+    background-color: rgb(0, 185, 185);
+}
+
+h1,
+h2,
+h3 {
+    padding: 1.4rem;
+    padding-bottom: 2.8rem;
+}
+
+p {
+    padding: 1.4rem;
+}
+
+p a {
+    padding: 0;
+}
+
+a {
+    padding: 1.4rem;
+}
+
+.table__account {
+    display: block;
+    width: 100%;
+    padding: 2rem 20%;
+    border: collapse;
+}
+
+.table__account--tableHeader {
+    width: 25rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-align: left;
+    color: #fff;
+    background-color: rgb(0, 185, 185);
+}
+
+.table__account--tableRow {
+    width: 100%;
+    padding: 1rem;
+    background-color: lightgrey;
+}
+
+td {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    background-color: white;
+}
+
+.crudForm__btn--small {
+    width: 100%;
+    height: 1rem;
+    padding: 0.3rem 0.75rem;
+    margin: 0 0.5rem;
+    color: rgb(0, 185, 185);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    border-radius: 0.3rem;
+    transition: 0.2s all;
+}
+
+.crudForm__btn--small:hover {
+    color: #fff;
+    background-color: rgb(0, 185, 185);
+}
+
+.crudForm__btn--smallUpdate {
+    color: #f1c40f;
+    border: 0.01rem solid #f1c40f;
+}
+
+.crudForm__btn--smallUpdate:hover {
+    color: #fff;
+    background-color: #f1c40f;
+}
+
+.crudForm__btn--smallDelete {
+    color: #e74c3c;
+    border: 0.01rem solid #e74c3c;
+}
+
+.crudForm__btn--smallDelete:hover {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+/* CRUD FORM */
+.crud__form--form {
+    width: 100%;
+    padding: 0 20%;
+}
+
+.crud__form--label {
+    width: 100%;
+    height: 2rem;
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.crud__form--input {
+    width: 100%;
+    height: 2rem;
+    padding: 0 20%;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 0.3rem;
+}
+
+.crudForm__btn {
+    width: 40rem;
+    padding: 1rem 2rem;
+    margin: 2rem auto;
+    display: block;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transition: 0.2s all;
+    border-radius: 0.3rem;
+}
+
+.crudForm__btn:hover {
+    color: white;
+    border: 0.01rem solid rgb(0, 185, 185);
+    background-color: rgb(0, 185, 185);
+}
+
+.crudForm__btn--create {
+    color: darkslategray;
+    border: 0.01rem solid darkslategray;
+}
+
+.crudForm__btn--create:hover {
+    color: white;
+    border: 0.01rem solid #2ecc71;
+    background-color: #2ecc71;
+}
+
+.crudForm__btn--update {
+    color: darkslategray;
+    border: 0.01rem solid darkslategray;
+}
+
+.crudForm__btn--update:hover {
+    color: white;
+    border: 0.01rem solid #f1c40f;
+    background-color: #f1c40f;
+}
+
+.crudForm__btn--delete {
+    color: darkslategray;
+    border: 0.01rem solid darkslategray;
+}
+
+.crudForm__btn--delete:hover {
+    color: white;
+    border: 0.01rem solid #e74c3c;
+    background-color: #e74c3c;
+}
+
+.movies_header {
+    text-align: center;
+    text-transform: uppercase;
+    color: darkslategray;
+}
+
+/* 
+
+body {
+    margin: 8px auto;
+    background: #fff;
+    width: 700px;
+}
+
+header {
+    background-color: #ddd;
+    padding: 1em;
+}
+
+main {
+    min-height: 24em;
+}
+
+footer {
+    background-color: #666;
+    color: #fff;
+    padding: 1em;
+}
+
+table {
+    border: 1px solid #ccc;
+}
+
+th {
+    border-bottom: 1px solid #999;
+}
+
+td {
+    padding: 0.2em;
+}
+
+td.right {
+    text-align: right;
+}
+
+tr:hover {
+    background-color: #eee;
+}
+
+form.label-left {
+    margin-bottom: 24px;
+}
+
+form.label-left label,
+form.label-left input[type=text],
+form.label-left input[type=number] {
+    height: 20px;
+    margin-bottom: 4px;
+}
+
+form.label-left label {
+    display: inline-block;
+    width: 5em;
+    float: left;
+    padding-top: 6px;
+    padding-right: 1em;
+
+    /* text-align: right; */
+/* }
+
+form.label-left label::after {
+    content: ":";
+}
+
+form.label-left input[type=text],
+form.label-left input[type=number] {
+    display: block;
+    width: 20em;
+    height: 25px;
+}  */
