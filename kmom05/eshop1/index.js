@@ -1,8 +1,7 @@
 /**
- * Express-SQL övning från Kmom04.
+ * Eshop (del1) - Web client.
  * -------------------------
  * DV1606 - Databasteknologier för webben
- * Kmom04 - index.js
  * @author Daniel Andersson, DAAP19
  * -------------------------
  * Module: index.js
@@ -10,29 +9,34 @@
 
 "use strict";
 
-const port    = process.env.DBWEBB_PORT || 1337;
-const path    = require("path");
+// Basic constants:
+const port = process.env.DBWEBB_PORT || 1337;
 const express = require("express");
-const app     = express();
-const routeIndex = require("./route/index.js");
-const routeToday = require("./route/today.js");
-const routeBank = require("./route/bank.js");
-const middleware = require("./middleware/index.js");
+const app = express();
 
+// Route constants:
+const routeIndex = require("./routes/index.js");
+const routeEshop = require("./routes/eshop.js");
+const middleware = require("./middleware/index.js");
+const path = require("path");
+
+// Setup for Embeded JavaScript (EJS):
 app.set("view engine", "ejs");
 
+// Middlewear:
 app.use(middleware.logIncoming);
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/", routeIndex);
-app.use("/today", routeToday);
-app.use("/bank", routeBank);
-app.listen(port, logStartUpDetails);
 
+// Routes:
+app.use("/", routeIndex);
+app.use("/eshop", routeEshop);
+
+// Listen to ports:
+app.listen(port, logStartUpDetails);
 
 
 /**
  * Log app details to console when starting up.
- *
  * @return {void}
  */
 function logStartUpDetails() {
@@ -54,6 +58,8 @@ function logStartUpDetails() {
         }
     });
 
+    // Startup messages:
+    console.info(`Server START.`);
     console.info(`Server is listening on port ${port}.`);
     console.info("Available routes are:");
     console.info(routes);

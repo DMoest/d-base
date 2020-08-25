@@ -1,0 +1,24 @@
+<%- include("./header"); %>
+
+<h1 class="view__text--header">Create new account</h1>
+
+<p class="view__text--paragraph">Here you can create a new account.<br> Add account ID, account name & the balance for the account.<br> You can add some extra, we know you need it from time to time.<br> Besides, funny money is our buisiness.</p>
+
+<form class="CRUD__form" method="post">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Account details</legend>
+
+        <label for="id" class="CRUD__form--label">Id:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input" placeholder="Account ID">
+
+        <label for="name" class="CRUD__form--label">Name:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input" placeholder="Account name">
+
+        <label for="balance" class="CRUD__form--label">Balance:</label>
+        <input id="balance" type="number" name="balance" class="CRUD__form--input" placeholder="Account balance">
+
+        <input type="submit" name="create" value="Create" class="CRUD__formBTN CRUD__formBTN--create">
+    </fieldset>
+</form>
+
+<%- include("./footer"); %>

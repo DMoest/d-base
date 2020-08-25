@@ -1,24 +1,28 @@
 /**
- * Kmom05.
+ * Express-SQL övning från Kmom04.
  * -------------------------
  * DV1606 - Databasteknologier för webben
+ * Kmom04 - index.js
  * @author Daniel Andersson, DAAP19
  * -------------------------
- * Module: src/movies.js
+ * Module: route/index.js
  */
 
 "use strict";
 
 const express = require("express");
-const router = express.Router();
+const router  = express.Router();
 
-// ROUTES:
 router.get("/", (req, res) => {
-    res.send("Index or \"/\" ROUTE.");
+    res.send("Hello World");
 });
 
-router.get("/movie", (req, res) => {
-    res.send("MOVIE ROUTE.")
+router.get("/about", (req, res) => {
+    res.send("About something");
+});
+
+router.get("/bank", (req, res) => {
+    res.send("The Bank");
 });
 
 module.exports = router;

@@ -1,0 +1,22 @@
+<%- include("./header"); %>
+
+<h1 class="CRUD__form--header">Delete existing account</h1>
+
+<form class="CRUD__form" method="post" action="/bank/delete">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Account details</legend>
+
+        <label for="id" class="CRUD__form--label">Id:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input"  value="<%= res[0].id %>" readonly>
+
+        <label for="name" class="CRUD__form--label">Name:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input"  value="<%= res[0].name %>" readonly>
+
+        <label for="balance" class="CRUD__form--label">Balance:</label>
+        <input id="balance" type="number" name="balance" class="CRUD__form--input"  value="<%= res[0].balance %>" readonly>
+
+        <input type="submit" name="delete" value="Delete Account" class="CRUD__formBTN CRUD__formBTN--delete">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

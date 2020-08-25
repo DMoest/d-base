@@ -1,0 +1,29 @@
+<%- include("header", {title:title}); %>
+
+<h1 class="view__text--header">All bank accounts</h1>
+
+<p class="view__text--paragraph">Here is the balance sheet for all the accounts in the bank.</p>
+
+<table class="table__account">
+    <tr class="table__account--tableRow">
+        <th class="table__account--tableHeader">Id</th>
+        <th class="table__account--tableHeader">Name</th>
+        <th class="table__account--tableHeader">Balance</th>
+        <th class="table__account--tableHeader">Action</th>
+    </tr>
+    <% for (const row of res[0]) { %>
+        <tr class="table__account--tableRow">
+            <td class="table__account--tableData"><a href="account/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--link"><%= row.id %></a></td>
+            <td class="table__account--tableData"><%= row.name %></td>
+            <td  class="table__account--tableData"><%= row.balance %></td>
+            <td  class="table__account--tableData">
+                <a href="update/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
+                <a href="delete/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
+            </td>
+        </tr>
+    <% }; %>
+</table>
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include("footer"); %>

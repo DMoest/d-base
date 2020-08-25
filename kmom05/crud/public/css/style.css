@@ -1,0 +1,334 @@
+/* POOR MANS NORMALIZE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    display: block;
+    font-size: 1em;
+    line-height: 1.4;
+    font-weight: 300;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    padding: 2.8rem;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #34495e;
+}
+
+.navigation {
+    top: 100%;
+    width: 100%;
+    padding: 0.25rem;
+    margin-bottom: 2rem;
+    background-color: #34495e;
+    display: flex;
+    flex-flow: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navigation__button {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.01rem solid #fff;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.navigation__button:hover {
+    color: grey;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3 {
+    padding: 1.4rem;
+    padding-bottom: 2.8rem;
+}
+
+a {
+    padding: 1.4rem;
+}
+
+.view__text--header {
+    text-align: center;
+}
+
+.view__text--paragraph {
+    padding: 0 1.4rem 1rem;
+    text-align: center;
+}
+
+.table__account {
+    display: block;
+    width: 100%;
+    padding: 2rem 20%;
+    border: collapse;
+}
+
+.table__account--tableHeader {
+    width: 30rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-align: left;
+    color: #fff;
+    background-color: #3498db;
+}
+
+.table__account--tableRow {
+    width: 100%;
+    height: 2.25rem;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.table__account--tableData {
+    text-align: center;
+    background-color: white;
+}
+
+
+/* INSIDE TABLE BUTTONS */
+
+/* BASE CLASS */
+.CRUD__smallBTN {
+    width: 100%;
+    height: 1rem;
+    padding: 0.2rem 0.75rem;
+    margin: 0.75rem 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    transition-property: color, background-color, box-shadow, transform;
+    transition-duration: 0.25s, 0.25s, 0.25s, 0.15s;
+    transition-timing-function: ease;
+}
+
+
+
+/* UPDATE */
+.CRUD__smallBTN--update {
+    color: #fbc02d;
+    background-color: #fff9c4;
+    border: 0.01rem solid #fbc02d;
+}
+
+.CRUD__smallBTN--update:hover {
+    color: #fff;
+    background-color: #fbc02d;
+    box-shadow: inset -0.2rem -0.3rem 0.5rem #f9a825, inset 0.05rem 0.1rem 0.3rem #ffeb3b;
+    border: 0.01rem solid #fbc02d;
+}
+
+.CRUD__smallBTN--update:active {
+    color: #fff;
+    background-color: #fdd835;
+    box-shadow: inset 0.25rem 0.35rem 0.5rem #f9a825;
+    border: 0.01rem solid #fdd835;
+    transform: translateY(0.04rem);
+}
+
+
+/* LINK */
+.CRUD__smallBTN--link {
+    color: #0097a7;
+    background-color: #e0f7fa;
+    border: 0.01rem solid #0097a7;
+}
+
+.CRUD__smallBTN--link:hover {
+    color: #fff;
+    background-color: #0097a7;
+    box-shadow: inset -0.2rem -0.3rem 0.5rem #00838f, inset 0.05rem 0.1rem 0.3rem #00acc1;
+    border: 0.01rem solid #0097a7;
+}
+
+.CRUD__smallBTN--link:active {
+    color: #fff;
+    background-color: #00acc1;
+    box-shadow: inset 0.25rem 0.35rem 0.5rem #00838f;
+    border: 0.01rem solid #00acc1;
+    transform: translateY(0.04rem);
+}
+
+
+/* DELETE */
+.CRUD__smallBTN--delete {
+    color: #e53935;
+    background-color: #ffcdd2;
+    border: 0.01rem solid #e53935;
+}
+
+.CRUD__smallBTN--delete:hover {
+    color: #fff;
+    background-color: #e53935;
+    box-shadow: inset -0.2rem -0.3rem 0.5rem #d32f2f, inset 0.05rem 0.1rem 0.3rem #f44336;
+    border: 0.01rem solid #e53935;
+}
+
+.CRUD__smallBTN--delete:active,
+.CRUD__smallBTN--delete:focus {
+    color: #fff;
+    background-color: #f44336;
+    box-shadow: inset 0.25rem 0.35rem 0.5rem #d32f2f;
+    border: 0.01rem solid #f44336;
+    transform: translateY(0.04rem);
+}
+
+
+
+/* CRUD TABLE */
+.CRUD__form--header {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.CRUD__form {
+    width: 100%;
+    padding: 0 30%;
+    display: block;
+}
+
+.CRUD__form--fieldset {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    background-color: lightgrey;
+}
+
+.CRUD__form--legend {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.CRUD__form--label {
+    width: 100%;
+    font-size: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.CRUD__form--input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+/* CRUD SUBMIT BUTTON */
+
+/* BASE CLASS */
+.CRUD__formBTN {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0.75rem 1rem;
+    display: block;
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 0.3rem;
+    transition: 0.2s all;
+}
+
+.CRUD__formBTN:active {
+    transition: translateY(0.04rem);
+}
+
+
+
+/* CREATE */
+.CRUD__formBTN--create {
+    color: #388e3c;
+    background-color: #c8e6c9;
+    border: 0.01rem solid #388e3c;
+}
+
+.CRUD__formBTN--create:hover {
+    color: #fff;
+    background-color: #388e3c;
+}
+
+.CRUD__formBTN--create:active,
+.CRUD__formBTN--create:focus {
+    color: #fff;
+    background-color: #4caf50;
+    border: 0.01rem solid #4caf50;
+}
+
+
+
+/* UPDATE */
+.CRUD__formBTN--update {
+    color: #fbc02d;
+    background-color: #fff9c4;
+    border: 0.01rem solid #fbc02d;
+}
+
+.CRUD__formBTN--update:hover {
+    color: #fff;
+    background-color: #fbc02d;
+}
+
+.CRUD__formBTN--update:active,
+.CRUD__formBTN--update:focus {
+    color: #fff;
+    background-color: #fdd835;
+    border: 0.01rem solid #fdd835;
+}
+
+
+
+/* DELETE */
+.CRUD__formBTN--delete {
+    color: #e53935;
+    background-color: #ffcdd2;
+    border: 0.01rem solid #e53935;
+}
+
+.CRUD__formBTN--delete:hover {
+    color: #fff;
+    background-color: #e53935;
+}
+
+.CRUD__formBTN--delete:active,
+.CRUD__formBTN--delete:focus {
+    color: #fff;
+    background-color: #e53935;
+    border: 0.01rem solid #e53935;
+}

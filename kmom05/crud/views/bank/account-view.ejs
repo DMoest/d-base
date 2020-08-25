@@ -1,0 +1,26 @@
+<%- include("header", {title:title}); %>
+
+<h1 class="view__text--header">Account details</h1>
+
+<table class="table__account">
+    <tr class="table__account--tableRow">
+        <th class="table__account--tableHeader">Id</th>
+        <th class="table__account--tableHeader">Name</th>
+        <th class="table__account--tableHeader">Balance</th>
+        <th class="table__account--tableHeader">Action</th>
+    </tr>
+
+        <tr class="table__account--tableRow">
+            <td class="table__account--tableData"><%= res[0].id %></td>
+            <td class="table__account--tableData"><%= res[0].name %></td>
+            <td  class="table__account--tableData right"><%= res[0].balance %></td>
+            <td  class="table__account--tableData right">
+                <a href="update/<%= res[0].id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
+                <a href="delete/<%= res[0].id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
+            </td>
+        </tr>
+</table>
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include("footer"); %>

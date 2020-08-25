@@ -1,0 +1,34 @@
+<%- include ("./../../partials/header") %>
+
+<h1 class="view__text--header">Alla produkter</h1>
+
+<p class="view__text--paragraph">Här är en lista på alla registrerade produkter.</p>
+
+<table class="productTable">
+    <tr class="productTable__TRs">
+        <th class="productTable__tableHeader productTable__tableHeader--id">Prod.nr.</th>
+        <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
+        <th class="productTable__tableHeader productTable__tableHeader--info">Information</th>
+        <th class="productTable__tableHeader productTable__tableHeader--price">Pris</th>
+        <th class="productTable__tableHeader productTable__tableHeader--action">Ändra</th>
+    </tr>
+    <% for (const row of res) { %>
+        <tr class="productTable__TRs">
+            <td class="productTable__TDs productTable__TDs--id"><%= row.id %></td>
+            <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
+            <td  class="productTable__TDs productTable__TDs--info"><%= row.info %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.price %></td>
+            <td  class="productTable__TDs">
+                <div class="productTable__TDs productTable__TDs--action">
+                    <a href="./../updateProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
+                    <a href="./../deleteProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
+                </div>  
+            </td>
+        </tr>
+    <% }; %>
+</table>
+
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

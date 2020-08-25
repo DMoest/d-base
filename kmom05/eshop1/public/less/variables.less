@@ -1,0 +1,210 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: variables.less
+*/
+
+// Colors:
+@color__white: #fff;
+@color__black: #000;
+@color__grey--light: #888;
+@color__grey: #555;
+@color__grey--dark: #222;
+@color__primary--light: #46bddb;
+@color__primary--standard: #1289a7;
+@color__primary--dark: #0b596d;
+@color__secondary--light: #ffd864;
+@color__secondary--standard: #ffc312;
+@color__secondary--dark: #cf9b00;
+
+// Colors for fonts:
+@color__font--light: #f5f5f5;
+@color__font--dark: #333;
+
+
+@font__size--base: 100%;
+@font__size--body: calc(12px + 1vw);
+@font__size--h1: 1.912em;
+@font__size--h2: 1.616em;
+@font__size--h3: 1.471em;
+@font__size--h4: 1.3em;
+@font__size--h5: 1.243em;
+@font__size--h6: 1.132em;
+@font__size--p: 1em;
+@font__size--footer: @font__size--p;
+@font__size--button: @font__size--h3;
+
+@font__weight--header: 400;
+@font__weight--subHeader: 400;
+@font__weight--p: 200;
+
+// Baseline & Rythem
+@lineHeight--base: 1.4;
+@rythem--standard: 1.4rem; // line height * font size (1.4 * 1 = 1.4)
+
+
+// Animation time:
+@animation: {
+    hover: 0.25s;
+    click: 0.125s;
+}
+
+// Borders:
+@border: {
+    thickness: 0.05rem;
+    radius: 0.3rem;
+    radiusFull: 200rem;
+}
+
+// Images:
+@imgWidth: {
+    small: 20rem;
+    medium: 25rem;
+    large: 30rem;
+}
+
+// Flexbox gap for multipage navigation.
+@flexGap: {
+    mobile: 0.2rem;
+    tablet: 0.5rem;
+    desktop_S: 0.75rem;
+    desktop_L: 1rem;
+}
+
+// Font related :
+@font__family: {
+    title: 'Pacifico', cursive;
+    slogan: 'Roboto Condensed', sans-serif;
+    header: 'Roboto Condensed', sans-serif;
+    subHeader: 'Roboto Condensed', sans-serif;
+    paragraph: 'Josefin Sans', sans-serif;
+}
+
+@font__weight: {
+    title: 600;
+    slogan: 300;
+    header: 400;
+    footer: 300;
+    subHeader: 400;
+    standard: 400;
+    paragraph: 200;
+    button: 400;
+}
+
+// base: 1em, 600, 
+// ratio: 1.333 (perfect fourth)
+@font__size: {
+    base: 100%;
+    body: calc(12px + 1vw);
+    title: 2rem;
+    slogan: 1em;
+    footer: 0.75em;
+}
+
+// Modular font size scales:
+@font__size--S: { 
+    h1: 5.61rem;
+    h2: 4.209rem;
+    h3: 3.157rem;
+    h4: 2.369rem;
+    h5: 1.777rem;
+    h6: 1.333rem;
+    p: 1rem;
+}
+  
+// base: 1em, 840,
+// ratio: 1.333 (perfect fourth)
+@font__size--M: {
+    h1: 6.038rem;
+    h2: 4.529rem;
+    h3: 3.398rem;
+    h4: 2.549rem;
+    h5: 1.912rem;
+    h6: 1.435rem;
+    p: 1.076rem;
+}
+
+// base: 1em, 1280,
+// ratio: 1.333 (perfect fourth)
+@font__size--L: {
+    h1: 7.249rem;
+    h2: 5.438rem;
+    h3: 4.08rem;
+    h4: 3.06rem;
+    h5: 2.296rem;
+    h6: 1.722rem;
+    p: 1.292rem;
+}
+
+// Margins & Paddings:
+@padding__content: {
+    p1: 0 @rythem--standard;
+    p2: 0 2.5%;
+    p3: 0 5%;
+    p4: 0 7.5%;
+    p5: 0 10%;
+    p6: 0 12.5%;
+    p7: 0 15%;
+}
+
+@padding__button: {
+    small: @rythem--standard 0.25rem;
+    medium: @rythem--standard 0.5rem;
+    large: @rythem--standard 0.7rem;
+}
+
+@padding__elements--around: @rythem--standard;
+// @padding__button: @rythem--standard;
+@margin__button: (@rythem--standard / 2) 0;
+
+// Width & Height:
+@width: {
+    full: 100%;
+    w90: 90%;
+    w80: 80%;
+    threeQuarters: 75%;
+    w70: 70%;
+    w60: 60%;
+    half: 50%;
+    w40: 40%;
+    w30: 30%;
+    quarter: 25%;
+    w20: 20%;
+    w10: 10%;
+}
+
+@header--height: 30rem;
+
+
+
+// --------------------------------------------------
+// --- MEDIA QUERIES ---
+// --------------------------------------------------
+// 0 - 600      phone--portrait
+// 601 - 720    phone--landscape
+// 720 - 840    tablet--portrait
+// 840 - 960    tablet--landscape
+// 960 - 1024   desktop--small
+// 1024 - 1280  desktop--mid
+// 1280 - ?     desktop--large
+// --------------------------------------------------
+
+@screenMin: {
+    mobilePortrait: 1px;
+    mobileLandscape: 600px;
+    tabletPortrait: 720px;
+    tabletLandscape: 840px;
+    desktopSmall: 960px;
+    desktopMedium: 1024px;
+    desktopLarge: 1280px;
+}
+  
+@screenMax: {
+    mobilePortrait: 600px;
+    mobileLandscape: 720px;
+    tabletPortrait: 840px;
+    tabletLandscape: 960px;
+    desktopSmall: 1024px;
+    desktopMedium: 1280px;
+    desktopLarge: 3500px;
+}

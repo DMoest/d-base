@@ -1,0 +1,122 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: mixins.less
+*/
+
+
+
+@import "variables.less";
+
+.bordered--light {
+    border: @border[thickness] solid @color__font--light;
+    border-radius: @border[radius];
+}
+
+.bordered--dark {
+    border: @border[thickness] solid @color__font--dark;
+    border-radius: @border[radius];
+}
+
+.bordered--primary{
+    border: @border[thickness] solid @color__primary--standard;
+    border-radius: @border[radius];
+}
+
+.button--hover {
+    &:hover {
+        color: @color__font--dark;
+        background-color: @color__primary--standard;
+        border: @border[thickness] solid @color__primary--standard;
+    }
+}
+
+.button--click {
+    transform: translateY(1px);
+    background-color: @color__primary--light;
+    border: @border[thickness] solid @color__primary--light;
+}
+
+.fontSize(@rules) {
+    @media only screen and (min-width: @screenMin[mobilePortrait]) and (max-width: @screenMax[mobilePortrait]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[mobileLandscape]) and (max-width: @screenMax[mobileLandscape]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[tabletPortrait]) and (max-width: @screenMax[tabletPortrait]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[desktopSmall]) and (max-width: @screenMax[desktopSmall]) {
+        @rules();
+    }
+
+    @media only screen and (min-width: @screenMin[desktopMedium]) and (max-width: @screenMax[desktopMedium]) {
+        @rules();
+    }
+    
+    @media only screen and (min-width: @screenMin[desktopLarge]) and (max-width: @screenMax[desktopLarge]) {
+        @rules();
+    }
+}
+
+
+// --------------------------------------------------
+// --- MEDIA QUERIES --- MIXIN
+// --------------------------------------------------
+// 0 - 600      phone--portrait
+// 601 - 840    phone--landscape
+// 840 - 960    tablet
+// 960 - 1280   desktop--mid
+// 1280         desktop--large
+// --------------------------------------------------
+
+.responsive(@minWidth; @maxWidth; @rules) {
+    @media only screen and (min-width: @minWidth) and (max-width: @maxWidth) {
+        @rules();
+    }
+}
+
+.breakpoint(@point) {
+    // --- MOBILE DEVICES (portrait):
+    & when (@point = mobilePortrait){
+        @media (max-width: @screenMax[mobilePortrait]) { @content(); }
+    }
+
+    // --- MOBILE DEVICES (landscape):
+    & when (@point = mobileLandscape) {
+        @media (min-width: @screenMax[mobileLandscape]) and (max-width: @screenMax[mobileLandscape]) { @content(); }
+    }
+
+    // --- TABLET DEVICES (protrait):
+    & when (@point = tabletPortrait) {
+        @media (min-width: @screenMax[tabletPortrait]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
+    }
+
+    // --- TABLET DEVICES(landscape) & DESKTOP(small/mid size):
+    & when (@point = tabletLandscape) {
+        @media (min-width: @screenMax[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
+    }
+
+    // --- DESKTOP DEVICES (small size):
+    & when (@point = desktopSmall) {
+        @media (min-width: @screenMax[desktopSmall]) and (max-width: @screenMax[desktopSmall]) { @content(); }
+    }
+    
+    // --- DESKTOP DEVICES (medium size):
+    & when (@point = desktopMedium) {
+        @media (min-width: @screenMax[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
+    }
+    
+    // --- DESKTOP DEVICES (large size):
+    & when (@point = desktopLarge) {
+        @media (min-width: @screenMax[tabletLandscape]) and (max-width: @screenMax[tabletLandscape]) { @content(); }
+    }
+}

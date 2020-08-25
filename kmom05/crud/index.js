@@ -10,21 +10,25 @@
 
 "use strict";
 
-const port = process.env.DBWEBB_PORT || 1337;
+const port    = process.env.DBWEBB_PORT || 1337;
 const express = require("express");
-const app = express();
+const app     = express();
 const routeIndex = require("./routes/index.js");
-const routeMovies = require("./routes/movie.js");
+const routeToday = require("./routes/today.js");
+const routeBank = require("./routes/bank.js");
 const middleware = require("./middleware/index.js");
-const path = require("path");
+const path    = require("path");
 
 app.set("view engine", "ejs");
 
 app.use(middleware.logIncoming);
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routeIndex);
-app.use("/movie", routeMovies);
+app.use("/today", routeToday);
+app.use("/bank", routeBank);
 app.listen(port, logStartUpDetails);
+
+
 
 /**
  * Log app details to console when starting up.

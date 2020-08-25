@@ -1,0 +1,22 @@
+<%- include("./header"); %>
+
+<h1 class="CRUD__form--header">Update existing account</h1>
+
+<form class="CRUD__form" method="post" action="/bank/update">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Account details</legend>
+
+        <label for="id" class="CRUD__form--label">Id:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input"  value="<%= res[0].id %>" readonly>
+
+        <label for="name" class="CRUD__form--label">Name:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input"  value="<%= res[0].name %>">
+
+        <label for="balance" class="CRUD__form--label">Balance:</label>
+        <input id="balance" type="number" name="balance" class="CRUD__form--input"  value="<%= res[0].balance %>">
+
+        <input type="submit" name="update" value="Update" class="CRUD__formBTN CRUD__formBTN--update">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

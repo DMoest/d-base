@@ -1,0 +1,28 @@
+<%- include ("./../../partials/header") %>
+
+<h1 class="view__text--header">Delete a product</h1>
+
+<p class="view__text--paragraph">Here you can delete product.</p>
+
+<form class="CRUD__form" method="post" action="/eshop/deleteProduct">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Product details</legend>
+
+        <label for="id" class="CRUD__form--label">Id:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input"  value="<%= res[0].id %>" readonly>
+
+        <label for="name" class="CRUD__form--label">Name:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input" value="<%= res[0].name %>" readonly>
+
+        <label for="info" class="CRUD__form--label">Info:</label>
+        <input id="info" type="text" name="info" class="CRUD__form--input CRUD__form--inputInfo"  value="<%= res[0].info %>" readonly></input>
+
+        <label for="price" class="CRUD__form--label">Price:</label>
+        <input id="price" type="number" step="0.01" name="price" class="CRUD__form--input"  value="<%= res[0].price %>" readonly>
+
+        <input type="submit" name="delete" value="Delete" class="CRUD__formBTN CRUD__formBTN--delete">
+    </fieldset>
+</form>
+
+
+<%- include ("./../../partials/footer") %>
