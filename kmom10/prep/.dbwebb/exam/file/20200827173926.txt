@@ -1,0 +1,48 @@
+20200827173926
+.
+total 168
+-rw-r--r--@ 1 Daniel  staff   6148 27 Aug 12:52 .DS_Store
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 12:35 .dbwebb
+-rw-r--r--  1 Daniel  staff   6375 27 Aug 17:39 INSTRUKTION_2018-03-21_upplevelse.md
+-rw-r--r--  1 Daniel  staff   7468 27 Aug 17:39 INSTRUKTION_2018-05-31_det-stora-slaget-om-tartan.md
+-rw-r--r--  1 Daniel  staff   7764 27 Aug 17:39 INSTRUKTION_2018-08-31_en-japansk-smakresa.md
+-rw-r--r--  1 Daniel  staff   9668 27 Aug 17:39 INSTRUKTION_2019-03-28_Sakerhetspolisen-SAPO.md
+-rw-r--r--  1 Daniel  staff  10089 27 Aug 17:39 INSTRUKTION_2019-05-30_Biblioteket.md
+-rw-r--r--  1 Daniel  staff   9428 27 Aug 17:39 INSTRUKTION_2019-08-30_pingis.md
+-rw-r--r--  1 Daniel  staff  10501 27 Aug 17:39 INSTRUKTION_2020-03-26_rock.md
+-rw-r--r--  1 Daniel  staff   3852 27 Aug 17:39 README_FIRST.md
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 12:55 doc
+drwxr-xr-x  4 Daniel  staff    128 27 Aug 12:52 sql
+./.dbwebb
+total 0
+drwxr-xr-x  5 Daniel  staff  160 27 Aug 17:39 exam
+./.dbwebb/exam
+total 8
+drwxr-xr-x  4 Daniel  staff  128 27 Aug 17:39 file
+-rw-r--r--  1 Daniel  staff   36 27 Aug 17:39 id.md
+drwxr-xr-x  4 Daniel  staff  128 27 Aug 17:39 receipt
+./.dbwebb/exam/file
+total 16
+-rw-r--r--  1 Daniel  staff  1204 27 Aug 12:35 20200827123541.txt
+-rw-r--r--  1 Daniel  staff  1200 27 Aug 17:39 20200827173926.txt
+./.dbwebb/exam/receipt
+total 16
+-rw-r--r--  1 Daniel  staff  593 27 Aug 12:35 20200827103541.md
+-rw-r--r--  1 Daniel  staff  658 27 Aug 17:39 20200827153926.md
+./doc
+total 0
+-rw-r--r--  1 Daniel  staff  0 27 Aug 12:55 er.pdf
+./sql
+total 16
+-rw-r--r--@  1 Daniel  staff  6148 27 Aug 12:52 .DS_Store
+drwxr-xr-x  10 Daniel  staff   320 27 Aug 12:53 exam
+./sql/exam
+total 56
+-rw-r--r--@ 1 Daniel  staff   163 27 Aug 12:49 Databasen exam 2020-03-26 - artist.csv
+-rw-r--r--@ 1 Daniel  staff    41 27 Aug 12:49 Databasen exam 2020-03-26 - landskod.csv
+-rw-r--r--@ 1 Daniel  staff   132 27 Aug 12:49 Databasen exam 2020-03-26 - speldag.csv
+-rw-r--r--@ 1 Daniel  staff   129 27 Aug 12:49 Databasen exam 2020-03-26 - spelning.csv
+-rw-r--r--  1 Daniel  staff  1043 27 Aug 17:38 ddl.sql
+-rw-r--r--  1 Daniel  staff     0 27 Aug 12:53 dml.sql
+-rw-r--r--  1 Daniel  staff    15 27 Aug 12:55 insert.sql
+-rw-r--r--  1 Daniel  staff   449 27 Aug 17:28 setup.sql

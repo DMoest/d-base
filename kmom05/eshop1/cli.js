@@ -43,14 +43,14 @@ const myFunctions = require("./src/functions.js");
                 break;
             case "products":
             case "-p": {
-                let result = await myFunctions.showAllProducts("products");
+                let result = await myFunctions.getAllProducts("products");
 
                 await console.table(result[0]);
                 break;
             }
             case "productcategories":
             case "-pc": {
-                let result = await myFunctions.showProductCategories("product_types");
+                let result = await myFunctions.getProductCategories("product_types");
 
                 await console.table(result);
                 break;
@@ -58,6 +58,15 @@ const myFunctions = require("./src/functions.js");
             case "invadd":
             case "-ia": {
                 console.info("* INVADD");
+
+                let shelf = lineArray[2].split("-");
+                let section = shelf[0].toUpperCase();
+                let position = shelf[1];
+                let level = shelf[2];
+                let product = parseInt(lineArray[1]);
+                let amount = parseInt(lineArray[3]);
+
+                await myFunctions.positionProductOnShelf(section, position, level, product, amount);
                 break;
             }
             case "invdel":
@@ -68,16 +77,37 @@ const myFunctions = require("./src/functions.js");
             case "inventory":
             case "-i": {
                 console.info("* INVENTORY");
+                let result;
+
+                if (lineArray.length > 1) {
+                    result = await myFunctions.searchInventory(lineArray[1]);
+                    await console.table(result[0]);
+                } else {
+                    result = await myFunctions.getProductInventories();
+                    await console.table(result[0]);
+                }
                 break;
             }
             case "shelf":
             case "-s": {
                 console.info("* SHELF");
+                let result = await myFunctions.getInventoryShelves();
+
+                await console.table(result[0]);
                 break;
             }
             case "log":
             case "-l": {
-                console.info("* LOG");
+                console.info("* LOG PRODUCTS");
+                let result;
+
+                if (lineArray.length > 1) {
+                    result = await myFunctions.getRowsFromProductLog(lineArray[1]);
+                    await console.table(result[0]);
+                } else {
+                    result = await myFunctions.getFullProductLog();
+                    await console.table(result[0]);
+                }
                 break;
             }
             case "exit":
@@ -128,14 +158,14 @@ function showMenu() {
         |                                                               |
         * ============================================================= *
 
-        Menu, Help (-h) .................................. Show this menu.
-        Exit, Quit (-q) .................................. Quit the program.
-        Customers (-c) ................................... Show all registerd customers.
-        Orders (-o) ...................................... Show all orders.
-        Orderlist (-ol) .................................. Show orderlist.
-        Products (-p) .................................... Show all products.
-        Product categories (-pc) ......................... Show all products.
-        Wearhouse  (-w) .................................. Show whats in the wearhouse.
+        Menu, Help (-h) ............................. Show this help menu.
+        Inventory (-i) <str> ........................ Show product inventory.
+        Invadd (-ia) <prod.id> <shelf> <amount> ..... Position amount of product on inventory shelf.
+        Products (-p) ............................... Show all products.
+        Productcategories (-pc) ..................... Show all products.
+        Shelf (-s) .................................. Show all shelves in the wearhouse.
+        Log (-s) <rows> ............................. Show <rows> from product log.
+        Exit, Quit (-q) ............................. Quit the program.
 
 
 

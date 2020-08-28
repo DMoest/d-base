@@ -17,9 +17,7 @@
     <% for (const row of res[0]) { %>
         <tr class="productTable__TRs">
             <td class="productTable__TDs productTable__TDs--id">
-                <div class="productTable__TDs">
-                    <a href="product/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--link"><%= row.id %></a>
-                </div>
+                <a href="product/<%= row.id %>"><%= row.id %></a>
             </td>
             <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
             <td class="productTable__TDs productTable__TDs--name"><%= row.types %></td>

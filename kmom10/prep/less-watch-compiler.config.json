@@ -1,0 +1,9 @@
+{
+    "allowedExtensions":[".less"],
+    "minified": true,
+    "sourceMap": false,
+    "plugins": "less-plugin-clean-css",
+    "mainFile": "style.less",
+    "watchFolder": "./public/less",
+    "outputFolder": "./public/css"
+}

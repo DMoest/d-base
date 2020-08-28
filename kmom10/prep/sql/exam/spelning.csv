@@ -1,0 +1,9 @@
+artist_id,speldag_id,klockslag
+dbh,1,15:00
+dbh,2,15:00
+dbh,3,15:00
+bc,2,19:00
+bc,3,19:00
+mw,1,21:00
+mw,2,21:00
+el,3,21:00

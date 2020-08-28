@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2181
+# --------------------------------------------------
 # DV1606, Databasteknologier för webben VT20
 # Daniel Andersson, DAAP19
 # Module: reset_db.bash
 # Module content: Reset database Eshop with setup, ddl & insert.
+# --------------------------------------------------
 
 
 
 # --------------------------------------------------
-# Load a SQL file into Eshop
+# Load a SQL file into Eshop.
 # --------------------------------------------------
 function loadSqlIntoDB
 {
@@ -34,12 +36,11 @@ loadSqlIntoDB "user" "pass" "insert.sql" "Insert data into tables."
 
 
 
-
 # --------------------------------------------------
 # Describe Tables:
 # --------------------------------------------------
 # The following can be use by comented in again.
-# Maybe it will help to search if errors occur.
+# Maybe it will help you to search if errors occur.
 # --------------------------------------------------
 # echo ">>> Describe all TABLES:"
 # echo ">>> Describe table products."
@@ -98,3 +99,50 @@ loadSqlIntoDB "user" "pass" "insert.sql" "Insert data into tables."
 # mysql -uuser -ppass eshop -e "show create trigger log_product_update;"
 # echo ">>> Show triggerslog_product_delete."
 # mysql -uuser -ppass eshop -e "show create trigger log_product_delete;"
+
+
+
+# Backup:
+# --------------------------------------------------
+mysqldump -uuser -ppass eshop > eshop_backup.sql
+echo ">>> MySQL backup from database Eshop to SQL-file 'eshop_backup.sql'."
+echo ">>> file eshop_backup.sql: "
+file eshop_backup.sql
+
+# Export av tabeller till individuella filer - Kan jag exportera allt till samma Excel-fil?
+echo ">>> Export of all tables to Excel-files: "
+echo ">>> Export from table Eshop.Products."
+mysql -uuser -ppass eshop -e "select * from products;" --batch > products.xls
+
+echo ">>> Export from table Eshop.Invoices."
+mysql -uuser -ppass eshop -e "select * from invoices;" --batch > invoices.xls
+
+echo ">>> Export from table Eshop.Order_from_customer."
+mysql -uuser -ppass eshop -e "select * from order_from_customer;" --batch > order_from_customer.xls
+
+echo ">>> Export from table Eshop.orders."
+mysql -uuser -ppass eshop -e "select * from orders;" --batch > orders.xls
+
+echo ">>> Export from table Eshop.Customer_phones."
+mysql -uuser -ppass eshop -e "select * from customer_phones;" --batch > customer_phones.xls
+
+echo ">>> Export from table Eshop.Customers."
+mysql -uuser -ppass eshop -e "select * from customers;" --batch > customers.xls
+
+echo ">>> Export from table Eshop.Products_to_picking_list."
+mysql -uuser -ppass eshop -e "select * from products_to_picking_list;" --batch > products_to_picking_list.xls
+
+echo ">>> Export from table Eshop.Picking_list."
+mysql -uuser -ppass eshop -e "select * from picking_list;" --batch > picking_list.xls
+
+echo ">>> Export from table Eshop.Product_types."
+mysql -uuser -ppass eshop -e "select * from product_types;" --batch > product_types.xls
+
+echo ">>> Export from table Eshop.Product_pictures."
+mysql -uuser -ppass eshop -e "select * from product_pictures;" --batch > product_pictures.xls
+
+echo ">>> Export from table Eshop.Inventory."
+mysql -uuser -ppass eshop -e "select * from inventory;" --batch > inventory.xls
+
+echo ">>> Export from table Eshop.Log_products."
+mysql -uuser -ppass eshop -e "select * from log_products;" --batch > log_products.xls

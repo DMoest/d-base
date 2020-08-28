@@ -1,0 +1,1707 @@
+20200827192209
+.
+total 248
+-rw-r--r--@  1 Daniel  staff   6148 27 Aug 12:52 .DS_Store
+drwxr-xr-x   3 Daniel  staff     96 27 Aug 12:35 .dbwebb
+-rw-r--r--   1 Daniel  staff   6375 27 Aug 17:39 INSTRUKTION_2018-03-21_upplevelse.md
+-rw-r--r--   1 Daniel  staff   7468 27 Aug 17:39 INSTRUKTION_2018-05-31_det-stora-slaget-om-tartan.md
+-rw-r--r--   1 Daniel  staff   7764 27 Aug 17:39 INSTRUKTION_2018-08-31_en-japansk-smakresa.md
+-rw-r--r--   1 Daniel  staff   9668 27 Aug 17:39 INSTRUKTION_2019-03-28_Sakerhetspolisen-SAPO.md
+-rw-r--r--   1 Daniel  staff  10089 27 Aug 17:39 INSTRUKTION_2019-05-30_Biblioteket.md
+-rw-r--r--   1 Daniel  staff   9428 27 Aug 17:39 INSTRUKTION_2019-08-30_pingis.md
+-rw-r--r--   1 Daniel  staff  10501 27 Aug 17:39 INSTRUKTION_2020-03-26_rock.md
+-rw-r--r--   1 Daniel  staff   3852 27 Aug 17:39 README_FIRST.md
+drwxr-xr-x   3 Daniel  staff     96 27 Aug 17:54 config
+drwxr-xr-x   3 Daniel  staff     96 27 Aug 12:55 doc
+-rw-r--r--   1 Daniel  staff   3608 27 Aug 18:04 eshop.js
+-rw-r--r--   1 Daniel  staff   1660 27 Aug 17:59 index.js
+drwxr-xr-x  90 Daniel  staff   2880 27 Aug 17:54 node_modules
+-rw-r--r--   1 Daniel  staff  25662 27 Aug 17:54 package-lock.json
+-rw-r--r--   1 Daniel  staff    408 27 Aug 17:54 package.json
+drwxr-xr-x   3 Daniel  staff     96 27 Aug 18:08 routes
+drwxr-xr-x   4 Daniel  staff    128 27 Aug 12:52 sql
+drwxr-xr-x   2 Daniel  staff     64 27 Aug 18:07 src
+./config
+total 0
+drwxr-xr-x  3 Daniel  staff  96 27 Aug 17:54 db
+./config/db
+total 8
+-rw-r--r--  1 Daniel  staff  127 27 Aug 17:56 config.json
+./node_modules/sqlstring
+total 48
+-rw-r--r--  1 Daniel  staff   859 25 Feb  2018 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1118 31 Mar  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  7969  2 Okt  2017 README.md
+-rw-r--r--  1 Daniel  staff    45  2 Okt  2017 index.js
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff  2404 27 Aug 17:53 package.json
+./node_modules/sqlstring/lib
+total 16
+-rw-r--r--  1 Daniel  staff  5858 25 Feb  2018 SqlString.js
+./node_modules/destroy
+total 32
+-rw-r--r--  1 Daniel  staff  1099 14 Aug  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  2185 13 Jan  2016 README.md
+-rw-r--r--  1 Daniel  staff  1043 13 Jan  2016 index.js
+-rw-r--r--  1 Daniel  staff  1821 27 Aug 17:53 package.json
+./node_modules/@types
+total 0
+drwxr-xr-x   6 Daniel  staff   192 27 Aug 17:54 bluebird
+drwxr-xr-x   6 Daniel  staff   192 27 Aug 17:54 mysql
+drwxr-xr-x  52 Daniel  staff  1664 27 Aug 17:54 node
+./node_modules/@types/bluebird
+total 136
+-rw-r--r--  1 Daniel  staff   1141 20 Maj 23:21 LICENSE
+-rw-r--r--  1 Daniel  staff    499 20 Maj 23:21 README.md
+-rw-r--r--  1 Daniel  staff  54522 20 Maj 23:21 index.d.ts
+-rw-r--r--  1 Daniel  staff   1697 27 Aug 17:54 package.json
+./node_modules/@types/mysql
+total 80
+-rw-r--r--  1 Daniel  staff   1141 12 Jul 09:55 LICENSE
+-rw-r--r--  1 Daniel  staff    724 12 Jul 09:55 README.md
+-rw-r--r--  1 Daniel  staff  24782 12 Jul 09:55 index.d.ts
+-rw-r--r--  1 Daniel  staff   2043 27 Aug 17:54 package.json
+./node_modules/@types/node
+total 1496
+-rw-r--r--  1 Daniel  staff    1141 27 Aug 13:19 LICENSE
+-rw-r--r--  1 Daniel  staff    2683 27 Aug 13:19 README.md
+-rw-r--r--  1 Daniel  staff    3202 27 Aug 13:19 assert.d.ts
+-rw-r--r--  1 Daniel  staff    9025 27 Aug 13:19 async_hooks.d.ts
+-rw-r--r--  1 Daniel  staff    1592 27 Aug 13:19 base.d.ts
+-rw-r--r--  1 Daniel  staff     708 27 Aug 13:19 buffer.d.ts
+-rw-r--r--  1 Daniel  staff   24867 27 Aug 13:19 child_process.d.ts
+-rw-r--r--  1 Daniel  staff   16125 27 Aug 13:19 cluster.d.ts
+-rw-r--r--  1 Daniel  staff    5910 27 Aug 13:19 console.d.ts
+-rw-r--r--  1 Daniel  staff     459 27 Aug 13:19 constants.d.ts
+-rw-r--r--  1 Daniel  staff   33291 27 Aug 13:19 crypto.d.ts
+-rw-r--r--  1 Daniel  staff    7156 27 Aug 13:19 dgram.d.ts
+-rw-r--r--  1 Daniel  staff   16161 27 Aug 13:19 dns.d.ts
+-rw-r--r--  1 Daniel  staff     715 27 Aug 13:19 domain.d.ts
+-rw-r--r--  1 Daniel  staff    3690 27 Aug 13:19 events.d.ts
+drwxr-xr-x  3 Daniel  staff      96 27 Aug 17:54 fs
+-rw-r--r--  1 Daniel  staff  112327 27 Aug 13:19 fs.d.ts
+-rw-r--r--  1 Daniel  staff   23041 27 Aug 13:19 globals.d.ts
+-rw-r--r--  1 Daniel  staff      35 27 Aug 13:19 globals.global.d.ts
+-rw-r--r--  1 Daniel  staff   17780 27 Aug 13:19 http.d.ts
+-rw-r--r--  1 Daniel  staff   56502 27 Aug 13:19 http2.d.ts
+-rw-r--r--  1 Daniel  staff    1684 27 Aug 13:19 https.d.ts
+-rw-r--r--  1 Daniel  staff    5043 27 Aug 13:19 index.d.ts
+-rw-r--r--  1 Daniel  staff  121933 27 Aug 13:19 inspector.d.ts
+-rw-r--r--  1 Daniel  staff    1643 27 Aug 13:19 module.d.ts
+-rw-r--r--  1 Daniel  staff   12828 27 Aug 13:19 net.d.ts
+-rw-r--r--  1 Daniel  staff    8178 27 Aug 13:19 os.d.ts
+-rw-r--r--  1 Daniel  staff    5554 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff    6309 27 Aug 13:19 path.d.ts
+-rw-r--r--  1 Daniel  staff   12044 27 Aug 13:19 perf_hooks.d.ts
+-rw-r--r--  1 Daniel  staff   19706 27 Aug 13:19 process.d.ts
+-rw-r--r--  1 Daniel  staff     378 27 Aug 13:19 punycode.d.ts
+-rw-r--r--  1 Daniel  staff    1046 27 Aug 13:19 querystring.d.ts
+-rw-r--r--  1 Daniel  staff    7330 27 Aug 13:19 readline.d.ts
+-rw-r--r--  1 Daniel  staff   17854 27 Aug 13:19 repl.d.ts
+-rw-r--r--  1 Daniel  staff   19323 27 Aug 13:19 stream.d.ts
+-rw-r--r--  1 Daniel  staff     193 27 Aug 13:19 string_decoder.d.ts
+-rw-r--r--  1 Daniel  staff     826 27 Aug 13:19 timers.d.ts
+-rw-r--r--  1 Daniel  staff   37634 27 Aug 13:19 tls.d.ts
+-rw-r--r--  1 Daniel  staff    2113 27 Aug 13:19 trace_events.d.ts
+drwxr-xr-x  8 Daniel  staff     256 27 Aug 17:54 ts3.2
+drwxr-xr-x  6 Daniel  staff     192 27 Aug 17:54 ts3.5
+drwxr-xr-x  5 Daniel  staff     160 27 Aug 17:54 ts3.7
+-rw-r--r--  1 Daniel  staff    2442 27 Aug 13:19 tty.d.ts
+-rw-r--r--  1 Daniel  staff    3810 27 Aug 13:19 url.d.ts
+-rw-r--r--  1 Daniel  staff   12209 27 Aug 13:19 util.d.ts
+-rw-r--r--  1 Daniel  staff    6769 27 Aug 13:19 v8.d.ts
+-rw-r--r--  1 Daniel  staff    5887 27 Aug 13:19 vm.d.ts
+-rw-r--r--  1 Daniel  staff    9044 27 Aug 13:19 worker_threads.d.ts
+-rw-r--r--  1 Daniel  staff   12182 27 Aug 13:19 zlib.d.ts
+./node_modules/@types/node/ts3.7
+total 24
+-rw-r--r--  1 Daniel  staff  3271 27 Aug 13:19 assert.d.ts
+-rw-r--r--  1 Daniel  staff   953 27 Aug 13:19 base.d.ts
+-rw-r--r--  1 Daniel  staff   267 27 Aug 13:19 index.d.ts
+./node_modules/@types/node/ts3.5
+total 32
+-rw-r--r--  1 Daniel  staff  1039 27 Aug 13:19 base.d.ts
+-rw-r--r--  1 Daniel  staff    55 27 Aug 13:19 globals.global.d.ts
+-rw-r--r--  1 Daniel  staff   335 27 Aug 13:19 index.d.ts
+-rw-r--r--  1 Daniel  staff  2197 27 Aug 13:19 wasi.d.ts
+./node_modules/@types/node/ts3.2
+total 48
+-rw-r--r--  1 Daniel  staff  1065 27 Aug 13:19 base.d.ts
+-rw-r--r--  1 Daniel  staff  1088 27 Aug 13:19 fs.d.ts
+-rw-r--r--  1 Daniel  staff   555 27 Aug 13:19 globals.d.ts
+-rw-r--r--  1 Daniel  staff   521 27 Aug 13:19 index.d.ts
+-rw-r--r--  1 Daniel  staff   251 27 Aug 13:19 process.d.ts
+-rw-r--r--  1 Daniel  staff   280 27 Aug 13:19 util.d.ts
+./node_modules/@types/node/fs
+total 64
+-rw-r--r--  1 Daniel  staff  29182 27 Aug 13:19 promises.d.ts
+./node_modules/process-nextick-args
+total 32
+-rw-r--r--  1 Daniel  staff  1083 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  1064 26 Okt  1985 license.md
+-rw-r--r--  1 Daniel  staff  1542 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   450 26 Okt  1985 readme.md
+./node_modules/errno
+total 88
+-rw-r--r--  1 Daniel  staff  1147  5 Dec  2017 .jshintrc
+-rw-r--r--  1 Daniel  staff    77  7 Dec  2017 .travis.yml
+-rw-r--r--  1 Daniel  staff  4701 10 Dec  2017 README.md
+-rwxr-xr-x  1 Daniel  staff  1139  5 Dec  2017 build.js
+-rwxr-xr-x  1 Daniel  staff   440 10 Dec  2017 cli.js
+-rw-r--r--  1 Daniel  staff  1663 15 Feb  2018 custom.js
+-rw-r--r--  1 Daniel  staff  5610  7 Dec  2017 errno.js
+-rw-r--r--  1 Daniel  staff  1567 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff  2642 15 Feb  2018 test.js
+./node_modules/.bin
+total 0
+lrwxr-xr-x  1 Daniel  staff  17 27 Aug 17:53 ejs -> ../ejs/bin/cli.js
+lrwxr-xr-x  1 Daniel  staff  15 27 Aug 17:54 errno -> ../errno/cli.js
+lrwxr-xr-x  1 Daniel  staff  31 27 Aug 17:54 image-size -> ../image-size/bin/image-size.js
+lrwxr-xr-x  1 Daniel  staff  18 27 Aug 17:53 jake -> ../jake/bin/cli.js
+lrwxr-xr-x  1 Daniel  staff  17 27 Aug 17:54 lessc -> ../less/bin/lessc
+lrwxr-xr-x  1 Daniel  staff  14 27 Aug 17:53 mime -> ../mime/cli.js
+lrwxr-xr-x  1 Daniel  staff  20 27 Aug 17:54 semver -> ../semver/bin/semver
+./node_modules/toidentifier
+total 32
+-rw-r--r--  1 Daniel  staff  1108  2 Jul  2018 LICENSE
+-rw-r--r--  1 Daniel  staff  1718  9 Jul  2018 README.md
+-rw-r--r--  1 Daniel  staff   490  2 Jul  2018 index.js
+-rw-r--r--  1 Daniel  staff  2218 27 Aug 17:53 package.json
+./node_modules/make-dir
+total 40
+-rw-r--r--  1 Daniel  staff  1098 26 Okt  1985 index.d.ts
+-rw-r--r--  1 Daniel  staff  3077 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  1109 26 Okt  1985 license
+-rw-r--r--  1 Daniel  staff  2158 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff  2887 26 Okt  1985 readme.md
+./node_modules/content-type
+total 48
+-rw-r--r--  1 Daniel  staff   436 11 Sep  2017 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1089 11 Sep  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  2796 11 Sep  2017 README.md
+-rw-r--r--  1 Daniel  staff  4809 11 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff  2196 27 Aug 17:53 package.json
+./node_modules/ms
+total 32
+-rw-r--r--  1 Daniel  staff  2764 16 Maj  2017 index.js
+-rw-r--r--  1 Daniel  staff  1077 16 Maj  2017 license.md
+-rw-r--r--  1 Daniel  staff  1595 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff  1721 16 Maj  2017 readme.md
+./node_modules/content-disposition
+total 64
+-rw-r--r--  1 Daniel  staff    952 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff   1094 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff   5237 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  10594 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   2418 27 Aug 17:53 package.json
+./node_modules/methods
+total 40
+-rw-r--r--  1 Daniel  staff   427 18 Jan  2016 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1180 18 Jan  2016 LICENSE
+-rw-r--r--  1 Daniel  staff  1694 18 Jan  2016 README.md
+-rw-r--r--  1 Daniel  staff  1040 18 Jan  2016 index.js
+-rw-r--r--  1 Daniel  staff  2046 27 Aug 17:53 package.json
+./node_modules/escape-string-regexp
+total 32
+-rw-r--r--  1 Daniel  staff   226 21 Feb  2016 index.js
+-rw-r--r--  1 Daniel  staff  1119 24 Jun  2014 license
+-rw-r--r--  1 Daniel  staff  2003 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   552 21 Feb  2016 readme.md
+./node_modules/proxy-addr
+total 56
+-rw-r--r--  1 Daniel  staff  2869 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1094 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  4400 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  6000 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2285 27 Aug 17:53 package.json
+./node_modules/depd
+total 72
+-rw-r--r--  1 Daniel  staff   2060 12 Jan  2018 History.md
+-rw-r--r--  1 Daniel  staff   1094 12 Jan  2018 LICENSE
+-rw-r--r--  1 Daniel  staff  10025 12 Jan  2018 Readme.md
+-rw-r--r--  1 Daniel  staff  10669 12 Jan  2018 index.js
+drwxr-xr-x  4 Daniel  staff    128 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff   2166 27 Aug 17:53 package.json
+./node_modules/depd/lib
+total 0
+drwxr-xr-x  3 Daniel  staff   96 27 Aug 17:53 browser
+drwxr-xr-x  5 Daniel  staff  160 27 Aug 17:53 compat
+./node_modules/depd/lib/compat
+total 24
+-rw-r--r--  1 Daniel  staff  2229 12 Jan  2018 callsite-tostring.js
+-rw-r--r--  1 Daniel  staff   338 12 Jan  2018 event-listener-count.js
+-rw-r--r--  1 Daniel  staff  1421 12 Jan  2018 index.js
+./node_modules/depd/lib/browser
+total 8
+-rw-r--r--  1 Daniel  staff  1512 27 Jul  2017 index.js
+./node_modules/core-util-is
+total 64
+-rw-r--r--  1 Daniel  staff   1077 20 Nov  2015 LICENSE
+-rw-r--r--  1 Daniel  staff     67 20 Nov  2015 README.md
+-rw-r--r--  1 Daniel  staff  16278 20 Nov  2015 float.patch
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff   1588 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   2101 20 Nov  2015 test.js
+./node_modules/core-util-is/lib
+total 8
+-rw-r--r--  1 Daniel  staff  3021 20 Nov  2015 util.js
+./node_modules/range-parser
+total 40
+-rw-r--r--  1 Daniel  staff   917 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1178 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  2278 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  2900 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2443 27 Aug 17:53 package.json
+./node_modules/balanced-match
+total 40
+-rw-r--r--  1 Daniel  staff    48 12 Jun  2017 .npmignore
+-rw-r--r--  1 Daniel  staff  1096 12 Jun  2017 LICENSE.md
+-rw-r--r--  1 Daniel  staff  3308 12 Jun  2017 README.md
+-rw-r--r--  1 Daniel  staff  1174 12 Jun  2017 index.js
+-rw-r--r--  1 Daniel  staff  2001 27 Aug 17:53 package.json
+./node_modules/prr
+total 64
+-rw-r--r--  1 Daniel  staff  1181 31 Mar  2013 .jshintrc
+-rw-r--r--  1 Daniel  staff    12 31 Mar  2013 .npmignore
+-rw-r--r--  1 Daniel  staff   119  1 Apr  2013 .travis.yml
+-rw-r--r--  1 Daniel  staff  1125 22 Jul  2014 LICENSE.md
+-rw-r--r--  1 Daniel  staff  1707 22 Jul  2014 README.md
+-rw-r--r--  1 Daniel  staff  1379 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff  1581  1 Apr  2013 prr.js
+-rw-r--r--  1 Daniel  staff  3862  1 Apr  2013 test.js
+./node_modules/bytes
+total 40
+-rw-r--r--  1 Daniel  staff  1581 26 Okt  1985 History.md
+-rw-r--r--  1 Daniel  staff  1153 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  3890 26 Okt  1985 Readme.md
+-rw-r--r--  1 Daniel  staff  3469 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2059 27 Aug 17:53 package.json
+./node_modules/less
+total 120
+-rw-r--r--   1 Daniel  staff     56 26 Okt  1985 .eslintignore
+-rw-r--r--   1 Daniel  staff     41 26 Okt  1985 .eslintrc.json
+-rw-r--r--   1 Daniel  staff  14630 26 Okt  1985 Gruntfile.js
+-rw-r--r--   1 Daniel  staff   9724 26 Okt  1985 LICENSE
+-rw-r--r--   1 Daniel  staff    251 26 Okt  1985 README.md
+drwxr-xr-x   3 Daniel  staff     96 27 Aug 17:54 bin
+-rw-r--r--   1 Daniel  staff    309 26 Okt  1985 bower.json
+drwxr-xr-x   5 Daniel  staff    160 27 Aug 17:54 dist
+-rw-r--r--   1 Daniel  staff     53 26 Okt  1985 index.js
+drwxr-xr-x   5 Daniel  staff    160 27 Aug 17:54 lib
+-rw-r--r--   1 Daniel  staff   4377 27 Aug 17:54 package.json
+drwxr-xr-x  12 Daniel  staff    384 27 Aug 17:54 test
+-rw-r--r--   1 Daniel  staff    255 26 Okt  1985 tsconfig.json
+./node_modules/less/test
+total 88
+-rw-r--r--   1 Daniel  staff    105 26 Okt  1985 .eslintrc.json
+-rw-r--r--   1 Daniel  staff    136 26 Okt  1985 README.md
+drwxr-xr-x  43 Daniel  staff   1376 27 Aug 17:54 browser
+-rw-r--r--   1 Daniel  staff   4248 26 Okt  1985 index.js
+-rw-r--r--   1 Daniel  staff  20250 26 Okt  1985 less-test.js
+-rw-r--r--   1 Daniel  staff    703 26 Okt  1985 modify-vars.js
+drwxr-xr-x   6 Daniel  staff    192 27 Aug 17:54 plugins
+drwxr-xr-x   6 Daniel  staff    192 27 Aug 17:54 sourcemaps
+drwxr-xr-x   3 Daniel  staff     96 27 Aug 17:54 sourcemaps-disable-annotation
+-rw-r--r--   1 Daniel  staff    336 26 Okt  1985 test-es6.ts
+./node_modules/less/test/plugins
+total 0
+drwxr-xr-x  3 Daniel  staff  96 27 Aug 17:54 filemanager
+drwxr-xr-x  3 Daniel  staff  96 27 Aug 17:54 postprocess
+drwxr-xr-x  3 Daniel  staff  96 27 Aug 17:54 preprocess
+drwxr-xr-x  3 Daniel  staff  96 27 Aug 17:54 visitor
+./node_modules/less/test/plugins/preprocess
+total 8
+-rw-r--r--  1 Daniel  staff  672 26 Okt  1985 index.js
+./node_modules/less/test/plugins/visitor
+total 8
+-rw-r--r--  1 Daniel  staff  710 26 Okt  1985 index.js
+./node_modules/less/test/plugins/filemanager
+total 8
+-rw-r--r--  1 Daniel  staff  845 26 Okt  1985 index.js
+./node_modules/less/test/plugins/postprocess
+total 8
+-rw-r--r--  1 Daniel  staff  398 26 Okt  1985 index.js
+./node_modules/less/test/sourcemaps-disable-annotation
+total 8
+-rw-r--r--  1 Daniel  staff  165 26 Okt  1985 basic.json
+./node_modules/less/test/browser
+total 312
+-rw-r--r--   1 Daniel  staff  8089 26 Okt  1985 common.js
+drwxr-xr-x  12 Daniel  staff   384 27 Aug 17:54 css
+drwxr-xr-x   7 Daniel  staff   224 27 Aug 17:54 generator
+drwxr-xr-x  16 Daniel  staff   512 27 Aug 17:54 less
+-rw-r--r--   1 Daniel  staff    87 26 Okt  1985 runner-VisitorPlugin-options.js
+-rw-r--r--   1 Daniel  staff    84 26 Okt  1985 runner-VisitorPlugin.js
+-rw-r--r--   1 Daniel  staff  1528 26 Okt  1985 runner-browser-options.js
+-rw-r--r--   1 Daniel  staff   309 26 Okt  1985 runner-browser-spec.js
+-rw-r--r--   1 Daniel  staff   135 26 Okt  1985 runner-console-errors.js
+-rw-r--r--   1 Daniel  staff   111 26 Okt  1985 runner-errors-options.js
+-rw-r--r--   1 Daniel  staff    81 26 Okt  1985 runner-errors-spec.js
+-rw-r--r--   1 Daniel  staff    93 26 Okt  1985 runner-filemanagerPlugin-options.js
+-rw-r--r--   1 Daniel  staff    88 26 Okt  1985 runner-filemanagerPlugin.js
+-rw-r--r--   1 Daniel  staff   117 26 Okt  1985 runner-global-vars-options.js
+-rw-r--r--   1 Daniel  staff    81 26 Okt  1985 runner-global-vars-spec.js
+-rw-r--r--   1 Daniel  staff   107 26 Okt  1985 runner-legacy-options.js
+-rw-r--r--   1 Daniel  staff    82 26 Okt  1985 runner-legacy-spec.js
+-rw-r--r--   1 Daniel  staff   399 26 Okt  1985 runner-main-options.js
+-rw-r--r--   1 Daniel  staff   210 26 Okt  1985 runner-main-spec.js
+-rw-r--r--   1 Daniel  staff    82 26 Okt  1985 runner-modify-vars-options.js
+-rw-r--r--   1 Daniel  staff   867 26 Okt  1985 runner-modify-vars-spec.js
+-rw-r--r--   1 Daniel  staff    84 26 Okt  1985 runner-no-js-errors-options.js
+-rw-r--r--   1 Daniel  staff   101 26 Okt  1985 runner-no-js-errors-spec.js
+-rw-r--r--   1 Daniel  staff    93 26 Okt  1985 runner-postProcessorPlugin-options.js
+-rw-r--r--   1 Daniel  staff    90 26 Okt  1985 runner-postProcessorPlugin.js
+-rw-r--r--   1 Daniel  staff    92 26 Okt  1985 runner-preProcessorPlugin-options.js
+-rw-r--r--   1 Daniel  staff    89 26 Okt  1985 runner-preProcessorPlugin.js
+-rw-r--r--   1 Daniel  staff    82 26 Okt  1985 runner-production-options.js
+-rw-r--r--   1 Daniel  staff   163 26 Okt  1985 runner-production-spec.js
+-rw-r--r--   1 Daniel  staff    83 26 Okt  1985 runner-relative-urls-options.js
+-rw-r--r--   1 Daniel  staff   100 26 Okt  1985 runner-relative-urls-spec.js
+-rw-r--r--   1 Daniel  staff    83 26 Okt  1985 runner-rewrite-urls-options.js
+-rw-r--r--   1 Daniel  staff    97 26 Okt  1985 runner-rewrite-urls-spec.js
+-rw-r--r--   1 Daniel  staff    95 26 Okt  1985 runner-rootpath-options.js
+-rw-r--r--   1 Daniel  staff   144 26 Okt  1985 runner-rootpath-relative-options.js
+-rw-r--r--   1 Daniel  staff   111 26 Okt  1985 runner-rootpath-relative-spec.js
+-rw-r--r--   1 Daniel  staff   144 26 Okt  1985 runner-rootpath-rewrite-urls-options.js
+-rw-r--r--   1 Daniel  staff   110 26 Okt  1985 runner-rootpath-rewrite-urls-spec.js
+-rw-r--r--   1 Daniel  staff   100 26 Okt  1985 runner-rootpath-spec.js
+-rw-r--r--   1 Daniel  staff   108 26 Okt  1985 runner-strict-units-options.js
+-rw-r--r--   1 Daniel  staff    88 26 Okt  1985 runner-strict-units-spec.js
+./node_modules/less/test/browser/css
+total 16
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 global-vars
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 modify-vars
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 plugin
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 postProcessor
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 relative-urls
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rewrite-urls
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rootpath
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rootpath-relative
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rootpath-rewrite-urls
+-rw-r--r--  1 Daniel  staff  5007 26 Okt  1985 urls.css
+./node_modules/less/test/browser/css/rootpath-relative
+total 8
+-rw-r--r--  1 Daniel  staff  1468 26 Okt  1985 urls.css
+./node_modules/less/test/browser/css/modify-vars
+total 8
+-rw-r--r--  1 Daniel  staff  99 26 Okt  1985 simple.css
+./node_modules/less/test/browser/css/global-vars
+total 8
+-rw-r--r--  1 Daniel  staff  24 26 Okt  1985 simple.css
+./node_modules/less/test/browser/css/rewrite-urls
+total 8
+-rw-r--r--  1 Daniel  staff  1602 26 Okt  1985 urls.css
+./node_modules/less/test/browser/css/relative-urls
+total 8
+-rw-r--r--  1 Daniel  staff  1608 26 Okt  1985 urls.css
+./node_modules/less/test/browser/css/postProcessor
+total 8
+-rw-r--r--  1 Daniel  staff  44 26 Okt  1985 postProcessor.css
+./node_modules/less/test/browser/css/plugin
+total 8
+-rw-r--r--  1 Daniel  staff  77 26 Okt  1985 plugin.css
+./node_modules/less/test/browser/css/rootpath-rewrite-urls
+total 8
+-rw-r--r--  1 Daniel  staff  1468 26 Okt  1985 urls.css
+./node_modules/less/test/browser/css/rootpath
+total 8
+-rw-r--r--  1 Daniel  staff  1238 26 Okt  1985 urls.css
+./node_modules/less/test/browser/less
+total 8
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 console-errors
+drwxr-xr-x  8 Daniel  staff   256 27 Aug 17:54 errors
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 global-vars
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 imports
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 modify-vars
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 nested-gradient-with-svg-gradient
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 plugin
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 postProcessor
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 relative-urls
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rewrite-urls
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rootpath
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rootpath-relative
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 rootpath-rewrite-urls
+-rw-r--r--  1 Daniel  staff  2146 26 Okt  1985 urls.less
+./node_modules/less/test/browser/less/rootpath-relative
+total 8
+-rw-r--r--  1 Daniel  staff  1056 26 Okt  1985 urls.less
+./node_modules/less/test/browser/less/modify-vars
+total 8
+drwxr-xr-x  3 Daniel  staff   96 27 Aug 17:54 imports
+-rw-r--r--  1 Daniel  staff  111 26 Okt  1985 simple.less
+./node_modules/less/test/browser/less/modify-vars/imports
+total 8
+-rw-r--r--  1 Daniel  staff  52 26 Okt  1985 simple2.less
+./node_modules/less/test/browser/less/global-vars
+total 8
+-rw-r--r--  1 Daniel  staff  32 26 Okt  1985 simple.less
+./node_modules/less/test/browser/less/rewrite-urls
+total 8
+-rw-r--r--  1 Daniel  staff  1092 26 Okt  1985 urls.less
+./node_modules/less/test/browser/less/relative-urls
+total 8
+-rw-r--r--  1 Daniel  staff  1092 26 Okt  1985 urls.less
+./node_modules/less/test/browser/less/postProcessor
+total 8
+-rw-r--r--  1 Daniel  staff  44 26 Okt  1985 postProcessor.less
+./node_modules/less/test/browser/less/plugin
+total 16
+-rw-r--r--  1 Daniel  staff  82 26 Okt  1985 plugin.js
+-rw-r--r--  1 Daniel  staff  43 26 Okt  1985 plugin.less
+./node_modules/less/test/browser/less/console-errors
+total 16
+-rw-r--r--  1 Daniel  staff   26 26 Okt  1985 test-error.less
+-rw-r--r--  1 Daniel  staff  159 26 Okt  1985 test-error.txt
+./node_modules/less/test/browser/less/imports
+total 16
+-rw-r--r--  1 Daniel  staff  62 26 Okt  1985 urls.less
+-rw-r--r--  1 Daniel  staff  63 26 Okt  1985 urls2.less
+./node_modules/less/test/browser/less/rootpath-rewrite-urls
+total 8
+-rw-r--r--  1 Daniel  staff  1056 26 Okt  1985 urls.less
+./node_modules/less/test/browser/less/rootpath
+total 8
+-rw-r--r--  1 Daniel  staff  1056 26 Okt  1985 urls.less
+./node_modules/less/test/browser/less/errors
+total 48
+-rw-r--r--  1 Daniel  staff   60 26 Okt  1985 image-height-error.less
+-rw-r--r--  1 Daniel  staff  236 26 Okt  1985 image-height-error.txt
+-rw-r--r--  1 Daniel  staff   53 26 Okt  1985 image-size-error.less
+-rw-r--r--  1 Daniel  staff  225 26 Okt  1985 image-size-error.txt
+-rw-r--r--  1 Daniel  staff   56 26 Okt  1985 image-width-error.less
+-rw-r--r--  1 Daniel  staff  231 26 Okt  1985 image-width-error.txt
+./node_modules/less/test/browser/less/nested-gradient-with-svg-gradient
+total 16
+-rw-r--r--  1 Daniel  staff   80 26 Okt  1985 mixin-consumer.less
+-rw-r--r--  1 Daniel  staff  365 26 Okt  1985 svg-gradient-mixin.less
+./node_modules/less/test/browser/generator
+total 48
+-rw-r--r--  1 Daniel  staff  1659 26 Okt  1985 benchmark.config.js
+-rw-r--r--  1 Daniel  staff  2195 26 Okt  1985 generate.js
+-rw-r--r--  1 Daniel  staff  6810 26 Okt  1985 runner.config.js
+-rw-r--r--  1 Daniel  staff    45 26 Okt  1985 runner.js
+-rw-r--r--  1 Daniel  staff  2676 26 Okt  1985 template.js
+./node_modules/less/test/sourcemaps
+total 24
+-rw-r--r--  1 Daniel  staff  1048 26 Okt  1985 basic.json
+-rw-r--r--  1 Daniel  staff   177 26 Okt  1985 custom-props.json
+-rw-r--r--  1 Daniel  staff   600 26 Okt  1985 index.html
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 maps
+./node_modules/less/test/sourcemaps/maps
+total 8
+-rw-r--r--  1 Daniel  staff  909 26 Okt  1985 import-map.map
+./node_modules/less/bin
+total 32
+-rwxr-xr-x  1 Daniel  staff  16208 26 Okt  1985 lessc
+./node_modules/less/dist
+total 2496
+-rw-r--r--  1 Daniel  staff  469721 26 Okt  1985 less.js
+-rw-r--r--  1 Daniel  staff  147793 26 Okt  1985 less.min.js
+-rw-r--r--  1 Daniel  staff  653232 26 Okt  1985 less.min.js.map
+./node_modules/less/lib
+total 0
+drwxr-xr-x  38 Daniel  staff  1216 27 Aug 17:54 less
+drwxr-xr-x  24 Daniel  staff   768 27 Aug 17:54 less-browser
+drwxr-xr-x  18 Daniel  staff   576 27 Aug 17:54 less-node
+./node_modules/less/lib/less
+total 440
+-rw-r--r--   1 Daniel  staff    318 26 Okt  1985 constants.js
+-rw-r--r--   1 Daniel  staff    528 26 Okt  1985 constants.js.map
+-rw-r--r--   1 Daniel  staff   5454 26 Okt  1985 contexts.js
+-rw-r--r--   1 Daniel  staff   9530 26 Okt  1985 contexts.js.map
+drwxr-xr-x   8 Daniel  staff    256 27 Aug 17:54 data
+-rw-r--r--   1 Daniel  staff   2784 26 Okt  1985 default-options.js
+-rw-r--r--   1 Daniel  staff   3472 26 Okt  1985 default-options.js.map
+drwxr-xr-x  12 Daniel  staff    384 27 Aug 17:54 environment
+drwxr-xr-x  32 Daniel  staff   1024 27 Aug 17:54 functions
+-rw-r--r--   1 Daniel  staff   9276 26 Okt  1985 import-manager.js
+-rw-r--r--   1 Daniel  staff  13156 26 Okt  1985 import-manager.js.map
+-rw-r--r--   1 Daniel  staff   5625 26 Okt  1985 index.js
+-rw-r--r--   1 Daniel  staff   5475 26 Okt  1985 index.js.map
+-rw-r--r--   1 Daniel  staff   6107 26 Okt  1985 less-error.js
+-rw-r--r--   1 Daniel  staff   9796 26 Okt  1985 less-error.js.map
+-rw-r--r--   1 Daniel  staff   1034 26 Okt  1985 logger.js
+-rw-r--r--   1 Daniel  staff   2093 26 Okt  1985 logger.js.map
+-rw-r--r--   1 Daniel  staff   2805 26 Okt  1985 parse-tree.js
+-rw-r--r--   1 Daniel  staff   4279 26 Okt  1985 parse-tree.js.map
+-rw-r--r--   1 Daniel  staff   4626 26 Okt  1985 parse.js
+-rw-r--r--   1 Daniel  staff   5931 26 Okt  1985 parse.js.map
+drwxr-xr-x   8 Daniel  staff    256 27 Aug 17:54 parser
+-rw-r--r--   1 Daniel  staff   4729 26 Okt  1985 plugin-manager.js
+-rw-r--r--   1 Daniel  staff   7599 26 Okt  1985 plugin-manager.js.map
+-rw-r--r--   1 Daniel  staff   2372 26 Okt  1985 render.js
+-rw-r--r--   1 Daniel  staff   2648 26 Okt  1985 render.js.map
+-rw-r--r--   1 Daniel  staff   3350 26 Okt  1985 source-map-builder.js
+-rw-r--r--   1 Daniel  staff   5188 26 Okt  1985 source-map-builder.js.map
+-rw-r--r--   1 Daniel  staff   6302 26 Okt  1985 source-map-output.js
+-rw-r--r--   1 Daniel  staff  11183 26 Okt  1985 source-map-output.js.map
+-rw-r--r--   1 Daniel  staff   3413 26 Okt  1985 transform-tree.js
+-rw-r--r--   1 Daniel  staff   5740 26 Okt  1985 transform-tree.js.map
+drwxr-xr-x  80 Daniel  staff   2560 27 Aug 17:54 tree
+-rw-r--r--   1 Daniel  staff   4778 26 Okt  1985 utils.js
+-rw-r--r--   1 Daniel  staff   6650 26 Okt  1985 utils.js.map
+drwxr-xr-x  18 Daniel  staff    576 27 Aug 17:54 visitors
+./node_modules/less/lib/less/tree
+total 1208
+-rw-r--r--  1 Daniel  staff   2211 26 Okt  1985 anonymous.js
+-rw-r--r--  1 Daniel  staff   2481 26 Okt  1985 anonymous.js.map
+-rw-r--r--  1 Daniel  staff   1815 26 Okt  1985 assignment.js
+-rw-r--r--  1 Daniel  staff   1738 26 Okt  1985 assignment.js.map
+-rw-r--r--  1 Daniel  staff   6270 26 Okt  1985 atrule.js
+-rw-r--r--  1 Daniel  staff   9902 26 Okt  1985 atrule.js.map
+-rw-r--r--  1 Daniel  staff   1921 26 Okt  1985 attribute.js
+-rw-r--r--  1 Daniel  staff   2210 26 Okt  1985 attribute.js.map
+-rw-r--r--  1 Daniel  staff   4811 26 Okt  1985 call.js
+-rw-r--r--  1 Daniel  staff   6933 26 Okt  1985 call.js.map
+-rw-r--r--  1 Daniel  staff   8720 26 Okt  1985 color.js
+-rw-r--r--  1 Daniel  staff  16285 26 Okt  1985 color.js.map
+-rw-r--r--  1 Daniel  staff   1748 26 Okt  1985 combinator.js
+-rw-r--r--  1 Daniel  staff   1684 26 Okt  1985 combinator.js.map
+-rw-r--r--  1 Daniel  staff   1870 26 Okt  1985 comment.js
+-rw-r--r--  1 Daniel  staff   1791 26 Okt  1985 comment.js.map
+-rw-r--r--  1 Daniel  staff   2365 26 Okt  1985 condition.js
+-rw-r--r--  1 Daniel  staff   2882 26 Okt  1985 condition.js.map
+-rw-r--r--  1 Daniel  staff   1426 26 Okt  1985 debug-info.js
+-rw-r--r--  1 Daniel  staff   2614 26 Okt  1985 debug-info.js.map
+-rw-r--r--  1 Daniel  staff   5806 26 Okt  1985 declaration.js
+-rw-r--r--  1 Daniel  staff   8151 26 Okt  1985 declaration.js.map
+-rw-r--r--  1 Daniel  staff   2871 26 Okt  1985 detached-ruleset.js
+-rw-r--r--  1 Daniel  staff   1977 26 Okt  1985 detached-ruleset.js.map
+-rw-r--r--  1 Daniel  staff   7013 26 Okt  1985 dimension.js
+-rw-r--r--  1 Daniel  staff  11351 26 Okt  1985 dimension.js.map
+-rw-r--r--  1 Daniel  staff   3448 26 Okt  1985 element.js
+-rw-r--r--  1 Daniel  staff   4737 26 Okt  1985 element.js.map
+-rw-r--r--  1 Daniel  staff   4288 26 Okt  1985 expression.js
+-rw-r--r--  1 Daniel  staff   4640 26 Okt  1985 expression.js.map
+-rw-r--r--  1 Daniel  staff   3280 26 Okt  1985 extend.js
+-rw-r--r--  1 Daniel  staff   4419 26 Okt  1985 extend.js.map
+-rw-r--r--  1 Daniel  staff   8189 26 Okt  1985 import.js
+-rw-r--r--  1 Daniel  staff  11874 26 Okt  1985 import.js.map
+-rw-r--r--  1 Daniel  staff   3552 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   3166 26 Okt  1985 index.js.map
+-rw-r--r--  1 Daniel  staff   2186 26 Okt  1985 javascript.js
+-rw-r--r--  1 Daniel  staff   2169 26 Okt  1985 javascript.js.map
+-rw-r--r--  1 Daniel  staff   3157 26 Okt  1985 js-eval-node.js
+-rw-r--r--  1 Daniel  staff   4129 26 Okt  1985 js-eval-node.js.map
+-rw-r--r--  1 Daniel  staff   1496 26 Okt  1985 keyword.js
+-rw-r--r--  1 Daniel  staff   1166 26 Okt  1985 keyword.js.map
+-rw-r--r--  1 Daniel  staff   7086 26 Okt  1985 media.js
+-rw-r--r--  1 Daniel  staff  10429 26 Okt  1985 media.js.map
+-rw-r--r--  1 Daniel  staff   9087 26 Okt  1985 mixin-call.js
+-rw-r--r--  1 Daniel  staff  15345 26 Okt  1985 mixin-call.js.map
+-rw-r--r--  1 Daniel  staff  10685 26 Okt  1985 mixin-definition.js
+-rw-r--r--  1 Daniel  staff  16918 26 Okt  1985 mixin-definition.js.map
+-rw-r--r--  1 Daniel  staff   3893 26 Okt  1985 namespace-value.js
+-rw-r--r--  1 Daniel  staff   5469 26 Okt  1985 namespace-value.js.map
+-rw-r--r--  1 Daniel  staff   1730 26 Okt  1985 negative.js
+-rw-r--r--  1 Daniel  staff   1480 26 Okt  1985 negative.js.map
+-rw-r--r--  1 Daniel  staff   5307 26 Okt  1985 node.js
+-rw-r--r--  1 Daniel  staff   9485 26 Okt  1985 node.js.map
+-rw-r--r--  1 Daniel  staff   3820 26 Okt  1985 operation.js
+-rw-r--r--  1 Daniel  staff   3995 26 Okt  1985 operation.js.map
+-rw-r--r--  1 Daniel  staff   1452 26 Okt  1985 paren.js
+-rw-r--r--  1 Daniel  staff   1104 26 Okt  1985 paren.js.map
+-rw-r--r--  1 Daniel  staff   3179 26 Okt  1985 property.js
+-rw-r--r--  1 Daniel  staff   4685 26 Okt  1985 property.js.map
+-rw-r--r--  1 Daniel  staff   3651 26 Okt  1985 quoted.js
+-rw-r--r--  1 Daniel  staff   5385 26 Okt  1985 quoted.js.map
+-rw-r--r--  1 Daniel  staff  34143 26 Okt  1985 ruleset.js
+-rw-r--r--  1 Daniel  staff  57823 26 Okt  1985 ruleset.js.map
+-rw-r--r--  1 Daniel  staff   5902 26 Okt  1985 selector.js
+-rw-r--r--  1 Daniel  staff   9721 26 Okt  1985 selector.js.map
+-rw-r--r--  1 Daniel  staff   1285 26 Okt  1985 unicode-descriptor.js
+-rw-r--r--  1 Daniel  staff    666 26 Okt  1985 unicode-descriptor.js.map
+-rw-r--r--  1 Daniel  staff   6259 26 Okt  1985 unit.js
+-rw-r--r--  1 Daniel  staff   8600 26 Okt  1985 unit.js.map
+-rw-r--r--  1 Daniel  staff   3029 26 Okt  1985 url.js
+-rw-r--r--  1 Daniel  staff   4163 26 Okt  1985 url.js.map
+-rw-r--r--  1 Daniel  staff   2133 26 Okt  1985 value.js
+-rw-r--r--  1 Daniel  staff   2493 26 Okt  1985 value.js.map
+-rw-r--r--  1 Daniel  staff   2627 26 Okt  1985 variable-call.js
+-rw-r--r--  1 Daniel  staff   2856 26 Okt  1985 variable-call.js.map
+-rw-r--r--  1 Daniel  staff   3082 26 Okt  1985 variable.js
+-rw-r--r--  1 Daniel  staff   4199 26 Okt  1985 variable.js.map
+./node_modules/less/lib/less/visitors
+total 360
+-rw-r--r--  1 Daniel  staff  24139 26 Okt  1985 extend-visitor.js
+-rw-r--r--  1 Daniel  staff  37860 26 Okt  1985 extend-visitor.js.map
+-rw-r--r--  1 Daniel  staff   2109 26 Okt  1985 import-sequencer.js
+-rw-r--r--  1 Daniel  staff   3423 26 Okt  1985 import-sequencer.js.map
+-rw-r--r--  1 Daniel  staff   7688 26 Okt  1985 import-visitor.js
+-rw-r--r--  1 Daniel  staff  12382 26 Okt  1985 import-visitor.js.map
+-rw-r--r--  1 Daniel  staff   1007 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff    813 26 Okt  1985 index.js.map
+-rw-r--r--  1 Daniel  staff   2468 26 Okt  1985 join-selector-visitor.js
+-rw-r--r--  1 Daniel  staff   3845 26 Okt  1985 join-selector-visitor.js.map
+-rw-r--r--  1 Daniel  staff   1256 26 Okt  1985 set-tree-visibility-visitor.js
+-rw-r--r--  1 Daniel  staff   2057 26 Okt  1985 set-tree-visibility-visitor.js.map
+-rw-r--r--  1 Daniel  staff  12441 26 Okt  1985 to-css-visitor.js
+-rw-r--r--  1 Daniel  staff  22438 26 Okt  1985 to-css-visitor.js.map
+-rw-r--r--  1 Daniel  staff   4825 26 Okt  1985 visitor.js
+-rw-r--r--  1 Daniel  staff   8819 26 Okt  1985 visitor.js.map
+./node_modules/less/lib/less/parser
+total 616
+-rw-r--r--  1 Daniel  staff    5641 26 Okt  1985 chunker.js
+-rw-r--r--  1 Daniel  staff    9601 26 Okt  1985 chunker.js.map
+-rw-r--r--  1 Daniel  staff   13313 26 Okt  1985 parser-input.js
+-rw-r--r--  1 Daniel  staff   24107 26 Okt  1985 parser-input.js.map
+-rw-r--r--  1 Daniel  staff   94949 26 Okt  1985 parser.js
+-rw-r--r--  1 Daniel  staff  154701 26 Okt  1985 parser.js.map
+./node_modules/less/lib/less/environment
+total 136
+-rw-r--r--  1 Daniel  staff   4721 26 Okt  1985 abstract-file-manager.js
+-rw-r--r--  1 Daniel  staff   8464 26 Okt  1985 abstract-file-manager.js.map
+-rw-r--r--  1 Daniel  staff   6587 26 Okt  1985 abstract-plugin-loader.js
+-rw-r--r--  1 Daniel  staff  10969 26 Okt  1985 abstract-plugin-loader.js.map
+-rw-r--r--  1 Daniel  staff    630 26 Okt  1985 environment-api.js
+-rw-r--r--  1 Daniel  staff    915 26 Okt  1985 environment-api.js.map
+-rw-r--r--  1 Daniel  staff   2549 26 Okt  1985 environment.js
+-rw-r--r--  1 Daniel  staff   3941 26 Okt  1985 environment.js.map
+-rw-r--r--  1 Daniel  staff   3558 26 Okt  1985 file-manager-api.js
+-rw-r--r--  1 Daniel  staff   4381 26 Okt  1985 file-manager-api.js.map
+./node_modules/less/lib/less/functions
+total 400
+-rw-r--r--  1 Daniel  staff    841 26 Okt  1985 boolean.js
+-rw-r--r--  1 Daniel  staff   1185 26 Okt  1985 boolean.js.map
+-rw-r--r--  1 Daniel  staff   2204 26 Okt  1985 color-blending.js
+-rw-r--r--  1 Daniel  staff   4738 26 Okt  1985 color-blending.js.map
+-rw-r--r--  1 Daniel  staff  13016 26 Okt  1985 color.js
+-rw-r--r--  1 Daniel  staff  26549 26 Okt  1985 color.js.map
+-rw-r--r--  1 Daniel  staff   4159 26 Okt  1985 data-uri.js
+-rw-r--r--  1 Daniel  staff   5287 26 Okt  1985 data-uri.js.map
+-rw-r--r--  1 Daniel  staff    800 26 Okt  1985 default.js
+-rw-r--r--  1 Daniel  staff   1248 26 Okt  1985 default.js.map
+-rw-r--r--  1 Daniel  staff   2586 26 Okt  1985 function-caller.js
+-rw-r--r--  1 Daniel  staff   3537 26 Okt  1985 function-caller.js.map
+-rw-r--r--  1 Daniel  staff   1154 26 Okt  1985 function-registry.js
+-rw-r--r--  1 Daniel  staff   2093 26 Okt  1985 function-registry.js.map
+-rw-r--r--  1 Daniel  staff   1948 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   2157 26 Okt  1985 index.js.map
+-rw-r--r--  1 Daniel  staff   4657 26 Okt  1985 list.js
+-rw-r--r--  1 Daniel  staff   8427 26 Okt  1985 list.js.map
+-rw-r--r--  1 Daniel  staff    682 26 Okt  1985 math-helper.js
+-rw-r--r--  1 Daniel  staff    979 26 Okt  1985 math-helper.js.map
+-rw-r--r--  1 Daniel  staff    918 26 Okt  1985 math.js
+-rw-r--r--  1 Daniel  staff   1540 26 Okt  1985 math.js.map
+-rw-r--r--  1 Daniel  staff   4120 26 Okt  1985 number.js
+-rw-r--r--  1 Daniel  staff   7695 26 Okt  1985 number.js.map
+-rw-r--r--  1 Daniel  staff   1984 26 Okt  1985 string.js
+-rw-r--r--  1 Daniel  staff   3607 26 Okt  1985 string.js.map
+-rw-r--r--  1 Daniel  staff   4445 26 Okt  1985 svg.js
+-rw-r--r--  1 Daniel  staff   6661 26 Okt  1985 svg.js.map
+-rw-r--r--  1 Daniel  staff   2749 26 Okt  1985 types.js
+-rw-r--r--  1 Daniel  staff   4452 26 Okt  1985 types.js.map
+./node_modules/less/lib/less/data
+total 64
+-rw-r--r--  1 Daniel  staff  4267 26 Okt  1985 colors.js
+-rw-r--r--  1 Daniel  staff  7449 26 Okt  1985 colors.js.map
+-rw-r--r--  1 Daniel  staff   468 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   353 26 Okt  1985 index.js.map
+-rw-r--r--  1 Daniel  staff   508 26 Okt  1985 unit-conversions.js
+-rw-r--r--  1 Daniel  staff  1011 26 Okt  1985 unit-conversions.js.map
+./node_modules/less/lib/less-node
+total 176
+-rw-r--r--  1 Daniel  staff    693 26 Okt  1985 environment.js
+-rw-r--r--  1 Daniel  staff   1306 26 Okt  1985 environment.js.map
+-rw-r--r--  1 Daniel  staff   7193 26 Okt  1985 file-manager.js
+-rw-r--r--  1 Daniel  staff  10315 26 Okt  1985 file-manager.js.map
+-rw-r--r--  1 Daniel  staff    216 26 Okt  1985 fs.js
+-rw-r--r--  1 Daniel  staff    411 26 Okt  1985 fs.js.map
+-rw-r--r--  1 Daniel  staff   2394 26 Okt  1985 image-size.js
+-rw-r--r--  1 Daniel  staff   3872 26 Okt  1985 image-size.js.map
+-rw-r--r--  1 Daniel  staff   1401 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   1623 26 Okt  1985 index.js.map
+-rw-r--r--  1 Daniel  staff   6481 26 Okt  1985 lessc-helper.js
+-rw-r--r--  1 Daniel  staff  10208 26 Okt  1985 lessc-helper.js.map
+-rw-r--r--  1 Daniel  staff   2931 26 Okt  1985 plugin-loader.js
+-rw-r--r--  1 Daniel  staff   3699 26 Okt  1985 plugin-loader.js.map
+-rw-r--r--  1 Daniel  staff   3139 26 Okt  1985 url-file-manager.js
+-rw-r--r--  1 Daniel  staff   3588 26 Okt  1985 url-file-manager.js.map
+./node_modules/less/lib/less-browser
+total 272
+-rw-r--r--  1 Daniel  staff   1927 26 Okt  1985 add-default-options.js
+-rw-r--r--  1 Daniel  staff   3194 26 Okt  1985 add-default-options.js.map
+-rw-r--r--  1 Daniel  staff   2112 26 Okt  1985 bootstrap.js
+-rw-r--r--  1 Daniel  staff   3640 26 Okt  1985 bootstrap.js.map
+-rw-r--r--  1 Daniel  staff   3684 26 Okt  1985 browser.js
+-rw-r--r--  1 Daniel  staff   4759 26 Okt  1985 browser.js.map
+-rw-r--r--  1 Daniel  staff   1858 26 Okt  1985 cache.js
+-rw-r--r--  1 Daniel  staff   3288 26 Okt  1985 cache.js.map
+-rw-r--r--  1 Daniel  staff   7184 26 Okt  1985 error-reporting.js
+-rw-r--r--  1 Daniel  staff  11279 26 Okt  1985 error-reporting.js.map
+-rw-r--r--  1 Daniel  staff   5167 26 Okt  1985 file-manager.js
+-rw-r--r--  1 Daniel  staff   7495 26 Okt  1985 file-manager.js.map
+-rw-r--r--  1 Daniel  staff   1034 26 Okt  1985 image-size.js
+-rw-r--r--  1 Daniel  staff   1427 26 Okt  1985 image-size.js.map
+-rw-r--r--  1 Daniel  staff  10629 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  18588 26 Okt  1985 index.js.map
+-rw-r--r--  1 Daniel  staff   1544 26 Okt  1985 log-listener.js
+-rw-r--r--  1 Daniel  staff   2726 26 Okt  1985 log-listener.js.map
+-rw-r--r--  1 Daniel  staff   1738 26 Okt  1985 plugin-loader.js
+-rw-r--r--  1 Daniel  staff   1359 26 Okt  1985 plugin-loader.js.map
+-rw-r--r--  1 Daniel  staff   1139 26 Okt  1985 utils.js
+-rw-r--r--  1 Daniel  staff   2026 26 Okt  1985 utils.js.map
+./node_modules/express
+total 256
+-rw-r--r--   1 Daniel  staff  109589 26 Okt  1985 History.md
+-rw-r--r--   1 Daniel  staff    1249 26 Okt  1985 LICENSE
+-rw-r--r--   1 Daniel  staff    4607 26 Okt  1985 Readme.md
+-rw-r--r--   1 Daniel  staff     224 26 Okt  1985 index.js
+drwxr-xr-x  10 Daniel  staff     320 27 Aug 17:53 lib
+-rw-r--r--   1 Daniel  staff    4013 27 Aug 17:53 package.json
+./node_modules/express/lib
+total 152
+-rw-r--r--  1 Daniel  staff  14270 26 Okt  1985 application.js
+-rw-r--r--  1 Daniel  staff   2409 26 Okt  1985 express.js
+drwxr-xr-x  4 Daniel  staff    128 27 Aug 17:53 middleware
+-rw-r--r--  1 Daniel  staff  12504 26 Okt  1985 request.js
+-rw-r--r--  1 Daniel  staff  27124 26 Okt  1985 response.js
+drwxr-xr-x  5 Daniel  staff    160 27 Aug 17:53 router
+-rw-r--r--  1 Daniel  staff   5972 26 Okt  1985 utils.js
+-rw-r--r--  1 Daniel  staff   3326 26 Okt  1985 view.js
+./node_modules/express/lib/middleware
+total 16
+-rw-r--r--  1 Daniel  staff  853 26 Okt  1985 init.js
+-rw-r--r--  1 Daniel  staff  885 26 Okt  1985 query.js
+./node_modules/express/lib/router
+total 56
+-rw-r--r--  1 Daniel  staff  14883 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   3296 26 Okt  1985 layer.js
+-rw-r--r--  1 Daniel  staff   4149 26 Okt  1985 route.js
+./node_modules/encodeurl
+total 40
+-rw-r--r--  1 Daniel  staff   238 22 Jan  2018 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1089 22 Jan  2018 LICENSE
+-rw-r--r--  1 Daniel  staff  3855 22 Jan  2018 README.md
+-rw-r--r--  1 Daniel  staff  1586 22 Jan  2018 index.js
+-rw-r--r--  1 Daniel  staff  2167 27 Aug 17:53 package.json
+./node_modules/promise-mysql
+total 48
+-rwxr-xr-x  1 Daniel  staff  1083 26 Okt  1985 LICENSE
+-rwxr-xr-x  1 Daniel  staff  5717 26 Okt  1985 README.md
+-rwxr-xr-x  1 Daniel  staff  2666 26 Okt  1985 index.d.ts
+-rwxr-xr-x  1 Daniel  staff   397 26 Okt  1985 index.js
+drwxr-xr-x  6 Daniel  staff   192 27 Aug 17:54 lib
+-rwxr-xr-x  1 Daniel  staff  2033 27 Aug 17:54 package.json
+./node_modules/promise-mysql/lib
+total 32
+-rwxr-xr-x  1 Daniel  staff  4063 26 Okt  1985 connection.js
+-rwxr-xr-x  1 Daniel  staff   825 26 Okt  1985 helper.js
+-rwxr-xr-x  1 Daniel  staff  2187 26 Okt  1985 pool.js
+-rwxr-xr-x  1 Daniel  staff   265 26 Okt  1985 poolConnection.js
+./node_modules/string_decoder
+total 32
+-rw-r--r--  1 Daniel  staff   899 26 Okt  1985 .travis.yml
+-rw-r--r--  1 Daniel  staff  2338 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  1801 26 Okt  1985 README.md
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff  1779 27 Aug 17:53 package.json
+./node_modules/string_decoder/lib
+total 24
+-rw-r--r--  1 Daniel  staff  9465 26 Okt  1985 string_decoder.js
+./node_modules/merge-descriptors
+total 40
+-rw-r--r--  1 Daniel  staff   363 18 Jan  2016 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1167 18 Jan  2016 LICENSE
+-rw-r--r--  1 Daniel  staff  1213 22 Maj  2015 README.md
+-rw-r--r--  1 Daniel  staff  1215 18 Jan  2016 index.js
+-rw-r--r--  1 Daniel  staff  2027 27 Aug 17:53 package.json
+./node_modules/tslib
+total 112
+-rw-r--r--  1 Daniel  staff    824 26 Okt  1985 CopyrightNotice.txt
+-rw-r--r--  1 Daniel  staff    655 26 Okt  1985 LICENSE.txt
+-rw-r--r--  1 Daniel  staff   3454 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff   1484 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff   2714 26 Okt  1985 tslib.d.ts
+-rw-r--r--  1 Daniel  staff     36 26 Okt  1985 tslib.es6.html
+-rw-r--r--  1 Daniel  staff  10274 26 Okt  1985 tslib.es6.js
+-rw-r--r--  1 Daniel  staff     32 26 Okt  1985 tslib.html
+-rw-r--r--  1 Daniel  staff  13204 26 Okt  1985 tslib.js
+./node_modules/array-flatten
+total 32
+-rw-r--r--  1 Daniel  staff  1103 15 Mar  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  1245  9 Maj  2015 README.md
+-rw-r--r--  1 Daniel  staff  1195  9 Jul  2015 array-flatten.js
+-rw-r--r--  1 Daniel  staff  1695 27 Aug 17:53 package.json
+./node_modules/safe-buffer
+total 88
+-rw-r--r--  1 Daniel  staff   1081 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  19555 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff   8738 26 Okt  1985 index.d.ts
+-rw-r--r--  1 Daniel  staff   1529 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   1732 27 Aug 17:53 package.json
+./node_modules/jake
+total 40
+-rw-r--r--   1 Daniel  staff  1319  9 Jun 08:13 Makefile
+-rw-r--r--   1 Daniel  staff   556  9 Jun 08:13 README.md
+drwxr-xr-x   4 Daniel  staff   128 27 Aug 17:53 bin
+-rw-r--r--   1 Daniel  staff  2887  9 Jun 08:13 jakefile.js
+drwxr-xr-x  14 Daniel  staff   448 27 Aug 17:53 lib
+-rw-r--r--   1 Daniel  staff  1912 27 Aug 17:53 package.json
+drwxr-xr-x   4 Daniel  staff   128 27 Aug 17:53 test
+-rw-r--r--   1 Daniel  staff   991  9 Jun 08:13 usage.txt
+./node_modules/jake/test
+total 0
+drwxr-xr-x  12 Daniel  staff  384 27 Aug 17:53 integration
+drwxr-xr-x   5 Daniel  staff  160 27 Aug 17:53 unit
+./node_modules/jake/test/unit
+total 32
+-rw-r--r--  1 Daniel  staff   580  9 Jun 08:13 jakefile.js
+-rw-r--r--  1 Daniel  staff  2582  9 Jun 08:13 namespace.js
+-rw-r--r--  1 Daniel  staff  5320  9 Jun 08:13 parseargs.js
+./node_modules/jake/test/integration
+total 120
+-rw-r--r--  1 Daniel  staff  1612  9 Jun 08:13 concurrent.js
+-rw-r--r--  1 Daniel  staff  6598  9 Jun 08:13 file.js
+-rw-r--r--  1 Daniel  staff  4675  9 Jun 08:13 file_task.js
+-rw-r--r--  1 Daniel  staff  1590  9 Jun 08:13 helpers.js
+-rw-r--r--  1 Daniel  staff  9118  9 Jun 08:13 jakefile.js
+drwxr-xr-x  6 Daniel  staff   192 27 Aug 17:53 jakelib
+-rw-r--r--  1 Daniel  staff   600  9 Jun 08:13 publish_task.js
+-rw-r--r--  1 Daniel  staff  6887  9 Jun 08:13 rule.js
+-rw-r--r--  1 Daniel  staff   746  9 Jun 08:13 selfdep.js
+-rw-r--r--  1 Daniel  staff  5945  9 Jun 08:13 task_base.js
+./node_modules/jake/test/integration/jakelib
+total 40
+-rw-r--r--  1 Daniel  staff  2473  9 Jun 08:13 concurrent.jake.js
+-rw-r--r--  1 Daniel  staff  1413  9 Jun 08:13 publish.jake.js
+-rw-r--r--  1 Daniel  staff   151  9 Jun 08:13 required_module.jake.js
+-rw-r--r--  1 Daniel  staff  6881  9 Jun 08:13 rule.jake.js
+./node_modules/jake/bin
+total 16
+-rwxr-xr-x  1 Daniel  staff  1375  9 Jun 08:13 bash_completion.sh
+-rwxr-xr-x  1 Daniel  staff   907  9 Jun 08:13 cli.js
+./node_modules/jake/lib
+total 184
+-rw-r--r--  1 Daniel  staff  12216  9 Jun 08:13 api.js
+-rw-r--r--  1 Daniel  staff   9438  9 Jun 08:13 jake.js
+-rw-r--r--  1 Daniel  staff   4192  9 Jun 08:13 loader.js
+-rw-r--r--  1 Daniel  staff   2453  9 Jun 08:13 namespace.js
+-rw-r--r--  1 Daniel  staff  11004  9 Jun 08:13 package_task.js
+-rw-r--r--  1 Daniel  staff   3753  9 Jun 08:13 parseargs.js
+-rw-r--r--  1 Daniel  staff   6544  9 Jun 08:13 program.js
+-rw-r--r--  1 Daniel  staff   9150  9 Jun 08:13 publish_task.js
+-rw-r--r--  1 Daniel  staff   7873  9 Jun 08:13 rule.js
+drwxr-xr-x  6 Daniel  staff    192 27 Aug 17:53 task
+-rw-r--r--  1 Daniel  staff   8482  9 Jun 08:13 test_task.js
+drwxr-xr-x  5 Daniel  staff    160 27 Aug 17:53 utils
+./node_modules/jake/lib/utils
+total 40
+-rw-r--r--  1 Daniel  staff  7660  9 Jun 08:13 file.js
+-rw-r--r--  1 Daniel  staff  7274  9 Jun 08:13 index.js
+-rw-r--r--  1 Daniel  staff   505  9 Jun 08:13 logger.js
+./node_modules/jake/lib/task
+total 48
+-rw-r--r--  1 Daniel  staff    575  9 Jun 08:13 directory_task.js
+-rw-r--r--  1 Daniel  staff   3306  9 Jun 08:13 file_task.js
+-rw-r--r--  1 Daniel  staff    238  9 Jun 08:13 index.js
+-rw-r--r--  1 Daniel  staff  11958  9 Jun 08:13 task.js
+./node_modules/ee-first
+total 32
+-rw-r--r--  1 Daniel  staff  1099 15 Aug  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  2617 25 Maj  2015 README.md
+-rw-r--r--  1 Daniel  staff  1684 25 Maj  2015 index.js
+-rw-r--r--  1 Daniel  staff  1830 27 Aug 17:53 package.json
+./node_modules/inherits
+total 40
+-rw-r--r--  1 Daniel  staff   749 20 Aug  2013 LICENSE
+-rw-r--r--  1 Daniel  staff  1625 16 Maj  2013 README.md
+-rw-r--r--  1 Daniel  staff   192  7 Sep  2016 inherits.js
+-rw-r--r--  1 Daniel  staff   672 16 Maj  2013 inherits_browser.js
+-rw-r--r--  1 Daniel  staff  1560 27 Aug 17:53 package.json
+./node_modules/iconv-lite
+total 48
+-rw-r--r--   1 Daniel  staff  4342 22 Aug  2018 Changelog.md
+-rw-r--r--   1 Daniel  staff  1064 19 Jan  2016 LICENSE
+-rw-r--r--   1 Daniel  staff  6534 22 Aug  2018 README.md
+drwxr-xr-x  12 Daniel  staff   384 27 Aug 17:53 encodings
+drwxr-xr-x   7 Daniel  staff   224 27 Aug 17:53 lib
+-rw-r--r--   1 Daniel  staff  2029 27 Aug 17:53 package.json
+./node_modules/iconv-lite/encodings
+total 224
+-rw-r--r--   1 Daniel  staff  21415 22 Aug  2018 dbcs-codec.js
+-rw-r--r--   1 Daniel  staff   8291 22 Aug  2018 dbcs-data.js
+-rw-r--r--   1 Daniel  staff    710 22 Aug  2018 index.js
+-rw-r--r--   1 Daniel  staff   6115 22 Aug  2018 internal.js
+-rw-r--r--   1 Daniel  staff   2191 22 Aug  2018 sbcs-codec.js
+-rw-r--r--   1 Daniel  staff  32034 22 Aug  2018 sbcs-data-generated.js
+-rw-r--r--   1 Daniel  staff   4686 22 Aug  2018 sbcs-data.js
+drwxr-xr-x  10 Daniel  staff    320 27 Aug 17:53 tables
+-rw-r--r--   1 Daniel  staff   5011 22 Aug  2018 utf16.js
+-rw-r--r--   1 Daniel  staff   9215 22 Aug  2018 utf7.js
+./node_modules/iconv-lite/encodings/tables
+total 456
+-rw-r--r--  1 Daniel  staff  17717 19 Jan  2016 big5-added.json
+-rw-r--r--  1 Daniel  staff  47320 19 Jan  2016 cp936.json
+-rw-r--r--  1 Daniel  staff  38122 19 Jan  2016 cp949.json
+-rw-r--r--  1 Daniel  staff  42356 19 Jan  2016 cp950.json
+-rw-r--r--  1 Daniel  staff  41064 19 Jan  2016 eucjp.json
+-rw-r--r--  1 Daniel  staff   2216 19 Jan  2016 gb18030-ranges.json
+-rw-r--r--  1 Daniel  staff   1227 19 Jan  2016 gbk-added.json
+-rw-r--r--  1 Daniel  staff  23782 19 Jan  2016 shiftjis.json
+./node_modules/iconv-lite/lib
+total 64
+-rw-r--r--  1 Daniel  staff  1109 22 Aug  2018 bom-handling.js
+-rw-r--r--  1 Daniel  staff  8701 22 Aug  2018 extend-node.js
+-rw-r--r--  1 Daniel  staff   982 22 Aug  2018 index.d.ts
+-rw-r--r--  1 Daniel  staff  5123 22 Aug  2018 index.js
+-rw-r--r--  1 Daniel  staff  3387 22 Aug  2018 streams.js
+./node_modules/color-name
+total 64
+-rw-r--r--  1 Daniel  staff  1160  3 Sep  2016 .eslintrc.json
+-rw-r--r--  1 Daniel  staff  1388 28 Jun  2015 .npmignore
+-rw-r--r--  1 Daniel  staff  1085 24 Dec  2015 LICENSE
+-rw-r--r--  1 Daniel  staff   384 14 Mar  2017 README.md
+-rw-r--r--  1 Daniel  staff  4617 16 Jul  2017 index.js
+-rw-r--r--  1 Daniel  staff  1398 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   171 16 Jul  2017 test.js
+./node_modules/async
+total 144
+-rw-r--r--  1 Daniel  staff     60 19 Maj  2015 .travis.yml
+-rw-r--r--  1 Daniel  staff   1063 19 Maj  2015 LICENSE
+-rw-r--r--  1 Daniel  staff  52082 19 Maj  2015 README.md
+-rw-r--r--  1 Daniel  staff    674 19 Maj  2015 bower.json
+-rw-r--r--  1 Daniel  staff    297 19 Maj  2015 component.json
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff   1819 27 Aug 17:53 package.json
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 support
+./node_modules/async/support
+total 8
+-rwxr-xr-x  1 Daniel  staff  1553 19 Maj  2015 sync-package-managers.js
+./node_modules/async/lib
+total 72
+-rw-r--r--  1 Daniel  staff  34652 19 Maj  2015 async.js
+./node_modules/fresh
+total 40
+-rw-r--r--  1 Daniel  staff  1500 14 Sep  2017 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1174 20 Feb  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  3374 14 Sep  2017 README.md
+-rw-r--r--  1 Daniel  staff  2711 14 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff  2436 27 Aug 17:53 package.json
+./node_modules/qs
+total 112
+-rw-r--r--  1 Daniel  staff    399 26 Okt  1985 .editorconfig
+-rw-r--r--  1 Daniel  staff      5 26 Okt  1985 .eslintignore
+-rw-r--r--  1 Daniel  staff    647 26 Okt  1985 .eslintrc
+-rw-r--r--  1 Daniel  staff  14655 26 Okt  1985 CHANGELOG.md
+-rw-r--r--  1 Daniel  staff   1654 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  18228 26 Okt  1985 README.md
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 dist
+drwxr-xr-x  7 Daniel  staff    224 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff   2393 27 Aug 17:53 package.json
+drwxr-xr-x  7 Daniel  staff    224 27 Aug 17:53 test
+./node_modules/qs/test
+total 136
+-rw-r--r--  1 Daniel  staff    422 26 Okt  1985 .eslintrc
+-rw-r--r--  1 Daniel  staff     81 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  27758 26 Okt  1985 parse.js
+-rw-r--r--  1 Daniel  staff  24073 26 Okt  1985 stringify.js
+-rw-r--r--  1 Daniel  staff   5096 26 Okt  1985 utils.js
+./node_modules/qs/dist
+total 56
+-rw-r--r--  1 Daniel  staff  24660 26 Okt  1985 qs.js
+./node_modules/qs/lib
+total 80
+-rw-r--r--  1 Daniel  staff   387 26 Okt  1985 formats.js
+-rw-r--r--  1 Daniel  staff   211 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  8492 26 Okt  1985 parse.js
+-rw-r--r--  1 Daniel  staff  8230 26 Okt  1985 stringify.js
+-rw-r--r--  1 Daniel  staff  6204 26 Okt  1985 utils.js
+./node_modules/pify
+total 32
+-rw-r--r--  1 Daniel  staff  1676 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  1109 26 Okt  1985 license
+-rw-r--r--  1 Daniel  staff  1909 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff  3621 26 Okt  1985 readme.md
+./node_modules/path-to-regexp
+total 40
+-rw-r--r--  1 Daniel  staff   694 28 Jul  2015 History.md
+-rw-r--r--  1 Daniel  staff  1103 28 Jul  2015 LICENSE
+-rw-r--r--  1 Daniel  staff  1102 28 Jul  2015 Readme.md
+-rw-r--r--  1 Daniel  staff  3328 28 Jul  2015 index.js
+-rw-r--r--  1 Daniel  staff  1532 27 Aug 17:53 package.json
+./node_modules/safer-buffer
+total 120
+-rw-r--r--  1 Daniel  staff   1094 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  12794 26 Okt  1985 Porting-Buffer.md
+-rw-r--r--  1 Daniel  staff   8261 26 Okt  1985 Readme.md
+-rw-r--r--  1 Daniel  staff   1483 26 Okt  1985 dangerous.js
+-rw-r--r--  1 Daniel  staff   1794 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   2110 26 Okt  1985 safer.js
+-rw-r--r--  1 Daniel  staff  15735 26 Okt  1985 tests.js
+./node_modules/ejs
+total 224
+-rw-r--r--  1 Daniel  staff  11358 17 Aug 18:01 LICENSE
+-rw-r--r--  1 Daniel  staff  12849 17 Aug 18:01 README.md
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 bin
+-rw-r--r--  1 Daniel  staff  47067 17 Aug 18:01 ejs.js
+-rw-r--r--  1 Daniel  staff  22565 17 Aug 18:01 ejs.min.js
+-rw-r--r--  1 Daniel  staff   2042 17 Aug 18:01 jakefile.js
+drwxr-xr-x  4 Daniel  staff    128 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff   1702 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   1677 17 Aug 18:01 usage.txt
+./node_modules/ejs/bin
+total 16
+-rwxr-xr-x  1 Daniel  staff  4702 17 Aug 18:01 cli.js
+./node_modules/ejs/lib
+total 72
+-rwxr-xr-x  1 Daniel  staff  26613 17 Aug 18:01 ejs.js
+-rw-r--r--  1 Daniel  staff   4165 17 Aug 18:01 utils.js
+./node_modules/mime-types
+total 48
+-rw-r--r--  1 Daniel  staff  7090 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1167 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  3635 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  3663 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2383 27 Aug 17:53 package.json
+./node_modules/bignumber.js
+total 648
+-rw-r--r--  1 Daniel  staff   7851 26 Okt  1985 CHANGELOG.md
+-rw-r--r--  1 Daniel  staff   1104 26 Okt  1985 LICENCE
+-rw-r--r--  1 Daniel  staff  10289 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  67076 26 Okt  1985 bignumber.d.ts
+-rw-r--r--  1 Daniel  staff  89253 26 Okt  1985 bignumber.js
+-rw-r--r--  1 Daniel  staff  18598 26 Okt  1985 bignumber.min.js
+-rw-r--r--  1 Daniel  staff  35516 26 Okt  1985 bignumber.min.js.map
+-rw-r--r--  1 Daniel  staff  84325 26 Okt  1985 bignumber.mjs
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 doc
+-rw-r--r--  1 Daniel  staff   1855 27 Aug 17:53 package.json
+./node_modules/bignumber.js/doc
+total 176
+-rw-r--r--  1 Daniel  staff  86676 26 Okt  1985 API.html
+./node_modules/type-is
+total 64
+-rw-r--r--  1 Daniel  staff  5447 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1172 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  5183 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  5562 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2269 27 Aug 17:53 package.json
+./node_modules/chalk
+total 72
+-rw-r--r--  1 Daniel  staff   6439 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   1921 26 Okt  1985 index.js.flow
+-rw-r--r--  1 Daniel  staff   1109 26 Okt  1985 license
+-rw-r--r--  1 Daniel  staff   2305 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff  10774 26 Okt  1985 readme.md
+-rw-r--r--  1 Daniel  staff   3133 26 Okt  1985 templates.js
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 types
+./node_modules/chalk/types
+total 8
+-rw-r--r--  1 Daniel  staff  2353 26 Okt  1985 index.d.ts
+./node_modules/has-flag
+total 32
+-rw-r--r--  1 Daniel  staff   320  2 Jan  2018 index.js
+-rw-r--r--  1 Daniel  staff  1109  1 Jun  2017 license
+-rw-r--r--  1 Daniel  staff  1704 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   986  2 Jan  2018 readme.md
+./node_modules/supports-color
+total 40
+-rw-r--r--  1 Daniel  staff    67 24 Mar  2018 browser.js
+-rw-r--r--  1 Daniel  staff  2771 20 Aug  2018 index.js
+-rw-r--r--  1 Daniel  staff  1109  1 Jun  2017 license
+-rw-r--r--  1 Daniel  staff  1990 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff  1865 24 Mar  2018 readme.md
+./node_modules/vary
+total 40
+-rw-r--r--  1 Daniel  staff   792 24 Sep  2017 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1094 20 Mar  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  2716 20 Mar  2017 README.md
+-rw-r--r--  1 Daniel  staff  2930 23 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff  2171 27 Aug 17:53 package.json
+./node_modules/color-convert
+total 88
+-rw-r--r--  1 Daniel  staff   1417 26 Okt  1985 CHANGELOG.md
+-rw-r--r--  1 Daniel  staff   1087 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff   2853 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  16850 26 Okt  1985 conversions.js
+-rw-r--r--  1 Daniel  staff   1725 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   1926 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   2227 26 Okt  1985 route.js
+./node_modules/unpipe
+total 40
+-rw-r--r--  1 Daniel  staff    59 14 Jun  2015 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1114 14 Jun  2015 LICENSE
+-rw-r--r--  1 Daniel  staff  1250 14 Jun  2015 README.md
+-rw-r--r--  1 Daniel  staff  1118 14 Jun  2015 index.js
+-rw-r--r--  1 Daniel  staff  1780 27 Aug 17:53 package.json
+./node_modules/brace-expansion
+total 40
+-rw-r--r--  1 Daniel  staff  1096  9 Feb  2018 LICENSE
+-rw-r--r--  1 Daniel  staff  4058 10 Feb  2018 README.md
+-rw-r--r--  1 Daniel  staff  4792  9 Feb  2018 index.js
+-rw-r--r--  1 Daniel  staff  2103 27 Aug 17:53 package.json
+./node_modules/native-request
+total 24
+-rw-r--r--  1 Daniel  staff  3018 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  2344 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  1822 27 Aug 17:54 package.json
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 test
+./node_modules/native-request/test
+total 16
+-rw-r--r--  1 Daniel  staff  1144 26 Okt  1985 get.js
+-rw-r--r--  1 Daniel  staff  1332 26 Okt  1985 post.js
+./node_modules/util-deprecate
+total 48
+-rw-r--r--  1 Daniel  staff   282  7 Okt  2015 History.md
+-rw-r--r--  1 Daniel  staff  1102 25 Nov  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  1666 25 Nov  2014 README.md
+-rw-r--r--  1 Daniel  staff  1614  7 Okt  2015 browser.js
+-rw-r--r--  1 Daniel  staff   123 25 Nov  2014 node.js
+-rw-r--r--  1 Daniel  staff  1582 27 Aug 17:53 package.json
+./node_modules/raw-body
+total 72
+-rw-r--r--  1 Daniel  staff  5354 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1181 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  6339 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  2286 26 Okt  1985 index.d.ts
+-rw-r--r--  1 Daniel  staff  6059 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2640 27 Aug 17:53 package.json
+./node_modules/bluebird
+total 32
+-rw-r--r--  1 Daniel  staff  1086 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  3058 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff    87 26 Okt  1985 changelog.md
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:54 js
+-rw-r--r--  1 Daniel  staff  3031 27 Aug 17:54 package.json
+./node_modules/bluebird/js
+total 0
+drwxr-xr-x   6 Daniel  staff   192 27 Aug 17:54 browser
+drwxr-xr-x  39 Daniel  staff  1248 27 Aug 17:54 release
+./node_modules/bluebird/js/release
+total 496
+-rw-r--r--  1 Daniel  staff    421 26 Okt  1985 any.js
+-rw-r--r--  1 Daniel  staff   1653 26 Okt  1985 assert.js
+-rw-r--r--  1 Daniel  staff   2876 26 Okt  1985 async.js
+-rw-r--r--  1 Daniel  staff   1970 26 Okt  1985 bind.js
+-rw-r--r--  1 Daniel  staff    291 26 Okt  1985 bluebird.js
+-rw-r--r--  1 Daniel  staff   4355 26 Okt  1985 call_get.js
+-rw-r--r--  1 Daniel  staff   3707 26 Okt  1985 cancel.js
+-rw-r--r--  1 Daniel  staff   1426 26 Okt  1985 catch_filter.js
+-rw-r--r--  1 Daniel  staff   2382 26 Okt  1985 context.js
+-rw-r--r--  1 Daniel  staff  32170 26 Okt  1985 debuggability.js
+-rw-r--r--  1 Daniel  staff   1395 26 Okt  1985 direct_resolve.js
+-rw-r--r--  1 Daniel  staff    789 26 Okt  1985 each.js
+-rw-r--r--  1 Daniel  staff   3717 26 Okt  1985 errors.js
+-rw-r--r--  1 Daniel  staff   1978 26 Okt  1985 es5.js
+-rw-r--r--  1 Daniel  staff    314 26 Okt  1985 filter.js
+-rw-r--r--  1 Daniel  staff   4613 26 Okt  1985 finally.js
+-rw-r--r--  1 Daniel  staff   7761 26 Okt  1985 generators.js
+-rw-r--r--  1 Daniel  staff   8136 26 Okt  1985 join.js
+-rw-r--r--  1 Daniel  staff   5602 26 Okt  1985 map.js
+-rw-r--r--  1 Daniel  staff   1768 26 Okt  1985 method.js
+-rw-r--r--  1 Daniel  staff   1560 26 Okt  1985 nodeback.js
+-rw-r--r--  1 Daniel  staff   1647 26 Okt  1985 nodeify.js
+-rw-r--r--  1 Daniel  staff  26986 26 Okt  1985 promise.js
+-rw-r--r--  1 Daniel  staff   5252 26 Okt  1985 promise_array.js
+-rw-r--r--  1 Daniel  staff  12182 26 Okt  1985 promisify.js
+-rw-r--r--  1 Daniel  staff   3117 26 Okt  1985 props.js
+-rw-r--r--  1 Daniel  staff   1873 26 Okt  1985 queue.js
+-rw-r--r--  1 Daniel  staff   1250 26 Okt  1985 race.js
+-rw-r--r--  1 Daniel  staff   5372 26 Okt  1985 reduce.js
+-rw-r--r--  1 Daniel  staff   2148 26 Okt  1985 schedule.js
+-rw-r--r--  1 Daniel  staff   1366 26 Okt  1985 settle.js
+-rw-r--r--  1 Daniel  staff   3959 26 Okt  1985 some.js
+-rw-r--r--  1 Daniel  staff   2813 26 Okt  1985 synchronous_inspection.js
+-rw-r--r--  1 Daniel  staff   2131 26 Okt  1985 thenables.js
+-rw-r--r--  1 Daniel  staff   2395 26 Okt  1985 timers.js
+-rw-r--r--  1 Daniel  staff   7525 26 Okt  1985 using.js
+-rw-r--r--  1 Daniel  staff  11379 26 Okt  1985 util.js
+./node_modules/bluebird/js/browser
+total 888
+-rw-r--r--  1 Daniel  staff  123379 26 Okt  1985 bluebird.core.js
+-rw-r--r--  1 Daniel  staff   57355 26 Okt  1985 bluebird.core.min.js
+-rw-r--r--  1 Daniel  staff  183390 26 Okt  1985 bluebird.js
+-rw-r--r--  1 Daniel  staff   81530 26 Okt  1985 bluebird.min.js
+./node_modules/semver
+total 144
+-rw-r--r--  1 Daniel  staff    672 26 Okt  1985 CHANGELOG.md
+-rw-r--r--  1 Daniel  staff    765 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  15723 26 Okt  1985 README.md
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:54 bin
+-rw-r--r--  1 Daniel  staff   1571 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff    619 26 Okt  1985 range.bnf
+-rw-r--r--  1 Daniel  staff  38803 26 Okt  1985 semver.js
+./node_modules/semver/bin
+total 16
+-rwxr-xr-x  1 Daniel  staff  4418 26 Okt  1985 semver
+./node_modules/http-errors
+total 56
+-rw-r--r--  1 Daniel  staff  3145 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1168 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  5554 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  5878 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2559 27 Aug 17:53 package.json
+./node_modules/minimatch
+total 88
+-rw-r--r--  1 Daniel  staff    765 19 Maj  2015 LICENSE
+-rw-r--r--  1 Daniel  staff   6336 20 Feb  2016 README.md
+-rw-r--r--  1 Daniel  staff  25347  9 Aug  2016 minimatch.js
+-rw-r--r--  1 Daniel  staff   1700 27 Aug 17:53 package.json
+./node_modules/accepts
+total 56
+-rw-r--r--  1 Daniel  staff  4972 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1167 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  4081 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  5252 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2283 27 Aug 17:53 package.json
+./node_modules/ansi-styles
+total 32
+-rw-r--r--  1 Daniel  staff  3574  2 Mar  2018 index.js
+-rw-r--r--  1 Daniel  staff  1109  1 Jun  2017 license
+-rw-r--r--  1 Daniel  staff  2121 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff  3711 11 Feb  2018 readme.md
+./node_modules/cookie-signature
+total 40
+-rw-r--r--  1 Daniel  staff    29 28 Jan  2014 .npmignore
+-rw-r--r--  1 Daniel  staff   695  3 Feb  2015 History.md
+-rw-r--r--  1 Daniel  staff  1490 19 Jun  2014 Readme.md
+-rw-r--r--  1 Daniel  staff  1230  3 Feb  2015 index.js
+-rw-r--r--  1 Daniel  staff  1565 27 Aug 17:53 package.json
+./node_modules/forwarded
+total 40
+-rw-r--r--  1 Daniel  staff   306 15 Sep  2017 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1094 15 Sep  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  1637 15 Sep  2017 README.md
+-rw-r--r--  1 Daniel  staff  1360 15 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff  2176 27 Aug 17:53 package.json
+./node_modules/negotiator
+total 48
+-rw-r--r--  1 Daniel  staff  2406 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1177 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  4811 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  3344 26 Okt  1985 index.js
+drwxr-xr-x  6 Daniel  staff   192 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff  2188 27 Aug 17:53 package.json
+./node_modules/negotiator/lib
+total 40
+-rw-r--r--  1 Daniel  staff  3081 26 Okt  1985 charset.js
+-rw-r--r--  1 Daniel  staff  3506 26 Okt  1985 encoding.js
+-rw-r--r--  1 Daniel  staff  3408 26 Okt  1985 language.js
+-rw-r--r--  1 Daniel  staff  5358 26 Okt  1985 mediaType.js
+./node_modules/body-parser
+total 96
+-rw-r--r--  1 Daniel  staff  15113 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff   1172 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  17100 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff   2656 26 Okt  1985 index.js
+drwxr-xr-x  4 Daniel  staff    128 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff   2719 27 Aug 17:53 package.json
+./node_modules/body-parser/lib
+total 8
+-rw-r--r--  1 Daniel  staff  3894 26 Okt  1985 read.js
+drwxr-xr-x  6 Daniel  staff   192 27 Aug 17:53 types
+./node_modules/body-parser/lib/types
+total 48
+-rw-r--r--  1 Daniel  staff  4918 26 Okt  1985 json.js
+-rw-r--r--  1 Daniel  staff  1884 26 Okt  1985 raw.js
+-rw-r--r--  1 Daniel  staff  2285 26 Okt  1985 text.js
+-rw-r--r--  1 Daniel  staff  5797 26 Okt  1985 urlencoded.js
+./node_modules/mysql
+total 200
+-rw-r--r--   1 Daniel  staff  21090 26 Okt  1985 Changes.md
+-rw-r--r--   1 Daniel  staff   1118 26 Okt  1985 License
+-rw-r--r--   1 Daniel  staff  57600 26 Okt  1985 Readme.md
+-rw-r--r--   1 Daniel  staff   4533 26 Okt  1985 index.js
+drwxr-xr-x  11 Daniel  staff    352 27 Aug 17:53 lib
+-rw-r--r--   1 Daniel  staff   2563 27 Aug 17:53 package.json
+./node_modules/mysql/lib
+total 112
+-rw-r--r--   1 Daniel  staff  13831 26 Okt  1985 Connection.js
+-rw-r--r--   1 Daniel  staff   6614 26 Okt  1985 ConnectionConfig.js
+-rw-r--r--   1 Daniel  staff   7586 26 Okt  1985 Pool.js
+-rw-r--r--   1 Daniel  staff   6470 26 Okt  1985 PoolCluster.js
+-rw-r--r--   1 Daniel  staff   1057 26 Okt  1985 PoolConfig.js
+-rw-r--r--   1 Daniel  staff   1697 26 Okt  1985 PoolConnection.js
+-rw-r--r--   1 Daniel  staff   3220 26 Okt  1985 PoolNamespace.js
+-rw-r--r--   1 Daniel  staff    588 26 Okt  1985 PoolSelector.js
+drwxr-xr-x  14 Daniel  staff    448 27 Aug 17:53 protocol
+./node_modules/mysql/lib/protocol
+total 128
+-rw-r--r--   1 Daniel  staff   4292 26 Okt  1985 Auth.js
+-rw-r--r--   1 Daniel  staff    385 26 Okt  1985 BufferList.js
+-rw-r--r--   1 Daniel  staff    121 26 Okt  1985 PacketHeader.js
+-rw-r--r--   1 Daniel  staff   5372 26 Okt  1985 PacketWriter.js
+-rw-r--r--   1 Daniel  staff  13406 26 Okt  1985 Parser.js
+-rw-r--r--   1 Daniel  staff  11657 26 Okt  1985 Protocol.js
+-rw-r--r--   1 Daniel  staff    233 26 Okt  1985 ResultSet.js
+-rw-r--r--   1 Daniel  staff     39 26 Okt  1985 SqlString.js
+-rw-r--r--   1 Daniel  staff    699 26 Okt  1985 Timer.js
+drwxr-xr-x   9 Daniel  staff    288 27 Aug 17:53 constants
+drwxr-xr-x  26 Daniel  staff    832 27 Aug 17:53 packets
+drwxr-xr-x  10 Daniel  staff    320 27 Aug 17:53 sequences
+./node_modules/mysql/lib/protocol/constants
+total 568
+-rw-r--r--  1 Daniel  staff   11398 26 Okt  1985 charsets.js
+-rw-r--r--  1 Daniel  staff    1629 26 Okt  1985 client.js
+-rw-r--r--  1 Daniel  staff  176038 26 Okt  1985 errors.js
+-rw-r--r--  1 Daniel  staff    1066 26 Okt  1985 field_flags.js
+-rw-r--r--  1 Daniel  staff    1449 26 Okt  1985 server_status.js
+-rw-r--r--  1 Daniel  staff   82511 26 Okt  1985 ssl_profiles.js
+-rw-r--r--  1 Daniel  staff    1763 26 Okt  1985 types.js
+./node_modules/mysql/lib/protocol/packets
+total 192
+-rw-r--r--  1 Daniel  staff   707 26 Okt  1985 AuthSwitchRequestPacket.js
+-rw-r--r--  1 Daniel  staff   375 26 Okt  1985 AuthSwitchResponsePacket.js
+-rw-r--r--  1 Daniel  staff  2080 26 Okt  1985 ClientAuthenticationPacket.js
+-rw-r--r--  1 Daniel  staff   960 26 Okt  1985 ComChangeUserPacket.js
+-rw-r--r--  1 Daniel  staff   289 26 Okt  1985 ComPingPacket.js
+-rw-r--r--  1 Daniel  staff   405 26 Okt  1985 ComQueryPacket.js
+-rw-r--r--  1 Daniel  staff   301 26 Okt  1985 ComQuitPacket.js
+-rw-r--r--  1 Daniel  staff   313 26 Okt  1985 ComStatisticsPacket.js
+-rw-r--r--  1 Daniel  staff   163 26 Okt  1985 EmptyPacket.js
+-rw-r--r--  1 Daniel  staff   721 26 Okt  1985 EofPacket.js
+-rw-r--r--  1 Daniel  staff  1007 26 Okt  1985 ErrorPacket.js
+-rw-r--r--  1 Daniel  staff   649 26 Okt  1985 Field.js
+-rw-r--r--  1 Daniel  staff  3264 26 Okt  1985 FieldPacket.js
+-rw-r--r--  1 Daniel  staff  3958 26 Okt  1985 HandshakeInitializationPacket.js
+-rw-r--r--  1 Daniel  staff   319 26 Okt  1985 LocalDataFilePacket.js
+-rw-r--r--  1 Daniel  staff   609 26 Okt  1985 LocalInfileRequestPacket.js
+-rw-r--r--  1 Daniel  staff  1414 26 Okt  1985 OkPacket.js
+-rw-r--r--  1 Daniel  staff   367 26 Okt  1985 OldPasswordPacket.js
+-rw-r--r--  1 Daniel  staff   381 26 Okt  1985 ResultSetHeaderPacket.js
+-rw-r--r--  1 Daniel  staff  4088 26 Okt  1985 RowDataPacket.js
+-rw-r--r--  1 Daniel  staff   983 26 Okt  1985 SSLRequestPacket.js
+-rw-r--r--  1 Daniel  staff   544 26 Okt  1985 StatisticsPacket.js
+-rw-r--r--  1 Daniel  staff   379 26 Okt  1985 UseOldPasswordPacket.js
+-rw-r--r--  1 Daniel  staff  1360 26 Okt  1985 index.js
+./node_modules/mysql/lib/protocol/sequences
+total 72
+-rw-r--r--  1 Daniel  staff  2071 26 Okt  1985 ChangeUser.js
+-rw-r--r--  1 Daniel  staff  3723 26 Okt  1985 Handshake.js
+-rw-r--r--  1 Daniel  staff   434 26 Okt  1985 Ping.js
+-rw-r--r--  1 Daniel  staff  5705 26 Okt  1985 Query.js
+-rw-r--r--  1 Daniel  staff   861 26 Okt  1985 Quit.js
+-rw-r--r--  1 Daniel  staff  3231 26 Okt  1985 Sequence.js
+-rw-r--r--  1 Daniel  staff   727 26 Okt  1985 Statistics.js
+-rw-r--r--  1 Daniel  staff   282 26 Okt  1985 index.js
+./node_modules/utils-merge
+total 40
+-rw-r--r--  1 Daniel  staff    79 20 Sep  2017 .npmignore
+-rw-r--r--  1 Daniel  staff  1084 20 Sep  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  1319 20 Sep  2017 README.md
+-rw-r--r--  1 Daniel  staff   381 20 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff  1704 27 Aug 17:53 package.json
+./node_modules/image-size
+total 24
+-rw-r--r--  1 Daniel  staff  1104 15 Maj  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  2308 15 Maj  2017 Readme.md
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:54 bin
+drwxr-xr-x  7 Daniel  staff   224 27 Aug 17:54 lib
+-rw-r--r--  1 Daniel  staff  1949 27 Aug 17:54 package.json
+./node_modules/image-size/bin
+total 8
+-rwxr-xr-x  1 Daniel  staff  938 15 Maj  2017 image-size.js
+./node_modules/image-size/lib
+total 32
+-rw-r--r--   1 Daniel  staff   376 25 Okt  2016 detector.js
+-rw-r--r--   1 Daniel  staff  2951 15 Maj  2017 index.js
+-rw-r--r--   1 Daniel  staff   307 25 Okt  2016 readUInt.js
+drwxr-xr-x  11 Daniel  staff   352 27 Aug 17:54 types
+-rw-r--r--   1 Daniel  staff   119 15 Maj  2017 types.js
+./node_modules/image-size/lib/types
+total 72
+-rw-r--r--  1 Daniel  staff   296 15 Maj  2017 bmp.js
+-rw-r--r--  1 Daniel  staff   304 15 Maj  2017 dds.js
+-rw-r--r--  1 Daniel  staff   350 12 Jun  2017 gif.js
+-rw-r--r--  1 Daniel  staff  1560 15 Maj  2017 jpg.js
+-rw-r--r--  1 Daniel  staff   911 15 Maj  2017 png.js
+-rw-r--r--  1 Daniel  staff   289 25 Okt  2016 psd.js
+-rw-r--r--  1 Daniel  staff  1764 15 Maj  2017 svg.js
+-rw-r--r--  1 Daniel  staff  2893 15 Maj  2017 tiff.js
+-rw-r--r--  1 Daniel  staff  1802 15 Maj  2017 webp.js
+./node_modules/concat-map
+total 40
+-rw-r--r--  1 Daniel  staff    43  8 Jun  2012 .travis.yml
+-rw-r--r--  1 Daniel  staff  1073 30 Jan  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  1165 28 Nov  2012 README.markdown
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:53 example
+-rw-r--r--  1 Daniel  staff   345  8 Dec  2012 index.js
+-rw-r--r--  1 Daniel  staff  1895 27 Aug 17:53 package.json
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:53 test
+./node_modules/concat-map/test
+total 8
+-rw-r--r--  1 Daniel  staff  1075 28 Nov  2012 map.js
+./node_modules/concat-map/example
+total 8
+-rw-r--r--  1 Daniel  staff  171  8 Jun  2012 map.js
+./node_modules/serve-static
+total 72
+-rw-r--r--  1 Daniel  staff  10083 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff   1189 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff   7783 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff   4570 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff   2385 27 Aug 17:53 package.json
+./node_modules/filelist
+total 56
+-rw-r--r--  1 Daniel  staff    226 24 Apr 03:37 Jakefile
+-rw-r--r--  1 Daniel  staff   2131 24 Apr 03:37 README.md
+-rw-r--r--  1 Daniel  staff  12906 24 Apr 03:37 index.js
+-rw-r--r--  1 Daniel  staff   1486 27 Aug 17:53 package.json
+./node_modules/mime
+total 128
+-rw-r--r--  1 Daniel  staff      0 25 Nov  2017 .npmignore
+-rw-r--r--  1 Daniel  staff   9473 25 Nov  2017 CHANGELOG.md
+-rw-r--r--  1 Daniel  staff   1098 23 Nov  2017 LICENSE
+-rw-r--r--  1 Daniel  staff   2119 25 Nov  2017 README.md
+-rwxr-xr-x  1 Daniel  staff    149 25 Nov  2017 cli.js
+-rw-r--r--  1 Daniel  staff   2726 25 Nov  2017 mime.js
+-rw-r--r--  1 Daniel  staff   1865 27 Aug 17:53 package.json
+drwxr-xr-x  4 Daniel  staff    128 27 Aug 17:53 src
+-rw-r--r--  1 Daniel  staff  31555 25 Nov  2017 types.json
+./node_modules/mime/src
+total 16
+-rwxr-xr-x  1 Daniel  staff  1351 25 Nov  2017 build.js
+-rw-r--r--  1 Daniel  staff  2334 25 Nov  2017 test.js
+./node_modules/ipaddr.js
+total 64
+-rw-r--r--  1 Daniel  staff  1087 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  8309 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  9738 26 Okt  1985 ipaddr.min.js
+drwxr-xr-x  4 Daniel  staff   128 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff  1780 27 Aug 17:53 package.json
+./node_modules/ipaddr.js/lib
+total 48
+-rw-r--r--  1 Daniel  staff  19333 26 Okt  1985 ipaddr.js
+-rw-r--r--  1 Daniel  staff   2959 26 Okt  1985 ipaddr.js.d.ts
+./node_modules/cookie
+total 56
+-rw-r--r--  1 Daniel  staff  2698 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1175 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  8809 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  4037 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2214 27 Aug 17:53 package.json
+./node_modules/source-map
+total 104
+-rw-r--r--   1 Daniel  staff   7884 18 Apr  2017 CHANGELOG.md
+-rw-r--r--   1 Daniel  staff   1526 18 Apr  2017 LICENSE
+-rw-r--r--   1 Daniel  staff  24072 25 Sep  2017 README.md
+drwxr-xr-x   6 Daniel  staff    192 27 Aug 17:54 dist
+drwxr-xr-x  12 Daniel  staff    384 27 Aug 17:54 lib
+-rw-r--r--   1 Daniel  staff   4909 27 Aug 17:54 package.json
+-rw-r--r--   1 Daniel  staff   3060 18 Apr  2017 source-map.d.ts
+-rw-r--r--   1 Daniel  staff    405 25 Sep  2017 source-map.js
+./node_modules/source-map/dist
+total 1312
+-rw-r--r--  1 Daniel  staff  272874 29 Sep  2017 source-map.debug.js
+-rw-r--r--  1 Daniel  staff  106973 29 Sep  2017 source-map.js
+-rw-r--r--  1 Daniel  staff   27111 29 Sep  2017 source-map.min.js
+-rw-r--r--  1 Daniel  staff  257409 29 Sep  2017 source-map.min.js.map
+./node_modules/source-map/lib
+total 240
+-rw-r--r--  1 Daniel  staff   3197  5 Jun  2017 array-set.js
+-rw-r--r--  1 Daniel  staff   4714 18 Apr  2017 base64-vlq.js
+-rw-r--r--  1 Daniel  staff   1540 18 Apr  2017 base64.js
+-rw-r--r--  1 Daniel  staff   4249 18 Apr  2017 binary-search.js
+-rw-r--r--  1 Daniel  staff   2339 18 Apr  2017 mapping-list.js
+-rw-r--r--  1 Daniel  staff   3616 18 Apr  2017 quick-sort.js
+-rw-r--r--  1 Daniel  staff  40562 29 Sep  2017 source-map-consumer.js
+-rw-r--r--  1 Daniel  staff  14356 25 Sep  2017 source-map-generator.js
+-rw-r--r--  1 Daniel  staff  13808 27 Sep  2017 source-node.js
+-rw-r--r--  1 Daniel  staff  12950 26 Sep  2017 util.js
+./node_modules/escape-html
+total 32
+-rw-r--r--  1 Daniel  staff  1157  1 Sep  2015 LICENSE
+-rw-r--r--  1 Daniel  staff   707  1 Sep  2015 Readme.md
+-rw-r--r--  1 Daniel  staff  1362  1 Sep  2015 index.js
+-rw-r--r--  1 Daniel  staff  1496 27 Aug 17:53 package.json
+./node_modules/statuses
+total 48
+-rw-r--r--  1 Daniel  staff  1023 28 Mar  2018 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1172 20 Okt  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  3458 20 Okt  2017 README.md
+-rw-r--r--  1 Daniel  staff  1821 28 Mar  2018 codes.json
+-rw-r--r--  1 Daniel  staff  2088 20 Okt  2017 index.js
+-rw-r--r--  1 Daniel  staff  2584 27 Aug 17:53 package.json
+./node_modules/parseurl
+total 40
+-rw-r--r--  1 Daniel  staff  1043 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1173 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  4094 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  2809 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2346 27 Aug 17:53 package.json
+./node_modules/etag
+total 48
+-rw-r--r--  1 Daniel  staff  1732 13 Sep  2017 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1094 19 Feb  2017 LICENSE
+-rw-r--r--  1 Daniel  staff  4198 13 Sep  2017 README.md
+-rw-r--r--  1 Daniel  staff  2479 13 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff  2319 27 Aug 17:53 package.json
+./node_modules/isarray
+total 64
+-rw-r--r--  1 Daniel  staff    13 10 Dec  2015 .npmignore
+-rw-r--r--  1 Daniel  staff    48 10 Dec  2015 .travis.yml
+-rw-r--r--  1 Daniel  staff    55 10 Dec  2015 Makefile
+-rw-r--r--  1 Daniel  staff  1890 10 Dec  2015 README.md
+-rw-r--r--  1 Daniel  staff   470 10 Dec  2015 component.json
+-rw-r--r--  1 Daniel  staff   132 10 Dec  2015 index.js
+-rw-r--r--  1 Daniel  staff  1816 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff   320 10 Dec  2015 test.js
+./node_modules/send
+total 120
+-rw-r--r--  1 Daniel  staff  12643 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff   1128 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff   9442 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  23287 26 Okt  1985 index.js
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 node_modules
+-rw-r--r--  1 Daniel  staff   2834 27 Aug 17:53 package.json
+./node_modules/send/node_modules
+total 0
+drwxr-xr-x  6 Daniel  staff  192 27 Aug 17:53 ms
+./node_modules/send/node_modules/ms
+total 32
+-rw-r--r--  1 Daniel  staff  3034 30 Nov  2017 index.js
+-rw-r--r--  1 Daniel  staff  1077 30 Nov  2017 license.md
+-rw-r--r--  1 Daniel  staff  1661 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff  2002 30 Nov  2017 readme.md
+./node_modules/finalhandler
+total 48
+-rw-r--r--  1 Daniel  staff  4080 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1119 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  4012 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  6518 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2424 27 Aug 17:53 package.json
+./node_modules/readable-stream
+total 120
+-rw-r--r--  1 Daniel  staff   991 26 Okt  1985 .travis.yml
+-rw-r--r--  1 Daniel  staff  1443 26 Okt  1985 CONTRIBUTING.md
+-rw-r--r--  1 Daniel  staff  5550 26 Okt  1985 GOVERNANCE.md
+-rw-r--r--  1 Daniel  staff  2337 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  2999 26 Okt  1985 README.md
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:53 doc
+-rw-r--r--  1 Daniel  staff    53 26 Okt  1985 duplex-browser.js
+-rw-r--r--  1 Daniel  staff    46 26 Okt  1985 duplex.js
+drwxr-xr-x  8 Daniel  staff   256 27 Aug 17:53 lib
+-rw-r--r--  1 Daniel  staff  2411 27 Aug 17:53 package.json
+-rw-r--r--  1 Daniel  staff    51 26 Okt  1985 passthrough.js
+-rw-r--r--  1 Daniel  staff   351 26 Okt  1985 readable-browser.js
+-rw-r--r--  1 Daniel  staff   771 26 Okt  1985 readable.js
+-rw-r--r--  1 Daniel  staff    49 26 Okt  1985 transform.js
+-rw-r--r--  1 Daniel  staff    55 26 Okt  1985 writable-browser.js
+-rw-r--r--  1 Daniel  staff   229 26 Okt  1985 writable.js
+./node_modules/readable-stream/lib
+total 136
+-rw-r--r--  1 Daniel  staff   4015 26 Okt  1985 _stream_duplex.js
+-rw-r--r--  1 Daniel  staff   1753 26 Okt  1985 _stream_passthrough.js
+-rw-r--r--  1 Daniel  staff  31324 26 Okt  1985 _stream_readable.js
+-rw-r--r--  1 Daniel  staff   7742 26 Okt  1985 _stream_transform.js
+-rw-r--r--  1 Daniel  staff  20317 26 Okt  1985 _stream_writable.js
+drwxr-xr-x  3 Daniel  staff     96 27 Aug 17:53 internal
+./node_modules/readable-stream/lib/internal
+total 0
+drwxr-xr-x  6 Daniel  staff  192 27 Aug 17:53 streams
+./node_modules/readable-stream/lib/internal/streams
+total 32
+-rw-r--r--  1 Daniel  staff  2059 26 Okt  1985 BufferList.js
+-rw-r--r--  1 Daniel  staff  1849 26 Okt  1985 destroy.js
+-rw-r--r--  1 Daniel  staff    49 26 Okt  1985 stream-browser.js
+-rw-r--r--  1 Daniel  staff    36 26 Okt  1985 stream.js
+./node_modules/readable-stream/doc
+total 0
+drwxr-xr-x  3 Daniel  staff  96 27 Aug 17:53 wg-meetings
+./node_modules/readable-stream/doc/wg-meetings
+total 8
+-rw-r--r--  1 Daniel  staff  2280 26 Okt  1985 2015-01-30.md
+./node_modules/graceful-fs
+total 96
+-rw-r--r--  1 Daniel  staff   781 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff  4454 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff   401 26 Okt  1985 clone.js
+-rw-r--r--  1 Daniel  staff  8965 26 Okt  1985 graceful-fs.js
+-rw-r--r--  1 Daniel  staff  2655 26 Okt  1985 legacy-streams.js
+-rw-r--r--  1 Daniel  staff  1976 27 Aug 17:54 package.json
+-rw-r--r--  1 Daniel  staff  9519 26 Okt  1985 polyfills.js
+./node_modules/on-finished
+total 48
+-rw-r--r--  1 Daniel  staff  1694 27 Maj  2015 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1167 16 Aug  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  4886 26 Maj  2015 README.md
+-rw-r--r--  1 Daniel  staff  3686 26 Maj  2015 index.js
+-rw-r--r--  1 Daniel  staff  2023 27 Aug 17:53 package.json
+./node_modules/debug
+total 144
+-rw-r--r--  1 Daniel  staff     46 15 Jun  2017 .coveralls.yml
+-rw-r--r--  1 Daniel  staff    180 22 Sep  2017 .eslintrc
+-rw-r--r--  1 Daniel  staff     72 15 Jun  2017 .npmignore
+-rw-r--r--  1 Daniel  staff    140 22 Sep  2017 .travis.yml
+-rw-r--r--  1 Daniel  staff  11707 22 Sep  2017 CHANGELOG.md
+-rw-r--r--  1 Daniel  staff   1107 15 Jun  2017 LICENSE
+-rw-r--r--  1 Daniel  staff   1059 22 Sep  2017 Makefile
+-rw-r--r--  1 Daniel  staff  17918 22 Sep  2017 README.md
+-rw-r--r--  1 Daniel  staff    321 22 Sep  2017 component.json
+-rw-r--r--  1 Daniel  staff   1736 15 Jun  2017 karma.conf.js
+-rw-r--r--  1 Daniel  staff     40 15 Jun  2017 node.js
+-rw-r--r--  1 Daniel  staff   2255 27 Aug 17:53 package.json
+drwxr-xr-x  7 Daniel  staff    224 27 Aug 17:53 src
+./node_modules/debug/src
+total 64
+-rw-r--r--  1 Daniel  staff  4734 22 Sep  2017 browser.js
+-rw-r--r--  1 Daniel  staff  4394 22 Sep  2017 debug.js
+-rw-r--r--  1 Daniel  staff   263 22 Sep  2017 index.js
+-rw-r--r--  1 Daniel  staff   373 21 Sep  2017 inspector-log.js
+-rw-r--r--  1 Daniel  staff  6015 22 Sep  2017 node.js
+./node_modules/media-typer
+total 48
+-rw-r--r--  1 Daniel  staff   461  8 Sep  2014 HISTORY.md
+-rw-r--r--  1 Daniel  staff  1089  8 Sep  2014 LICENSE
+-rw-r--r--  1 Daniel  staff  2371  8 Sep  2014 README.md
+-rw-r--r--  1 Daniel  staff  6375  8 Sep  2014 index.js
+-rw-r--r--  1 Daniel  staff  1789 27 Aug 17:53 package.json
+./node_modules/mime-db
+total 408
+-rw-r--r--  1 Daniel  staff   10913 26 Okt  1985 HISTORY.md
+-rw-r--r--  1 Daniel  staff    1099 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff    4065 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff  178741 26 Okt  1985 db.json
+-rw-r--r--  1 Daniel  staff     136 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff    2783 27 Aug 17:53 package.json
+./node_modules/setprototypeof
+total 40
+-rw-r--r--  1 Daniel  staff   727 26 Okt  1985 LICENSE
+-rw-r--r--  1 Daniel  staff   850 26 Okt  1985 README.md
+-rw-r--r--  1 Daniel  staff    93 26 Okt  1985 index.d.ts
+-rw-r--r--  1 Daniel  staff   384 26 Okt  1985 index.js
+-rw-r--r--  1 Daniel  staff  2098 27 Aug 17:53 package.json
+drwxr-xr-x  3 Daniel  staff    96 27 Aug 17:53 test
+./node_modules/setprototypeof/test
+total 8
+-rw-r--r--  1 Daniel  staff  690 26 Okt  1985 index.js
+./.dbwebb
+total 0
+drwxr-xr-x  5 Daniel  staff  160 27 Aug 17:39 exam
+./.dbwebb/exam
+total 8
+drwxr-xr-x  5 Daniel  staff  160 27 Aug 19:22 file
+-rw-r--r--  1 Daniel  staff   36 27 Aug 17:39 id.md
+drwxr-xr-x  5 Daniel  staff  160 27 Aug 19:22 receipt
+./.dbwebb/exam/file
+total 280
+-rw-r--r--  1 Daniel  staff   1204 27 Aug 12:35 20200827123541.txt
+-rw-r--r--  1 Daniel  staff   2286 27 Aug 17:39 20200827173926.txt
+-rw-r--r--  1 Daniel  staff  84318 27 Aug 19:22 20200827192209.txt
+./.dbwebb/exam/receipt
+total 24
+-rw-r--r--  1 Daniel  staff  593 27 Aug 12:35 20200827103541.md
+-rw-r--r--  1 Daniel  staff  658 27 Aug 17:39 20200827153926.md
+-rw-r--r--  1 Daniel  staff  658 27 Aug 19:22 20200827192209.md
+./doc
+total 0
+-rw-r--r--  1 Daniel  staff  0 27 Aug 12:55 er.pdf
+./routes
+total 8
+-rw-r--r--  1 Daniel  staff  442 27 Aug 18:08 index.js
+./src
+./sql
+total 16
+-rw-r--r--@  1 Daniel  staff  6148 27 Aug 12:52 .DS_Store
+drwxr-xr-x  11 Daniel  staff   352 27 Aug 18:51 exam
+./sql/exam
+total 72
+-rw-r--r--@ 1 Daniel  staff   163 27 Aug 12:49 artist.csv
+-rw-r--r--  1 Daniel  staff  6014 27 Aug 18:51 backup.sql
+-rw-r--r--  1 Daniel  staff  1051 27 Aug 17:48 ddl.sql
+-rw-r--r--  1 Daniel  staff     0 27 Aug 12:53 dml.sql
+-rw-r--r--  1 Daniel  staff  1058 27 Aug 17:56 insert.sql
+-rw-r--r--@ 1 Daniel  staff    41 27 Aug 12:49 landskod.csv
+-rw-r--r--  1 Daniel  staff   449 27 Aug 17:28 setup.sql
+-rw-r--r--@ 1 Daniel  staff   132 27 Aug 12:49 speldag.csv
+-rw-r--r--@ 1 Daniel  staff   129 27 Aug 12:49 spelning.csv

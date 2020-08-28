@@ -16,7 +16,8 @@ const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({ extended: false});
 
 router.get("/index", async (req, res) => {
-    console.log("* INDEX ROUTE");
+    // console.log("* INDEX ROUTE");
+
     let data = {
         title: "Welcome to E-shop!"
     };
@@ -25,18 +26,20 @@ router.get("/index", async (req, res) => {
 });
 
 router.get("/product", async (req, res) => {
-    console.log("* ALL PRODUCTS ROUTE");
+    // console.log("* ALL PRODUCTS ROUTE");
+
     let data = {
         title: "All Products | E-shop",
-        res: await myFunctions.showProductsStockView()
+        res: await myFunctions.getProductInventories()
     };
 
     res.render("eshop/products/product-catalog", data);
 });
 
 router.get("/product/:id", async (req, res) => {
-    console.log("* A PRODUCT:ID ROUTE, show a specific product.");
-    console.log("req.params.id: ", req.params.id);
+    // console.log("* A PRODUCT:ID ROUTE, show a specific product.");
+    // console.log("req.params.id: ", req.params.id);
+
     let id = req.params.id;
     let data = {
         title: `Product ${id}`,
@@ -49,20 +52,20 @@ router.get("/product/:id", async (req, res) => {
 });
 
 router.get("/productCategories", async (req, res) => {
-    console.log("* PRODUCT CATEGORIES ROUTE (GET)");
+    // console.log("* PRODUCT CATEGORIES ROUTE (GET)");
 
     let data = {
         title: "Product categories | E-shop",
-        res: await myFunctions.showProductCategories()
+        res: await myFunctions.getProductCategories()
     };
 
-    console.log("data.res ", data.res);
+    // console.log("data.res ", data.res);
 
     res.render("eshop/products/product-categories", data);
 });
 
 router.get("/createProduct", async (req, res) => {
-    console.log("* CREATE PRODUCT ROUTE (GET)");
+    // console.log("* CREATE PRODUCT ROUTE (GET)");
 
     let data = {
         title: "Create Product"
@@ -72,8 +75,8 @@ router.get("/createProduct", async (req, res) => {
 });
 
 router.post("/createProduct", urlencodedParser, async (req, res) => {
-    console.log("* CREATE PRODUCT ROUTE (POST)");
-    console.log(JSON.stringify("REQ.BODY: ", req.body, null, 4));
+    // console.log("* CREATE PRODUCT ROUTE (POST)");
+    // console.log(JSON.stringify("REQ.BODY: ", req.body, null, 4));
 
     await myFunctions.createProduct(req.body.id, req.body.name, req.body.info, req.body.price);
 
@@ -81,18 +84,19 @@ router.post("/createProduct", urlencodedParser, async (req, res) => {
 });
 
 router.get("/updateProduct/:id", async (req, res) => {
-    console.log("* UPDATE PRODUCT ROUTE (GET)");
-    console.log("req.param.id: ", req.param.id);
+    // console.log("* UPDATE PRODUCT ROUTE (GET)");
+    // console.log("req.param.id: ", req.param.id);
 
     let id = req.params.id;
-    console.log("id: ", id);
-    
+
+    // console.log("id: ", id);
+
     let data = {
         title: `Update Product ${id}`,
         product: id
     };
-    
-    console.log("data: ", data);
+
+    // console.log("data: ", data);
 
     data.res = await myFunctions.showProduct(id);
 
@@ -100,8 +104,8 @@ router.get("/updateProduct/:id", async (req, res) => {
 });
 
 router.post("/updateProduct", urlencodedParser, async (req, res) => {
-    console.log("* UPDATE PRODUCT ROUTE (POST)");
-    console.log("req.body: ", req.body);
+    // console.log("* UPDATE PRODUCT ROUTE (POST)");
+    // console.log("req.body: ", req.body);
 
     await myFunctions.updateProduct(req.body.id, req.body.name, req.body.info, req.body.price);
 
@@ -109,8 +113,8 @@ router.post("/updateProduct", urlencodedParser, async (req, res) => {
 });
 
 router.get("/deleteProduct/:id", async (req, res) => {
-    console.log("* DELETE ROUTE (GET)");
-    console.log("req.param.id: ", req.param.id);
+    // console.log("* DELETE ROUTE (GET)");
+    // console.log("req.param.id: ", req.param.id);
 
     let id = req.params.id;
 
@@ -125,8 +129,8 @@ router.get("/deleteProduct/:id", async (req, res) => {
 });
 
 router.post("/deleteProduct", urlencodedParser, async (req, res) => {
-    console.log("* DELETE ROUTE (POST)");
-    console.log("req.body: ", req.body);
+    // console.log("* DELETE ROUTE (POST)");
+    // console.log("req.body: ", req.body);
 
     await myFunctions.deleteProduct(req.body.id);
 

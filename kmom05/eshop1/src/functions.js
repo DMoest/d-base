@@ -48,11 +48,10 @@ async function getAllFromTable(table) {
  * @async
  * @returns {RowDataPacket} Result from query.
  */
-async function showAllProducts(table) {
-    console.log("* showAllProducts() function.");
+async function getAllProducts(table) {
+    console.log("* getAllProducts() function.");
     let result;
-    let sql = `
-    call show_all_products();`;
+    let sql = `call show_all_products();`;
 
     result = await db.query(sql, [table]);
 
@@ -67,15 +66,97 @@ async function showAllProducts(table) {
  * @async
  * @returns {RowDataPacket} Result from query.
  */
-async function showProductsStockView(table) {
-    console.log("* showProductsStockView() function.");
+async function getProductInventories() {
+    console.log("* getProductInventories() function.");
     let result;
-    let sql = `
-    call show_products_view();`;
+    let sql = `call show_all_products();`;
 
-    result = await db.query(sql, [table]);
+    result = await db.query(sql);
 
-    console.info("result: ", result);
+    console.info("Result: ", result);
+    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result;
+}
+
+/**
+ * Search in inventory.
+ * @param   input           input search.
+ * @async
+ * @returns {RowDataPacket} Result from query.
+ */
+async function searchInventory(input) {
+    console.log("* getProductInventories() function.");
+    let result;
+    let sql = `call search_inventory(?);`;
+
+    result = await db.query(sql, [input]);
+
+    console.info("Result: ", result);
+    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result;
+}
+
+/**
+ * Show all the shelves in the wearhouse table.
+ * @async
+ * @returns {RowDataPacket} Result from query.
+ */
+async function getInventoryShelves() {
+    console.log("* getInventoryShelves() function.");
+    let result;
+    let sql = `call show_all_shelves();`;
+
+    result = await db.query(sql);
+
+    console.info("Result: ", result);
+    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result;
+}
+
+/**
+ * Position product on shelf in wearhouse inventory.
+ * @async
+ * @param section               Inventory section.
+ * @param position              Inventory position.
+ * @param level                 Inventory level
+ * @param product               Product id to put on shelf.
+ * @param amount                Amount of product to put on shelf.
+ * @returns {RowDataPacket}     Result from query.
+ */
+async function positionProductOnShelf(section, position, level, product, amount) {
+    console.log("* getInventoryShelves() function.");
+    let result;
+    let sql = `call position_product_on_shelf(?, ?, ?, ?, ?);`;
+
+    result = await db.query(sql, [section, position, level, product, amount]);
+
+    console.info("Result: ", result);
+    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result;
+}
+
+/**
+ * Remove product on shelf in wearhouse inventory.
+ * @async
+ * @param section               Inventory section.
+ * @param position              Inventory position.
+ * @param level                 Inventory level
+ * @param product               Product id to put on shelf.
+ * @param amount                Amount of product to put on shelf.
+ * @returns {RowDataPacket}     Result from query.
+ */
+async function removeProductFromShelf(section, position, level, product, amount) {
+    console.log("* getInventoryShelves() function.");
+    let result;
+    let sql = `call remove_product_from_shelf(?, ?, ?, ?, ?);`;
+
+    result = await db.query(sql, [section, position, level, product, amount]);
+
+    console.info("Result: ", result);
     console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
@@ -101,13 +182,12 @@ async function showProduct(id) {
 }
 
 /**
- * Show details a product.
+ * Show details about all product categories.
  * @async
- * @param {string} id           A id (productnumber) of the product.
  * @returns {RowDataPacket}     Resultset from the query.
  */
-async function showProductCategories() {
-    console.log("* showProductCategories() function.");
+async function getProductCategories() {
+    console.log("* getProductCategories() function.");
     let result;
     let sql = `call show_product_categories();`;
 
@@ -176,43 +256,53 @@ async function deleteProduct(id) {
     console.info(`SQL: ${sql} got ${result.length} rows.`);
 }
 
-// /**
-//  * Console info a table to terminal.
-//  * @param {string} res       Each tuple in DB table to be printed.
-//  * @returns {void}
-//  */
-// function productsAsTable(res) {
-//     let str;
+/**
+ * Show details about all product categories.
+ * @async
+ * @returns {RowDataPacket}     Resultset from the query.
+ */
+async function getFullProductLog() {
+    console.log("* getFullProductLog();");
+    let result;
+    let sql = `call show_full_product_log();`;
 
-//     /* eslint-disable */
-//     str  = "+ ----- + -------------------- + -------- +\n";
-//     str += "| ID    | Namn                 | Pris     |\n";
-//     str += "+ ----- + -------------------- + -------- +\n";
-//     /* eslint-enable */
-//     for (const row of res[0]) {
-//         str += "| ";
-//         str += row.id.toString().padEnd(5);
-//         str += " | ";
-//         str += row.name.padEnd(20);
-//         str += " | ";
-//         str += row.price.toString().padEnd(5);
-//         str += " |\n";
-//     }
-//     /* eslint-disable */
-//     str += "+ ----- + -------------------- + -------- +\n";
-//     /* eslint-enable */
-//     return str;
-// }
+    result = await db.query(sql);
+    console.info(`SQL: ${sql} got ${result.length} rows.`);
+
+    return result;
+}
+
+/**
+ * Show details about all product categories.
+ * @async
+ * @returns {RowDataPacket}     Resultset from the query.
+ */
+async function getRowsFromProductLog(limit) {
+    console.log("* getRowsProductLog();");
+    let result;
+    let sql = `call show_rows_from_product_log(?);`;
+
+    result = await db.query(sql, [limit]);
+    console.info(`SQL: ${sql} got ${result.length} rows.`);
+
+    return result;
+}
 
 
 
 module.exports = {
     "getAllFromTable": getAllFromTable,
-    "showAllProducts": showAllProducts,
+    "getAllProducts": getAllProducts,
     "showProduct": showProduct,
     "createProduct": createProduct,
     "updateProduct": updateProduct,
     "deleteProduct": deleteProduct,
-    "showProductCategories": showProductCategories,
-    "showProductsStockView": showProductsStockView,
+    "getProductCategories": getProductCategories,
+    "getProductInventories": getProductInventories,
+    "getInventoryShelves": getInventoryShelves,
+    "positionProductOnShelf": positionProductOnShelf,
+    "removeProductFromShelf": removeProductFromShelf,
+    "searchInventory": searchInventory,
+    "getFullProductLog": getFullProductLog,
+    "getRowsFromProductLog": getRowsFromProductLog
 };

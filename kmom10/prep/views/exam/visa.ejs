@@ -1,0 +1,42 @@
+<%- include ("./../partials/header") %>
+
+<pre><%= JSON.stringify(res, null, 4) %></pre>
+
+<h1 class="view__text--header">Välkommen till Exam</h1>
+
+<p class="view__text--paragraph"></p>
+
+<p class="view__text--paragraph"></p>
+
+<p class="view__text--paragraph"></p>
+
+
+
+<table class="productTable">
+    <tr class="productTable__TRs">
+        <th class="productTable__tableHeader productTable__tableHeader--id">ID</th>
+        <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
+        <th class="productTable__tableHeader productTable__tableHeader--name">Ort</th>
+        <th class="productTable__tableHeader productTable__tableHeader--info">Land</th>
+        <th class="productTable__tableHeader productTable__tableHeader--price">Uppträder</th>
+        <th class="productTable__tableHeader productTable__tableHeader--price">Dag</th>
+        <th class="productTable__tableHeader productTable__tableHeader--action">Datum</th>
+        <th class="productTable__tableHeader productTable__tableHeader--action">Tid</th>
+    </tr>
+    <% for (const row of res[0]) { %>
+        <tr class="productTable__TRs">
+            <td class="productTable__TDs productTable__TDs--name"><%= row.id %></td>
+            <td class="productTable__TDs productTable__TDs--name"><%= row.artist %></td>
+            <td  class="productTable__TDs productTable__TDs--info"><%= row.ort %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.land %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.upptrader %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.dag %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.datum %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.tid %></td>
+            <td  class="productTable__TDs"></td>
+        </tr>
+    <% }; %>
+</table>
+
+
+<%- include ("./../partials/footer") %>

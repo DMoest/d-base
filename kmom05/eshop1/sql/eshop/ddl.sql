@@ -5,6 +5,10 @@
 
 
 
+-- --------------------------------------------------
+-- * DROP FIRST IF EXISTS!                          *
+-- --------------------------------------------------
+
 -- Drop tabels if exists:
 drop table if exists log_products;
 drop table if exists invoices;
@@ -20,25 +24,31 @@ drop table if exists inventory;
 drop table if exists products;
 
 -- Drop views if exists:
-drop view if exists v_inventory;
 drop view if exists v_products;
 drop view if exists v_product_categories;
+drop view if exists v_inventory;
+drop view if exists v_log_products;
 
 -- Drop procedures if exists:
 drop procedure if exists get_all_from_table;
 drop procedure if exists show_all_products;
-drop procedure if exists show_products_view;
 drop procedure if exists show_product;
 drop procedure if exists show_product_categories;
 drop procedure if exists create_product;
 drop procedure if exists update_product;
 drop procedure if exists delete_product;
+drop procedure if exists show_inventory;
+drop procedure if exists search_inventory;
+drop procedure if exists show_all_shelves;
+drop procedure if exists position_product_on_shelf;
+drop procedure if exists remove_product_from_shelf;
+drop procedure if exists show_full_product_log;
+drop procedure if exists show_rows_from_product_log;
 
 -- Drop trigger if exists:
 drop trigger if exists log_product_insert;
 drop trigger if exists log_product_update;
 drop trigger if exists log_product_delete;
-
 
 -- Teckenkodning:
 set names 'utf8';
@@ -48,8 +58,9 @@ set names 'utf8';
 set foreign_key_checks = 0;
 
 
--- Tables:
--- ----------
+-- --------------------------------------------------
+-- * TABLES:                                        *
+-- --------------------------------------------------
 
 -- Products:
 create table products
@@ -318,18 +329,35 @@ show tables;
 
 
 
--- VIEWS:
--- -----------
+
+
+
+
+-- --------------------------------------------------
+-- * VIEWS:                                         *
+-- --------------------------------------------------
 
 -- A easier view for inventory:
 create view v_inventory
 as
 select
-    id,
-    concat(`section`, '-', `position`, '-', `level`) as position,
-    `product`,
-    `amount`
-from inventory
+    i.id as id,
+    i.product as product,
+    p.name as `name`,
+    concat(i.section, '-', i.position, '-', i.level) as position,
+    i.amount as amount
+from inventory as i
+    join products as p
+        on i.product = p.id
+;
+
+
+-- A easier view for inventory:
+create view v_log_products
+as
+select
+    *
+from log_products
 ;
 
 -- describe v_inventory;
@@ -344,7 +372,7 @@ select
     p.info,
     p.price,
     group_concat( distinct pt.type separator ", " ) as 'types',
-    group_concat( concat(i.section, "-", i.position, "-", i.level) separator ", \n" ) as `stored`
+    group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", ") as `stored`
 from (
     products as p 
         left outer join 
@@ -354,6 +382,8 @@ from (
     on p.id = i.product
 group by id
 ;
+
+-- describe v_products;
 
 
 -- Product categories:
@@ -368,9 +398,13 @@ group by
 order by type asc
 ;
 
+-- describe v_product_categories;
 
--- STORED PROCEDUREs:
--- -----------
+
+
+-- --------------------------------------------------
+-- * STORED PROCEDUREs:                             *
+-- --------------------------------------------------
 
 -- Get all from any table:
 delimiter $$
@@ -387,13 +421,13 @@ delimiter ;
 
 
 -- Show all products:
-delimiter $$
-create procedure show_all_products()
-begin
-    select * from products;
-end
-$$
-delimiter ;
+-- delimiter $$
+-- create procedure show_all_products()
+-- begin
+--     select * from products;
+-- end
+-- $$
+-- delimiter ;
 
 -- show create procedure show_all_products;
 
@@ -401,7 +435,7 @@ delimiter ;
 -- Show product view:
 -- Including id, name, category, information & stored position.
 delimiter $$
-create procedure show_products_view()
+create procedure show_all_products()
 begin
     select * from v_products;
 end
@@ -491,10 +525,145 @@ delimiter ;
 -- show create procedure delete_product;
 
 
+-- Show inventory:
+delimiter $$
+create procedure show_inventory()
+begin
+    select * from v_inventory;
+end
+$$
+delimiter ;
+
+-- show create procedure show_inventory;
 
 
--- TRIGGERs:
--- ----------
+-- Show product log history:
+delimiter $$
+create procedure show_full_product_log()
+begin
+select * from v_log_products
+    order by 'time' desc;
+end
+$$
+delimiter ;
+
+-- show create show_rows_from_product_log;
+
+
+-- Show product log history:
+delimiter $$
+create procedure show_rows_from_product_log(
+    l_limit int
+)
+begin
+select * from v_log_products
+    order by 'time' desc
+    limit l_limit;
+end
+$$
+delimiter ;
+
+-- show create show_rows_from_product_log;
+
+
+-- Show all shelves in the wearhouse:
+delimiter $$
+create procedure show_all_shelves()
+begin
+select
+    *
+from v_inventory
+    order by position asc;
+end
+$$
+delimiter ;
+
+-- show create procedure show_all_shelves;
+
+
+-- Insert product into inventory shelf:
+delimiter $$
+create procedure position_product_on_shelf(
+    i_section char(2),
+    i_position char(2),
+    i_level char(2),
+    p_id int,
+    p_amount int
+)
+begin
+start transaction;
+update inventory 
+    set
+        `product` = p_id,
+        `amount` = `amount` + p_amount
+    where
+        `section` = i_section and
+        `position` = i_position and
+        `level` = i_level
+    ;
+commit;
+end
+$$
+delimiter ;
+
+
+
+delimiter $$
+create procedure search_inventory(
+    i_search varchar(20)
+)
+begin
+    select * from v_inventory
+        where 
+            product = i_search or
+            name = i_search or
+            position = i_search;
+
+end
+$$
+delimiter ;
+
+
+
+-- Delete amount of product from inventory shelf:
+-- delimiter $$
+-- create procedure remove_product_from_shelf(
+--     i_section char(2),
+--     i_position char(2),
+--     i_level char(2),
+--     p_id int,
+--     p_amount int
+-- )
+-- begin
+-- start transaction;
+-- select * from inventory
+--     where
+--         `section` = i_section and
+--         `position` = i_position and
+--         `level` = i_level;
+--     declare newAmount
+--     check `amount` < p_amount
+--     then
+--         rollback;
+--     else
+--         call position_product_on_shelf(
+--             i_section,
+--             i_position,
+--             i_level,
+--             p_id,
+--             (`amount` - p_amount)
+--         );
+--         commit;
+--     end if;
+-- end
+-- $$
+-- delimiter ;
+
+
+
+-- --------------------------------------------------
+-- * TRIGGERs:                                      *
+-- --------------------------------------------------
 
 -- New product:
 create trigger log_product_insert

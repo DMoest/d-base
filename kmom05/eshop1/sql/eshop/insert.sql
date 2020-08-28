@@ -5,10 +5,9 @@
 
 use eshop;
 
-delete from product_types;
 delete from products;
+delete from product_types;
 delete from inventory;
-delete from customers;
 delete from customers;
 
 
@@ -89,4 +88,8 @@ select * from customers;
 
 
 -- Check trigger events for insert of products:
-select * from log_products;
+-- select * from log_products;
+
+-- Try to restore what was avoided before.
+-- 
+set foreign_key_checks = 1;

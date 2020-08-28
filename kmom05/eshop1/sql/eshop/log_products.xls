@@ -1,0 +1,14 @@
+id	product	time	date	activity	before	after
+1	1	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 1 NAME: Badbrallor
+2	2	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 2 NAME: Bikini
+3	3	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 3 NAME: Baddräkt
+4	4	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 4 NAME: Baddräkt
+5	5	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 5 NAME: Shorts
+6	6	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 6 NAME: T-Shirt
+7	7	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 7 NAME: T-Shirt
+8	8	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 8 NAME: Hoodie
+9	9	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 9 NAME: Hoodie
+10	10	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 10 NAME: Hoodie
+11	11	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 11 NAME: Jeans
+12	12	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 12 NAME: Chinos
+13	13	19:19:19	2020-08-27	TRIGGER - New product was registered.	Empty	New product -> ID: 13 NAME: Polotröja
