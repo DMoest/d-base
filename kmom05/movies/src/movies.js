@@ -24,7 +24,7 @@ let db;
 
 async function getAllMovies(table) {
     console.log("* getAll() function");
-    
+
     let res;
     let sql = `select * from ??;`;
 
@@ -35,7 +35,7 @@ async function getAllMovies(table) {
 
 async function getOneMovie(id) {
     console.log("* insertMovie() function.");
-    
+
     let res;
     let sql = `
     select
@@ -50,13 +50,13 @@ async function getOneMovie(id) {
 
 async function insertMovie(data) {
     console.log("* insertMovie() function.");
-    
+
     let res;
     let sql = `
     insert
     into movies (name, year)
     values (?, ?);`;
-    
+
     res = await db.query(sql, [data.name, data.year]);
 
     return res;

@@ -24,7 +24,7 @@ router.get("/index", async (req, res) => {
 
     let data = {
         res: await movies.getAllMovies("movies")
-    }
+    };
 
     res.render("movies/index", data);
 });
@@ -49,7 +49,7 @@ router.get("/update/:id", async (req, res) => {
 
     let data = {
         res: await movies.getOneMovie(req.params.id)
-    }
+    };
 
     res.render("movies/update", data);
 });
@@ -69,7 +69,7 @@ router.get("/delete/:id", async (req, res) => {
 
     let data = {
         res: await movies.getOneMovie(req.params.id)
-    }
+    };
 
     res.render("movies/delete", data);
 });

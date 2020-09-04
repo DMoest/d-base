@@ -1,0 +1,36 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-1.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Skapa en produkt</h1>
+</div>
+
+<h1 class="view__text--header"></h1>
+
+<p class="view__text--paragraph">Skapa en ny produkt genom att fylla i formuläret och tryck på "skapa produkt".</p>
+
+<form class="CRUD__form" method="post">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Product details</legend>
+
+        <label for="id" class="CRUD__form--label">Id:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input" placeholder="Produkens ID">
+
+        <label for="name" class="CRUD__form--label">Name:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input" placeholder="Produktnamn">
+
+        <!-- <label for="category" class="CRUD__form--category">Category:</label>
+        <input id="category" type="text" name="category" class="CRUD__form--input" placeholder="Kategori"> -->
+
+        <label for="info" class="CRUD__form--label">Info:</label>
+        <textarea id="info" type="text" name="info" class="CRUD__form--input CRUD__form--inputInfo" placeholder="Produktinformation"></textarea>
+
+        <label for="price" class="CRUD__form--label">Price:</label>
+        <input id="price" type="number" step="0.01" name="price" class="CRUD__form--input" placeholder="Produktens pris">
+
+        <input type="submit" name="create" value="Skapa produkten" class="CRUD__formBTN CRUD__formBTN--create">
+    </fieldset>
+</form>
+
+
+<%- include ("./../../partials/footer") %>

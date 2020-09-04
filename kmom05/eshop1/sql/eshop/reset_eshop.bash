@@ -33,6 +33,7 @@ echo ">>> Reset database Eshop."
 loadSqlIntoDB "root" "" "setup.sql" "Init database and users."
 loadSqlIntoDB "user" "pass" "ddl.sql" "Create tables, views, stored procedures & triggers."
 loadSqlIntoDB "user" "pass" "insert.sql" "Insert data into tables."
+loadSqlIntoDB "user" "pass" "dml.sql" "DML describe tables, views, procedures & triggers in the database."
 
 
 

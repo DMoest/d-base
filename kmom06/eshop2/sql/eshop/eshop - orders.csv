@@ -1,0 +1,6 @@
+id,customer,picking_list,date,status
+1,5,1,2019-10-30,Skapad
+2,3,2,2019-10-21,Uppdaterad
+3,8,3,2019-08-11,Raderad
+4,2,4,2019-09-30,Beställd
+5,1,5,2019-01-30,Skickad

@@ -1,0 +1,24 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-5.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Produkter</h1>
+</div>
+
+    <% for (const row of res) { %>
+        <div class="productContainer">
+            <h3 class="productContainer--header"><%= row.name %></h2>
+            <p class="productContainer--id"><%= row.id %></p>
+            <p class="productContainer--paragraph"><%= row.info %></p>
+            <p class="productContainer--price"><%= row.price %> kr </p>
+
+            <div class="productContainer--crud">
+                <a href="./../updateProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
+                <a href="./../deleteProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
+            </div>  
+        </div>
+    <% }; %>
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

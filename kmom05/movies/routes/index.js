@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/movie", (req, res) => {
-    res.send("MOVIE ROUTE.")
+    res.send("MOVIE ROUTE.");
 });
 
 module.exports = router;

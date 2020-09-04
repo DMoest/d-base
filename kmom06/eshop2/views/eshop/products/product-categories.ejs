@@ -1,0 +1,26 @@
+<%- include ("./../../partials/header") %>
+
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-13.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Produktkategorier</h1>
+</div>
+
+<p class="view__text--paragraph">Här är en lista på alla registrerade produktkategorier lager.</p>
+
+<table class="productTable">
+    <tr class="productTable__TRs">
+        <th class="productTable__tableHeader productTable__tableHeader--id">Produktkategorier</th>
+        <th class="productTable__tableHeader productTable__tableHeader--id">Antal produkter</th>
+    </tr>
+    <% for (const row of res) { %>
+        <tr class="productTable__TRs">
+            <td class="productTable__TDs productTable__TDs--id"><%= row.type %></a></td>
+            <td class="productTable__TDs productTable__TDs--id"><%= row.products %></a></td>
+        </tr>
+    <% }; %>
+</table>
+
+<%- include ("./../../partials/footer") %>

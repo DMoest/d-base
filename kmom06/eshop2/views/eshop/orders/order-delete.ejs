@@ -1,0 +1,39 @@
+<%- include ("./../../partials/header") %>
+
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-11.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Radera Order</h1>
+</div>
+
+<p class="view__text--paragraph">Är du helt säker på att du vill radera ordern med följande detaljer? Se över detaljerna och tänk till en extra gång innan du raderar ordern. När du slutligen bestämt dig tryck på den stora röda knappen längst ner i formuläret.</p>
+
+<form class="CRUD__form" method="post" action="/eshop/deleteOrder">
+    <fieldset class="CRUD__form--fieldset">
+        <legend class="CRUD__form--legend">Order information</legend>
+
+        <label for="id" class="CRUD__form--label">Order:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input" value="<%= res[0].id %>" readonly>
+
+        <label for="customer" class="CRUD__form--label">Kund:</label>
+        <input id="customer" type="text" name="customer" class="CRUD__form--input" value="<%= res[0].customer %>" readonly>
+
+        <label for="name" class="CRUD__form--label">Namn:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input"  value="<%= res[0].name %>" readonly></input>
+
+        <label for="price" class="CRUD__form--label">Plocklista:</label>
+        <input id="picking_list" type="text" name="picking_list" class="CRUD__form--input"  value="<%= res[0].picking_list %>" readonly>
+
+        <label for="date" class="CRUD__form--label">Datum:</label>
+        <input id="date" type="datetime" step="0.01" name="date" class="CRUD__form--input"  value="<%= res[0].date %>" readonly>
+
+        <label for="date" class="CRUD__form--label">Status:</label>
+        <input id="date" type="text" step="0.01" name="date" class="CRUD__form--input"  value="<%= res[0].status %>" readonly>
+
+        <input type="submit" name="delete" value="Radera" class="CRUD__formBTN CRUD__formBTN--delete">
+    </fieldset>
+</form>
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

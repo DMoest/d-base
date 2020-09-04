@@ -1,0 +1,20 @@
+20200828105559
+.
+total 32
+drwxr-xr-x  3 Daniel  staff     96 28 Aug 10:55 .dbwebb
+-rw-r--r--  1 Daniel  staff  10032 28 Aug 10:55 INSTRUKTION.md
+-rw-r--r--  1 Daniel  staff   3852 28 Aug 10:55 README_FIRST.md
+./.dbwebb
+total 0
+drwxr-xr-x  5 Daniel  staff  160 28 Aug 10:55 exam
+./.dbwebb/exam
+total 8
+drwxr-xr-x  3 Daniel  staff  96 28 Aug 10:55 file
+-rw-r--r--  1 Daniel  staff  36 28 Aug 10:55 id.md
+drwxr-xr-x  3 Daniel  staff  96 28 Aug 10:55 receipt
+./.dbwebb/exam/file
+total 8
+-rw-r--r--  1 Daniel  staff  475 28 Aug 10:55 20200828105559.txt
+./.dbwebb/exam/receipt
+total 8
+-rw-r--r--  1 Daniel  staff  591 28 Aug 10:55 20200828085559.md

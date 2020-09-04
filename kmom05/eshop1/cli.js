@@ -72,6 +72,14 @@ const myFunctions = require("./src/functions.js");
             case "invdel":
             case "-id": {
                 console.info("* INVDEL");
+                let shelf = lineArray[2].split("-");
+                let section = shelf[0].toUpperCase();
+                let position = shelf[1];
+                let level = shelf[2];
+                let product = parseInt(lineArray[1]);
+                let amount = parseInt(lineArray[3]);
+
+                await myFunctions.removeProductFromShelf(section, position, level, product, amount);
                 break;
             }
             case "inventory":
@@ -161,13 +169,11 @@ function showMenu() {
         Menu, Help (-h) ............................. Show this help menu.
         Inventory (-i) <str> ........................ Show product inventory.
         Invadd (-ia) <prod.id> <shelf> <amount> ..... Position amount of product on inventory shelf.
+        Invdel (-id) <prod.id> <shelf> <amount> ..... Remove amount of product on inventory shelf.
         Products (-p) ............................... Show all products.
         Productcategories (-pc) ..................... Show all products.
         Shelf (-s) .................................. Show all shelves in the wearhouse.
         Log (-s) <rows> ............................. Show <rows> from product log.
         Exit, Quit (-q) ............................. Quit the program.
-
-
-
     `);
 }

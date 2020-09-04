@@ -77,11 +77,6 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- describe products;
--- show create table products \G;
-
-
-
 -- Product types:
 create table product_types
 (
@@ -97,11 +92,6 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
--- describe product_types;
--- show create table product_types \G;
-
-
 
 -- Product pictures:
 create table product_pictures
@@ -119,11 +109,6 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
--- describe product_pictures;
--- show create table product_pictures \G;
-
-
 
 -- Inventory:
 create table inventory
@@ -143,11 +128,6 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
--- describe inventory;
--- show create table inventory \G;
-
-
 
 -- Customers:
 create table customers
@@ -170,10 +150,6 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- describe customers;
--- show create table customers \G;
-
-
 -- Picking_list:
 create table picking_list
 (
@@ -194,10 +170,6 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- describe picking_list;
--- show create table picking_list \G;
-
-
 -- Products_to_picking_list:
 create table products_to_picking_list
 (
@@ -213,11 +185,6 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
--- describe products_to_picking_list;
--- show create table products_to_picking_list \G;
-
-
 
 -- Orders:
 create table orders
@@ -238,10 +205,6 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- describe orders;
--- show create table orders \G;
-
-
 -- Orders from customers:
 create table order_from_customer
 (
@@ -257,11 +220,6 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- describe order_from_customer;
--- show create table order_from_customer \G;
-
-
-
 -- Customer_phones:
 create table customer_phones
 (
@@ -274,11 +232,6 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
--- describe customer_phones;
--- show create table customer_phones \G;
-
-
 
 -- Invoices:
 create table invoices
@@ -301,17 +254,12 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- describe invoices;
--- show create table invoices \G;
-
-
-
 -- Activity LOG:
 create table log_products
 (
     `id` int unique auto_increment not null,
     `product` int not null,
-    `time` time not null,
+    `time` timestamp default current_timestamp not null,
     `date` date not null,
     `activity` varchar(200) not null,
     `before` varchar(250) not null,
@@ -321,15 +269,6 @@ engine innodb
 charset utf8
 collate utf8_swedish_ci
 ;
-
--- describe log_products;
--- -- show create table log_products \G;
-
-show tables;
-
-
-
-
 
 
 
@@ -351,7 +290,6 @@ from inventory as i
         on i.product = p.id
 ;
 
-
 -- A easier view for inventory:
 create view v_log_products
 as
@@ -359,9 +297,6 @@ select
     *
 from log_products
 ;
-
--- describe v_inventory;
-
 
 -- Products view:
 create view v_products
@@ -383,9 +318,6 @@ from (
 group by id
 ;
 
--- describe v_products;
-
-
 -- Product categories:
 create view v_product_categories
 as
@@ -397,8 +329,6 @@ group by
     type
 order by type asc
 ;
-
--- describe v_product_categories;
 
 
 
@@ -417,23 +347,7 @@ end
 $$
 delimiter ;
 
--- show create procedure get_all_from_table;
-
-
--- Show all products:
--- delimiter $$
--- create procedure show_all_products()
--- begin
---     select * from products;
--- end
--- $$
--- delimiter ;
-
--- show create procedure show_all_products;
-
-
 -- Show product view:
--- Including id, name, category, information & stored position.
 delimiter $$
 create procedure show_all_products()
 begin
@@ -454,8 +368,6 @@ end
 $$
 delimiter ;
 
--- show create procedure show_product;
-
 
 -- Show product categories:
 delimiter $$
@@ -465,8 +377,6 @@ begin
 end
 $$
 delimiter ;
-
--- show create procedure show_product_categories;
 
 
 -- Create a product:
@@ -482,8 +392,6 @@ begin
 end
 $$
 delimiter ;
-
--- show create procedure create_product;
 
 
 -- Update a product:
@@ -506,8 +414,6 @@ end
 $$
 delimiter ;
 
--- show create procedure update_product;
-
 
 -- Delete a product:
 delimiter $$
@@ -522,8 +428,6 @@ end
 $$
 delimiter ;
 
--- show create procedure delete_product;
-
 
 -- Show inventory:
 delimiter $$
@@ -533,79 +437,6 @@ begin
 end
 $$
 delimiter ;
-
--- show create procedure show_inventory;
-
-
--- Show product log history:
-delimiter $$
-create procedure show_full_product_log()
-begin
-select * from v_log_products
-    order by 'time' desc;
-end
-$$
-delimiter ;
-
--- show create show_rows_from_product_log;
-
-
--- Show product log history:
-delimiter $$
-create procedure show_rows_from_product_log(
-    l_limit int
-)
-begin
-select * from v_log_products
-    order by 'time' desc
-    limit l_limit;
-end
-$$
-delimiter ;
-
--- show create show_rows_from_product_log;
-
-
--- Show all shelves in the wearhouse:
-delimiter $$
-create procedure show_all_shelves()
-begin
-select
-    *
-from v_inventory
-    order by position asc;
-end
-$$
-delimiter ;
-
--- show create procedure show_all_shelves;
-
-
--- Insert product into inventory shelf:
-delimiter $$
-create procedure position_product_on_shelf(
-    i_section char(2),
-    i_position char(2),
-    i_level char(2),
-    p_id int,
-    p_amount int
-)
-begin
-start transaction;
-update inventory 
-    set
-        `product` = p_id,
-        `amount` = `amount` + p_amount
-    where
-        `section` = i_section and
-        `position` = i_position and
-        `level` = i_level
-    ;
-commit;
-end
-$$
-delimiter ;
-
 
 
 delimiter $$
@@ -624,40 +455,121 @@ $$
 delimiter ;
 
 
+-- Show all shelves in the wearhouse:
+delimiter $$
+create procedure show_all_shelves()
+begin
+select
+    *
+from v_inventory
+    order by position asc;
+end
+$$
+delimiter ;
+
+
+-- Insert product into inventory shelf:
+delimiter $$
+create procedure position_product_on_shelf(
+    i_section char(2),
+    i_position char(2),
+    i_level char(2),
+    p_id int,
+    p_amount int
+)
+begin
+start transaction;
+    update inventory 
+        set
+            `product` = p_id,
+            `amount` = `amount` + p_amount
+        where
+            `section` = i_section and
+            `position` = i_position and
+            `level` = i_level
+        ;
+    commit;
+end
+$$
+delimiter ;
+
 
 -- Delete amount of product from inventory shelf:
--- delimiter $$
--- create procedure remove_product_from_shelf(
---     i_section char(2),
---     i_position char(2),
---     i_level char(2),
---     p_id int,
---     p_amount int
--- )
--- begin
--- start transaction;
--- select * from inventory
---     where
---         `section` = i_section and
---         `position` = i_position and
---         `level` = i_level;
---     declare newAmount
---     check `amount` < p_amount
---     then
---         rollback;
---     else
---         call position_product_on_shelf(
---             i_section,
---             i_position,
---             i_level,
---             p_id,
---             (`amount` - p_amount)
---         );
---         commit;
---     end if;
--- end
--- $$
--- delimiter ;
+delimiter $$
+create procedure remove_product_from_shelf(
+    i_section char(2),
+    i_position char(2),
+    i_level char(2),
+    p_id int,
+    p_amount int
+)
+begin
+    declare current_amount int;
+    declare product_on_shelf int;
+
+    start transaction;
+
+    set current_amount = 
+        (select amount from inventory 
+            where 
+                section = i_section and
+                position = i_position and
+                level = i_level
+        );
+
+    select current_amount;
+    
+    set product_on_shelf = 
+        (select product from inventory 
+            where 
+                section = i_section and
+                position = i_position and
+                level = i_level
+        );
+
+    select product_on_shelf;
+
+    if (current_amount - p_amount < 0) or (product_on_shelf != p_id) then
+        rollback;
+        select 'Product amount is not enough to make transaction' as message;
+    else
+        update inventory
+            set amount = current_amount - p_amount
+            where 
+                section = i_section and
+                position = i_position and
+                level = i_level;
+        commit;
+    end if;
+end
+
+$$
+delimiter ;
+
+
+-- Show product log history:
+delimiter $$
+create procedure show_full_product_log()
+begin
+select * from v_log_products
+    order by 'time' desc;
+end
+$$
+delimiter ;
+
+
+-- Show product log history:
+delimiter $$
+create procedure show_rows_from_product_log(
+    l_limit int
+)
+begin
+select * from v_log_products
+    order by 'time' desc
+    limit l_limit;
+end
+$$
+delimiter ;
 
 
 

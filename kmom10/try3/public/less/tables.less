@@ -1,0 +1,81 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: tables.less
+*/
+
+
+
+@import "variables.less";
+@import "mixins.less";
+
+.productTable {
+    display: block;
+    width: 100%;
+    padding: 2rem 10%;
+    border: collapse;
+
+    &__tableHeader {
+        padding: 1rem;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        background-color: #1f6ea3;
+
+        &--id {
+            // width: 2.5%;
+        }
+
+        &--name {
+            // width: 17.5%;
+        }
+
+        &--info {
+            // width: 35%;
+        }
+
+        &--price {
+            // width: 3.475%;
+        }
+
+        &--action {
+            // width: 8.75%;
+        }
+    }
+
+    &__TDs {
+        height: 100%;
+        // width: 100%;
+        padding: 0.25rem;
+        background-color: white;
+
+        &--id {
+            // width: 2.5%;
+            text-align: center;
+        }
+
+        &--name {
+            // width: 10%;
+            text-align: left;
+        }
+        
+        &--info {
+            // width: 30%;
+            text-align: left;
+        }
+        
+        &--price {
+            // width: 2.5%;
+            text-align: center;
+        }
+        
+        &--action {
+            text-align: center;
+            display: flex;
+            flex-flow: nowrap row;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+    }
+}

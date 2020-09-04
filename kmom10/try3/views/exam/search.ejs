@@ -1,0 +1,18 @@
+<%- include ("./../partials/header") %>
+
+<h1 class="view__text--header">Sök i Exam</h1>
+
+<p class="view__text--paragraph"></p>
+
+<form class="CRUD__form" method="post" action="/exam/search">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Sök efter:</legend>
+
+        <label for="search" class="CRUD__form--label">Sök:</label>
+        <input id="id" type="text" name="search" class="CRUD__form--input" placeholder="Input för sökning">
+
+        <input type="submit" name="doit" value="Sök iniformation" class="CRUD__formBTN CRUD__formBTN--create">
+    </fieldset>
+</form>
+
+<%- include ("./../partials/footer") %>

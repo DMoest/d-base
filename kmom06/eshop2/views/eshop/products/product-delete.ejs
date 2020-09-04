@@ -1,0 +1,30 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-6.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Radera en produkt</h1>
+</div>
+
+<p class="view__text--paragraph">Här kan ni tabort en produkt.</p>
+
+<form class="CRUD__form" method="post" action="/eshop/deleteProduct">
+    <fieldset class="CRUD__form--fieldset">
+        <legend>Product details</legend>
+
+        <label for="id" class="CRUD__form--label">Id:</label>
+        <input id="id" type="text" name="id" class="CRUD__form--input"  value="<%= res[0].id %>" readonly>
+
+        <label for="name" class="CRUD__form--label">Name:</label>
+        <input id="name" type="text" name="name" class="CRUD__form--input" value="<%= res[0].name %>" readonly>
+
+        <label for="info" class="CRUD__form--label">Info:</label>
+        <input id="info" type="text" name="info" class="CRUD__form--input CRUD__form--inputInfo"  value="<%= res[0].info %>" readonly></input>
+
+        <label for="price" class="CRUD__form--label">Price:</label>
+        <input id="price" type="number" step="0.01" name="price" class="CRUD__form--input"  value="<%= res[0].price %>" readonly>
+
+        <input type="submit" name="delete" value="Delete" class="CRUD__formBTN CRUD__formBTN--delete">
+    </fieldset>
+</form>
+
+<%- include ("./../../partials/footer") %>

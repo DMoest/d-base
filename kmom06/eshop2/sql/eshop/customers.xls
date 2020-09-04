@@ -1,0 +1,11 @@
+id	firstname	lastname	street	number	post_code	city	country	email	birthday
+1	Janne	Lundqvist	Hejhoppgatan	34	72541	örebro	sweden	janne@janne.com	1951-10-13
+2	Bertil	Svensson	Härvardetasfaltsväge	3	11301	stockholm	sweden	bert@bert.com	2001-01-01
+3	Pelle	Karlsson	Brevidhavetvägen	1276	32154	västerås	sweden	pelle@pelle.se	1985-06-13
+4	Kalle	Anka	Ankeborgsgatan	2	11314	ankeborg	kalle anka land	kalle@anka.nu	1974-12-31
+5	Jonas	Svensson	Därbortavägen	642	54123	göteborg	sweden	svensson@jonas.io	1076-10-21
+6	Anders	Andersson	Kompåfestgatan	112	11208	jönköping	sweden	anders@anders.ju	2048-01-01
+7	Hamid	Hamidsson	NewDeligatn	91	987-154-1	new deli	indien	hamid@h.io	1932-11-13
+8	Dennis	Andersson	Runthörnetvägen	71	98563	kiruna	sweden	andersson.dennis@da.se	1945-06-23
+9	Sven-Bertil	Taube	Södermalmsgatan	50	11405	stockholm	sweden	svennesemail@email.com	1900-04-21
+10	Donald	Kvack	Ankeborgsgatan	1	11313	ankeborg	kalle anka land	donald.kvack@kvack.kvack	1863-07-07

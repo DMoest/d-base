@@ -1,0 +1,385 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: typography.less
+*/
+
+
+
+@import "variables.less";
+@import "mixins.less";
+
+html {
+
+    @font-face {
+        font-family: arial;
+        font-style: normal;
+        font-display: swap;
+        src: url('fonts/Arial Unicode.ttf');
+    }
+
+    .wf-active .site__title,
+    .wf-active .site__slogan,
+    .wf-active body h1,
+    .wf-active body h2,
+    .wf-active body h3,
+    .wf-active body h4,
+    .wf-active body h5,
+    .wf-active body h6,
+    .wf-active body p {
+        font-family: "Pacifico, Roboto Condenced, Josefin Sans, Arial";
+    }
+
+    font-size: @font__size[base];
+
+    body {
+        font-family: @font__family[paragraph];
+        font-size: @font__size--body;
+        font-weight: @font__weight[standard];
+        font-kerning: normal;
+        font-variant-ligatures: common-ligatures contextual;
+        font-feature-settings: "kern", "liga", "clig", "calt";
+        font-style: normal;
+        font-display: swap;
+        line-height: @lineHeight--base;
+        color: @color__font--dark;
+
+        h1 {
+            font-family: @font__family[header];
+            font-weight: @font__weight[header];
+            padding-bottom: (2 * @rythem--standard);
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: @font__family[subHeader];
+            font-weight: @font__weight[subHeader];
+            padding-bottom: @rythem--standard;
+        }
+
+        p {
+            font-family: @font__family[paragraph];
+            font-weight: @font__weight[paragraph];
+            padding-bottom: @rythem--standard;
+        }
+
+        .site__title {
+            font-family: @font__family[title];
+            font-size: @font__size[title];
+        }
+        
+        .site__slogan {
+            font-family: @font__family[slogan];
+            font-size: @font__size[slogan];
+        }
+        
+        // RESPONSIVE
+        .responsive(@screenMin[mobilePortrait], @screenMax[mobilePortrait], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: @font__size--S[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--S[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+        
+        .responsive(@screenMin[mobileLandscape], @screenMax[mobileLandscape], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: @font__size--S[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--S[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+        
+        .responsive(@screenMin[tabletPortrait], @screenMax[tabletPortrait], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: @font__size--S[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--S[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--S[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+
+        .responsive(@screenMin[tabletLandscape], @screenMax[tabletLandscape], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: @font__size--M[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--M[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+
+        .responsive(@screenMin[desktopSmall], @screenMax[desktopSmall], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: @font__size--M[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--M[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--M[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+
+        .responsive(@screenMin[desktopMedium], @screenMax[desktopMedium], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: @font__size--L[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--L[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+
+        .responsive(@screenMin[desktopLarge], @screenMax[desktopLarge], {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: @font__size--L[h1];
+                font-weight: @font__weight[header];
+            }
+            
+            h2 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h2];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h3 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h3];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            h4 {
+                font-family: @font__family[subHeader];
+                font-size: @font__size--L[h4];
+                font-weight: @font__weight[subHeader];
+            }
+    
+            p {
+                font-family: @font__family[paragraph];
+                font-size: @font__size--L[p];
+                font-weight: @font__weight[paragraph];
+            }
+        });
+
+        .site__footer {
+            & p { 
+                text-align: center;
+                font-size: @font__size[footer];
+                font-weight: @font__weight[footer];
+            }
+
+            &--validationLinks,
+            &--specificationLinks,
+            &--pageLoaders {
+                .navigation__button--footer {
+                    text-align: center;
+                    font-size: @font__size[footer];
+                    font-weight: @font__weight[footer];
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<%- include ("./../partials/header") %>
+
+<h1 class="view__text--header">Välkommen till Exam</h1>
+
+<p class="view__text--paragraph"></p>
+
+<table class="productTable">
+    <tr class="productTable__TRs">
+        <th class="productTable__tableHeader productTable__tableHeader--id">ID</th>
+        <th class="productTable__tableHeader productTable__tableHeader--name">Person ID</th>
+        <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
+        <th class="productTable__tableHeader productTable__tableHeader--info">Organisation</th>
+        <th class="productTable__tableHeader productTable__tableHeader--price">Kategori</th>
+        <th class="productTable__tableHeader productTable__tableHeader--price">Nivå</th>
+        <th class="productTable__tableHeader productTable__tableHeader--action">Brott</th>
+    </tr>
+    <% for (const row of res[0]) { %>
+        <tr class="productTable__TRs">
+            <td class="productTable__TDs productTable__TDs--name"><%= row.logg_id %></td>
+            <td class="productTable__TDs productTable__TDs--name"><%= row.person_id %></td>
+            <td  class="productTable__TDs productTable__TDs--info"><%= row.namn %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.organisation %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.kategori %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.niva %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.vad %></td>
+            <td  class="productTable__TDs productTable__TDs--price"><%= row.tid %></td>
+        </tr>
+    <% }; %>
+</table>
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../partials/footer") %>
