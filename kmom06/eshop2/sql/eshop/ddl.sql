@@ -42,6 +42,7 @@ drop procedure if exists show_product_categories;
 drop procedure if exists create_product;
 drop procedure if exists update_product;
 drop procedure if exists delete_product;
+drop procedure if exists give_category_to_product;
 drop procedure if exists search_products;
 drop procedure if exists show_full_product_log;
 drop procedure if exists show_rows_from_product_log;
@@ -54,6 +55,9 @@ drop procedure if exists search_orders;
 drop procedure if exists show_all_customers;
 drop procedure if exists show_all_orders;
 drop procedure if exists show_order;
+drop procedure if exists get_customer_for_order;
+drop procedure if exists get_customer_from_order;
+drop procedure if exists add_product_to_picking_list;
 drop procedure if exists create_order;
 drop procedure if exists delete_order;
 
@@ -207,13 +211,14 @@ collate utf8_swedish_ci
 -- Products_to_picking_list:
 create table products_to_picking_list
 (
-    `picking_list` int not null,
-    `id` int not null,
+    `id` int unique auto_increment not null,
+    `product` int not null,
+    `order` int not null,
     `amount` int not null,
 
-    primary key (picking_list),
+    primary key (id),
     unique key (id),
-    foreign key (id) references products(id)
+    foreign key (product) references products(id)
     on delete cascade
 )
 engine innodb
@@ -380,14 +385,13 @@ select
     group_concat( distinct pt.type separator ", " ) as 'types',
     group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", ") as `stored`,
     sum( distinct i.amount ) as `amount`
-from (
-    products as p 
-        left outer join 
-    product_types as pt 
+from products as p 
+    left outer join product_types as pt 
         on p.id = pt.product
-) join inventory as i
-    on p.id = i.product
+    left outer join inventory as i
+        on p.id = i.product
 group by id
+order by id
 ;
 
 -- Product (single product) view:
@@ -398,7 +402,7 @@ select
     p.name,
     p.info,
     p.price,
-    group_concat( distinct pt.type separator ", " ) as 'types',
+    -- group_concat( distinct pt.type separator ", " ) as 'types',
     sum( distinct i.amount ) as `amount`
 from products as p
     join product_types as pt
@@ -447,9 +451,9 @@ select
     o.customer as `customer`,
     (concat(c.firstname, " ", c.lastname)) as `name`,
     o.picking_list as `picking_list`,
+    count(pl.order) as `rows`,
     o.date as `date`,
-    o.status as `status`,
-    count(pl.order) as `rows`
+    o.status as `status`
 from orders as o
     join customers as c
         on o.customer = c.id
@@ -601,6 +605,21 @@ begin
 end
 $$
 delimiter ;
+
+
+delimiter $$
+create procedure give_category_to_product(
+    product_id int,
+    type varchar(30)
+)
+begin
+    insert into product_types
+        (`product`, `type`)
+    values (product_id, type);
+end
+$$
+delimiter ;
+
 
 -- Show inventory:
 delimiter $$
@@ -790,6 +809,22 @@ $$
 delimiter ;
 
 
+-- Delete order:
+delimiter $$
+create procedure add_product_to_picking_list(
+    order_id int,
+    product_id int,
+    amount int
+)
+begin
+insert into products_to_picking_list
+    (`order`, `product`, `amount`)
+values (order_id, product_id, amount);
+end
+$$
+delimiter ;
+
+
 -- Search orders:
 delimiter $$
 create procedure search_orders(
@@ -804,6 +839,22 @@ from v_orders
         `picking_list` like search_for or
         `date` like search_for or
         `status` like search_for;
+end
+$$
+delimiter ;
+
+
+-- Get the customer for order:
+delimiter $$
+create procedure get_customer_from_order(
+    order_id int
+)
+begin
+select
+    customer
+from v_orders
+    where
+        id = order_id;
 end
 $$
 delimiter ;

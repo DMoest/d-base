@@ -98,4 +98,7 @@ describe v_log_products;
 -- -----------------------------------------------------
 SHOW procedure STATUS WHERE Db = 'eshop';
 
+select * from log_products;
+select * from log_orders;
+
 show warnings;

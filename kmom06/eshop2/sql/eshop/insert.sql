@@ -15,7 +15,7 @@ delete from orders;
 
 -- Set & Check for ability to load local infile:
 set global local_infile = 1;
-show variables like 'local_infile';
+-- show variables like 'local_infile';
 
 
 
@@ -32,7 +32,7 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from products;
+-- select * from products;
 
 
 
@@ -49,7 +49,7 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from product_types;
+-- select * from product_types;
 
 
 
@@ -66,7 +66,7 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from inventory;
+-- select * from inventory;
 
 
 
@@ -84,7 +84,7 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from customers;
+-- select * from customers;
 
 
 
@@ -102,7 +102,7 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from customers;
+-- select * from customers;
 
 
 
@@ -120,7 +120,7 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from orders;
+-- select * from orders;
 
 
 
@@ -138,12 +138,13 @@ ignore 1 lines
 ;
 
 -- show warnings;
-select * from picking_lists;
+-- select * from picking_lists;
 
 
 
 -- Check trigger events for insert of products:
 -- select * from log_products;
+-- select * from log_orders;
 
 -- Try to restore what was avoided before.
 -- 

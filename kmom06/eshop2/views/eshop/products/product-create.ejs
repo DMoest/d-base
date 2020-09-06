@@ -9,7 +9,7 @@
 
 <p class="view__text--paragraph">Skapa en ny produkt genom att fylla i formuläret och tryck på "skapa produkt".</p>
 
-<form class="CRUD__form" method="post">
+<form class="CRUD__form" method="post" action="./createProduct">
     <fieldset class="CRUD__form--fieldset">
         <legend>Product details</legend>
 
@@ -18,9 +18,9 @@
 
         <label for="name" class="CRUD__form--label">Name:</label>
         <input id="name" type="text" name="name" class="CRUD__form--input" placeholder="Produktnamn">
-
-        <!-- <label for="category" class="CRUD__form--category">Category:</label>
-        <input id="category" type="text" name="category" class="CRUD__form--input" placeholder="Kategori"> -->
+        
+        <label for="type" class="CRUD__form--label">Type:</label>
+        <input id="type" type="text" name="type" class="CRUD__form--input" placeholder="Kategori">
 
         <label for="info" class="CRUD__form--label">Info:</label>
         <textarea id="info" type="text" name="info" class="CRUD__form--input CRUD__form--inputInfo" placeholder="Produktinformation"></textarea>
@@ -31,6 +31,5 @@
         <input type="submit" name="create" value="Skapa produkten" class="CRUD__formBTN CRUD__formBTN--create">
     </fieldset>
 </form>
-
 
 <%- include ("./../../partials/footer") %>

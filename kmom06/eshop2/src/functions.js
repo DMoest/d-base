@@ -48,12 +48,12 @@ async function getAllFromTable(table) {
  * @async
  * @returns {RowDataPacket} Result from query.
  */
-async function getAllProducts(table) {
+async function getAllProducts() {
     console.log("* getAllProducts() function.");
     let result;
     let sql = `call show_all_products();`;
 
-    result = await db.query(sql, [table]);
+    result = await db.query(sql);
 
     // console.info("result: ", result);
     // console.info(`SQL: ${sql} contains ${result.length} rows.`);
@@ -208,12 +208,14 @@ async function getProductCategories() {
  * @param {string} Price                The price for the product.
  * @returns {void}
  */
-async function createProduct(id, name, info, price) {
+async function createProduct(id, name, info, price, product, type) {
     console.log("* createProduct() function.");
     let result;
     let sql = `call create_product(?, ?, ?, ?);`;
 
-    result = await db.query(sql, [id, name, info, price]);
+    sql += `call give_category_to_product(?, ?);`;
+
+    result = await db.query(sql, [id, name, info, price, product, type]);
 
     // console.log("RES: ", result);
     console.info(`SQL: ${sql} contains ${result.length} rows.`);
@@ -338,6 +340,25 @@ async function getAllCustomers() {
     return result;
 }
 
+/**
+ * Get customer from order id.
+ * @async
+ * @param   order           The order to get customer from.
+ * @returns {RowDataPacket} Result from query.
+ */
+async function getCustomerFromOrder(order) {
+    console.log("* getCustomerFromOrder() function.");
+    let result;
+    let sql = `call get_customer_from_order(?);`;
+
+    result = await db.query(sql, [order]);
+
+    // console.info("Result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result;
+}
+
 
 /* ---------- ORDERS ---------- */
 /**
@@ -418,6 +439,25 @@ async function createOrder(customer) {
 }
 
 /**
+ * Create a order for a customer.
+ * @async
+ * @returns {RowDataPacket} Result from query.
+ */
+async function addProductToPickingList(order, product, amount) {
+    console.log("* addProductToPickingList() function.");
+    let result;
+    let sql = `call add_product_to_picking_list(?, ?, ?);`;
+
+    result = await db.query(sql, [order, product, amount]);
+
+    console.info("result: ", result);
+    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result;
+}
+
+
+/**
  * Delete an existing order.
  * @async
  * @returns {RowDataPacket} Result from query.
@@ -457,5 +497,7 @@ module.exports = {
     "searchOrders": searchOrders,
     "showOrder": showOrder,
     "createOrder": createOrder,
-    "deleteOrder": deleteOrder
+    "deleteOrder": deleteOrder,
+    "getCustomerFromOrder": getCustomerFromOrder,
+    "addProductToPickingList": addProductToPickingList
 };

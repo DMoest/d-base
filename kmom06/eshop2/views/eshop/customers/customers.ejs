@@ -11,18 +11,18 @@
     <tr class="productTable__TRs">
         <th class="productTable__tableHeader productTable__tableHeader--id">ID</th>
         <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
-        <th class="productTable__tableHeader productTable__tableHeader--name">Adress</th>
-        <th class="productTable__tableHeader productTable__tableHeader--info">Email</th>
-        <th class="productTable__tableHeader productTable__tableHeader--price">Phone</th>
+        <th class="productTable__tableHeader productTable__tableHeader--adress">Adress</th>
+        <th class="productTable__tableHeader productTable__tableHeader--email">Email</th>
+        <th class="productTable__tableHeader productTable__tableHeader--phone">Phone</th>
         <th class="productTable__tableHeader productTable__tableHeader--price">Skapa Order</th>
     </tr>
     <% for (const row of res[0]) { %>
         <tr class="productTable__TRs">
             <td class="productTable__TDs productTable__TDs--id"><%= row.id %></td>
             <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
-            <td class="productTable__TDs productTable__TDs--name"><%= row.adress %></td>
-            <td  class="productTable__TDs productTable__TDs--info"><%= row.email %></td>
-            <td  class="productTable__TDs productTable__TDs--price"><%= row.phone %></td>
+            <td class="productTable__TDs productTable__TDs--adress"><%= row.adress %></td>
+            <td  class="productTable__TDs productTable__TDs--email"><%= row.email %></td>
+            <td  class="productTable__TDs productTable__TDs--phone"><%= row.phone %></td>
             <td  class="productTable__TDs productTable__TDs--addOrder">
                 <div class="productTable__TDs productTable__TDs--action">
                     <form method="post" action="createOrder/<%= row.id %>" class="CRUD__smallBTN">

@@ -16,7 +16,7 @@
     border: collapse;
 
     &__tableHeader {
-        padding: (@rythem--standard / 2);
+        padding: 0.5rem;
         font-size: @font__size[tableHeader];
         font-weight: @font__weight[subStandard];
         text-transform: uppercase;
@@ -52,7 +52,7 @@
     &__TDs {
         height: 100%;
         width: 100%;
-        padding: 0.2rem;
+        padding: 0.5rem;
         background-color: @color__white;
 
         &--id {
@@ -66,7 +66,17 @@
         }
 
         &--name {
-            width: 10%;
+            width: 5%;
+            text-align: left;
+        }
+
+        &--phone {
+            width: 2.5%;
+            text-align: right;
+        }
+        
+        &--email {
+            width: 5%;
             text-align: left;
         }
 
@@ -76,13 +86,35 @@
         }
         
         &--info {
-            width: 30%;
+            width: 20%;
             text-align: left;
         }
         
         &--price {
-            width: 2.5%;
+            width: 5%;
             text-align: center;
+        }
+
+        &--types {
+            width: 5%;
+            text-align: left;
+        }
+
+        &--amount {
+            width: 5%;
+            text-align: right;
+        }
+
+        &--items {
+            width: 3%;
+            text-align: center;
+
+            &Input {
+                width: 100%;
+                padding: 0.1rem;
+                text-align: right;
+                border-radius: 0.3rem;
+            }
         }
         
         &--action {
@@ -91,6 +123,16 @@
             flex-flow: nowrap row;
             justify-content: space-around;
             gap: 1rem;
+        }
+
+        &--addOrder {
+            width: 5%;
+            text-align: center;
+        }
+
+        &--addProduct {
+            width: 10%;
+            text-align: center;
         }
     }
 }
