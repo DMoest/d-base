@@ -56,16 +56,21 @@
 }
 
 // Search form
-.produkts__searchForm {
-    padding: @rythem--standard 15%;
+.products__searchForm {
+    margin: auto;
+    padding: @rythem[standard] 15%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: space-between;
 
     &--label {
-        width: 10%;
-        margin: @rythem--standard;
+        width: 20%;
+        margin: @rythem[standard];
     }
 
     &--input {
-        width: 70%;
-        margin: @rythem--standard;
+        width: 100%;
+        margin: @rythem[standard];
     }
 }

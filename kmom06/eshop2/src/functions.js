@@ -33,7 +33,7 @@ let db;
  * @returns {RowDataPacket}
  */
 async function getAllFromTable(table) {
-    console.log("* getAllFromTable() function.");
+    // console.log("* getAllFromTable() function.");
     let result;
     let sql = `call get_all_from_table(?);`;
 
@@ -49,12 +49,11 @@ async function getAllFromTable(table) {
  * @returns {RowDataPacket} Result from query.
  */
 async function getAllProducts() {
-    console.log("* getAllProducts() function.");
+    // console.log("* getAllProducts() function.");
     let result;
     let sql = `call show_all_products();`;
 
     result = await db.query(sql);
-
     // console.info("result: ", result);
     // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
@@ -67,7 +66,7 @@ async function getAllProducts() {
  * @returns {RowDataPacket} Result from query.
  */
 async function getProductInventories() {
-    console.log("* getProductInventories() function.");
+    // console.log("* getProductInventories() function.");
     let result;
     let sql = `call show_all_products();`;
 
@@ -86,7 +85,7 @@ async function getProductInventories() {
  * @returns {RowDataPacket} Result from query.
  */
 async function searchInventory(input) {
-    console.log("* searchInventory() function.");
+    // console.log("* searchInventory() function.");
     let result;
     let sql = `call search_inventory(?);`;
 
@@ -104,7 +103,7 @@ async function searchInventory(input) {
  * @returns {RowDataPacket} Result from query.
  */
 async function getInventoryShelves() {
-    console.log("* getInventoryShelves() function.");
+    // console.log("* getInventoryShelves() function.");
     let result;
     let sql = `call show_all_shelves();`;
 
@@ -127,7 +126,7 @@ async function getInventoryShelves() {
  * @returns {RowDataPacket}     Result from query.
  */
 async function positionProductOnShelf(section, position, level, product, amount) {
-    console.log("* positionProductOnShelf() function.");
+    // console.log("* positionProductOnShelf() function.");
     let result;
     let sql = `call position_product_on_shelf(?, ?, ?, ?, ?);`;
 
@@ -150,14 +149,14 @@ async function positionProductOnShelf(section, position, level, product, amount)
  * @returns {RowDataPacket}     Result from query.
  */
 async function removeProductFromShelf(section, position, level, product, amount) {
-    console.log("* removeProductFromShelf() function.");
+    // console.log("* removeProductFromShelf() function.");
     let result;
     let sql = `call remove_product_from_shelf(?, ?, ?, ?, ?);`;
 
     result = await db.query(sql, [section, position, level, product, amount]);
 
     // console.info("Result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
 }
@@ -169,14 +168,14 @@ async function removeProductFromShelf(section, position, level, product, amount)
  * @returns {RowDataPacket}     Resultset from the query.
  */
 async function showProduct(id) {
-    console.log("* showProduct() function.");
+    // console.log("* showProduct() function.");
     let result;
     let sql = `call show_product(?);`;
 
     result = await db.query(sql, [id]);
 
     // console.log("Result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result[0];
 }
@@ -187,7 +186,7 @@ async function showProduct(id) {
  * @returns {RowDataPacket}     Resultset from the query.
  */
 async function getProductCategories() {
-    console.log("* getProductCategories() function.");
+    // console.log("* getProductCategories() function.");
     let result;
     let sql = `call show_product_categories();`;
 
@@ -209,7 +208,7 @@ async function getProductCategories() {
  * @returns {void}
  */
 async function createProduct(id, name, info, price, product, type) {
-    console.log("* createProduct() function.");
+    // console.log("* createProduct() function.");
     let result;
     let sql = `call create_product(?, ?, ?, ?);`;
 
@@ -218,7 +217,7 @@ async function createProduct(id, name, info, price, product, type) {
     result = await db.query(sql, [id, name, info, price, product, type]);
 
     // console.log("RES: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
 }
@@ -233,8 +232,7 @@ async function createProduct(id, name, info, price, product, type) {
  * @returns {void}
  */
 async function updateProduct(id, name, info, price) {
-    console.log("* updateProduct();");
-    console.log("* vart ligger ACCOUNT I DENNA???");
+    // console.log("* updateProduct();");
     let sql = `call update_product(?, ?, ?, ?);`;
     let result;
 
@@ -253,7 +251,7 @@ async function updateProduct(id, name, info, price) {
  * @returns {void}
  */
 async function deleteProduct(id) {
-    console.log("* deleteProduct();");
+    // console.log("* deleteProduct();");
     let result;
     let sql = `call delete_product(?);`;
 
@@ -271,7 +269,7 @@ async function deleteProduct(id) {
  * @returns {RowDataPacket}     Result from query.
  */
 async function searchProduct(input) {
-    console.log("* searchProduct() function.");
+    // console.log("* searchProduct() function.");
     let result;
     let sql = `call search_products(?);`;
 
@@ -280,8 +278,6 @@ async function searchProduct(input) {
 
     result = await db.query(sql, [input]);
 
-    console.info("Result: ", result);
-    console.info("Input: ", input);
     // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
@@ -293,7 +289,7 @@ async function searchProduct(input) {
  * @returns {RowDataPacket}     Resultset from the query.
  */
 async function getFullProductLog() {
-    console.log("* getFullProductLog();");
+    // console.log("* getFullProductLog();");
     let result;
     let sql = `call show_full_product_log();`;
 
@@ -310,7 +306,7 @@ async function getFullProductLog() {
  * @returns {RowDataPacket}     Resultset from the query.
  */
 async function getRowsFromProductLog(limit) {
-    console.log("* getRowsProductLog();");
+    // console.log("* getRowsProductLog();");
     let result;
     let sql = `call show_rows_from_product_log(?);`;
 
@@ -328,14 +324,14 @@ async function getRowsFromProductLog(limit) {
  * @returns {RowDataPacket} Result from query.
  */
 async function getAllCustomers() {
-    console.log("* getAllCustomers() function.");
+    // console.log("* getAllCustomers() function.");
     let result;
     let sql = `call show_all_customers();`;
 
     result = await db.query(sql);
 
-    console.info("result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info("result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
 }
@@ -347,7 +343,7 @@ async function getAllCustomers() {
  * @returns {RowDataPacket} Result from query.
  */
 async function getCustomerFromOrder(order) {
-    console.log("* getCustomerFromOrder() function.");
+    // console.log("* getCustomerFromOrder() function.");
     let result;
     let sql = `call get_customer_from_order(?);`;
 
@@ -368,7 +364,7 @@ async function getCustomerFromOrder(order) {
  * @returns {RowDataPacket}     Result from query.
  */
 async function searchOrders(input) {
-    console.log("* searchOrders() function.");
+    // console.log("* searchOrders() function.");
     let result;
     let sql = `call search_orders(?);`;
 
@@ -389,14 +385,14 @@ async function searchOrders(input) {
  * @returns {RowDataPacket} Result from query.
  */
 async function getAllOrders() {
-    console.log("* getAllOrders() function.");
+    // console.log("* getAllOrders() function.");
     let result;
     let sql = `call show_all_orders();`;
 
     result = await db.query(sql);
 
-    console.info("result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info("result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
 }
@@ -408,14 +404,14 @@ async function getAllOrders() {
  * @returns {RowDataPacket}     Resultset from the query.
  */
 async function showOrder(id) {
-    console.log("* showOrder() function.");
+    // console.log("* showOrder() function.");
     let result;
     let sql = `call show_order(?);`;
 
     result = await db.query(sql, [id]);
 
-    console.log("Result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.log("Result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result[0];
 }
@@ -426,36 +422,51 @@ async function showOrder(id) {
  * @returns {RowDataPacket} Result from query.
  */
 async function createOrder(customer) {
-    console.log("* createOrder() function.");
+    // console.log("* createOrder() function.");
     let result;
     let sql = `call create_order(?);`;
 
     result = await db.query(sql, [customer]);
 
-    console.info("result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info("result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
 }
 
 /**
- * Create a order for a customer.
+ * Add a product to an order.
  * @async
+ * @param   order           The order the product is added to.
+ * @param   product         The product to add.
+ * @param   amount          Amount of product to add to the order.
  * @returns {RowDataPacket} Result from query.
  */
 async function addProductToPickingList(order, product, amount) {
-    console.log("* addProductToPickingList() function.");
+    // console.log("* addProductToPickingList() function.");
     let result;
     let sql = `call add_product_to_picking_list(?, ?, ?);`;
 
     result = await db.query(sql, [order, product, amount]);
 
-    console.info("result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
-
     return result;
 }
 
+/**
+ * Place the order with the products thats been selected.
+ * @async
+ * @param   order       The order to place.
+ * @returns {RowDataPacket} Result from query.
+ */
+async function placeTheOrder(order) {
+    // console.log("placeTheOrder() function.");
+    let result;
+    let sql = `call place_the_order(?);`;
+
+    result = await db.query(sql, [order]);
+
+    return result;
+}
 
 /**
  * Delete an existing order.
@@ -463,14 +474,14 @@ async function addProductToPickingList(order, product, amount) {
  * @returns {RowDataPacket} Result from query.
  */
 async function deleteOrder(order) {
-    console.log("* deleteOrder() function.");
+    // console.log("* deleteOrder() function.");
     let result;
     let sql = `call delete_order(?);`;
 
     result = await db.query(sql, [order]);
 
-    console.info("result: ", result);
-    console.info(`SQL: ${sql} contains ${result.length} rows.`);
+    // console.info("result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
 
     return result;
 }
@@ -499,5 +510,6 @@ module.exports = {
     "createOrder": createOrder,
     "deleteOrder": deleteOrder,
     "getCustomerFromOrder": getCustomerFromOrder,
-    "addProductToPickingList": addProductToPickingList
+    "addProductToPickingList": addProductToPickingList,
+    "placeTheOrder": placeTheOrder
 };

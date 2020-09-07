@@ -8,42 +8,35 @@
 <p class="view__text--paragraph">Här är en lista på alla registrerade produkter i eshopen. Var god se er omkring kanske gillar ni något. Vi presenterar listan med id, namn, kategori, information & pris. Hittar ni inte vad ni letar efter kanske sökfunktionen kan hjälpa till.</p>
 
 <!-- Search form for products -->
-<form method="post" action="/eshop/searchProducts" class="produkts__searchForm">
-    <label for="search" class="produkts__searchForm--label">Sök produkter</label>
-    <input type="text" name="search" class="produkts__searchForm--input"/>
-    <input type="submit" value="Sök" class="produkts__searchForm--BTN">
+<form method="post" action="/eshop/searchProducts" class="products__searchForm">
+    <label for="search" class="products__searchForm--label">Sök produkter</label>
+    <input type="text" name="search" class="products__searchForm--input"/>
+    <input type="submit" value="Sök" class="products__searchForm--BTN" />
 </form>
 
-<!-- Table of products -->
-<table class="productTable">
-    <tr class="productTable__TRs">
-        <th class="productTable__tableHeader productTable__tableHeader--id">Prod.nr.</th>
-        <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
-        <th class="productTable__tableHeader productTable__tableHeader--name">Kategori</th>
-        <th class="productTable__tableHeader productTable__tableHeader--info">Information</th>
-        <th class="productTable__tableHeader productTable__tableHeader--price">Pris</th>
-        <th class="productTable__tableHeader productTable__tableHeader--price">Antal</th>
-        <th class="productTable__tableHeader productTable__tableHeader--actionHeader">Ändra</th>
-    </tr>
+
+<div id="productsGrid" class="products">
+
     <% for (const row of res[0]) { %>
-        <tr class="productTable__TRs">
-            <td class="productTable__TDs productTable__TDs--id">
-                <a href="product/<%= row.id %>"><%= row.id %></a>
-            </td>
-            <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
-            <td class="productTable__TDs productTable__TDs--name"><%= row.types %></td>
-            <td  class="productTable__TDs productTable__TDs--info"><%= row.info %></td>
-            <td  class="productTable__TDs productTable__TDs--price"><%= row.price %> kr</td>
-            <td  class="productTable__TDs productTable__TDs--price"><%= row.amount %> st</td>
-            <td  class="productTable__TDs">
-                <div class="productTable__TDs productTable__TDs--action">
-                    <a href="updateProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
-                    <a href="deleteProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
-                </div>  
-            </td>
-        </tr>
+        <div class="products__container">
+            <img src="<%= row.picture %>" alt="<%= row.alt %>" class="products__container__image"/>
+            <div class="products__container__info">
+                <p class="products__container__info--name"><%= row.name %></p>
+                <p class="products__container__info--id">Prodnr. <%= row.id %></p>
+                <p class="products__container__info--types"><%= row.types %></p>
+                <p class="products__container__info--info"><%= row.info %></p>
+                <p class="products__container__info--amount">Antal i lager <%= row.amount %> st </p>
+                <p class="products__container__info--price">Pris <%= row.price %> kr </p>
+            </div>
+            <div class="products__container__btn">
+                <a href="product/<%= row.id %>" class="products__container__info--btn">Se produkten</a>
+            </div>
+        </div>
     <% }; %>
-</table>
+
+</div>
+
+
 
 <!-- Check your RowDataPackages -->
 <!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->

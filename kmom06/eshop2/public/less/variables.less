@@ -56,9 +56,14 @@
 @font__weight--p: 200;
 
 // Baseline & Rythem
-@lineHeight--base: 1.4;
+@lineHeight--base: 1.333;
 @rythem--standard: 1.333rem; // line height * font size (1.4 * 1 = 1.4)
 
+@rythem: {
+    standard: 1.333rem;
+    half: (1.333rem / 2);
+    quarter: (1.333rem / 4);
+}
 
 // Animation time:
 @animation: {
@@ -159,7 +164,7 @@
 
 // Margins & Paddings:
 @padding__content: {
-    p1: 0 @rythem--standard;
+    p1: 0 @rythem[standard];
     p2: 0 2.5%;
     p3: 0 5%;
     p4: 0 7.5%;
@@ -169,14 +174,14 @@
 }
 
 @padding__button: {
-    small: @rythem--standard 0.25rem;
-    medium: @rythem--standard 0.5rem;
-    large: @rythem--standard 0.7rem;
+    small: @rythem[standard] 0.25rem;
+    medium: @rythem[standard] 0.5rem;
+    large: @rythem[standard] 0.7rem;
 }
 
-@padding__elements--around: @rythem--standard;
-// @padding__button: @rythem--standard;
-@margin__button: (@rythem--standard / 2) 0;
+@padding__elements--around: @rythem[standard];
+// @padding__button: @rythem[standard];
+@margin__button: @rythem[half] 0;
 
 // Width & Height:
 @width: {

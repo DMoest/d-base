@@ -29,6 +29,7 @@ router.get("/index", async (req, res) => {
 });
 
 
+
 // * ----- PRODUCTS ----- *
 
 // All products
@@ -46,7 +47,6 @@ router.get("/product", async (req, res) => {
 // Single product view
 router.get("/product/:id", async (req, res) => {
     // console.log("* A PRODUCT:ID ROUTE, show a specific product.");
-    // console.log("req.params.id: ", req.params.id);
 
     let id = req.params.id;
 
@@ -68,8 +68,6 @@ router.get("/productCategories", async (req, res) => {
         res: await myFunctions.getProductCategories()
     };
 
-    // console.log("data.res ", data.res);
-
     res.render("eshop/products/product-categories", data);
 });
 
@@ -86,7 +84,6 @@ router.get("/searchProducts", async (req, res) => {
 
 router.post("/searchProducts", urlencodedParser, async (req, res) => {
     // console.log("* SEARCH PRODUCTS ROUTE (POST)");
-    // console.log(JSON.stringify("REQ.BODY: ", req.body, null, 4));
 
     console.log("req.body.search: ", req.body.search);
 
@@ -111,9 +108,13 @@ router.get("/createProduct", async (req, res) => {
 
 router.post("/createProduct", urlencodedParser, async (req, res) => {
     // console.log("* CREATE PRODUCT ROUTE (POST)");
-    // console.log(JSON.stringify("REQ.BODY: ", req.body, null, 4));
+    let id = req.body.id;
+    let name = req.body.name;
+    let info = req.body.info;
+    let price = req.body.price;
+    let type = req.body.type;
 
-    await myFunctions.createProduct(req.body.id, req.body.name, req.body.info, req.body.price, req.body.id, req.body.type);
+    await myFunctions.createProduct(id, name, info, price, id, type);
 
     res.redirect("./product");
 });
@@ -121,7 +122,6 @@ router.post("/createProduct", urlencodedParser, async (req, res) => {
 // Update product
 router.get("/updateProduct/:id", async (req, res) => {
     // console.log("* UPDATE PRODUCT ROUTE (GET)");
-    // console.log("req.param.id: ", req.param.id);
 
     let id = req.params.id;
 
@@ -136,7 +136,6 @@ router.get("/updateProduct/:id", async (req, res) => {
 
 router.post("/updateProduct", urlencodedParser, async (req, res) => {
     // console.log("* UPDATE PRODUCT ROUTE (POST)");
-    // console.log("req.body: ", req.body);
 
     await myFunctions.updateProduct(req.body.id, req.body.name, req.body.info, req.body.price);
 
@@ -146,7 +145,6 @@ router.post("/updateProduct", urlencodedParser, async (req, res) => {
 // Delete products
 router.get("/deleteProduct/:id", async (req, res) => {
     // console.log("* DELETE ROUTE (GET)");
-    // console.log("req.param.id: ", req.param.id);
 
     let id = req.params.id;
 
@@ -160,8 +158,7 @@ router.get("/deleteProduct/:id", async (req, res) => {
 });
 
 router.post("/deleteProduct", urlencodedParser, async (req, res) => {
-    console.log("* DELETE ROUTE (POST)");
-    // console.log("req.body: ", req.body);
+    // console.log("* DELETE ROUTE (POST)");
 
     await myFunctions.deleteProduct(req.body.id);
 
@@ -172,7 +169,7 @@ router.post("/deleteProduct", urlencodedParser, async (req, res) => {
 
 // * ----- CUSTOMERS ----- *
 router.get("/customer", async (req, res) => {
-    // console.log("* ALL PRODUCTS ROUTE");
+    // console.log("* CUSTOMERS ROUTE");
 
     let data = {
         title: "All Customers | E-shop",
@@ -196,10 +193,21 @@ router.get("/order", async (req, res) => {
     res.render("eshop/orders/orders", data);
 });
 
+// Order view (single order)
+router.get("/order/:id", async (req, res) => {
+    // console.log("* ALL ORDERS ROUTE");
+
+    let data = {
+        title: "All Orders | E-shop",
+        res: await myFunctions.getAllOrders()
+    };
+
+    res.render("eshop/orders/orders", data);
+});
+
 // Create order
 router.get("/createOrder/:id", async (req, res) => {
-    console.log("* CREATE ORDER ROUTE (GET)");
-    // console.log("req.param.id: ", req.param);
+    // console.log("* CREATE ORDER ROUTE (GET)");
 
     let id = req.params.id;
 
@@ -209,31 +217,22 @@ router.get("/createOrder/:id", async (req, res) => {
         res: await myFunctions.getProductInventories(id)
     };
 
-    console.log("****** DATA", data);
-
     res.render(`eshop/orders/orders-selectProducts/${id}`, data);
 });
 
 router.post("/createOrder/:id", urlencodedParser, async (req, res) => {
-    console.log("* CREATE ORDER ROUTE (POST)");    
-    // console.log("req.body.id: ", req.body.id);
+    // console.log("* CREATE ORDER ROUTE (POST)");
 
     let id = req.body.id;
 
-    let data = {
-        title: "Create order | E-shop",
-        customer: id,
-        res: await myFunctions.createOrder(id)
-    };
+    await myFunctions.createOrder(id);
 
-    // console.log("****** DATA", data);
     res.redirect(`/eshop/order`);
 });
 
 // Select products to order
 router.get("/orders-selectProducts/:id", async (req, res) => {
-    console.log("* ORDER - SELECT PRODUCTS ROUTE");
-    console.log("***** REQ.PARAMS.ID: ", req.params.id);
+    // console.log("* ORDER - SELECT PRODUCTS ROUTE");
 
     let id = req.params.id;
 
@@ -244,33 +243,12 @@ router.get("/orders-selectProducts/:id", async (req, res) => {
         res: await myFunctions.getProductInventories()
     };
 
-    // console.log("***** DATA: ", data);
-    // console.log("***** DATA.CUSTOMER[0]: ", data.customer[0]);
     res.render("eshop/orders/orders-selectProducts", data);
 });
 
-// // Add product to order
-// router.get("/orders-addProduct/:product", async (req, res) => {
-//     console.log("* ORDER - ADD PRODUCT TO ORDER ROUTE (POST)");
-//     console.log("***** res.body: ", res.data);
-
-//     let data = {
-//         product: req.params.product,
-//     };
-
-//     // await myFunctions.addProductToPickingList(order, picking_list, product, amount);
-
-//     // console.log("***** DATA: ", data);
-//     // console.log("***** DATA.CUSTOMER[0]: ", data.customer[0]);
-// });
-
 // Add product to order
 router.post("/:order/addProduct/:product", urlencodedParser, async (req, res) => {
-    console.log("* ORDER - ADD PRODUCT TO ORDER ROUTE (POST)");
-    console.log("***** req.body.amount: ", req.body.amount);
-    console.log("***** req.params: ", req.params);
-    console.log("***** res.body", res.body);
-    console.log("***** res.params: ", res.params);
+    // console.log("* ORDER - ADD PRODUCT TO ORDER ROUTE (POST)");
 
     let order = req.params.order;
     let product = req.params.product;
@@ -278,15 +256,25 @@ router.post("/:order/addProduct/:product", urlencodedParser, async (req, res) =>
 
     await myFunctions.addProductToPickingList(order, product, amount);
 
-    // console.log("***** DATA: ", data);
-    // console.log("***** DATA.CUSTOMER[0]: ", data.customer[0]);
     res.redirect(`/eshop/orders-selectProducts/${order}`);
+});
+
+
+
+// Place the order with the selected products
+router.post("/:order/placeOrder/", urlencodedParser, async (req, res) => {
+    console.log("* ORDER - PLACE THE ORDER (POST)");
+
+    let order = req.body.order;
+
+    await myFunctions.placeTheOrder(order);
+
+    res.redirect(`/eshop/order/${order}`);
 });
 
 // Delete order
 router.get("/deleteOrder/:id", async (req, res) => {
-    console.log("* DELETE ORDER ROUTE (GET)");
-    // console.log("req.param.id: ", req.param.id);
+    // console.log("* DELETE ORDER ROUTE (GET)");
 
     let id = req.params.id;
     let customer = req.params.customer;
@@ -298,27 +286,19 @@ router.get("/deleteOrder/:id", async (req, res) => {
         res: await myFunctions.showOrder(id)
     };
 
-    // console.log("data.res", data);
-
     res.render("eshop/orders/order-delete", data);
 });
 
 router.post("/deleteOrder", urlencodedParser, async (req, res) => {
-    console.log("* DELETE ORDER ROUTE (POST)");
-    console.log(JSON.stringify("REQ.BODY: ", req.body, null, 4));
-
-    console.log("req.body.id: ", req.body.id);
-
     await myFunctions.deleteOrder(req.body.id);
 
     res.redirect("./order");
 });
 
 
+
 // * ----- ABOUT ----- *
 router.get("/about", async (req, res) => {
-    // console.log("* ABOUT ROUTE");
-
     let data = {
         title: "About E-shop!"
     };

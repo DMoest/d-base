@@ -58,11 +58,12 @@ drop procedure if exists show_order;
 drop procedure if exists get_customer_for_order;
 drop procedure if exists get_customer_from_order;
 drop procedure if exists add_product_to_picking_list;
+drop procedure if exists place_the_order;
 drop procedure if exists create_order;
 drop procedure if exists delete_order;
 
 -- Drop functions if exists:
--- drop funktion if exists order_status();
+drop function if exists order_status;
 
 -- Drop trigger if exists:
 drop trigger if exists log_product_insert;
@@ -75,9 +76,9 @@ drop trigger if exists log_order_delete;
 -- Teckenkodning:
 set names 'utf8';
 
-
 -- Bad idea?
 set foreign_key_checks = 0;
+
 
 
 -- --------------------------------------------------
@@ -127,12 +128,13 @@ create table product_pictures
 (
     `id` int unique auto_increment not null,
     `product` int not null,
-    `picture` varchar(30) not null,
-    `description` varchar(100) not null,
+    `picture` varchar(200) not null,
+    `text` varchar(100) not null,
+    `alt` varchar(100) not null,
 
     primary key (id),
     unique key (id),
-    fulltext key (`description`),
+    fulltext key (`text`),
     foreign key (product) references products(id)
     on delete cascade
 )
@@ -232,8 +234,12 @@ create table orders
     `id` int unique auto_increment not null,
     `customer` int not null,
     `picking_list` int default 0 not null,
-    `date` timestamp default current_timestamp,
-    `status` varchar(20) not null,
+    `created` timestamp default current_timestamp,
+    `ordered` timestamp default null,
+    `shipped` timestamp default null,
+    `updated`timestamp default null
+        on update current_timestamp,
+    `deleted` timestamp default null,
 
     primary key (id),
     unique key (id),
@@ -264,7 +270,7 @@ charset utf8
 collate utf8_swedish_ci
 ;
 
--- Customer_phones:
+-- Customer phones:
 create table customer_phones
 (
     `id` int not null,
@@ -348,6 +354,38 @@ collate utf8_swedish_ci
 
 
 
+-- FUNCTIONs:
+-- --------------------------------------------------
+-- Order status:
+delimiter $$
+create function order_status(
+    time_created timestamp,
+    time_updated timestamp,
+    time_ordered timestamp,
+    time_shipped timestamp,
+    time_deleted timestamp
+)
+returns char(10)
+deterministic
+begin
+    if time_deleted is not null then
+        return 'Raderad';
+    elseif time_shipped is not null then
+        return 'Skickad';
+    elseif time_ordered is not null then
+        return 'Beställd';
+    elseif time_updated is not null then
+        return 'Uppdaterad';
+    elseif time_created is not null then
+        return 'Skapad';
+    end if;
+    return 'Status okänd';
+end
+$$
+delimiter ;
+
+
+
 -- --------------------------------------------------
 -- * VIEWS:                                         *
 -- --------------------------------------------------
@@ -384,13 +422,22 @@ select
     p.price,
     group_concat( distinct pt.type separator ", " ) as 'types',
     group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", ") as `stored`,
-    sum( distinct i.amount ) as `amount`
+    sum( distinct i.amount ) as `amount`,
+    pp.picture,
+    pp.alt,
+    pp.text
 from products as p 
     left outer join product_types as pt 
         on p.id = pt.product
+    left outer join product_pictures as pp
+        on p.id = pp.product
     left outer join inventory as i
         on p.id = i.product
-group by id
+group by
+    id,
+    picture,
+    alt,
+    text
 order by id
 ;
 
@@ -452,8 +499,8 @@ select
     (concat(c.firstname, " ", c.lastname)) as `name`,
     o.picking_list as `picking_list`,
     count(pl.order) as `rows`,
-    o.date as `date`,
-    o.status as `status`
+    o.created as `created`,
+    order_status(o.created, o.updated, o.ordered, o.shipped, o.deleted) as `status`
 from orders as o
     join customers as c
         on o.customer = c.id
@@ -787,9 +834,9 @@ create procedure create_order(
 )
 begin
 insert into orders
-        (customer, status)
+        (customer)
     values
-        (customer_id, 'Skapad');
+        (customer_id);
 end
 $$
 delimiter ;
@@ -855,6 +902,37 @@ select
 from v_orders
     where
         id = order_id;
+end
+$$
+delimiter ;
+
+
+
+delimiter $$
+create procedure place_the_order(
+    input_order int
+)
+begin
+start transaction;
+
+insert into picking_lists
+    (`order`, `index`, `product`, `amount`)
+select
+    `order`,
+    `id`,
+    `product`,
+    `amount`
+from products_to_picking_list as ptpl
+    where ptpl.order = input_order;
+
+update orders
+    set `ordered` = current_timestamp
+    where id = input_order;
+
+delete from products_to_picking_list
+    where `order` like input_order;
+
+commit;
 end
 $$
 delimiter ;
@@ -948,7 +1026,7 @@ on orders
     for each row
 begin
     insert into log_orders (`order`, `customer`, `time`, `activity`, `before`, `after`)
-        values (old.id, old.customer, current_timestamp(), "TRIGGER - Deleted order was registered.", concat("order -> ID: ", old.id, " CUSTOMER: ", old.customer, " OLD STATUS: ", old.status, " OLD PICKING LIST: ", old.picking_list), "Deleted");
+        values (old.id, old.customer, current_timestamp(), "TRIGGER - Deleted order was registered.", concat("order -> ID: ", old.id, " CUSTOMER: ", old.customer, " OLD PICKING LIST: ", old.picking_list), "Deleted");
 end
 $$
 delimiter ;
@@ -961,7 +1039,7 @@ on orders
     for each row
 begin
 insert into log_orders (`order`, `customer`, `time`, `activity`, `before`, `after`)
-    values (old.id, old.customer, current_timestamp(), "TRIGGER - order was updated.", concat("Old data -> CUSTOMER: ", old.customer, " OLD STATUS: ", old.status, " OLD PICKING LIST: ", old.picking_list), concat("New data -> CUSTOMER: ", new.customer, " STATUS: ", new.status, " NEW PICKING LIST: ", new.picking_list));
+    values (old.id, old.customer, current_timestamp(), "TRIGGER - order was updated.", concat("Old data -> CUSTOMER: ", old.customer, " OLD PICKING LIST: ", old.picking_list), concat("New data -> CUSTOMER: ", new.customer, " NEW PICKING LIST: ", new.picking_list));
 end
 $$
 delimiter ;

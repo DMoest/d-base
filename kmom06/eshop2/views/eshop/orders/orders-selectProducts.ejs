@@ -31,10 +31,9 @@
             <td  class="productTable__TDs productTable__TDs--amount"><%= row.amount %> st</td>
             <td  class="productTable__TDs productTable__TDs--items">
                 <form method="post" action="/eshop/<%= order.toString(); %>/addProduct/<%= row.id %>">
-                    <input type="text" id="amount" name="amount" min="0" max="<%= row.amount %>" value="0" class="productTable__TDs--itemsInput">
+                    <input type="number" id="amount" name="amount" min="0" max="<%= row.amount %>" value="0" class="productTable__TDs--itemsInput">
             </td>
             <td  class="productTable__TDs productTable__TDs--addProduct">
-                
                     <input type="hidden" id="product" name="product" value="<%= row.id %>" class="productTable__TDs--itemsInput">
                     <input type="submit" value="lägg till" class="CRUD__smallBTN CRUD__smallBTN--create">
                 </form>
@@ -42,6 +41,11 @@
         </tr>
     <% }; %>
 </table>
+
+<form method="post" action="placeOrder" class="orders__selectProducts">
+    <input type="hidden" name="order" value="<%= order.toString(); %>" class="orders__selectProducts--btn">
+    <input type="submit" value="Beställ" class="orders__selectProducts--btn">
+</form>
 
 <%- include ("./../../partials/footer") %>
  

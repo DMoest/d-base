@@ -1,11 +1,14 @@
 id,firstname,lastname,street,number,post_number,city,country,email,birthday
-,Janne,Lundqvist,Hejhoppgatan,34,72541,örebro,sweden,janne@janne.com,1951-10-13
-,Bertil,Svensson,Härvardetasfaltsvägen,3,11301,stockholm,sweden,bert@bert.com,2001-01-01
-,Pelle,Karlsson,Brevidhavetvägen,1276,32154,västerås,sweden,pelle@pelle.se,1985-06-13
-,Kalle,Anka,Ankeborgsgatan,2,11314,ankeborg,kalle anka land,kalle@anka.nu,1974-12-31
-,Jonas,Svensson,Därbortavägen,642,54123,göteborg,sweden,svensson@jonas.io,1076-10-21
-,Anders,Andersson,Kompåfestgatan,112,11208,jönköping,sweden,anders@anders.ju,2048-01-01
-,Hamid,Hamidsson,NewDeligatn,91,987-154-1,new deli,indien,hamid@h.io,1932-11-13
-,Dennis,Andersson,Runthörnetvägen,71,98563,kiruna,sweden,andersson.dennis@da.se,1945-06-23
+,Mikael,Roos,Denfiktivagatan,1,12345,Karlskrona,sweden,mikael@roos.com,1951-10-13
+,Emil,Folino,Härvardetasfaltsvägen,3,11301,Stockholm,sweden,emil@folino.se,2001-01-01
+,Andreas,Arnesson,Brevidhavetvägen,1276,32154,Gisslevik,sweden,andreas@arnesson.se,1985-06-13
+,Gåtte,Gås,Gåsgatan,4,54123,Ankeborg,Kalle Anka Land,gåsen@anka.nu,1964-03-21
+,Kalle,Anka,Ankeborgsgatan,2,11314,Ankeborg,Kalle Anka Land,kalle@anka.nu,1974-12-31
+,Knatte,Anka,Ankeborgsgatan,642,54123,Ankeborg,Kalle Anka Land,knatte@anka.nu,1076-10-21
+,Donna,Anka,Ankeborgsgatan,2,11208,Ankeborg,Kalle Anka Land,donna@anka.nu,2048-01-01
+,Åsnan,Basilio,Ankeborgsgatan,91,987-154-1,Ankeborg,Kalle Anka Land,asna@anka.nu,1932-11-13
+,Strutsen,Hortensia,Ankeborgsgatan,71,98563,Ankeborg,Kalle Anka Land,strutsen@anka.nu,1945-06-23
 ,Sven-Bertil,Taube,Södermalmsgatan,50,11405,stockholm,sweden,svennesemail@email.com,1900-04-21
-,Donald,Kvack,Ankeborgsgatan,1,11313,ankeborg,kalle anka land,donald.kvack@kvack.kvack,1863-07-07
+,Mårten,Gås,Ankeborgsgatan,43,11313,Ankeborg,Kalle Anka Land,marten@anka.nu,1863-07-07
+,Farmor,Anka,Ankeborgsgatan,99,5196,Ankeborg,Kalle Anka Land,farmor@anka.nu,1924-12-31
+,Kajsa,Anka,Ankeborgsgatan,112,11212,Ankeborg,Kalle Anka Land,kajsa@anka.nu,1973-64-10

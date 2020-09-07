@@ -31,9 +31,18 @@ lines
 ignore 1 lines
 ;
 
--- show warnings;
--- select * from products;
 
+-- Product pictures.
+load data local infile 'eshop - product_pictures.csv'
+into table product_pictures
+charset utf8
+fields
+    terminated by ','
+    enclosed by '"'
+lines
+    terminated by '\n'
+ignore 1 lines
+;
 
 
 -- Product types.
@@ -48,10 +57,6 @@ lines
 ignore 1 lines
 ;
 
--- show warnings;
--- select * from product_types;
-
-
 
 -- Inventory.
 load data local infile 'eshop - inventory.csv'
@@ -64,10 +69,6 @@ lines
     terminated by '\r\n'
 ignore 1 lines
 ;
-
--- show warnings;
--- select * from inventory;
-
 
 
 -- Customers.
@@ -83,13 +84,9 @@ lines
 ignore 1 lines
 ;
 
--- show warnings;
--- select * from customers;
-
-
 
 -- Customer phones.
--- Insert TEST-customers.
+-- Insert TEST-customers phone numbers.
 load data local infile 'eshop - customer_phones.csv'
 into table customer_phones
 charset utf8
@@ -102,50 +99,5 @@ ignore 1 lines
 ;
 
 -- show warnings;
--- select * from customers;
 
-
-
--- Orders.
--- Insert TEST-orders.
-load data local infile 'eshop - orders.csv'
-into table orders
-charset utf8
-fields
-    terminated by ','
-    enclosed by '"'
-lines
-    terminated by '\r\n'
-ignore 1 lines
-;
-
--- show warnings;
--- select * from orders;
-
-
-
--- Picking Lists.
--- Insert TEST-picking lists.
-load data local infile 'eshop - picking_lists.csv'
-into table picking_lists
-charset utf8
-fields
-    terminated by ','
-    enclosed by '"'
-lines
-    terminated by '\r\n'
-ignore 1 lines
-;
-
--- show warnings;
--- select * from picking_lists;
-
-
-
--- Check trigger events for insert of products:
--- select * from log_products;
--- select * from log_orders;
-
--- Try to restore what was avoided before.
--- 
 set foreign_key_checks = 1;
