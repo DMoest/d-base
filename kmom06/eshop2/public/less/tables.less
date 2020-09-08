@@ -112,3 +112,36 @@
         }
     }
 }
+
+.orderView__table {
+    width: 100%;
+
+    &--row {
+        width: 100%;
+    }
+
+    &--header {
+        padding: 0.25rem;
+        font-size: 1.2rem;
+        font-weight: @font__weight[subStandard];
+        background-color: @color__primary--standard;
+        color: @color__white;
+    }
+
+    &--data {
+        padding: @rythem[quarter];
+
+        &--id,
+        &--productID,
+        &--amount {
+            width: 15%;
+            text-align: center;
+        }
+
+        &--name,
+        &--info {
+            width: 27.5%;
+            text-align: left;
+        }
+    }
+}

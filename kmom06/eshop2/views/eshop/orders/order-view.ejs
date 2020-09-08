@@ -1,0 +1,82 @@
+<%- include ("./../../partials/header") %>
+
+<div class="orderView">
+
+<h4 class="orderView--subHeader">Kund:</h4>
+    <% for (const cust of customer[0]) { %>
+        <div class="orderView__customer">
+            <div class="orderView__customer--label">
+                <p class="orderView__customer--label">Förnamn: </p>
+                <p class="orderView__customer--label">Efternamn: </p>
+                <p class="orderView__customer--label">Adress: </p>
+                <p class="orderView__customer--label">Postnummer, ort: </p>
+                <p class="orderView__customer--label">Land: </p>
+                <p class="orderView__customer--label">E-Mail: </p>
+                <p class="orderView__customer--label">Födelsedag: </p>
+            </div>
+            <div class="orderView__customer--details">
+                <p class="orderView__customer--firstname"><%= cust.firstname %></p>
+                <p class="orderView__customer--lastname"><%= cust.lastname %></p>
+                <p class="orderView__customer--street"><%= cust.street %> <%= cust.number %></p>
+                <p class="orderView__customer--code"><%= cust.post_code %> <%= cust.city %></p>
+                <p class="orderView__customer--country"><%= cust.country %></p>
+                <p class="orderView__customer--email"><%= cust.email %> </p>
+                <p class="orderView__customer--birthday"><%= cust.birthday.getFullYear() %>-<%= cust.birthday.getMonth()%>-<%= cust.birthday.getDate() %></p>
+            </div>
+        </div>
+    <% }; %>
+
+<h4 class="orderView--subHeader">Order:</h4>
+    <% for (const order of res) { %>
+        <div class="orderView__details">
+            <div class="orderView__details--label">
+                <p class="orderView__details--label">Ordernummer: </p>
+                <p class="orderView__details--label">Kund: </p>
+                <p class="orderView__details--label">Kundnummer: </p>
+                <p class="orderView__details--label">Skapad: </p>
+                <p class="orderView__details--label">Status: </p>
+                <p class="orderView__details--label">Antal orderrader: </p>
+            </div>
+            <div class="orderView__details--details">
+                <p class="orderView__details--id"><%= order.id %></p>
+                <p class="orderView__details--customer"><%= order.name %></p>
+                <p class="orderView__details--customer"><%= order.customer %></p>
+                <p class="orderView__details--created"><%=order.created.getFullYear()+"-"+order.created.getMonth()+"-"+order.created.getDate()%></p>
+                <p class="orderView__details--status"><%= order.status %></p>
+                <p class="orderView__details--rows"><%= order.rows %></p>
+            </div>
+        </div>
+    <% }; %>
+
+<h4 class="orderView--subHeader">Innehåll: </h4>
+
+    <table class="orderView__table">
+        <tr class="orderView__table--row">
+            <th class="orderView__table--header orderView__table--headerIndex">Index</th>
+            <th class="orderView__table--header orderView__table--header--productID">Produktnr.</th>
+            <th class="orderView__table--header orderView__table--header--name">Produktnamn</th>
+            <th class="orderView__table--header orderView__table--header--info">Information</th>
+            <th class="orderView__table--header orderView__table--header--amount">Antal</th>
+        </tr>
+        <% for (const row of picklist) { %>
+            <tr class="orderView__table--row">
+                <td class="orderView__table--data orderView__table--data--id"><%= row.index %></td>
+                <td class="orderView__table--data orderView__table--data--productID"><%= row.product %></td>
+                <td class="orderView__table--data orderView__table--data--name"><%= row.name %></td>
+                <td class="orderView__table--data orderView__table--data--info"><%= row.info %></td>
+                <td class="orderView__table--data orderView__table--data--amount"><%= row.amount %></td>
+            </tr>
+        <% }; %>
+    </table>
+</div>
+<!-- 
+<p>Här är RES: </p>
+<pre><%= JSON.stringify(res, null, 4) %></pre>
+
+<p>Här är CUSTOMER:</p>
+<pre><%= JSON.stringify(customer, null, 4) %></pre>
+
+<p>Här är PICKLIST:</p>
+<pre><%= JSON.stringify(picklist, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

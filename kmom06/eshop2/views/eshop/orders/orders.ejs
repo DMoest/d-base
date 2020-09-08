@@ -13,7 +13,6 @@
         <th class="productTable__tableHeader productTable__tableHeader--id">Order</th>
         <th class="productTable__tableHeader productTable__tableHeader--customerID">Kund</th>
         <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
-        <th class="productTable__tableHeader productTable__tableHeader--pickingL">Plocklista</th>
         <th class="productTable__tableHeader productTable__tableHeader--pickingL">Orderrader</th>
         <th class="productTable__tableHeader productTable__tableHeader--date">Datum</th>
         <th class="productTable__tableHeader productTable__tableHeader--status">Status</th>
@@ -24,12 +23,12 @@
             <td class="productTable__TDs productTable__TDs--id"><%= row.id %></td>
             <td class="productTable__TDs productTable__TDs--customerID"><%= row.customer %></td>
             <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
-            <td class="productTable__TDs productTable__TDs--pickingL"><%= row.picking_list %></td>
             <td class="productTable__TDs productTable__TDs--pickingL"><%= row.rows %></td>
             <td  class="productTable__TDs productTable__TDs--date"><%= row.created %></td>
             <td  class="productTable__TDs productTable__TDs--status"><%= row.status %></td>
             <td  class="productTable__TDs productTable__TDs--action">
                 <div class="productTable__TDs productTable__TDs--action">
+                    <a href="order/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--create">Översikt</a>
                     <a href="orders-selectProducts/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--link">Hantera</a>
                     <a href="deleteOrder/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Radera</a>
                 </div>
@@ -38,6 +37,6 @@
     <% }; %>
 </table>
 
-<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+<pre><%= JSON.stringify(res, null, 4) %></pre>
 
 <%- include ("./../../partials/footer") %>

@@ -195,14 +195,17 @@ router.get("/order", async (req, res) => {
 
 // Order view (single order)
 router.get("/order/:id", async (req, res) => {
-    // console.log("* ALL ORDERS ROUTE");
+    console.log("* A ORDER ROUTE");
+    let id = req.params.id;
 
     let data = {
-        title: "All Orders | E-shop",
-        res: await myFunctions.getAllOrders()
+        title: `All information on order ${id} | E-shop`,
+        customer: await myFunctions.getCustomerFromOrder(id),
+        res: await myFunctions.showOrder(id),
+        picklist: await myFunctions.getPickingList(id)
     };
 
-    res.render("eshop/orders/orders", data);
+    res.render("eshop/orders/order-view", data);
 });
 
 // Create order

@@ -416,6 +416,27 @@ async function showOrder(id) {
     return result[0];
 }
 
+
+/**
+ * Get picking list for a placed order.
+ * @async
+ * @param {string} order        Order id of the picking list.
+ * @returns {RowDataPacket}     Resultset from the query.
+ */
+async function getPickingList(order) {
+    // console.log("* getPickingList() function.");
+    let result;
+    let sql = `call get_picking_list(?);`;
+
+    result = await db.query(sql, [order]);
+
+    // console.log("Result: ", result);
+    // console.info(`SQL: ${sql} contains ${result.length} rows.`);
+
+    return result[0];
+}
+
+
 /**
  * Create a order for a customer.
  * @async
@@ -507,6 +528,7 @@ module.exports = {
     "getAllOrders": getAllOrders,
     "searchOrders": searchOrders,
     "showOrder": showOrder,
+    "getPickingList": getPickingList,
     "createOrder": createOrder,
     "deleteOrder": deleteOrder,
     "getCustomerFromOrder": getCustomerFromOrder,

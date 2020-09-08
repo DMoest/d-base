@@ -55,6 +55,7 @@ drop procedure if exists search_orders;
 drop procedure if exists show_all_customers;
 drop procedure if exists show_all_orders;
 drop procedure if exists show_order;
+drop procedure if exists get_picking_list;
 drop procedure if exists get_customer_for_order;
 drop procedure if exists get_customer_from_order;
 drop procedure if exists add_product_to_picking_list;
@@ -497,7 +498,6 @@ select
     o.id as `id`,
     o.customer as `customer`,
     (concat(c.firstname, " ", c.lastname)) as `name`,
-    o.picking_list as `picking_list`,
     count(pl.order) as `rows`,
     o.created as `created`,
     order_status(o.created, o.updated, o.ordered, o.shipped, o.deleted) as `status`
@@ -521,6 +521,7 @@ select
     pl.index,
     pl.product,
     p.name,
+    p.info,
     pl.amount,
     group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", " ) as 'position'
 from picking_lists as pl
@@ -856,7 +857,20 @@ $$
 delimiter ;
 
 
--- Delete order:
+-- Get picking list for order:
+delimiter $$
+create procedure get_picking_list(
+    input_order int
+)
+begin
+select *
+    from v_picking_lists
+        where `order` = `input_order`;
+end
+$$
+delimiter ;
+
+-- Add product to picking list:
 delimiter $$
 create procedure add_product_to_picking_list(
     order_id int,
@@ -897,15 +911,21 @@ create procedure get_customer_from_order(
     order_id int
 )
 begin
-select
-    customer
-from v_orders
-    where
-        id = order_id;
+    declare customer_id int;
+
+    set customer_id = (
+    select
+        customer
+    from v_orders
+        where
+            id = order_id
+    );
+
+    select * from customers
+        where id = customer_id;
 end
 $$
 delimiter ;
-
 
 
 delimiter $$

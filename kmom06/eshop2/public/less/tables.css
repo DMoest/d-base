@@ -1,0 +1,150 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: tables.less
+*/
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: variables.less
+*/
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: mixins.less
+*/
+.bordered--light {
+  border: 0.05rem solid #f5f5f5;
+  border-radius: 0.3rem;
+}
+.bordered--dark {
+  border: 0.05rem solid #333;
+  border-radius: 0.3rem;
+}
+.bordered--primary {
+  border: 0.05rem solid #406e73;
+  border-radius: 0.3rem;
+}
+.button--hover:hover {
+  color: #333;
+  background-color: #406e73;
+  border: 0.05rem solid #406e73;
+}
+.button--click {
+  transform: translateY(1px);
+  background-color: #46bddb;
+  border: 0.05rem solid #46bddb;
+}
+.productTable {
+  display: block;
+  width: 100%;
+  padding: 2rem 15%;
+  border: collapse;
+}
+.productTable__tableHeader {
+  padding: 0.5rem;
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #406e73;
+}
+.productTable__TDs {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+.productTable__TDs--id {
+  width: 2.5%;
+  text-align: center;
+}
+.productTable__TDs--customerID {
+  width: 2.5%;
+  text-align: center;
+}
+.productTable__TDs--name {
+  width: 10%;
+  text-align: left;
+}
+.productTable__TDs--phone {
+  width: 2.5%;
+  text-align: right;
+}
+.productTable__TDs--email {
+  width: 5%;
+  text-align: left;
+}
+.productTable__TDs--pickingL {
+  width: 2.5%;
+  text-align: center;
+}
+.productTable__TDs--info {
+  width: 20%;
+  text-align: left;
+}
+.productTable__TDs--price {
+  width: 5%;
+  text-align: center;
+}
+.productTable__TDs--types {
+  width: 5%;
+  text-align: left;
+}
+.productTable__TDs--amount {
+  width: 5%;
+  text-align: right;
+}
+.productTable__TDs--items {
+  width: 3%;
+  text-align: center;
+}
+.productTable__TDs--itemsInput {
+  width: 100%;
+  padding: 0.1rem;
+  text-align: right;
+  border-radius: 0.3rem;
+}
+.productTable__TDs--action {
+  text-align: center;
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.productTable__TDs--addOrder {
+  width: 5%;
+  text-align: center;
+}
+.productTable__TDs--addProduct {
+  width: 10%;
+  text-align: center;
+}
+.orderView__table {
+  width: 100%;
+}
+.orderView__table--row {
+  width: 100%;
+}
+.orderView__table--header {
+  padding: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  background-color: #406e73;
+  color: #fff;
+}
+.orderView__table--data {
+  padding: 0.33325rem;
+}
+.orderView__table--data--id,
+.orderView__table--data--productID,
+.orderView__table--data--amount {
+  width: 15%;
+  text-align: center;
+}
+.orderView__table--data--name,
+.orderView__table--data--info {
+  width: 27.5%;
+  text-align: left;
+}

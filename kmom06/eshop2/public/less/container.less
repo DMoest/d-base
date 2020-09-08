@@ -96,3 +96,77 @@
 .site__footer {
     width: 100%;
 }
+
+
+.orderView {
+    width: 100%;
+    padding: @rythem[standard] 15%;
+    margin: 0;
+
+    &--header {
+        font-size: @font__size[title];
+    }
+
+    &--subHeader {
+        font-size: @font__size[title];
+    }
+
+    &--paragraph {
+        padding: @rythem[standard] 0;
+        margin: 0;
+    }
+
+    &__customer {
+        width: 100%;
+        padding: 0 30% 0 0;
+        margin: 0;
+        display: flex;
+        flex-flow: nowrap row;
+        justify-content: space-between;
+
+        &--label,
+        &--details,
+        &--details p {
+            width: 100%;
+            padding: 0 0 @rythem[quarter];
+            margin: 0;
+        }
+
+        &--firstname,
+        &--lastname,
+        &--street,
+        &--code,
+        &--country,
+        &--email,
+        &--birthday {
+            width: 100%;
+        }
+    }
+
+    &__details {
+        width: 100%;
+        padding: 0 30% 0 0;
+        margin: 0;
+        display: flex;
+        flex-flow: nowrap row;
+        justify-content: space-between;
+
+        &--label,
+        &--details,
+        &--details p {
+            width: 100%;
+            padding: 0 0 @rythem[quarter];
+            margin: 0;
+        }
+
+        &--firstname,
+        &--lastname,
+        &--street,
+        &--code,
+        &--country,
+        &--email,
+        &--birthday {
+            width: 100%;
+        }
+    }
+}
