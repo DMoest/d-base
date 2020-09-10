@@ -49,6 +49,7 @@
 
 }
 
+// Full product catalog view.
 .products {
     width: 100%;
     padding: @rythem[standard] 15%;
@@ -118,7 +119,7 @@
 
     &__customer {
         width: 100%;
-        padding: 0 30% 0 0;
+        padding: 0 30% @rythem[standard] 0;
         margin: 0;
         display: flex;
         flex-flow: nowrap row;
@@ -145,7 +146,7 @@
 
     &__details {
         width: 100%;
-        padding: 0 30% 0 0;
+        padding: 0 30% @rythem[standard] 0;
         margin: 0;
         display: flex;
         flex-flow: nowrap row;
@@ -168,5 +169,107 @@
         &--birthday {
             width: 100%;
         }
+    }
+}
+
+
+.productContainer {
+    padding: @rythem[standard] 20%;
+    
+    &__product {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: @rythem[standard];
+        grid-template-areas: 
+        "header header"
+        "info image"
+        "info image"
+        "info imageText"
+        "crud crud"
+        ;
+        gap: @rythem[standard];
+
+        &--header {
+            text-align: center;
+            padding: @rythem[standard];
+            grid-area: header;
+        }
+
+        &--image {
+            max-width: 30rem;
+            margin: auto;
+            display: inline-block;
+            border-radius: @border[radius];
+            grid-column: 3 / span 2;
+            grid-area: image;
+        }
+
+        &--imageText {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            text-align: center;
+            font-style: italic;
+            grid-area: imageText;
+        }
+
+        &__info {
+            width: 100%;
+            
+            display: inline-block;
+            grid-column: 1 / span 2;
+            grid-area: info;
+            
+            &--info {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+            
+            &--types {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+
+            &--id {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+
+            &--amount {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+            
+            &--price {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: @font__weight[standard];
+            }
+        }
+
+        &--crud {
+            grid-area: crud;
+            padding: @rythem[standard];
+            display: flex;
+            flex-direction: row;
+            flex-flow: nowrap;
+            justify-content: space-around;
+            gap: @rythem[standard];
+
+            a {
+                display: inline-block;
+                width: 10rem;
+                text-align: center;
+            }
+        }
+
     }
 }

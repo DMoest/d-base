@@ -60,6 +60,7 @@ drop procedure if exists get_customer_for_order;
 drop procedure if exists get_customer_from_order;
 drop procedure if exists add_product_to_picking_list;
 drop procedure if exists place_the_order;
+drop procedure if exists ship_order;
 drop procedure if exists create_order;
 drop procedure if exists delete_order;
 
@@ -523,7 +524,8 @@ select
     p.name,
     p.info,
     pl.amount,
-    group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", " ) as 'position'
+    group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", " ) as 'position',
+    sum( distinct i.amount ) as `stored`
 from picking_lists as pl
     join products as p
         on pl.product = p.id
@@ -568,7 +570,7 @@ create procedure show_product(
     p_id int
 )
 begin
-    select * from products where id = p_id;
+    select * from v_products where id = p_id;
 end
 $$
 delimiter ;
@@ -843,20 +845,6 @@ $$
 delimiter ;
 
 
--- Delete order:
-delimiter $$
-create procedure delete_order(
-    order_id int
-)
-begin
-delete from orders
-    where
-        id = order_id;
-end
-$$
-delimiter ;
-
-
 -- Get picking list for order:
 delimiter $$
 create procedure get_picking_list(
@@ -869,6 +857,7 @@ select *
 end
 $$
 delimiter ;
+
 
 -- Add product to picking list:
 delimiter $$
@@ -957,6 +946,32 @@ end
 $$
 delimiter ;
 
+
+delimiter $$
+create procedure ship_order(
+    order_id int
+)
+begin
+update orders
+    set `shipped` = current_timestamp
+    where id = order_id;
+end
+$$
+delimiter ;
+
+
+-- Delete order:
+delimiter $$
+create procedure delete_order(
+    order_id int
+)
+begin
+update orders
+    set `deleted` = current_timestamp
+    where id = order_id;
+end
+$$
+delimiter ;
 
 
 -- LOG PROCEDUREs:

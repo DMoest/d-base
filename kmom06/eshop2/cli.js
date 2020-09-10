@@ -32,10 +32,15 @@ const myFunctions = require("./src/functions.js");
         line = line.trim();
         let lineArray = line.split(" ");
 
-        console.info("Line: ", line);
-        console.info("linearray: ", lineArray);
+        // console.info("Line: ", line);
+        // console.info("linearray: ", lineArray);
 
         switch (lineArray[0]) {
+            case "about":
+            case "-a": {
+                await about();
+                break;
+            }
             case "menu":
             case "help":
             case "-h":
@@ -57,7 +62,7 @@ const myFunctions = require("./src/functions.js");
             }
             case "invadd":
             case "-ia": {
-                console.info("* INVADD");
+                // console.info("* INVADD");
 
                 let shelf = lineArray[2].split("-");
                 let section = shelf[0].toUpperCase();
@@ -71,7 +76,7 @@ const myFunctions = require("./src/functions.js");
             }
             case "invdel":
             case "-id": {
-                console.info("* INVDEL");
+                // console.info("* INVDEL");
                 let shelf = lineArray[2].split("-");
                 let section = shelf[0].toUpperCase();
                 let position = shelf[1];
@@ -84,7 +89,7 @@ const myFunctions = require("./src/functions.js");
             }
             case "inventory":
             case "-i": {
-                console.info("* INVENTORY");
+                // console.info("* INVENTORY");
                 let result;
 
                 if (lineArray.length > 1) {
@@ -98,7 +103,7 @@ const myFunctions = require("./src/functions.js");
             }
             case "log":
             case "-l": {
-                console.info("* LOG PRODUCTS");
+                // console.info("* LOG PRODUCTS");
                 let result;
 
                 if (lineArray.length > 1) {
@@ -112,7 +117,7 @@ const myFunctions = require("./src/functions.js");
             }
             case "order":
             case "-o": {
-                console.info("* LOG PRODUCTS");
+                // console.info("* LOG PRODUCTS");
                 let result;
 
                 if (lineArray.length > 1) {
@@ -124,12 +129,38 @@ const myFunctions = require("./src/functions.js");
                 }
                 break;
             }
+            case "picklist":
+            case "-pl": {
+                // console.info("* PICKLIST");
+                let result;
+                let order = lineArray[1];
+
+                if (lineArray.length <= 1) {
+                    console.info("Please specify which order id to print picklist from.");
+                } else {
+                    result = await myFunctions.getPickingList(order);
+                    await console.table(result);
+                }
+                break;
+            }
             case "shelf":
             case "-s": {
-                console.info("* SHELF");
+                // console.info("* SHELF");
                 let result = await myFunctions.getInventoryShelves();
 
                 await console.table(result[0]);
+                break;
+            }
+            case "ship": {
+                // console.info("* SHIP");
+                let order = lineArray[1];
+
+                if (lineArray.length < 2) {
+                    console.info("Please specify which order id to ship an order.");
+                } else {
+                    await myFunctions.shipOrder(order);
+                    await console.info(`Order number ${order} has been shiped to the customer.`);
+                }
                 break;
             }
             case "exit":
@@ -157,15 +188,15 @@ const myFunctions = require("./src/functions.js");
 
 function showWelcomeText() {
     console.info(`
-    * ================================================================ *
-    |                                                                  |
-    |   Welcome to the terminal commanline loop for E-SHOP!            |
-    |   To view available options simply use 'menu' or 'help' command. |
-    |                                                                  |
-    | ================================================================ |
-    |   E-shop terminal comand loop is create by Daniel Andersson 2020 |
-    |   for the course DV1606 - Database technologies @ BTH.           |
-    * ================================================================ *
+    * ================================================================== *
+    |                                                                    |
+    |   Welcome to the terminal commanline loop for E-SHOP!              |
+    |   To view available options simply use 'menu' or 'help' command.   |
+    |                                                                    |
+    | ================================================================== |
+    |   E-shop terminal comand loop is create by Daniel Andersson 2020   |
+    |   for the course DV1606 - Database technologies @ BTH.             |
+    * ================================================================== *
     `);
 }
 
@@ -174,11 +205,11 @@ function showWelcomeText() {
  */
 function showMenu() {
     console.info(`
-        * ============================================================= *
-        |                                                               |
-        |   *   *   *            The E-Shop Menu            *   *   *   |
-        |                                                               |
-        * ============================================================= *
+        * ============================================================================= *
+        |                                                                               |
+        |   *   *   *                    The E-Shop Menu                    *   *   *   |
+        |                                                                               |
+        * ============================================================================= *
 
         Menu, Help (-h) ............................. Show this help menu.
         Inventory (-i) <str> ........................ Show product inventory.
@@ -186,8 +217,28 @@ function showMenu() {
         Invdel (-id) <prod.id> <shelf> <amount> ..... Remove amount of product on inventory shelf.
         Products (-p) ............................... Show all products.
         Productcategories (-pc) ..................... Show all products.
+        Picklist (-pl) <order id> ................... Get the picking list for the order.
         Shelf (-s) .................................. Show all shelves in the wearhouse.
+        Ship <order id> ............................. Ship an existing order to customer.
         Log (-l) <rows> ............................. Show <rows> from product log.
-        Exit, Quit (-q) ............................. Quit the program.
+        About (-a) .................................. Show the about information.
+        Exit, Quit (-q) ............................. Quit the application.
+    `);
+}
+
+function about() {
+    console.info(`
+        * ================================================================= *
+        |                                                                   |
+        |   The Eshop application is created by Daniel Andersson, daap19.   |
+        |   This application is the final and examinating project for the   |
+        |   course database technology DV1606 at Blekinge Institute         |
+        |   of Technology.                                                  |
+        |                                                                   |
+        |   E-shop terminal comand loop is one part of the project and      |
+        |   the other part is a webbapplication that works with the same    |
+        |   database and data.                                              |
+        |                                                                   |
+        * ================================================================= *
     `);
 }

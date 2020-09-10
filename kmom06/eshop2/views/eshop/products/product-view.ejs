@@ -7,15 +7,22 @@
 
     <% for (const row of res) { %>
         <div class="productContainer">
-            <h3 class="productContainer--header"><%= row.name %></h2>
-            <p class="productContainer--id"><%= row.id %></p>
-            <p class="productContainer--paragraph"><%= row.info %></p>
-            <p class="productContainer--price"><%= row.price %> kr </p>
-
-            <div class="productContainer--crud">
-                <a href="./../updateProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
-                <a href="./../deleteProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
-            </div>  
+            <div class="productContainer__product">
+                <h3 class="productContainer__product--header"><%= row.name %></h2>
+                <img src="<%= row.picture %>" alt="<%= row.alt %>" class="productContainer__product--image">
+                <p class="productContainer__product--imageText"><%= row.text %></p>
+                <div class="productContainer__product__info">
+                    <p class="productContainer__product__info--info"><%= row.info %></p>
+                    <p class="productContainer__product__info--types"><%= row.types %></p>
+                    <p class="productContainer__product__info--id">Produktnummer <%= row.id %></p>
+                    <p class="productContainer__product__info--amount">I lager <%= row.amount %>st</p>
+                    <p class="productContainer__product__info--price"><%= row.price %> kr </p>
+                </div>
+                <div class="productContainer__product--crud">
+                    <a href="./../updateProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--update">Update</a>
+                    <a href="./../deleteProduct/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Delete</a>
+                </div>
+            </div>
         </div>
     <% }; %>
 
