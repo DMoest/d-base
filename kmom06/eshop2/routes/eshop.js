@@ -61,7 +61,7 @@ router.get("/product/:id", async (req, res) => {
 
 // Product categories
 router.get("/productCategories", async (req, res) => {
-    // console.log("* PRODUCT CATEGORIES ROUTE (GET)");
+    console.log("* PRODUCT CATEGORIES ROUTE (GET)");
 
     let data = {
         title: "Product categories | E-shop",
@@ -70,6 +70,27 @@ router.get("/productCategories", async (req, res) => {
 
     res.render("eshop/products/product-categories", data);
 });
+
+
+router.get("/productCategory/:type", async (res, req) => {
+    console.log(`ROUTE PRODUCT CATEGORY ${res.params.type}`);
+    
+    let type = res.params.type;
+    
+    console.log("res.params.type", res.params.type);
+    console.log("req.params.type", req.params);
+
+    let data = {
+        title: `Product category ${type} | E-Shop`,
+        type: type,
+        res: await myFunctions.getProductsOfType(type)
+    };
+
+    console.log("*** DATA: ", data);
+
+    res.render("eshop/products/product-type", data);
+});
+
 
 // Search products
 router.get("/searchProducts", async (req, res) => {
@@ -308,5 +329,80 @@ router.get("/about", async (req, res) => {
 
     res.render("eshop/about/about", data);
 });
+
+
+
+// * ----- LOG ----- *
+router.get("/log", async (req, res) => {
+    let limit = 20;
+
+    let data = {
+        title: "Log product events | Eshop",
+        res: await myFunctions.getRowsFromProductLog(limit)
+    };
+
+    res.render("eshop/log/log-products", data);
+});
+
+
+
+
+
+
+router.get("/logSearch", async (req, res) => {
+    let data = {
+        title: "Search log product events | Eshop",
+    };
+
+    res.render("eshop/log/log-products", data);
+});
+
+// Search in product log.
+router.post("/logSearch", urlencodedParser, async (req, res) => {
+    console.log("LOG SEARCH");
+
+    let limit = req.body.search;
+
+    let data = {
+        title: "Search log product events | Eshop",
+        res: await myFunctions.searchInProductLog(req.body.search)
+    };
+
+    res.render("eshop/log/log-products", data);
+});
+
+
+
+
+
+
+
+
+
+// Search products
+router.get("/searchProducts", async (req, res) => {
+    // console.log("* SEARCH PRODUCTS ROUTE (POST)");
+
+    let data = {
+        title: "Search products | E-shop"
+    };
+
+    res.render("eshop/products/product-catalog", data);
+});
+
+router.post("/searchProducts", urlencodedParser, async (req, res) => {
+    // console.log("* SEARCH PRODUCTS ROUTE (POST)");
+
+    console.log("req.body.search: ", req.body.search);
+
+    let data = {
+        title: "Show search products | E-shop",
+        res: await myFunctions.searchProduct(req.body.search)
+    };
+
+    res.render("eshop/products/product-catalog", data);
+});
+
+
 
 module.exports = router;

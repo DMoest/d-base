@@ -1,0 +1,38 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-5.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Produkter</h1>
+</div>
+
+<p class="view__text--paragraph"></p>
+
+
+
+<div id="productsGrid" class="products">
+
+    <% for (const row of res[0]) { %>
+        <div class="products__container">
+            <img src="<%= row.picture %>" alt="<%= row.alt %>" class="products__container__image"/>
+            <div class="products__container__info">
+                <p class="products__container__info--name"><%= row.name %></p>
+                <p class="products__container__info--id">Prodnr. <%= row.id %></p>
+                <p class="products__container__info--types"><%= row.types %></p>
+                <p class="products__container__info--info"><%= row.info %></p>
+                <p class="products__container__info--amount">Antal i lager <%= row.amount %> st </p>
+                <p class="products__container__info--price">Pris <%= row.price %> kr </p>
+            </div>
+            <div class="products__container__btn">
+                <a href="product/<%= row.id %>" class="products__container__info--btn">Se produkten</a>
+            </div>
+        </div>
+    <% }; %>
+
+</div>
+
+
+
+<!-- Check your RowDataPackages -->
+<pre><%= JSON.stringify(res, null, 4) %></pre>
+
+<%- include ("./../../partials/footer") %>

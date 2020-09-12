@@ -1,0 +1,41 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-5.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Produktlogg</h1>
+</div>
+
+<p class="view__text--paragraph">Här är en lista på alla registrerade produkter i eshopen. Var god se er omkring kanske gillar ni något. Vi presenterar listan med id, namn, kategori, information & pris. Hittar ni inte vad ni letar efter kanske sökfunktionen kan hjälpa till.</p>
+
+<!-- Search form for products -->
+<form method="post" action="/eshop/logSearch" class="products__searchForm">
+    <label for="search" class="products__searchForm--label">Sök i aktivitetsloggen</label>
+    <input type="text" name="search" class="products__searchForm--input"/>
+    <input type="submit" value="Sök" class="products__searchForm--BTN" />
+</form>
+
+<table class="productLog">
+    <tr class="productLog__tableHeader">
+        <th class="productLog__tableHeader--id">ID</th>
+        <th class="productLog__tableHeader--product">Produkt</th>
+        <th class="productLog__tableHeader--time">Datum & Tid</th>
+        <th class="productLog__tableHeader--activity">Aktivitet</th>
+        <th class="productLog__tableHeader--before">Före</th>
+        <th class="productLog__tableHeader--after">Efter</th>
+    </tr>
+    <% for (const row of res[0]) { %>
+        <tr class="productLog__tableData">
+            <td class="productLog__tableData--id"><%= row.id %></td>
+            <td class="productLog__tableData--product"><%= row.product %></td>
+            <td class="productLog__tableData--time"><%= row.time %></td>
+            <td  class="productLog__tableData--activity"><%= row.activity %></td>
+            <td  class="productLog__tableData--before"><%= row.before %></td>
+            <td  class="productLog__tableData--after"><%= row.after %></td>
+        </tr>
+    <% }; %>
+</table>
+
+<!-- Check your RowDataPackages -->
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

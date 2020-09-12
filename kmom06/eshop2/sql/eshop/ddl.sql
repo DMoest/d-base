@@ -43,9 +43,11 @@ drop procedure if exists create_product;
 drop procedure if exists update_product;
 drop procedure if exists delete_product;
 drop procedure if exists give_category_to_product;
+drop procedure if exists get_products_of_type;
 drop procedure if exists search_products;
 drop procedure if exists show_full_product_log;
 drop procedure if exists show_rows_from_product_log;
+drop procedure if exists search_product_log;
 drop procedure if exists show_inventory;
 drop procedure if exists show_all_shelves;
 drop procedure if exists search_inventory;
@@ -315,7 +317,6 @@ create table log_products
     `id` int unique auto_increment not null,
     `product` int not null,
     `time` timestamp default current_timestamp not null,
-    `date` date not null,
     `activity` varchar(200) not null,
     `before` varchar(250) not null,
     `after` varchar(250) not null,
@@ -657,6 +658,20 @@ $$
 delimiter ;
 
 
+-- Get products belonging to type of product.
+delimiter $$
+create procedure get_products_of_type(
+    input_type varchar(30)
+)
+begin
+select * from v_products
+    where `types` like `input_type`;
+end
+$$
+delimiter ;
+
+
+-- Give a category to product:
 delimiter $$
 create procedure give_category_to_product(
     product_id int,
@@ -692,7 +707,6 @@ begin
             product = i_search or
             name = i_search or
             position = i_search;
-
 end
 $$
 delimiter ;
@@ -1000,6 +1014,25 @@ end
 $$
 delimiter ;
 
+-- Search products:
+delimiter $$
+create procedure search_product_log(
+    input_search varchar(500)
+)
+begin
+    select * 
+    from v_log_products
+        where 
+            `id` like input_search or
+            `product` like input_search or
+            `activity` like input_search or
+            `before` like input_search or
+            `after` like input_search
+        order by `id` asc;
+end
+$$
+delimiter ;
+
 
 
 -- --------------------------------------------------
@@ -1013,8 +1046,8 @@ create trigger log_product_insert
 after insert
 on products
     for each row
-        insert into log_products (`product`, `date`, `time`, `activity`, `before`, `after`)
-            values (new.id, curdate(), current_timestamp(), "TRIGGER - New product was registered.", "Empty", concat("New product -> ID: ", new.id, " NAME: ", new.name));
+        insert into log_products (`product`, `time`, `activity`, `before`, `after`)
+            values (new.id, current_timestamp(), "TRIGGER - New product was registered.", "Empty", concat("New product -> ID: ", new.id, " NAME: ", new.name));
 
 -- Delete product:
 delimiter $$
@@ -1023,8 +1056,8 @@ after delete
 on products
     for each row
 begin
-    insert into log_products (`product`, `date`, `time`, `activity`, `before`, `after`)
-        values (old.id, curdate(), current_timestamp(), "TRIGGER - Deleted product was registered.", concat("Product -> ID: ", old.id, " NAME: ", old.name, " INFO: ", old.info, " PRICE: ", old.price), "Deleted");
+    insert into log_products (`product`, `time`, `activity`, `before`, `after`)
+        values (old.id, current_timestamp(), "TRIGGER - Deleted product was registered.", concat("Product -> ID: ", old.id, " NAME: ", old.name, " INFO: ", old.info, " PRICE: ", old.price), "Deleted");
 end
 $$
 delimiter ;
@@ -1036,8 +1069,8 @@ after update
 on products
     for each row
 begin
-insert into log_products (`product`, `date`, `time`, `activity`, `before`, `after`)
-    values (old.id, curdate(), current_timestamp(), "TRIGGER - Product was updated.", concat("Old data -> NAME: ", old.name, " INFO: ", old.info, " PRICE: ", old.price), concat("New data -> NAME: ", new.name, " INFO: ", new.info, " PRICE: ", new.price));
+insert into log_products (`product`, `time`, `activity`, `before`, `after`)
+    values (old.id, current_timestamp(), "TRIGGER - Product was updated.", concat("Old data -> NAME: ", old.name, " INFO: ", old.info, " PRICE: ", old.price), concat("New data -> NAME: ", new.name, " INFO: ", new.info, " PRICE: ", new.price));
 end
 $$
 delimiter ;

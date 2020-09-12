@@ -145,3 +145,66 @@
         }
     }
 }
+
+.productLog {
+    width: 100%;
+    padding: @rythem[standard] 15%;
+
+    &__tableHeader {
+        width: 100%;
+        padding: @rythem[standard] 15%;
+        padding: @rythem[half];
+        background-color: @color__primary--standard;
+
+        &--id,
+        &--product,
+        &--time,
+        &--activity,
+        &--before,
+        &--after {
+            padding: @rythem[half];
+            text-align: center;
+            text-transform: uppercase;
+            color: @color__white;
+        }
+
+        &--id,
+        &--product {
+            width: 7.5%;
+        }
+
+        &--time,
+        &--activity,
+        &--before,
+        &--after {
+            width: 21%;
+        }
+    }
+
+    &__tableData {
+        padding: 0 0 @rythem[quarter];
+
+        &--id,
+        &--product,
+        &--time,
+        &--activity,
+        &--before,
+        &--after {
+            padding: @rythem[quarter];
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        &--id,
+        &--product {
+            text-align: center;
+        }
+
+        &--time,
+        &--activity,
+        &--before,
+        &--after {
+            text-align: left;
+        }
+    }
+}

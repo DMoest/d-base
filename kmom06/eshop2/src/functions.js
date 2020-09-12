@@ -167,6 +167,26 @@ async function getProductCategories() {
 }
 
 /**
+ * Get products in category.
+ * @param   type                Input category.
+ * @async                       Async function.
+ * @returns {RowDataPacket}     Result from query.
+ */
+async function getProductsOfType(type) {
+    console.log("Going to function");
+    let result;
+    let sql = `call get_products_of_type(?);`;
+
+    // type = '%'+type+'%';
+
+    console.log("type: ", type);
+
+    result = await db.query(sql, [type]);
+
+    return result;
+}
+
+/**
  * Create a product.
  * @async
  * @param {string} Id                   A id of the product.
@@ -238,6 +258,8 @@ async function searchProduct(input) {
     return result;
 }
 
+
+/* ----- LOG ----- */
 /**
  * Show details about all product categories.
  * @async
@@ -253,7 +275,7 @@ async function getFullProductLog() {
 }
 
 /**
- * Show details about all product categories.
+ * Show details from product log with limited amount of rows.
  * @async
  * @returns {RowDataPacket}     Resultset from the query.
  */
@@ -265,6 +287,24 @@ async function getRowsFromProductLog(limit) {
 
     return result;
 }
+
+/**
+ * Search details in product activity log.
+ * @async
+ * @returns {RowDataPacket}     Resultset from the query.
+ */
+async function searchInProductLog(search) {
+    let result;
+    let sql = `call search_product_log(?);`;
+
+    search = "%" + search + "%";
+
+    result = await db.query(sql, [search]);
+
+    return result;
+}
+
+
 
 /* ---------- CUSTOMERS ---------- */
 /**
@@ -443,29 +483,38 @@ async function deleteOrder(order) {
 
 module.exports = {
     "getAllFromTable": getAllFromTable,
+
     "getAllProducts": getAllProducts,
     "showProduct": showProduct,
     "createProduct": createProduct,
     "updateProduct": updateProduct,
     "deleteProduct": deleteProduct,
     "searchProduct": searchProduct,
+
+    "getProductsOfType": getProductsOfType,
     "getProductCategories": getProductCategories,
+
     "getProductInventories": getProductInventories,
     "getInventoryShelves": getInventoryShelves,
     "positionProductOnShelf": positionProductOnShelf,
     "removeProductFromShelf": removeProductFromShelf,
     "searchInventory": searchInventory,
+
     "getFullProductLog": getFullProductLog,
     "getRowsFromProductLog": getRowsFromProductLog,
+    "searchInProductLog": searchInProductLog,
+
     "getAllCustomers": getAllCustomers,
+    "getCustomerFromOrder": getCustomerFromOrder,
+
     "getAllOrders": getAllOrders,
+    "createOrder": createOrder,
+    "deleteOrder": deleteOrder,
     "searchOrders": searchOrders,
     "showOrder": showOrder,
-    "getPickingList": getPickingList,
-    "createOrder": createOrder,
+    "placeTheOrder": placeTheOrder,
     "shipOrder": shipOrder,
-    "deleteOrder": deleteOrder,
-    "getCustomerFromOrder": getCustomerFromOrder,
+
+    "getPickingList": getPickingList,
     "addProductToPickingList": addProductToPickingList,
-    "placeTheOrder": placeTheOrder
 };

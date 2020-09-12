@@ -8,19 +8,25 @@
     <h1 class="site__header--title">Produktkategorier</h1>
 </div>
 
-<p class="view__text--paragraph">Här är en lista på alla registrerade produktkategorier lager.</p>
+<p class="view__text--paragraph">Här finner ni alla registrerade produktkategorier.</p>
 
-<table class="productTable">
-    <tr class="productTable__TRs">
-        <th class="productTable__tableHeader productTable__tableHeader--id">Produktkategorier</th>
-        <th class="productTable__tableHeader productTable__tableHeader--id">Antal produkter</th>
-    </tr>
+<div id="productsGrid" class="products">
+
     <% for (const row of res) { %>
-        <tr class="productTable__TRs">
-            <td class="productTable__TDs productTable__TDs--id"><%= row.type %></a></td>
-            <td class="productTable__TDs productTable__TDs--id"><%= row.products %></a></td>
-        </tr>
+        <div class="products__container">
+            <img src="" alt="" class="products__container__image">
+            <div class="products__container__info">
+                <p class="products__container__info--category"><%= row.type %></p>
+                <p class="products__container__info--products">Antal produkter <%= row.products %>st</p>
+
+            </div>
+            <div class="products__container__btn">
+                <a href="productCategory/<%= row.type %>" class="products__container__info--btn">Se innehåll</a>
+            </div>
+        </div>
     <% }; %>
-</table>
+</div>
+
+<pre><%= JSON.stringify(res, null, 4) %></pre>
 
 <%- include ("./../../partials/footer") %>
