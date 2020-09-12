@@ -195,16 +195,32 @@ async function getProductsOfType(type) {
  * @param {string} Price                The price for the product.
  * @returns {void}
  */
-async function createProduct(id, name, info, price, product, type) {
+async function createProduct(id, name, info, price) {
     let result;
     let sql = `call create_product(?, ?, ?, ?);`;
 
-    sql += `call give_category_to_product(?, ?);`;
-
-    result = await db.query(sql, [id, name, info, price, product, type]);
+    result = await db.query(sql, [id, name, info, price]);
 
     return result;
 }
+
+/**
+ * Give category/type to a product.
+ * @async
+ * @param {string} Product                   A id of the product.
+ * @param {string} Type                 The name of the product type/category.
+ * @returns {void}
+ */
+async function giveTypeToProduct(id, type) {
+    let result;
+    let sql = `call give_category_to_product(?, ?);`;
+
+    result = await db.query(sql, [id, type]);
+
+    return result;
+}
+
+
 
 /**
  * Edit details on a product.
@@ -523,6 +539,7 @@ module.exports = {
 
     "getProductsOfType": getProductsOfType,
     "getProductCategories": getProductCategories,
+    "giveTypeToProduct": giveTypeToProduct,
 
     "getProductInventories": getProductInventories,
     "getInventoryShelves": getInventoryShelves,

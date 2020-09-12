@@ -134,7 +134,14 @@ router.post("/createProduct", urlencodedParser, async (req, res) => {
     let price = req.body.price;
     let type = req.body.type;
 
-    await myFunctions.createProduct(id, name, info, price, id, type);
+    type = type.trim();
+    let typeArray = type.split(", ");
+
+    await myFunctions.createProduct(id, name, info, price);
+    
+    await typeArray.forEach( function(type) {
+        myFunctions.giveTypeToProduct(id, type);
+    });
 
     res.redirect("./product");
 });
@@ -343,9 +350,6 @@ router.get("/logProducts", async (req, res) => {
     res.render("eshop/log/log-products", data);
 });
 
-
-
-
 router.get("/logOrders", async (req, res) => {
     let limit = 20;
 
@@ -357,20 +361,15 @@ router.get("/logOrders", async (req, res) => {
     res.render("eshop/log/log-orders", data);
 });
 
-
-
-
-
-
 // Search in product log.
 router.post("/logSearchProducts", urlencodedParser, async (req, res) => {
     console.log("LOG SEARCH");
 
-    let limit = req.body.search;
+    let search = req.body.search;
 
     let data = {
         title: "Search logged product events | Eshop",
-        res: await myFunctions.searchInProductLog(req.body.search)
+        res: await myFunctions.searchInProductLog(search)
     };
 
     res.render("eshop/log/log-products", data);
@@ -380,23 +379,15 @@ router.post("/logSearchProducts", urlencodedParser, async (req, res) => {
 router.post("/logSearchOrders", urlencodedParser, async (req, res) => {
     console.log("LOG SEARCH");
 
-    let limit = req.body.search;
+    let search = req.body.search;
 
     let data = {
         title: "Search logged order events | Eshop",
-        res: await myFunctions.searchInOrdersLog(req.body.search)
+        res: await myFunctions.searchInOrdersLog(search)
     };
 
     res.render("eshop/log/log-orders", data);
 });
-
-
-
-
-
-
-
-
 
 // Search products
 router.get("/searchProducts", async (req, res) => {
