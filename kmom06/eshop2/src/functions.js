@@ -177,7 +177,7 @@ async function getProductsOfType(type) {
     let result;
     let sql = `call get_products_of_type(?);`;
 
-    // type = '%'+type+'%';
+    type = '%'+type+'%';
 
     console.log("type: ", type);
 
@@ -289,6 +289,20 @@ async function getRowsFromProductLog(limit) {
 }
 
 /**
+ * Show details from product log with limited amount of rows.
+ * @async
+ * @returns {RowDataPacket}     Resultset from the query.
+ */
+async function getRowsFromOrderLog(limit) {
+    let result;
+    let sql = `call show_rows_from_order_log(?);`;
+
+    result = await db.query(sql, [limit]);
+
+    return result;
+}
+
+/**
  * Search details in product activity log.
  * @async
  * @returns {RowDataPacket}     Resultset from the query.
@@ -296,6 +310,22 @@ async function getRowsFromProductLog(limit) {
 async function searchInProductLog(search) {
     let result;
     let sql = `call search_product_log(?);`;
+
+    search = "%" + search + "%";
+
+    result = await db.query(sql, [search]);
+
+    return result;
+}
+
+/**
+ * Search details in product activity log.
+ * @async
+ * @returns {RowDataPacket}     Resultset from the query.
+ */
+async function searchInOrdersLog(search) {
+    let result;
+    let sql = `call search_order_log(?);`;
 
     search = "%" + search + "%";
 
@@ -503,6 +533,8 @@ module.exports = {
     "getFullProductLog": getFullProductLog,
     "getRowsFromProductLog": getRowsFromProductLog,
     "searchInProductLog": searchInProductLog,
+    "getRowsFromOrderLog": getRowsFromOrderLog,
+    "searchInOrdersLog": searchInOrdersLog,
 
     "getAllCustomers": getAllCustomers,
     "getCustomerFromOrder": getCustomerFromOrder,

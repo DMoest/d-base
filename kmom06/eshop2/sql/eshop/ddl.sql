@@ -30,6 +30,7 @@ drop view if exists v_product;
 drop view if exists v_product_categories;
 drop view if exists v_inventory;
 drop view if exists v_log_products;
+drop view if exists v_log_orders;
 drop view if exists v_customers;
 drop view if exists v_orders;
 drop view if exists v_picking_lists;
@@ -47,7 +48,9 @@ drop procedure if exists get_products_of_type;
 drop procedure if exists search_products;
 drop procedure if exists show_full_product_log;
 drop procedure if exists show_rows_from_product_log;
+drop procedure if exists show_rows_from_order_log;
 drop procedure if exists search_product_log;
+drop procedure if exists search_order_log;
 drop procedure if exists show_inventory;
 drop procedure if exists show_all_shelves;
 drop procedure if exists search_inventory;
@@ -407,12 +410,20 @@ from inventory as i
         on i.product = p.id
 ;
 
--- A easier view for inventory:
+-- A easier view for product log:
 create view v_log_products
 as
 select
     *
 from log_products
+;
+
+-- A easier view for product log:
+create view v_log_orders
+as
+select
+    *
+from log_orders
 ;
 
 -- Products view:
@@ -1014,6 +1025,19 @@ end
 $$
 delimiter ;
 
+-- Show product log history:
+delimiter $$
+create procedure show_rows_from_order_log(
+    l_limit int
+)
+begin
+select * from v_log_orders
+    order by 'time' desc
+    limit l_limit;
+end
+$$
+delimiter ;
+
 -- Search products:
 delimiter $$
 create procedure search_product_log(
@@ -1025,6 +1049,27 @@ begin
         where 
             `id` like input_search or
             `product` like input_search or
+            `activity` like input_search or
+            `before` like input_search or
+            `after` like input_search
+        order by `id` asc;
+end
+$$
+delimiter ;
+
+-- Search orders:
+delimiter $$
+create procedure search_order_log(
+    input_search varchar(500)
+)
+begin
+    select * 
+    from v_log_orders
+        where 
+            `id` like input_search or
+            `order` like input_search or
+            `customer` like input_search or
+            `time` like input_search or
             `activity` like input_search or
             `before` like input_search or
             `after` like input_search

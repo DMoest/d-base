@@ -9,31 +9,31 @@
 
 <!-- Table of products -->
 <table class="productTable">
-    <tr class="productTable__TRs">
-        <th class="productTable__tableHeader productTable__tableHeader--id">Prod.nr.</th>
-        <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
-        <th class="productTable__tableHeader productTable__tableHeader--types">Kategori</th>
-        <th class="productTable__tableHeader productTable__tableHeader--info">Information</th>
-        <th class="productTable__tableHeader productTable__tableHeader--price">Pris</th>
-        <th class="productTable__tableHeader productTable__tableHeader--amount">I lager</th>
-        <th class="productTable__tableHeader productTable__tableHeader--items">Antal</th>
-        <th class="productTable__tableHeader productTable__tableHeader--addProduct">Lägg till</th>
+    <tr class="productTable__tableHeader">
+        <th class="productTable__tableHeader--id">Prod.nr.</th>
+        <th class="productTable__tableHeader--name">Namn</th>
+        <th class="productTable__tableHeader--types">Kategori</th>
+        <th class="productTable__tableHeader--info">Information</th>
+        <th class="productTable__tableHeader--price">Pris</th>
+        <th class="productTable__tableHeader--amount">I lager</th>
+        <th class="productTable__tableHeader--items">Antal</th>
+        <th class="productTable__tableHeader--addProduct">Lägg till</th>
     </tr>
     <% for (const row of res[0]) { %>
-        <tr class="productTable__TRs">
-            <td class="productTable__TDs productTable__TDs--id">
+        <tr class="productTable__tableData">
+            <td class="productTable__tableData--id">
                 <a href="product/<%= row.id %>"><%= row.id %></a>
             </td>
-            <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
-            <td class="productTable__TDs productTable__TDs--types"><%= row.types %></td>
-            <td  class="productTable__TDs productTable__TDs--info"><%= row.info %></td>
-            <td  class="productTable__TDs productTable__TDs--price"><%= row.price %> kr</td>
-            <td  class="productTable__TDs productTable__TDs--amount"><%= row.amount %> st</td>
-            <td  class="productTable__TDs productTable__TDs--items">
+            <td class="productTable__tableData--name"><%= row.name %></td>
+            <td class="productTable__tableData--types"><%= row.types %></td>
+            <td  class="productTable__tableData--info"><%= row.info %></td>
+            <td  class="productTable__tableData--price"><%= row.price %> kr</td>
+            <td  class="productTable__tableData--amount"><%= row.amount %> st</td>
+            <td  class="productTable__tableData--items">
                 <form method="post" action="/eshop/<%= order.toString(); %>/addProduct/<%= row.id %>">
                     <input type="number" id="amount" name="amount" min="0" max="<%= row.amount %>" value="0" class="productTable__TDs--itemsInput">
             </td>
-            <td  class="productTable__TDs productTable__TDs--addProduct">
+            <td  class="productTable__tableData--addProduct">
                     <input type="hidden" id="product" name="product" value="<%= row.id %>" class="productTable__TDs--itemsInput">
                     <input type="submit" value="lägg till" class="CRUD__smallBTN CRUD__smallBTN--create">
                 </form>

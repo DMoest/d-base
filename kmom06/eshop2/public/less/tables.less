@@ -21,11 +21,11 @@
         font-weight: @font__weight[subStandard];
         text-transform: uppercase;
         text-align: center;
-        color: @color__white;
+        color: @color__font--light;
         background-color: @color__primary--standard;
     }
 
-    &__TDs {
+    &__tableData {
         height: 100%;
         width: 100%;
         padding: 0.5rem;
@@ -36,31 +36,16 @@
             text-align: center;
         }
 
-        &--customerID {
-            width: 2.5%;
-            text-align: center;
-        }
-
         &--name {
             width: 10%;
             text-align: left;
         }
 
-        &--phone {
-            width: 2.5%;
-            text-align: right;
-        }
-        
-        &--email {
+        &--types {
             width: 5%;
             text-align: left;
         }
 
-        &--pickingL {
-            width: 2.5%;
-            text-align: center;
-        }
-        
         &--info {
             width: 20%;
             text-align: left;
@@ -69,11 +54,6 @@
         &--price {
             width: 5%;
             text-align: center;
-        }
-
-        &--types {
-            width: 5%;
-            text-align: left;
         }
 
         &--amount {
@@ -101,14 +81,78 @@
             gap: 1rem;
         }
 
-        &--addOrder {
-            width: 5%;
-            text-align: center;
-        }
-
         &--addProduct {
             width: 10%;
             text-align: center;
+        }
+    }
+}
+
+.orderTable {
+    width: 100%;
+    padding: @rythem[standard] 10%;
+
+    &__tableHeader {
+        width: 100%;
+        padding: @rythem[half];
+        background-color: @color__primary--standard;
+
+        &--id,
+        &--customer,
+        &--name,
+        &--rows,
+        &--created,
+        &--status,
+        &--action {
+            padding: @rythem[half];
+            font-size: @font__size[tableHeader];
+            text-align: center;
+            color: @color__font--light;
+        }
+
+        &--id,
+        &--customer {
+            width: 5%;
+        }
+
+        &--name,
+        &--created {
+            width: 15%;
+        }
+
+        &--rows,
+        &--status {
+            width: 10%;
+        }
+
+        &--action {
+            width: 30%;
+        }
+    }
+
+    &__tableData {
+        padding: 0 0 @rythem[quarter];
+
+        &--id,
+        &--customer,
+        &--rows,
+        &--status,
+        &--action {
+            padding: 0 0 @rythem[quarter];
+            text-align: center;
+            color: @color__font--dark;
+        }
+
+        &--name,
+        &--created {
+            text-align: left;
+        }
+
+        &--actionContainer {
+            display: flex;
+            flex-flow: nowrap row;
+            justify-content: space-between;
+            gap: @rythem[half];
         }
     }
 }
@@ -125,7 +169,7 @@
         font-size: 1.2rem;
         font-weight: @font__weight[subStandard];
         background-color: @color__primary--standard;
-        color: @color__white;
+        color: @color__font--light;
     }
 
     &--data {
@@ -146,18 +190,68 @@
     }
 }
 
-.productLog {
+.customerTable {
     width: 100%;
     padding: @rythem[standard] 15%;
 
     &__tableHeader {
         width: 100%;
-        padding: @rythem[standard] 15%;
+        padding: @rythem[half];
+        background-color: @color__primary--standard;
+
+        &--id,
+        &--name,
+        &--adress,
+        &--email,
+        &--phone,
+        &--addOrder {
+            padding: @rythem[half];
+            text-align: center;
+            text-transform: uppercase;
+            color: @color__font--light;
+        }
+
+        &--id { width: 5%; }
+
+        &--name,
+        &--phone,
+        &--addOrder {
+            width: 15%;
+        }
+
+        &--email { width: 20%; }
+
+        &--adress { width: 30%; }
+    }
+
+    &__tableData {
+        padding: @rythem[quarter];
+
+        &--id,
+        &--phone { text-align: center; }
+
+        &--name,
+        &--adress,
+        &--email,
+        &--addOrder {
+            text-align: left;
+        }
+    }
+}
+
+.activityLog {
+    width: 100%;
+    padding: @rythem[standard] 15%;
+
+    &__tableHeader {
+        width: 100%;
         padding: @rythem[half];
         background-color: @color__primary--standard;
 
         &--id,
         &--product,
+        &--order,
+        &--customer,
         &--time,
         &--activity,
         &--before,
@@ -165,12 +259,18 @@
             padding: @rythem[half];
             text-align: center;
             text-transform: uppercase;
-            color: @color__white;
+            color: @color__font--light;
         }
 
-        &--id,
-        &--product {
-            width: 7.5%;
+        &--id {
+            width: 2.5%;
+        }
+
+
+        &--product,
+        &--order,
+        &--customer {
+            width: 5%;
         }
 
         &--time,
@@ -192,11 +292,12 @@
         &--after {
             padding: @rythem[quarter];
             text-align: left;
-            text-transform: uppercase;
         }
 
         &--id,
-        &--product {
+        &--product,
+        &--order,
+        &--customer {
             text-align: center;
         }
 

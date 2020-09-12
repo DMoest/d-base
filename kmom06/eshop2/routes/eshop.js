@@ -71,14 +71,9 @@ router.get("/productCategories", async (req, res) => {
     res.render("eshop/products/product-categories", data);
 });
 
-
-router.get("/productCategory/:type", async (res, req) => {
-    console.log(`ROUTE PRODUCT CATEGORY ${res.params.type}`);
-    
-    let type = res.params.type;
-    
-    console.log("res.params.type", res.params.type);
-    console.log("req.params.type", req.params);
+// Single product view
+router.get("/productCategory/:type", async (req, res) => {
+    let type = req.params.type;
 
     let data = {
         title: `Product category ${type} | E-Shop`,
@@ -86,10 +81,14 @@ router.get("/productCategory/:type", async (res, req) => {
         res: await myFunctions.getProductsOfType(type)
     };
 
-    console.log("*** DATA: ", data);
-
     res.render("eshop/products/product-type", data);
 });
+
+
+
+
+
+
 
 
 // Search products
@@ -333,7 +332,7 @@ router.get("/about", async (req, res) => {
 
 
 // * ----- LOG ----- *
-router.get("/log", async (req, res) => {
+router.get("/logProducts", async (req, res) => {
     let limit = 20;
 
     let data = {
@@ -347,28 +346,48 @@ router.get("/log", async (req, res) => {
 
 
 
+router.get("/logOrders", async (req, res) => {
+    let limit = 20;
 
-
-router.get("/logSearch", async (req, res) => {
     let data = {
-        title: "Search log product events | Eshop",
+        title: "Log product events | Eshop",
+        res: await myFunctions.getRowsFromOrderLog(limit)
+    };
+
+    res.render("eshop/log/log-orders", data);
+});
+
+
+
+
+
+
+// Search in product log.
+router.post("/logSearchProducts", urlencodedParser, async (req, res) => {
+    console.log("LOG SEARCH");
+
+    let limit = req.body.search;
+
+    let data = {
+        title: "Search logged product events | Eshop",
+        res: await myFunctions.searchInProductLog(req.body.search)
     };
 
     res.render("eshop/log/log-products", data);
 });
 
 // Search in product log.
-router.post("/logSearch", urlencodedParser, async (req, res) => {
+router.post("/logSearchOrders", urlencodedParser, async (req, res) => {
     console.log("LOG SEARCH");
 
     let limit = req.body.search;
 
     let data = {
-        title: "Search log product events | Eshop",
-        res: await myFunctions.searchInProductLog(req.body.search)
+        title: "Search logged order events | Eshop",
+        res: await myFunctions.searchInOrdersLog(req.body.search)
     };
 
-    res.render("eshop/log/log-products", data);
+    res.render("eshop/log/log-orders", data);
 });
 
 

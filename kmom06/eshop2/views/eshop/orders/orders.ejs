@@ -8,26 +8,26 @@
 
 <!-- <p class="view__text--paragraph"></p> -->
 
-<table class="productTable">
-    <tr class="productTable__TRs">
-        <th class="productTable__tableHeader productTable__tableHeader--id">Order</th>
-        <th class="productTable__tableHeader productTable__tableHeader--customerID">Kund</th>
-        <th class="productTable__tableHeader productTable__tableHeader--name">Namn</th>
-        <th class="productTable__tableHeader productTable__tableHeader--pickingL">Orderrader</th>
-        <th class="productTable__tableHeader productTable__tableHeader--date">Datum</th>
-        <th class="productTable__tableHeader productTable__tableHeader--status">Status</th>
-        <th class="productTable__tableHeader productTable__tableHeader--action">Ändra</th>
+<table class="orderTable">
+    <tr class="orderTable__tableHeader">
+        <th class="orderTable__tableHeader--id">Order</th>
+        <th class="orderTable__tableHeader--customer">Kund</th>
+        <th class="orderTable__tableHeader--name">Namn</th>
+        <th class="orderTable__tableHeader--rows">Orderrader</th>
+        <th class="orderTable__tableHeader--created">Datum</th>
+        <th class="orderTable__tableHeader--status">Status</th>
+        <th class="orderTable__tableHeader--action">Ändra</th>
     </tr>
     <% for (const row of res[0]) { %>
-        <tr class="productTable__TRs">
-            <td class="productTable__TDs productTable__TDs--id"><%= row.id %></td>
-            <td class="productTable__TDs productTable__TDs--customerID"><%= row.customer %></td>
-            <td class="productTable__TDs productTable__TDs--name"><%= row.name %></td>
-            <td class="productTable__TDs productTable__TDs--pickingL"><%= row.rows %></td>
-            <td  class="productTable__TDs productTable__TDs--date"><%= row.created %></td>
-            <td  class="productTable__TDs productTable__TDs--status"><%= row.status %></td>
-            <td  class="productTable__TDs productTable__TDs--action">
-                <div class="productTable__TDs productTable__TDs--action">
+        <tr class="orderTable__tableData">
+            <td class="orderTable__tableData--id"><%= row.id %></td>
+            <td class="orderTable__tableData--customer"><%= row.customer %></td>
+            <td class="orderTable__tableData--name"><%= row.name %></td>
+            <td class="orderTable__tableData--rows"><%= row.rows %></td>
+            <td  class="orderTable__tableData--created"><%= row.created %></td>
+            <td  class="orderTable__tableData--status"><%= row.status %></td>
+            <td  class="orderTable__tableData--action">
+                <div class="orderTable__tableData--actionContainer">
                     <a href="order/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--create">Översikt</a>
                     <a href="orders-selectProducts/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--link">Hantera</a>
                     <a href="deleteOrder/<%= row.id %>" class="CRUD__smallBTN CRUD__smallBTN--delete">Radera</a>
