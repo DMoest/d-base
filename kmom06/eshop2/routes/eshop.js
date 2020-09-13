@@ -138,7 +138,7 @@ router.post("/createProduct", urlencodedParser, async (req, res) => {
     let typeArray = type.split(", ");
 
     await myFunctions.createProduct(id, name, info, price);
-    
+
     await typeArray.forEach( function(type) {
         myFunctions.giveTypeToProduct(id, type);
     });
@@ -163,8 +163,23 @@ router.get("/updateProduct/:id", async (req, res) => {
 
 router.post("/updateProduct", urlencodedParser, async (req, res) => {
     // console.log("* UPDATE PRODUCT ROUTE (POST)");
+    let id = req.body.id;
+    let type = req.body.types;
+    let name = req.body.name;
+    let info = req.body.info;
+    let price = req.body.price;
 
-    await myFunctions.updateProduct(req.body.id, req.body.name, req.body.info, req.body.price);
+    console.log("*** type: ", type);
+
+    let typeArray = type.split(", ");
+
+    await myFunctions.updateProduct(id, name, info, price);
+
+    await myFunctions.clearProductCategories(id);
+
+    await typeArray.forEach( function(type) {
+        myFunctions.giveTypeToProduct(id, type);
+    });
 
     res.redirect(`./product/${req.body.id}`);
 });

@@ -1,37 +1,178 @@
+/**
+ * Eshop (del2) - Functions.
+ * -------------------------
+ * DV1606 - Databasteknologier för webben
+ * @author Daniel Andersson, DAAP19
+ * -------------------------
+ * Module: src/tables.js
+ */
+
+
 
 /**
  * Print to table.
  * @param {RowDataPacket}
  * @returns {string}
  */
-function orderAsTable(order) {
+function productAsTable(product) {
     let str;
 
     /* eslint-disable */
-    str =  " ID     Namn                   Kategori         Info                            \n";
-    str += " .....  .......                .............    ..............................            +\n";
+    str =  " ID      Namn                             Kategori                              Information                                                                Pris    Antal\n";
+    str += " ...     .......                          ...........                           ..............                                                             ....    .....\n";
     /* eslint-enable */
-    for (const row of order) {
-        str += "| ";
-        str += row.akronym.padEnd(12);
-        str += "| ";
-        str += (row.fornamn + " " + row.efternamn).padEnd(20);
-        str += "| ";
-        str += row.avdelning.padEnd(12);
-        str += "| ";
-        str += row.lon.toString().padStart(11);
-        str += " | ";
-        str += row.kompetens.toString().padStart(11);
-        str += " | ";
-        str += row.fodd.toISOString().slice(0, 10).padStart(15);
-        str += " | \n";
+
+    for (const row of product) {
+        str += " ";
+        str += row.id.toString().padEnd(5);
+        str += "   ";
+        str += row.name.padEnd(30);
+        str += "   ";
+        str += row.types.toString().padEnd(35);
+        str += "   ";
+        str += row.info.substr(0, 69).padEnd(70);
+        str += "   ";
+        str += row.price.toString().padStart(5);
+        str += "     ";
+        str += row.amount.toString().padStart(5);
+        str += " \n";
     }
-    /* eslint-disable */
-    str += "+ ----------- + ------------------- + ----------- + ----------- + ----------- + --------------- +\n";
-    /* eslint-enable */
+    str += "   \n";
+
     return str;
 }
 
+
+/**
+ * Print to table.
+ * @param {RowDataPacket}
+ * @returns {string}
+ */
+function inventoryAsTable(product) {
+    let str;
+
+    /* eslint-disable */
+    str =  " ID      Produkt   Namn                               Antal   Lagerplats    \n";
+    str += " ...     .......   .......                            .....   ............. \n";
+    /* eslint-enable */
+
+    for (const row of product) {
+        str += " ";
+        str += row.id.toString().padEnd(5);
+        str += "   ";
+        str += row.product.toString().padEnd(7);
+        str += "   ";
+        str += row.name.padEnd(30);
+        str += "     ";
+        str += row.amount.toString().padStart(5);
+        str += "   ";
+        str += row.position.padEnd(3);
+        str += " \n";
+    }
+    str += "   \n";
+
+    return str;
+}
+
+
+/**
+ * Print inventory to table.
+ * @param {RowDataPacket}
+ * @returns {string}
+ */
+function categoriesAsTable(input) {
+    let str;
+
+    /* eslint-disable */
+    str =  " Kategori     Antal produkter     \n";
+    str += " ........     ...............     \n";
+    /* eslint-enable */
+
+    for (const row of input) {
+        str += " ";
+        str += row.type.toString().padEnd(15);
+        str += "   ";
+        str += row.products.toString().padStart(10);
+        str += " \n";
+    }
+    str += "   \n";
+
+    return str;
+}
+
+
+/**
+ * Print to table.
+ * @param {RowDataPacket}
+ * @returns {string}
+ */
+function shelfsAsTable(input) {
+    let str;
+
+    /* eslint-disable */
+    str =  " ID      Produkt   Namn                               Lagerplats   Antal   \n";
+    str += " ...     .......   .......                            ..........   .....   \n";
+    /* eslint-enable */
+
+    for (const row of input) {
+        str += " ";
+        str += row.id.toString().padEnd(5);
+        str += "   ";
+        str += row.product.toString().padEnd(7);
+        str += "   ";
+        str += row.name.padEnd(30);
+        str += "     ";
+        str += row.position.padEnd(10);
+        str += "   ";
+        str += row.amount.toString().padStart(5);
+        str += " \n";
+    }
+    str += "   \n";
+
+    return str;
+}
+
+
+
+/**
+ * Print to table.
+ * @param {RowDataPacket}
+ * @returns {string}
+ */
+function log_productsAsTable(product) {
+    let str;
+
+    /* eslint-disable */
+    str =  " ID      Produkt    Datum & Tid                 Aktivitet                                  Före                                                   Efter       \n";
+    str += " ...     .......    ..............              ............                               .......                                                ........    \n";
+    /* eslint-enable */
+
+    for (const row of product) {
+        str += " ";
+        str += row.id.toString().padEnd(5);
+        str += "   ";
+        str += row.product.toString().padEnd(8);
+        str += "   ";
+        str += row.time.toString().substr(0, 24).padEnd(25);
+        str += "   ";
+        str += row.activity.substr(0, 39).padEnd(40);
+        str += "   ";
+        str += row.before.substr(0, 49).padEnd(50);
+        str += "     ";
+        str += row.after.substr(0, 49).padEnd(50);
+        str += " \n";
+    }
+    str += "   \n";
+
+    return str;
+}
+
+
+
 module.exports = {
-    "orderAsTable": orderAsTable
+    "productAsTable": productAsTable,
+    "inventoryAsTable": inventoryAsTable,
+    "categoriesAsTable": categoriesAsTable,
+    "shelfsAsTable": shelfsAsTable,
+    "log_productsAsTable": log_productsAsTable,
 };

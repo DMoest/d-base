@@ -45,6 +45,7 @@ drop procedure if exists update_product;
 drop procedure if exists delete_product;
 drop procedure if exists give_category_to_product;
 drop procedure if exists get_products_of_type;
+drop procedure if exists clear_product_categories;
 drop procedure if exists search_products;
 drop procedure if exists show_full_product_log;
 drop procedure if exists show_rows_from_product_log;
@@ -408,6 +409,8 @@ select
 from inventory as i
     join products as p
         on i.product = p.id
+group by id
+order by id
 ;
 
 -- A easier view for product log:
@@ -436,7 +439,7 @@ select
     p.price,
     group_concat( distinct pt.type separator ", " ) as 'types',
     group_concat( distinct concat(i.section, "-", i.position, "-", i.level) separator ", ") as `stored`,
-    sum( distinct i.amount ) as `amount`,
+    sum( i.amount ) as `amount`,
     pp.picture,
     pp.alt,
     pp.text
@@ -650,6 +653,7 @@ end
 $$
 delimiter ;
 
+
 -- Search products:
 delimiter $$
 create procedure search_products(
@@ -669,7 +673,7 @@ $$
 delimiter ;
 
 
--- Get products belonging to type of product.
+-- Get products belonging to type/category of product.
 delimiter $$
 create procedure get_products_of_type(
     input_type varchar(30)
@@ -677,6 +681,20 @@ create procedure get_products_of_type(
 begin
 select * from v_products
     where `types` like `input_type`;
+end
+$$
+delimiter ;
+
+
+-- Clear types/categories for a product.
+delimiter $$
+create procedure clear_product_categories(
+    input_id int
+)
+begin
+    delete
+    from product_types
+        where `product` = input_id;
 end
 $$
 delimiter ;
@@ -715,9 +733,9 @@ create procedure search_inventory(
 begin
     select * from v_inventory
         where 
-            product = i_search or
-            name = i_search or
-            position = i_search;
+            product like i_search or
+            name like i_search or
+            position like i_search;
 end
 $$
 delimiter ;
@@ -942,6 +960,7 @@ $$
 delimiter ;
 
 
+-- Place an order:
 delimiter $$
 create procedure place_the_order(
     input_order int
@@ -972,6 +991,7 @@ $$
 delimiter ;
 
 
+-- Ship an order:
 delimiter $$
 create procedure ship_order(
     order_id int
@@ -1025,6 +1045,7 @@ end
 $$
 delimiter ;
 
+
 -- Show product log history:
 delimiter $$
 create procedure show_rows_from_order_log(
@@ -1038,7 +1059,8 @@ end
 $$
 delimiter ;
 
--- Search products:
+
+-- Search in products logg:
 delimiter $$
 create procedure search_product_log(
     input_search varchar(500)
@@ -1057,7 +1079,8 @@ end
 $$
 delimiter ;
 
--- Search orders:
+
+-- Search in orders logg:
 delimiter $$
 create procedure search_order_log(
     input_search varchar(500)

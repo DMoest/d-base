@@ -7,6 +7,8 @@
 @import "variables.less";
 @import "mixins.less";
 
+
+
 .site__header {
     text-align: center;
     width: 100%;
@@ -102,7 +104,6 @@
     width: 100%;
 }
 
-
 .orderView {
     width: 100%;
     padding: @rythem[standard] 15%;
@@ -176,7 +177,6 @@
     }
 }
 
-
 .productContainer {
     padding: @rythem[standard] 20%;
     
@@ -190,9 +190,7 @@
         "info image"
         "info image"
         "info imageText"
-        "crud crud"
-        ;
-        gap: @rythem[standard];
+        "crud crud";
 
         &--header {
             text-align: center;
@@ -221,17 +219,16 @@
 
         &__info {
             width: 100%;
-            
             display: inline-block;
             grid-column: 1 / span 2;
             grid-area: info;
-            
+
             &--info {
                 width: 100%;
                 padding-bottom: @rythem[standard];
                 margin: 0;
             }
-            
+
             &--types {
                 width: 100%;
                 padding-bottom: @rythem[standard];
@@ -249,7 +246,7 @@
                 padding-bottom: @rythem[standard];
                 margin: 0;
             }
-            
+
             &--price {
                 width: 100%;
                 padding-bottom: @rythem[standard];
@@ -274,6 +271,5 @@
                 text-align: center;
             }
         }
-
     }
 }

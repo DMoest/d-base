@@ -7,19 +7,19 @@
 
 <h1 class="view__text--header"></h1>
 
-<p class="view__text--paragraph">Skapa en ny produkt genom att fylla i formuläret och tryck på "skapa produkt".</p>
+<p class="view__text--paragraph">Skapa en ny produkt genom att fylla i formuläret och tryck på "skapa produkt". Om produkten tillhör fler kategorier är det möjligt att lägga den till flera kategorier vid skapandet. Exempelvis ange "kategori, kategori, kategori". Det är separationen med ett komma följt av ett mellanslag som möjligör flera kategorier.</p>
 
 <form class="CRUD__form" method="post" action="./createProduct">
     <fieldset class="CRUD__form--fieldset">
-        <legend>Product details</legend>
+        <legend>Produktinformation</legend>
 
         <label for="id" class="CRUD__form--label">Id:</label>
         <input id="id" type="text" name="id" class="CRUD__form--input" placeholder="Produkens ID">
 
-        <label for="name" class="CRUD__form--label">Name:</label>
+        <label for="name" class="CRUD__form--label">Namn:</label>
         <input id="name" type="text" name="name" class="CRUD__form--input" placeholder="Produktnamn">
         
-        <label for="type" class="CRUD__form--label">Type:</label>
+        <label for="type" class="CRUD__form--label">Kategori:</label>
         <input id="type" type="text" name="type" class="CRUD__form--input" placeholder="Kategori">
 
         <label for="info" class="CRUD__form--label">Info:</label>

@@ -16,19 +16,22 @@
         <label for="id" class="CRUD__form--label">Id:</label>
         <input id="id" type="text" name="id" class="CRUD__form--input"  value="<%= res[0].id %>" readonly>
 
-        <label for="name" class="CRUD__form--label">Name:</label>
+        <label for="name" class="CRUD__form--label">Namn:</label>
         <input id="name" type="text" name="name" class="CRUD__form--input" value="<%= res[0].name %>">
+        
+        <label for="types" class="CRUD__form--label">Kategori:</label>
+        <input id="name" type="text" name="types" class="CRUD__form--input" value="<%= res[0].types %>">
 
         <label for="info" class="CRUD__form--label">Info:</label>
         <input id="info" type="text" name="info" class="CRUD__form--input CRUD__form--inputInfo"  value="<%= res[0].info %>"></input>
 
-        <label for="price" class="CRUD__form--label">Price:</label>
+        <label for="price" class="CRUD__form--label">Pris:</label>
         <input id="price" type="number" step="0.01" name="price" class="CRUD__form--input" value="<%= res[0].price %>">
 
         <input type="submit" name="update" value="Update" class="CRUD__formBTN CRUD__formBTN--update">
     </fieldset>
 </form>
 
-<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+<pre><%= JSON.stringify(res, null, 4) %></pre>
 
 <%- include ("./../../partials/footer") %>

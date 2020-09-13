@@ -25,11 +25,11 @@ id,section,position,level,product,amount
 ,AB,3,3,6,5
 ,AB,4,1,7,7
 ,AB,4,2,8,8
-,AB,4,3,13,0
+,AB,4,3,13,1
 ,AB,5,1,2,3
 ,AB,5,2,2,5
 ,AB,5,3,12,10
-,AC,1,1,,
+,AC,1,1,10,0
 ,AC,1,2,,
 ,AC,1,3,,
 ,AC,2,1,,

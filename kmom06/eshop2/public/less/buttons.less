@@ -4,10 +4,10 @@
  * Module: buttons.less
 */
 
-
-
 @import "variables.less";
 @import "mixins.less";
+
+
 
 // NAVIGATION
 .navigation__button {
@@ -181,7 +181,7 @@
                 transform: translateY(0.04rem);
             }
         }
-        
+
         &--create {
             display: inline-block;
             color: @color__crud--positive;
@@ -244,6 +244,7 @@
     &__selectProducts {
         text-align: center;
         padding: @rythem--standard 15%;
+
         &--btn {
             width: 15rem;
             padding: (@rythem--standard / 2);
@@ -254,7 +255,6 @@
             font-size: 1.25rem;
             color: @color__crud--positive;
             background-color: @color__white;
-            
             border-radius: @border[radius];
             border: @border[thickness] solid @color__crud--positive;
 
@@ -270,7 +270,6 @@
         }
     }
 }
-
 
 .products__container__info--btn {
     bottom: @rythem[standard];
@@ -310,7 +309,6 @@
         color: @color__font--light;
         background-color: @color--link;
     }
-
 
     &:active {
         color: @color__font--light;

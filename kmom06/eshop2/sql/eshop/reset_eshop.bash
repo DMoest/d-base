@@ -105,10 +105,10 @@ loadSqlIntoDB "user" "pass" "dml.sql" "DML describe tables, views, procedures & 
 
 # Backup:
 # --------------------------------------------------
-mysqldump -uuser -ppass eshop > eshop_backup.sql
-echo ">>> MySQL backup from database Eshop to SQL-file 'eshop_backup.sql'."
-echo ">>> file eshop_backup.sql: "
-file eshop_backup.sql
+echo ">>> MySQL backup from database Eshop to SQL-file 'backup.sql'."
+mysqldump -uroot -p --routines --add-drop-database --result-file=backup.sql --databases eshop
+echo ">>> file backup.sql: "
+file backup.sql
 
 # Export av tabeller till individuella filer - Kan jag exportera allt till samma Excel-fil?
 echo ">>> Export of all tables to Excel-files: "

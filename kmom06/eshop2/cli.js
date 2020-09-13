@@ -11,6 +11,7 @@
 
 const readline = require('readline');
 const myFunctions = require("./src/functions.js");
+const myTables = require("./src/tables.js");
 
 /**
  * MAIN FUNCTION - CommandLineLoop to run all functions for database handling.
@@ -48,16 +49,16 @@ const myFunctions = require("./src/functions.js");
                 break;
             case "products":
             case "-p": {
-                let result = await myFunctions.getAllProducts("products");
+                let result = await myFunctions.getAllProducts();
 
-                await console.table(result[0]);
+                await console.info(myTables.productAsTable(result[0]));
                 break;
             }
             case "productcategories":
             case "-pc": {
-                let result = await myFunctions.getProductCategories("product_types");
+                let result = await myFunctions.getProductCategories();
 
-                await console.table(result);
+                await console.info(myTables.categoriesAsTable(result));
                 break;
             }
             case "invadd":
@@ -94,10 +95,13 @@ const myFunctions = require("./src/functions.js");
 
                 if (lineArray.length > 1) {
                     result = await myFunctions.searchInventory(lineArray[1]);
-                    await console.table(result[0]);
+                    // await console.table(result[0]);
+                    await console.info(myTables.inventoryAsTable(result[0]));
                 } else {
                     result = await myFunctions.getProductInventories();
-                    await console.table(result[0]);
+                    // await console.table(result[0]);
+
+                    await console.info(myTables.inventoryAsTable(result[0]));
                 }
                 break;
             }
@@ -108,10 +112,21 @@ const myFunctions = require("./src/functions.js");
 
                 if (lineArray.length > 1) {
                     result = await myFunctions.getRowsFromProductLog(lineArray[1]);
-                    await console.table(result[0]);
+                    await console.info(myTables.log_productsAsTable(result[0]));
                 } else {
                     result = await myFunctions.getFullProductLog();
+                    await console.info(myTables.log_productsAsTable(result[0]));
+                }
+                break;
+            }
+            case "logsearch": {
+                let result;
+
+                if (lineArray.length > 1) {
+                    result = await myFunctions.searchInProductLog(lineArray[1]);
                     await console.table(result[0]);
+                } else {
+                    console.info("You need to enter a search string to find a matching product.");
                 }
                 break;
             }
@@ -148,7 +163,7 @@ const myFunctions = require("./src/functions.js");
                 // console.info("* SHELF");
                 let result = await myFunctions.getInventoryShelves();
 
-                await console.table(result[0]);
+                await console.info(myTables.shelfsAsTable(result[0]));
                 break;
             }
             case "ship": {

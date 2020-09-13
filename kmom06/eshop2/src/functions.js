@@ -62,7 +62,7 @@ async function getAllProducts() {
  */
 async function getProductInventories() {
     let result;
-    let sql = `call show_all_products();`;
+    let sql = `call show_inventory();`;
 
     result = await db.query(sql);
 
@@ -79,6 +79,8 @@ async function getProductInventories() {
 async function searchInventory(input) {
     let result;
     let sql = `call search_inventory(?);`;
+
+    input = "%"+input+"%";
 
     result = await db.query(sql, [input]);
 
@@ -220,6 +222,15 @@ async function giveTypeToProduct(id, type) {
     return result;
 }
 
+
+async function clearProductCategories(id) {
+    let result;
+    let sql = `call clear_product_categories(?);`;
+
+    result = await db.query(sql, [id]);
+
+    return result;
+}
 
 
 /**
@@ -540,6 +551,7 @@ module.exports = {
     "getProductsOfType": getProductsOfType,
     "getProductCategories": getProductCategories,
     "giveTypeToProduct": giveTypeToProduct,
+    "clearProductCategories": clearProductCategories,
 
     "getProductInventories": getProductInventories,
     "getInventoryShelves": getInventoryShelves,
