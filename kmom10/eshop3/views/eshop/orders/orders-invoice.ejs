@@ -1,0 +1,107 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-14.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Plocklista</h1>
+</div>
+
+<p class="view__text--paragraph">Här är plocklistan för ordern <%= res[0].id %></p>
+
+<div class="orderView">
+    <h4 class="orderView--subHeader">Kund:</h4>
+        <% for (const cust of customer[0]) { %>
+            <div class="orderView__customer">
+                <div class="orderView__customer--label">
+                    <p class="orderView__customer--label">Namn: </p>
+                    <p class="orderView__customer--label">Adress: </p>
+                    <p class="orderView__customer--label">Postnummer, ort: </p>
+                    <p class="orderView__customer--label">Land: </p>
+                    <p class="orderView__customer--label">E-Mail: </p>
+                    <p class="orderView__customer--label">Födelsedag: </p>
+                </div>
+                <div class="orderView__customer--details">
+                    <p class="orderView__customer--firstname"><%= cust.firstname %> <%= cust.lastname %></p>
+                    <p class="orderView__customer--lastname"></p>
+                    <p class="orderView__customer--street"><%= cust.street %> <%= cust.number %></p>
+                    <p class="orderView__customer--code"><%= cust.post_code %> <%= cust.city %></p>
+                    <p class="orderView__customer--country"><%= cust.country %></p>
+                    <p class="orderView__customer--email"><%= cust.email %> </p>
+                    <p class="orderView__customer--birthday"><%= cust.birthday.getFullYear() %>-<%= cust.birthday.getMonth()%>-<%= cust.birthday.getDate() %></p>
+                </div>
+            </div>
+        <% }; %>
+
+    <h4 class="orderView--subHeader">Order:</h4>
+        <% for (const order of res) { %>
+            <div class="orderView__details">
+                <div class="orderView__details--label">
+                    <p class="orderView__details--label">Ordernummer: </p>
+                    <p class="orderView__details--label">Kundnummer: </p>
+                    <p class="orderView__details--label">Skapad: </p>
+                    <p class="orderView__details--label">Antal orderrader: </p>
+                    <p class="orderView__details--label">Status: </p>
+                    <p class="orderView__details--label">Betald: </p>
+                    <p class="orderView__details--label">Plockad: </p>
+                    <p class="orderView__details--label">Skickad: </p>
+                </div>
+                <div class="orderView__details--details">
+                    <p class="orderView__details--id"><%= order.id %></p>
+                    <p class="orderView__details--customer"><%= order.customer %></p>
+                    <p class="orderView__details--created"><%=order.created.getFullYear()+"-"+order.created.getMonth()+"-"+order.created.getDate()%></p>
+                    <p class="orderView__details--rows"><%= order.rows %></p>
+                    <p class="orderView__details--status"><%= order.status %></p>
+                    <p class="orderView__details--status"><%= order.payment %></p>
+                    <p class="orderView__details--status"><%= order.picked %></p>
+                </div>
+            </div>
+        <% }; %>
+
+    <!-- Table of products -->
+    <table class="productTable">
+        <tr class="productTable__tableHeader">
+            <th class="productTable__tableHeader--id">ID</th>
+            <th class="productTable__tableHeader--name">Namn</th>
+            <th class="productTable__tableHeader--product">Produkt</th>
+            <th class="productTable__tableHeader--info">Information</th>
+            <th class="productTable__tableHeader--position">Lagerplats</th>
+            <th class="productTable__tableHeader--amount">Antal</th>
+            <th class="productTable__tableHeader--stored">I lager</th>
+            <th class="productTable__tableHeader--stored">Pris</th>
+        </tr>
+
+        <% let totalPrice = 0; %>
+        <% for (const row of picklist) { %>
+            <tr class="productTable__tableData">
+                <td class="productTable__tableData--id">
+                    <a href="product/<%= row.id %>"><%= row.id %></a>
+                </td>
+                <td class="productTable__tableData--name"><%= row.name %></td>
+                <td class="productTable__tableData--product"><%= row.product %></td>
+                <td  class="productTable__tableData--info"><%= row.info %></td>
+                <td  class="productTable__tableData--position"><%= row.position %></td>
+                <td  class="productTable__tableData--amount"><%= row.amount %> st</td>
+                <td  class="productTable__tableData--stored"><%= row.stored %> st</td>
+                <td  class="productTable__tableData--stored"><%= row.price %> st</td>
+            </tr>
+
+        <% totalPrice += row.price %>
+
+        <% console.log("totalPrice: ", totalPrice); %>
+        <% }; %>
+    </table>
+    <div class="productTable__tableFooter--container">
+        <p class="productTable__tableFooter--label">pris totalt:</td>
+        <p class="productTable__tableFooter--price"><%= totalPrice %> kr </td>
+    </div>
+</div>
+
+
+<!-- <p>Här är CUSTOMER:</p> -->
+<!-- <pre><%= JSON.stringify(customer, null, 4) %></pre> -->
+<!-- <p>Här är PICKLIST:</p> -->
+<!-- <pre><%= JSON.stringify(picklist, null, 4) %></pre> -->
+<!-- <p>Här är ORDER:</p> -->
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+
+<%- include ("./../../partials/footer") %>

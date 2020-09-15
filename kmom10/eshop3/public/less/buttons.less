@@ -1,0 +1,320 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: buttons.less
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+// NAVIGATION
+.navigation__button {
+    width: auto;
+    padding: @rythem[quarter];
+    font-size: 1rem;
+    color: @color__primary--standard;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: @font__family[navigation];
+    font-weight: @font__weight[button];
+    border-radius: @border[radius];
+    cursor: pointer;
+    transition: 0.2s all;
+
+    &:hover {
+        color: @color__primary--light;
+    }
+}
+
+.CRUD {
+    // FORM BUTTONS:
+    &__formBTN {
+        width: 100%;
+        margin: 1rem auto;
+        padding: 0.75rem 1rem;
+        display: block;
+        font-family: @font__family[navigation];
+        font-weight: @font__weight[button];
+        font-size: 1.25rem;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: @border[radius];
+        transition: 0.2s all;
+
+        &:active {
+            transition: translateY(0.04rem);
+        }
+
+        &--create {
+            color: @color__crud--positive;
+            background-color: #c8e6c9;
+            border: @border[thickness] solid @color__crud--positive;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--positive;
+            }
+
+            &:active,
+            &:focus {
+                color: @color__font--light;
+                background-color: @color__crud--positiveLight;
+                border: @border[thickness] solid @color__crud--positiveLight;
+            }
+        }
+
+        &--update {
+            color: @color__crud--caution;
+            background-color: @color__white;
+            border: @border[thickness] solid @color__crud--caution;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--caution;
+            }
+
+            &:active,
+            &:focus {
+                color: @color__font--light;
+                background-color: @color__crud--cautionLight;
+                border: @border[thickness] solid @color__crud--cautionLight;
+            }
+        }
+
+        &--delete {
+            color: @color__crud--varning;
+            background-color: #ffcdd2;
+            border: @border[thickness] solid @color__crud--varning;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--varning;
+            }
+
+            &:active,
+            &:focus {
+                color: @color__font--light;
+                background-color: @color__crud--varning;
+                border: @border[thickness] solid @color__crud--varning;
+            }
+        }
+    }
+
+    // TABLES BUTTONS
+    &__smallBTN {
+        width: 100%;
+        display: inline-block;
+        padding: @rythem[quarter];
+        font-family: @font__family[navigation];
+        font-weight: @font__weight[button];
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: @border[radius];
+        transition-property: color, background-color, box-shadow, transform;
+        transition-duration: 0.25s, 0.25s, 0.25s, 0.15s;
+        transition-timing-function: ease;
+
+        &--update {
+            color: @color__crud--caution;
+            background-color: @color__white;
+            border: @border[thickness] solid @color__crud--caution;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--caution;
+                box-shadow: inset -0.2rem -0.3rem 0.5rem @color__crud--cautionDark, inset 0.05rem 0.1rem 0.3rem @color__crud--cautionVeryLight;
+                border: @border[thickness] solid @color__crud--caution;
+            }
+
+            &:active {
+                color: @color__font--light;
+                background-color: @color__crud--cautionLight;
+                box-shadow: inset 0.25rem 0.35rem 0.5rem @color__crud--cautionDark;
+                border: @border[thickness] solid @color__crud--cautionLight;
+                transform: translateY(0.04rem);
+            }
+        }
+
+        &--delete {
+            padding: 0.25rem 0.5rem;
+            color: @color__crud--varning;
+            background-color: #ffcdd2;
+            border: @border[thickness] solid @color__crud--varning;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--varning;
+                box-shadow: inset -0.2rem -0.3rem 0.5rem @color__crud--varningDark, inset 0.05rem 0.1rem 0.3rem @color__crud--varningLight;
+                border: @border[thickness] solid @color__crud--varning;
+            }
+
+            &:active {
+                color: @color__font--light;
+                background-color: @color__crud--varningLight;
+                box-shadow: inset 0.25rem 0.35rem 0.5rem @color__crud--varningDark;
+                border: @border[thickness] solid @color__crud--varningLight;
+                transform: translateY(0.04rem);
+            }
+        }
+
+        &--link {
+            padding: 0.25rem 0.5rem;
+            color: #0097a7;
+            background-color: #e0f7fa;
+            border: @border[thickness] solid #0097a7;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: #0097a7;
+                box-shadow: inset -0.2rem -0.3rem 0.5rem #00838f, inset 0.05rem 0.1rem 0.3rem #00acc1;
+                border: @border[thickness] solid #0097a7;
+            }
+
+            &:active {
+                color: @color__font--light;
+                background-color: #00acc1;
+                box-shadow: inset 0.25rem 0.35rem 0.5rem #00838f;
+                border: @border[thickness] solid #00acc1;
+                transform: translateY(0.04rem);
+            }
+        }
+
+        &--create {
+            display: inline-block;
+            color: @color__crud--positive;
+            background-color: #e0f7fa;
+            border: @border[thickness] solid @color__crud--positive;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--positive;
+                box-shadow: inset -0.2rem -0.3rem 0.5rem @color__crud--positiveDark, inset 0.05rem 0.1rem 0.3rem @color__crud--positiveDark;
+                border: @border[thickness] solid @color__crud--positive;
+            }
+
+            &:active {
+                color: @color__font--light;
+                background-color: @color__crud--positiveLight;
+                box-shadow: inset 0.25rem 0.35rem 0.5rem @color__crud--positive;
+                border: @border[thickness] solid @color__crud--positiveDark;
+                transform: translateY(0.04rem);
+            }
+        }
+    }
+}
+
+.products__searchForm--BTN {
+    width: 30%;
+    height: 2rem;
+    padding: 0;
+    margin: auto;
+    display: inline-block;
+    font-family: @font__family[navigation];
+    font-weight: @font__weight[button];
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: @border[radius];
+    transition-property: color, background-color, box-shadow, transform;
+    transition-duration: 0.25s, 0.25s, 0.25s, 0.15s;
+    transition-timing-function: ease;
+    color: @color__crud--positive;
+    background-color: @color__white;
+    border: @border[thickness] solid @color__crud--positive;
+
+    &:hover {
+        color: @color__font--light;
+        background-color: @color__crud--positive;
+        box-shadow: inset -0.2rem -0.3rem 0.5rem @color__crud--positiveDark, inset 0.05rem 0.1rem 0.3rem @color__crud--positiveVeryLight;
+        border: @border[thickness] solid @color__crud--positive;
+    }
+
+    &:active {
+        color: @color__font--light;
+        background-color: @color__crud--positiveLight;
+        box-shadow: inset 0.25rem 0.35rem 0.5rem @color__crud--positiveDark;
+        border: @border[thickness] solid @color__crud--positiveLight;
+        transform: translateY(0.04rem);
+    }
+}
+
+.orders {
+    &__selectProducts {
+        text-align: center;
+        padding: @rythem--standard 15%;
+
+        &--btn {
+            width: 15rem;
+            padding: (@rythem--standard / 2);
+            margin: auto;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            color: @color__crud--positive;
+            background-color: @color__white;
+            border-radius: @border[radius];
+            border: @border[thickness] solid @color__crud--positive;
+
+            &:hover {
+                color: @color__font--light;
+                background-color: @color__crud--positive;
+            }
+
+            &:active {
+                color: @color__font--light;
+                background-color: @color__crud--positiveLight; 
+            }
+        }
+    }
+}
+
+.products__container__info--btn {
+    bottom: @rythem[standard];
+    width: 10rem;
+    padding: @rythem[half];
+    margin: @rythem[standard] auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: @border[thickness] solid @color__primary--standard;
+    border-radius: @border[radius];
+    display: block;
+    color: @color__primary--standard;
+    background-color: @color__grey--veryLight;
+    transition: all 0.25s ease;
+
+    &:hover {
+        color: @color__font--light;
+        background-color: @color__primary--standard;
+    }
+}
+
+.logNavigation__link {
+    width: 100%;
+    padding: @rythem[half];
+    border: @border[thickness] solid @color--link;
+    border-radius: @border[radius];
+    text-align: center;
+    font-size: 1.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: @color--link;
+    display: inline-block;
+    transition: all 0.2s;
+
+    &:hover {
+        color: @color__font--light;
+        background-color: @color--link;
+    }
+
+    &:active {
+        color: @color__font--light;
+        background-color: @color--linkLight;
+        box-shadow: inset 0.25rem 0.35rem 0.5rem @color--linkDark;
+        border: @border[thickness] solid @color--linkLight;
+        transform: translateY(0.04rem);
+    }
+}

@@ -1,0 +1,40 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-4.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Kunder</h1>
+</div>
+
+<p class="view__text--paragraph">Här är en lista på alla registrerade kunder.</p>
+
+<table class="customerTable">
+    <tr class="customerTable__tableHeader">
+        <th class="customerTable__tableHeader--id">ID</th>
+        <th class="customerTable__tableHeader--name">Namn</th>
+        <th class="customerTable__tableHeader--adress">Adress</th>
+        <th class="customerTable__tableHeader--email">Email</th>
+        <th class="customerTable__tableHeader--phone">Phone</th>
+        <th class="customerTable__tableHeader--addOrder">Skapa Order</th>
+    </tr>
+    <% for (const row of res[0]) { %>
+        <tr class="customerTable__tableData">
+            <td class="customerTable__tableData--id"><%= row.id %></td>
+            <td class="customerTable__tableData--name"><%= row.name %></td>
+            <td class="customerTable__tableData--adress"><%= row.adress %></td>
+            <td  class="customerTable__tableData--email"><%= row.email %></td>
+            <td  class="customerTable__tableData--phone"><%= row.phone %></td>
+            <td  class="customerTable__tableData--addOrder">
+                <div class="customerTable__tableData--action">
+                    <form method="post" action="createOrder/<%= row.id %>" class="CRUD__smallBTN">
+                        <input type="text" name="id" value="<%= row.id %>" hidden>
+                        <input type="submit" value="Skapa order" class="CRUD__smallBTN CRUD__smallBTN--create">
+                    </form>
+                </div>  
+            </td>
+        </tr>
+    <% }; %>
+</table>
+
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

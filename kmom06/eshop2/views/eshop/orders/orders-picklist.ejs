@@ -1,0 +1,45 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-14.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Plocklista</h1>
+</div>
+
+<div class="productTable--container">
+    <!-- Table of products -->
+    <table class="productTable">
+        <tr class="productTable__tableHeader">
+            <th class="productTable__tableHeader--id">ID</th>
+            <th class="productTable__tableHeader--name">Namn</th>
+            <th class="productTable__tableHeader--product">Produkt</th>
+            <th class="productTable__tableHeader--info">Information</th>
+            <th class="productTable__tableHeader--position">Lagerplats</th>
+            <th class="productTable__tableHeader--amount">Antal</th>
+            <th class="productTable__tableHeader--stored">I lager</th>
+            <th class="productTable__tableHeader--stored">Lagerdiff.</th>
+        </tr>
+        <% for (const row of order) { %>
+            <tr class="productTable__tableData">
+                <td class="productTable__tableData--id">
+                    <a href="product/<%= row.id %>"><%= row.id %></a>
+                </td>
+                <td class="productTable__tableData--name"><%= row.name %></td>
+                <td class="productTable__tableData--product"><%= row.product %></td>
+                <td  class="productTable__tableData--info"><%= row.info %></td>
+                <td  class="productTable__tableData--position"><%= row.position %></td>
+                <td  class="productTable__tableData--amount"><%= row.amount %> st</td>
+                <td  class="productTable__tableData--stored"><%= row.stored %> st</td>
+                <td  class="productTable__tableData--stored"><%= row.stored - row.amount %> st</td>
+            </tr>
+        <% }; %>
+    </table>
+</div>
+
+<form method="post" action="./picklist/picked" class="navigation__orderView--order">
+    <input type="hidden" name="picklist" value="<%= order.id %>">
+    <input type="submit" class="orders__selectProducts--btn" value="Order plockad">
+</form>
+
+<!-- <pre><%= JSON.stringify(order, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>

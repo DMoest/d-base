@@ -1,0 +1,275 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: container.less
+*/
+
+@import "variables.less";
+@import "mixins.less";
+
+
+
+.site__header {
+    text-align: center;
+    width: 100%;
+    z-index: 200;
+    position: relative;
+
+    &--coverIMG {
+        top: 0;
+        width: 100%;
+        height: 10rem;
+        margin:  0;
+        height: auto;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &--title {
+        width: 100%;
+        position: absolute;
+        top: 15%;
+        color: @color__font--light;
+        text-align: center;
+        font-family: @font__family[title];
+        z-index: 100;
+    }
+}
+
+.cover__image {
+    width: 100%;
+    height: auto;
+}
+
+// Full product catalog view.
+.products {
+    width: 100%;
+    padding: @rythem[standard] 15%;
+    display: grid;
+    grid-gap: @rythem[standard];
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+    &__container {
+        border-radius: @border[radius];
+        background-color: @color__grey--veryLight;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: inset;
+
+        &__image {
+            display: inline-block;
+            width: 100%;
+            border-radius: @border[radius] @border[radius] 0 0;
+        }
+
+        &__info {
+            display: inline-block;
+            width: 100%;
+
+            &--name {
+                padding: @rythem[standard];
+                font-size: 1.4rem;
+                font-style: bold;
+                text-align: center;
+            }
+
+            &--id,
+            &--types,
+            &--info,
+            &--price,
+            &--amount {
+                padding: 0 @rythem[half] @rythem[half];
+                margin: 0;
+            }
+
+            &--category {
+                padding: @rythem[standard];
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: @font__weight[standard];
+            }
+
+            &--products {
+                text-align: center;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+.site__footer {
+    width: 100%;
+}
+
+.orderView {
+    width: 100%;
+    padding: @rythem[standard] 15%;
+    margin: 0;
+
+    &--header {
+        font-size: @font__size[title];
+    }
+
+    &--subHeader {
+        font-size: @font__size[title];
+    }
+
+    &--paragraph {
+        padding: @rythem[standard] 0;
+        margin: 0;
+    }
+
+    &__customer {
+        width: 100%;
+        padding: 0 30% @rythem[standard] 0;
+        margin: 0;
+        display: flex;
+        flex-flow: nowrap row;
+        justify-content: space-between;
+
+        &--label,
+        &--details,
+        &--details p {
+            width: 100%;
+            padding: 0 0 @rythem[quarter];
+            margin: 0;
+        }
+
+        &--firstname,
+        &--lastname,
+        &--street,
+        &--code,
+        &--country,
+        &--email,
+        &--birthday {
+            width: 100%;
+        }
+    }
+
+    &__details {
+        width: 100%;
+        padding: 0 30% @rythem[standard] 0;
+        margin: 0;
+        display: flex;
+        flex-flow: nowrap row;
+        justify-content: space-between;
+
+        &--label,
+        &--details,
+        &--details p {
+            width: 100%;
+            padding: 0 0 @rythem[quarter];
+            margin: 0;
+        }
+
+        &--firstname,
+        &--lastname,
+        &--street,
+        &--code,
+        &--country,
+        &--email,
+        &--birthday {
+            width: 100%;
+        }
+    }
+}
+
+.productContainer {
+    padding: @rythem[standard] 20%;
+    
+    &__product {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: @rythem[standard];
+        grid-template-areas: 
+        "header header"
+        "info image"
+        "info image"
+        "info imageText"
+        "crud crud";
+
+        &--header {
+            text-align: center;
+            padding: @rythem[standard];
+            grid-area: header;
+        }
+
+        &--image {
+            max-width: 30rem;
+            margin: auto;
+            display: inline-block;
+            border-radius: @border[radius];
+            grid-column: 3 / span 2;
+            grid-area: image;
+        }
+
+        &--imageText {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            text-align: center;
+            font-style: italic;
+            grid-area: imageText;
+        }
+
+        &__info {
+            width: 100%;
+            display: inline-block;
+            grid-column: 1 / span 2;
+            grid-area: info;
+
+            &--info {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+
+            &--types {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+
+            &--id {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+
+            &--amount {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+            }
+
+            &--price {
+                width: 100%;
+                padding-bottom: @rythem[standard];
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: @font__weight[standard];
+            }
+        }
+
+        &--crud {
+            grid-area: crud;
+            padding: @rythem[standard];
+            display: flex;
+            flex-direction: row;
+            flex-flow: nowrap;
+            justify-content: space-around;
+            gap: @rythem[standard];
+
+            a {
+                display: inline-block;
+                width: 10rem;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+/**
+ * Eshop
+ * Daniel Andersson (daap19)
+ * Module: base.less
+*/
+
+
+
+@import "variables.less";
+@import "mixins.less";
+
+/* POOR MANS NORMALIZE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+// BASICS
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+
+    body {
+        width: 100%;
+        padding-bottom: 10rem;
+        margin: auto;
+        display: block;
+        font-size: 1em;
+        line-height: 1.4;
+        font-weight: 300;
+        font-style: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: @color__white;
+
+        p {
+            margin: 0 10%;
+        }
+    }
+}

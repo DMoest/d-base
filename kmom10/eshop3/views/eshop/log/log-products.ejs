@@ -1,0 +1,46 @@
+<%- include ("./../../partials/header") %>
+
+<div class="site__header--index">
+    <img src="/img/covers/webCover-9.jpg" class="site__header--coverIMG">
+    <h1 class="site__header--title">Aktivitetslogg produkter</h1>
+</div>
+
+<p class="view__text--paragraph">Det här är aktivitetsloggen för produkter. Det går även att söka efter önskade event genom formuläret med knappen "SÖK".</p>
+
+<nav class="logNavigation">
+    <a href="/eshop/logProducts" class="logNavigation__link">Produktloggen</a>
+    <a href="/eshop/logOrders" class="logNavigation__link">Orderloggen</a>
+</nav>
+
+<!-- Search form for products -->
+<form method="post" action="/eshop/logSearchProducts" class="products__searchForm">
+    <label for="search" class="products__searchForm--label">Sök i aktivitetsloggen</label>
+    <input type="text" name="search" class="products__searchForm--input"/>
+    <input type="submit" value="Sök" class="products__searchForm--BTN" />
+</form>
+
+<table class="activityLog">
+    <tr class="activityLog__tableHeader">
+        <th class="activityLog__tableHeader--id">ID</th>
+        <th class="activityLog__tableHeader--product">Produkt</th>
+        <th class="activityLog__tableHeader--time">Datum & Tid</th>
+        <th class="activityLog__tableHeader--activity">Aktivitet</th>
+        <th class="activityLog__tableHeader--before">Före</th>
+        <th class="activityLog__tableHeader--after">Efter</th>
+    </tr>
+    <% for (const row of res[0]) { %>
+        <tr class="activityLog__tableData">
+            <td class="activityLog__tableData--id"><%= row.id %></td>
+            <td class="activityLog__tableData--product"><%= row.product %></td>
+            <td class="activityLog__tableData--time"><%= row.time %></td>
+            <td  class="activityLog__tableData--activity"><%= row.activity %></td>
+            <td  class="activityLog__tableData--before"><%= row.before %></td>
+            <td  class="activityLog__tableData--after"><%= row.after %></td>
+        </tr>
+    <% }; %>
+</table>
+
+<!-- Check your RowDataPackages -->
+<!-- <pre><%= JSON.stringify(res, null, 4) %></pre> -->
+
+<%- include ("./../../partials/footer") %>
