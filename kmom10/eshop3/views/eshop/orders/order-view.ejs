@@ -54,7 +54,7 @@
                     <%if (order.picked_date === null ) { %>
                         <%= order.picked %>
                     <% } else { %>
-                    <%= order.picked_date %>
+                    <%= order.picked_date.toString().substr(0, 25) %>
                     
                 <% } %></p>
             </div>
@@ -64,20 +64,20 @@
 <h4 class="orderView--subHeader">Innehåll: </h4>
 
     <table class="orderView__table">
-        <tr class="orderView__table--row">
-            <th class="orderView__table--header orderView__table--headerIndex">Index</th>
-            <th class="orderView__table--header orderView__table--header--productID">Produktnr.</th>
-            <th class="orderView__table--header orderView__table--header--name">Produktnamn</th>
-            <th class="orderView__table--header orderView__table--header--info">Information</th>
-            <th class="orderView__table--header orderView__table--header--amount">Antal</th>
+        <tr class="orderView__tableHeader">
+            <th class="orderView__tableHeader orderView__tableHeader--index">Index</th>
+            <th class="orderView__tableHeader orderView__tableHeader--productID">Produktnr.</th>
+            <th class="orderView__tableHeader orderView__tableHeader--name">Produktnamn</th>
+            <th class="orderView__tableHeader orderView__tableHeader--info">Information</th>
+            <th class="orderView__tableHeader orderView__tableHeader--amount">Antal</th>
         </tr>
         <% for (const row of picklist) { %>
             <tr class="orderView__table--row">
-                <td class="orderView__table--data orderView__table--data--id"><%= row.index %></td>
-                <td class="orderView__table--data orderView__table--data--productID"><%= row.product %></td>
-                <td class="orderView__table--data orderView__table--data--name"><%= row.name %></td>
-                <td class="orderView__table--data orderView__table--data--info"><%= row.info %></td>
-                <td class="orderView__table--data orderView__table--data--amount"><%= row.amount %></td>
+                <td class="orderView__tableData orderView__tableData--id"><%= row.index %></td>
+                <td class="orderView__tableData orderView__tableData--productID"><%= row.product %></td>
+                <td class="orderView__tableData orderView__tableData--name"><%= row.name %></td>
+                <td class="orderView__tableData orderView__tableData--info"><%= row.info %></td>
+                <td class="orderView__tableData orderView__tableData--amount"><%= row.amount %></td>
             </tr>
         <% }; %>
     </table>

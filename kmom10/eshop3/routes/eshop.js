@@ -84,13 +84,6 @@ router.get("/productCategory/:type", async (req, res) => {
     res.render("eshop/products/product-type", data);
 });
 
-
-
-
-
-
-
-
 // Search products
 router.get("/searchProducts", async (req, res) => {
     // console.log("* SEARCH PRODUCTS ROUTE (POST)");
@@ -309,25 +302,13 @@ router.post("/:order/placeOrder", urlencodedParser, async (req, res) => {
     // console.log("* ORDER - PLACE THE ORDER (POST)");
 
     let order = req.body.order;
+    let customer = await myFunctions.getCustomerFromOrder(order);
 
     await myFunctions.placeTheOrder(order);
+    await myFunctions.createInvoice(order, customer[0][0].id);
 
     res.redirect(`/eshop/order/${order}`);
 });
-
-// // Picklist for order
-// router.get("/order/:order/picklist", urlencodedParser, async (req, res) => {
-//     console.log("* CREATE ORDER ROUTE (POST)");
-
-//     let order = req.body.order;
-
-//     let data = {
-//         title: `Picklist for order ${order} | E-shop`,
-//         order: await myFunctions.getPickingList(order),
-//     };
-
-//     res.render("eshop/orders/orders-picklist", data);
-// });
 
 // Picklist for order
 router.post("/order/:order/picklist", urlencodedParser, async (req, res) => {
@@ -354,9 +335,12 @@ router.post("/order/:order/picklist/picked", urlencodedParser, async (req, res) 
     res.redirect(`/eshop/order/${order}`);
 });
 
+
+
+
 // Invoice for order
 router.post("/:order/invoice/", urlencodedParser, async (req, res) => {
-    console.log("* CREATE ORDER ROUTE (POST)");
+    console.log("* INVOICE ROUTE (POST)");
 
     let order = req.body.order;
 
@@ -364,13 +348,16 @@ router.post("/:order/invoice/", urlencodedParser, async (req, res) => {
         title: `Invoice for order ${order} | E-shop`,
         customer: await myFunctions.getCustomerFromOrder(order),
         res: await myFunctions.showOrder(order),
-        picklist: await myFunctions.getPickingList(order)
+        picklist: await myFunctions.getPickingList(order),
+        invoice: await myFunctions.getInvoice(order),
     };
-
-    await myFunctions.getPickingList(order);
 
     res.render("eshop/orders/orders-invoice", data);
 });
+
+
+
+
 
 // Ship order
 router.post("/:order/shipOrder/", urlencodedParser, async (req, res) => {

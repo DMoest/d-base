@@ -35,6 +35,7 @@ drop view if exists v_log_orders;
 drop view if exists v_customers;
 drop view if exists v_orders;
 drop view if exists v_picking_lists;
+drop view if exists v_invoices;
 
 -- Drop procedures if exists:
 drop procedure if exists get_all_from_table;
@@ -71,6 +72,8 @@ drop procedure if exists pick_order;
 drop procedure if exists get_customer_from_order;
 drop procedure if exists get_picking_list;
 drop procedure if exists add_product_to_picking_list;
+drop procedure if exists create_invoice;
+drop procedure if exists get_invoice;
 
 -- Drop functions if exists:
 drop function if exists order_status;
@@ -303,17 +306,17 @@ collate utf8_swedish_ci
 -- Invoices:
 create table invoices
 (
-    `id` int unique not null,
+    `id` int unique auto_increment not null,
     `order_id` int not null,
     `customer` int not null,
-    `product_list` int not null,
-    `adress` varchar(30) not null,
-    `status` varchar(20) not null,
+    `created` timestamp default current_timestamp,
+    `shipped` timestamp default null,
+    `payment` timestamp default null,
+    `deleted` timestamp default null,
 
     primary key (id),
     foreign key (order_id) references orders(id),
-    foreign key (customer) references customers(id),
-    foreign key (product_list) references picking_lists(id)
+    foreign key (customer) references customers(id)
     on delete cascade
 )
 engine innodb
@@ -623,6 +626,26 @@ group by
     pl.product,
     i.product
 order by pl.id asc;
+
+
+
+-- Invoice view:
+create view v_invoices
+as
+select
+    o.id as `order`,
+    o.customer as `customer`,
+    o.deleted as `deleted`,
+    i.id as `invoice`,
+    i.created as `created`,
+    o.shipped as `shipped`,
+    i.payment as `payment`,
+    payment_status(i.payment, i.deleted) as `payment_status`
+from invoices as i
+    join orders as o
+        on o.id = i.order_id
+group by invoice
+order by invoice asc;
 
 
 
@@ -967,7 +990,52 @@ begin
 insert into orders
         (customer)
     values
-        (customer_id);
+        (customer_id);    
+end
+$$
+delimiter ;
+
+
+-- Create invoice:
+delimiter $$
+create procedure create_invoice(
+    input_order int,
+    input_customer int
+)
+begin
+insert into invoices
+        (`order_id`, `customer`)
+    values
+        (input_order, input_customer);
+end
+$$
+delimiter ;
+
+
+-- Get invoice:
+delimiter $$
+create procedure get_invoice(
+    input_order int
+)
+begin
+select *
+    from v_invoices
+        where `order` = `input_order`;
+end
+$$
+delimiter ;
+
+
+-- Pay invoice:
+delimiter $$
+create procedure pay_invoice(
+    input_invoice int,
+    input_date date
+)
+begin
+update invoices
+    set payment = input_date
+        where id = input_invoice;
 end
 $$
 delimiter ;
@@ -1014,7 +1082,6 @@ from v_orders
     where 
         `id` like search_for or
         `customer` like search_for or
-        `created` like search_for or
         `rows` like search_for or
         `status` like search_for;
 end
@@ -1085,6 +1152,10 @@ begin
 update orders
     set `shipped` = current_timestamp
     where id = order_id;
+
+update invoices
+    set `shipped` = current_timestamp
+    where order_id = order_id;
 end
 $$
 delimiter ;

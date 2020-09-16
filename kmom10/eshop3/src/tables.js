@@ -16,6 +16,7 @@
  */
 function productAsTable(product) {
     let str;
+    let zero = 0;
 
     /* eslint-disable */
     str =  " ID      Namn                             Kategori                              Information                                                                Pris    Antal\n";
@@ -34,7 +35,11 @@ function productAsTable(product) {
         str += "   ";
         str += row.price.toString().padStart(5);
         str += "     ";
-        str += row.amount.toString().padStart(5);
+        if (row.amount === null) { 
+            str += zero.toString().padStart(5); 
+        } else {
+            str += row.amount.toString().padStart(5);
+        };
         str += " \n";
     }
     str += "   \n";
@@ -50,10 +55,11 @@ function productAsTable(product) {
  */
 function orderAsTable(product) {
     let str;
+    let notShipped = " ";
 
     /* eslint-disable */
-    str =  " ID      Kundnummer   Namn              Orderrader   Skapad                                          Skickad                                         Status   Betald   \n";
-    str += " ...     ..........   ....              ...........  .......                                         .......                                         ......   ......   \n";
+    str =  " ID      Kundnummer   Namn              Orderrader   Skapad                                          Skickad                                         Status       Betald   \n";
+    str += " ...     ..........   ....              ...........  .......                                         .......                                         ......       ......   \n";
     /* eslint-enable */
 
     for (const row of product) {
@@ -68,11 +74,15 @@ function orderAsTable(product) {
         str += "   ";
         str += row.created.toString().padStart(5);
         str += "   ";
-        str += row.shipped.toString().padStart(5);
+        if (row.shipped === null) {
+            str += notShipped.toString().padStart(45);
+        } else {
+            str += row.shipped.toString().padStart(5);
+        };
         str += "   ";
-        str += row.status.padStart(5);
+        str += row.status.padEnd(10);
         str += "   ";
-        str += row.payment.padStart(5);
+        str += row.payment.padEnd(10);
         str += " \n";
     }
     str += "   \n";

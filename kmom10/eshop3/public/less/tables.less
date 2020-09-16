@@ -222,34 +222,74 @@
     }
 }
 
-.orderView__table {
-    width: 100%;
-
-    &--row {
+.orderView {
+    &__table{
         width: 100%;
     }
 
-    &--header {
-        padding: 0.25rem;
-        font-size: 1.2rem;
+    &__tableHeader {
+        width: 100%;
         font-weight: @font__weight[subStandard];
         background-color: @color__primary--standard;
         color: @color__font--light;
+        
+        &--id,
+        &--name,
+        &--types,
+        &--info,
+        &--price,
+        &--amount,
+        &--position,
+        &--items {
+            padding: @rythem[half];
+            font-size: @font__size[tableHeader];
+            text-align: center;
+            color: @color__font--light;
+        }
+
+        &--id {
+            width: 5%;
+        }
+
+        &--name,
+        &--types {
+            width: 15%;
+        }
+
+        &--info {
+            width: 20%;
+        }
+
+        &--price,
+        &--items,
+        &--product,
+        &--position,
+        &--amount,
+        &--stored {
+            width: 10%;
+        }
+
+        &--index,
+        &--productID,
+        &--name,
+        &--info,
+        &--amount {
+            width: 20%;
+        }
     }
 
-    &--data {
+    &__tableData {
         padding: @rythem[quarter];
 
         &--id,
         &--productID,
+        &--product,
         &--amount {
-            width: 15%;
             text-align: center;
         }
 
         &--name,
         &--info {
-            width: 27.5%;
             text-align: left;
         }
     }
