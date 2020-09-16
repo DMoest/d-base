@@ -74,6 +74,7 @@ drop procedure if exists get_picking_list;
 drop procedure if exists add_product_to_picking_list;
 drop procedure if exists create_invoice;
 drop procedure if exists get_invoice;
+drop procedure if exists pay_invoice;
 
 -- Drop functions if exists:
 drop function if exists order_status;
@@ -1036,6 +1037,9 @@ begin
 update invoices
     set payment = input_date
         where id = input_invoice;
+update orders
+    set payment = input_date
+        where id = (select order_id from invoices where id = input_invoice);
 end
 $$
 delimiter ;

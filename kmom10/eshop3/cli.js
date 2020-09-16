@@ -297,6 +297,7 @@ function showMenu() {
         Products (-p) ............................... Show all products.
         Productcategories (-pc) ..................... Show all product categories.
         Picklist (-pl) <order id> ................... Get the picking list for the order.
+        Payed <invocie id> <date> ................... Change the orders payment status.
         Shelf (-s) .................................. Show all shelves in the wearhouse.
         Ship <order id> ............................. Ship an existing order to customer.
         Log (-l) <rows> ............................. Show <rows> from product log.

@@ -35,11 +35,11 @@ function productAsTable(product) {
         str += "   ";
         str += row.price.toString().padStart(5);
         str += "     ";
-        if (row.amount === null) { 
-            str += zero.toString().padStart(5); 
+        if (row.amount === null) {
+            str += zero.toString().padStart(5);
         } else {
             str += row.amount.toString().padStart(5);
-        };
+        }
         str += " \n";
     }
     str += "   \n";
@@ -53,7 +53,7 @@ function productAsTable(product) {
  * @param {RowDataPacket}
  * @returns {string}
  */
-function orderAsTable(product) {
+function orderAsTable(order) {
     let str;
     let notShipped = " ";
 
@@ -62,7 +62,7 @@ function orderAsTable(product) {
     str += " ...     ..........   ....              ...........  .......                                         .......                                         ......       ......   \n";
     /* eslint-enable */
 
-    for (const row of product) {
+    for (const row of order) {
         str += " ";
         str += row.id.toString().padEnd(5);
         str += "   ";
@@ -78,7 +78,7 @@ function orderAsTable(product) {
             str += notShipped.toString().padStart(45);
         } else {
             str += row.shipped.toString().padStart(5);
-        };
+        }
         str += "   ";
         str += row.status.padEnd(10);
         str += "   ";
