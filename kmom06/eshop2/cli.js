@@ -124,7 +124,7 @@ const myTables = require("./src/tables.js");
                     result = await myFunctions.searchInProductLog(lineArray[1]);
                     await console.info(myTables.logProductsAsTable(result[0]));
                 } else {
-                    console.info("You need to enter a search string to find a matching product.");
+                    console.info("You need to enter a search string to find a matching log entry.");
                 }
                 break;
             }
@@ -153,6 +153,19 @@ const myTables = require("./src/tables.js");
                 } else {
                     result = await myFunctions.getPickingList(order);
                     await console.info(myTables.picklistAsTable(result));
+                }
+                break;
+            }
+            case "payed": {
+                // console.info("* PICKLIST");
+                let invoice = lineArray[1];
+                let date = lineArray[2];
+
+                if (lineArray.length <= 1) {
+                    console.info("Please specify which order id to change payment status for.");
+                } else {
+                    await myFunctions.payInvoice(invoice, date);
+                    console.info(`The invoice number ${invoice} have benn payed on ${date}`);
                 }
                 break;
             }
@@ -284,6 +297,7 @@ function showMenu() {
         Products (-p) ............................... Show all products.
         Productcategories (-pc) ..................... Show all product categories.
         Picklist (-pl) <order id> ................... Get the picking list for the order.
+        Payed <invocie id> <date> ................... Change the orders payment status.
         Shelf (-s) .................................. Show all shelves in the wearhouse.
         Ship <order id> ............................. Ship an existing order to customer.
         Log (-l) <rows> ............................. Show <rows> from product log.

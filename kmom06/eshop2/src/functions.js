@@ -84,8 +84,6 @@ async function getProductFromPosition(position) {
     return result;
 }
 
-
-
 /**
  * Get all product inventories.
  * @async                   Async function.
@@ -169,8 +167,6 @@ async function removeProductFromShelf(section, position, level, product, amount)
 
     return result;
 }
-
-
 
 /**
  * Show details a product.
@@ -586,6 +582,54 @@ async function deleteOrder(order) {
     return result;
 }
 
+/* ----- INVOICES ----- */
+/**
+ * Create a invoice for order.
+ * @async                   Async function.
+ * @param   order           The order id to delete.
+ * @returns {RowDataPacket} Result from query.
+ */
+async function createInvoice(order, customer) {
+    let result;
+    let sql = `call create_invoice(?, ?);`;
+
+    result = await db.query(sql, [order, customer]);
+
+    return result;
+}
+
+/**
+ * Get invoice for an order.
+ * @async                   Async function.
+ * @param   order           The order id to get invoice for.
+ * @returns {RowDataPacket} Result from query.
+ */
+async function getInvoice(order) {
+    let result;
+    let sql = `call get_invoice(?);`;
+
+    result = await db.query(sql, [order]);
+
+    return result;
+}
+
+
+/**
+ * Get invoice for an order.
+ * @async                   Async function.
+ * @param   invoice         The invoice id to pay.
+ * @param   date            The date the invoice was payed.
+ * @returns {RowDataPacket} Result from query.
+ */
+async function payInvoice(invoice, date) {
+    let result;
+    let sql = `call pay_invoice(?, ?);`;
+
+    result = await db.query(sql, [invoice, date]);
+
+    return result;
+}
+
 
 
 module.exports = {
@@ -638,4 +682,9 @@ module.exports = {
     // Picking lists
     "getPickingList": getPickingList,
     "addProductToPickingList": addProductToPickingList,
+
+    // Invoice
+    "createInvoice": createInvoice,
+    "getInvoice": getInvoice,
+    "payInvoice": payInvoice,
 };

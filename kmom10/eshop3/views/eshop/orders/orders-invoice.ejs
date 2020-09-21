@@ -50,6 +50,11 @@
                     <p class="orderView__details--rows"><%= order.rows %></p>
                     <p class="orderView__details--status"><%= order.status %></p>
                     <p class="orderView__details--status"><%= invoice[0][0].payment_status %></p>
+                    <p class="orderView__details--status"><% if (invoice[0][0].shipped === null) { %>
+                        <%= "Ej Skickad" %>
+                    <% } else { %>
+                        <%= invoice[0][0].shipped.toString().substr(0, 25) %></p>
+                    <% } %>
                 </div>
             </div>
         <% }; %>

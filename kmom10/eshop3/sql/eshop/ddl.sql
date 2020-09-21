@@ -112,9 +112,7 @@ create table products
     primary key (id),
     unique key `product_id` (`id`),
     key (`name`),
-    fulltext key (`name`),
-    fulltext key (`info`)
-
+    fulltext key (`name`)
 )
 engine innodb
 charset utf8
@@ -130,6 +128,7 @@ create table product_types
 
     primary key (id),
     unique key (id),
+    key (`product`),
     fulltext key (`type`),
     foreign key (product) references products(id)
     on delete cascade
@@ -150,7 +149,9 @@ create table product_pictures
 
     primary key (id),
     unique key (id),
+    key (`product`),
     fulltext key (`text`),
+    fulltext key (`alt`),
     foreign key (product) references products(id)
     on delete cascade
 )
@@ -171,6 +172,10 @@ create table inventory
 
     primary key (id),
     unique key (id),
+    key(`section`),
+    key(`position`),
+    key(`level`),
+    key(`product`),
     foreign key (product) references products(id)
     on delete cascade
 )
@@ -200,7 +205,6 @@ create table customers
     fulltext key (`street`),
     fulltext key (`email`),
     key (`birthday`)
-
 )
 engine innodb
 charset utf8
